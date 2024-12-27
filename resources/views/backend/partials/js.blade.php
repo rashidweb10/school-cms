@@ -6,3 +6,9 @@
 
 <!-- App JS -->
 <script src="{{ asset('backend/js/app.js') }}"></script>
+
+<!-- Additional JS Scripts-->
+<script src="{{ asset('backend/js/toastr.min.js') }}"></script>
+
+<!-- Backend JS -->
+<script src="{{ asset('backend/js/backend.js') }}"></script>
