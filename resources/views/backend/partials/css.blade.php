@@ -12,3 +12,9 @@
 
 <!-- Backend CSS -->
 <link href="{{ asset('backend/css/backend.css') }}" rel="stylesheet" type="text/css" />
+
+<!-- AIZ CSS -->
+<link href="{{ asset('backend/css/aiz-vendors.css') }}" rel="stylesheet" type="text/css" />
+<!-- <link href="{{ asset('backend/css/aiz-core.css') }}" rel="stylesheet" type="text/css" />  -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/basic.css" /> -->
