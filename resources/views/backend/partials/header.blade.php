@@ -450,8 +450,8 @@
                     <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" data-bs-offset="0,19" type="button" aria-haspopup="false" aria-expanded="false">
                         <img src="{{ asset('backend/img/avatar-1.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image">
                         <span class="d-lg-flex flex-column gap-1 d-none">
-                            <h5 class="my-0">Dhanoo K.</h5>
-                            <h6 class="my-0 fw-normal">Premium</h6>
+                            <h5 class="my-0">{{auth()->user()->name}}</h5>
+                            <h6 class="my-0 fw-normal">Superadmin</h6>
                         </span>
                         <i class="ti ti-chevron-down d-none d-lg-block align-middle ms-2"></i>
                     </a>
@@ -463,7 +463,7 @@
 
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item active fw-semibold text-danger">
+                        <a href="{{ route('backend.logout') }}" class="dropdown-item active fw-semibold text-danger">
                             <i class="ti ti-logout me-1 fs-17 align-middle"></i>
                             <span class="align-middle">Sign Out</span>
                         </a>

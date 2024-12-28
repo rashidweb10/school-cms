@@ -9,6 +9,7 @@
 
 <!-- Additional JS Scripts-->
 <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
+<script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
 
 <!-- Backend JS -->
 <script src="{{ asset('backend/js/backend.js') }}"></script>

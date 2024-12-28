@@ -9,3 +9,6 @@
 
 <!-- Additional CSS Files-->
 <link href="{{ asset('backend/css/toastr.min.css') }}" rel="stylesheet" type="text/css" />
+
+<!-- Backend CSS -->
+<link href="{{ asset('backend/css/backend.css') }}" rel="stylesheet" type="text/css" />

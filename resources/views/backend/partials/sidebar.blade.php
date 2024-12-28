@@ -34,7 +34,7 @@
                 <span class="menu-icon"><i class="ti ti-dashboard"></i></span>
                 <span class="menu-text"> Dashboard </span>
             </a>
-        </li>
+        </li>        
     </ul>
     <div class="clearfix"></div>
 </div>
