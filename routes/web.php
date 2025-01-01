@@ -8,6 +8,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/clear-caches', function () {
+    return env("DB_DATABASE"); 
+    // Clear the caches
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:cache');
+    
+    // Regenerate the application key
+    Artisan::call('key:generate');
+
+    // Create the symbolic storage link
+    Artisan::call('storage:link');    
+
+    // Return a response
+    return 'Caches cleared and config cached successfully!';
+});
+
 // Group routes under the 'backend' prefix
 Route::prefix('backend')->group(function () {
 
