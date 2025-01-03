@@ -529,7 +529,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                                     "</div>" +
                                     '<div class="remove">' +
                                     '<button class="btn btn-sm btn-link remove-attachment" type="button">' +
-                                    '<i class="la la-close"></i>' +
+                                    '<i class="ti ti-x"></i>' +
                                     "</button>" +
                                     "</div>" +
                                     "</div>";
