@@ -12,7 +12,7 @@
 <script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
 
 <!-- Backend JS -->
-<script src="{{ asset('backend/js/backend.js') }}"></script>
+<script src="{{ asset('backend/js/backend.js') }}" defer></script>
 
 <!-- Aiz Upload JS -->
 <script>
@@ -41,4 +41,4 @@
     }
 </script>
 <script src="{{ asset('backend/js/aiz-vendors.js') }}"></script>
-<script src="{{ asset('backend/js/aiz-core.js') }}"></script>
+<script src="{{ asset('backend/js/aiz-core.js') }}" defer></script>

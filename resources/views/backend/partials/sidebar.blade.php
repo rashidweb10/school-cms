@@ -30,11 +30,35 @@
         <li class="side-nav-title">Navigation</li>
 
         <li class="side-nav-item">
-            <a href="" class="side-nav-link">
+            <a href="{{route('backend.dashboard')}}" class="side-nav-link">
                 <span class="menu-icon"><i class="ti ti-dashboard"></i></span>
                 <span class="menu-text"> Dashboard </span>
             </a>
+        </li> 
+        
+        <li class="side-nav-item">
+            <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false" aria-controls="sidebarTables"
+                class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-table"></i></span>
+                <span class="menu-text"> Media Uploads </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarTables">
+                <ul class="sub-menu">
+                    <li class="side-nav-item">
+                        <a href="{{ route('uploaded-files.create') }}" class="side-nav-link">
+                            <span class="menu-text">Add New</span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="{{ route('uploaded-files.index') }}" class="side-nav-link">
+                            <span class="menu-text">All Uploads</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </li>        
+
     </ul>
     <div class="clearfix"></div>
 </div>
