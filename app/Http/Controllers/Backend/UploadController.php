@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class AizUploadController extends Controller
+class UploadController extends Controller
 {
     public function index(Request $request)
     {
@@ -42,22 +42,20 @@ class AizUploadController extends Controller
                 break;
         }
 
-        $all_uploads = $all_uploads->paginate(12)->appends(request()->query());
+        $all_uploads = $all_uploads->paginate(20)->appends(request()->query());
 
 
-        return view('backend.uploaded_files.index', compact('all_uploads', 'search', 'sort_by'));
+        return view('backend.uploads.index', compact('all_uploads', 'search', 'sort_by'));
     }
 
     public function create()
     {
-
-        return view('backend.uploaded_files.create');
+        return view('backend.uploads.create');
     }
-
 
     public function show_uploader(Request $request)
     {
-        return view('uploader.aiz-uploader');
+        return view('backend.uploads.aiz-uploader-modal');
     }
     public function upload(Request $request)
     {
@@ -232,6 +230,6 @@ class AizUploadController extends Controller
     public function file_info(Request $request)
     {
         $file = Upload::findOrFail($request['id']);
-        return view('backend.uploaded_files.info', compact('file'));
+        return view('backend.uploads.info', compact('file'));
     }
 }

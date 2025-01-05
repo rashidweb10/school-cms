@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
-use App\Http\Controllers\Backend\AizUploadController;
+use App\Http\Controllers\Backend\UploadController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,9 +23,9 @@ Route::prefix('backend')->group(function () {
         })->name('backend.dashboard');
     });
 
-    // Aiz upload routes 
-    Route::middleware(['auth.backend'])->resource('/uploaded-files', AizUploadController::class);
-    Route::middleware(['auth.backend'])->controller(AizUploadController::class)->group(function () {
+    // Uploads routes 
+    Route::middleware(['auth.backend'])->resource('/uploaded-files', UploadController::class);
+    Route::middleware(['auth.backend'])->controller(UploadController::class)->group(function () {
         Route::any('/uploaded-files/file-info', 'file_info')->name('uploaded-files.info');
         Route::get('/uploaded-files/destroy/{id}', 'destroy')->name('uploaded-files.destroy');
         Route::post('/bulk-uploaded-files-delete', 'bulk_uploaded_files_delete')->name('bulk-uploaded-files-delete');
