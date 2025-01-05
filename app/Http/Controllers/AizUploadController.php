@@ -113,7 +113,7 @@ class AizUploadController extends Controller
                 }
 
                 $size = $request->file('aiz_file')->getSize();
-                $path = $request->file('aiz_file')->store('uploads/all', 'public');
+                $path = $request->file('aiz_file')->store('uploads/'.date("Y").'/'.date("m"), 'public');
 
                 $upload->extension = $extension;
                 $upload->file_name = 'storage/'.$path;
