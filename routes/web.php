@@ -35,5 +35,12 @@ Route::prefix('backend')->group(function () {
         Route::get('/aiz-uploader/get-uploaded-files', 'get_uploaded_files');
         Route::post('/aiz-uploader/get_file_by_ids', 'get_preview_files');
         Route::get('/aiz-uploader/download/{id}', 'attachment_download')->name('download_attachment');        
+    }); 
+    
+    // Schools routes
+    Route::middleware(['auth.backend'])->group(function () {
+        Route::get('/schools', function () {
+            return view('backend.schools.index');
+        })->name('backend.schools');
     });    
 });

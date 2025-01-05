@@ -121,6 +121,11 @@ function ajaxSubmit(e, form, callBackFunction) {
     }
 }
 
-$(document).ready(function () {
-    //Command: toastr["success"]("Test", "Success");
-});
+function initDatatable(selector){
+    $(selector).DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });   
+}

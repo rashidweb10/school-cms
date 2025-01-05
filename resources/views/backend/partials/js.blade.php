@@ -11,9 +11,6 @@
 <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
 <script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
 
-<!-- Backend JS -->
-<script src="{{ asset('backend/js/backend.js') }}" defer></script>
-
 <!-- Aiz Upload JS -->
 <script>
     var AIZ = AIZ || {};
@@ -42,3 +39,36 @@
 </script>
 <script src="{{ asset('backend/js/aiz-vendors.js') }}"></script>
 <script src="{{ asset('backend/js/aiz-core.js') }}" defer></script>
+
+<!-- DataTables Core -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<!-- DataTables Buttons Extension -->
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+<!-- DataTables Responsive Extension -->
+<script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
+<!-- DataTables Select Extension -->
+<script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
+
+<!-- DataTables FixedHeader Extension -->
+<script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+
+<!-- DataTables FixedColumns Extension -->
+<script src="https://cdn.datatables.net/fixedcolumns/4.4.0/js/dataTables.fixedColumns.min.js"></script>
+
+<!-- DataTables KeyTable Extension -->
+<script src="https://cdn.datatables.net/keytable/2.8.0/js/dataTables.keyTable.min.js"></script>
+
+<!-- DataTables RowGroup Extension -->
+<script src="https://cdn.datatables.net/rowgroup/1.4.0/js/dataTables.rowGroup.min.js"></script>
+
+<!-- Backend JS -->
+<script src="{{ asset('backend/js/backend.js') }}"></script>

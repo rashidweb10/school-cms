@@ -11,19 +11,6 @@
 </div>
 
 <div class="row">
-<div class="form-group row">
-        <label class="col-md-3 col-form-label" for="signinSrEmail">{{__('Gallery Images1')}}</label>
-        <div class="col-md-9">
-            <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="true">
-                <div class="input-group-prepend">
-                    <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse')}}</div>
-                </div>
-                <div class="form-control file-amount">{{ __('Choose File') }}</div>
-                <input type="hidden" name="photos1" class="selected-files">
-            </div>
-            <div class="file-preview box sm">
-            </div>
-        </div>
-    </div>    
+   
 </div>
 @endsection
