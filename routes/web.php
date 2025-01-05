@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
-use App\Http\Controllers\AizUploadController;
+use App\Http\Controllers\Backend\AizUploadController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,7 +31,6 @@ Route::get('/clear-caches', function () {
 Route::prefix('backend')->group(function () {
 
     // Public login/logout routes
-    
     Route::get('/login', [AuthController::class, 'showLoginForm'])->middleware('auth.guest')->name('backend.login');
     Route::post('/login', [AuthController::class, 'login'])->name('backend.login.submit');
     Route::get('/logout', [AuthController::class, 'logout'])->name('backend.logout');
@@ -43,21 +42,17 @@ Route::prefix('backend')->group(function () {
         })->name('backend.dashboard');
     });
 
-    // uploaded files
+    // Aiz upload routes 
     Route::middleware(['auth.backend'])->resource('/uploaded-files', AizUploadController::class);
     Route::middleware(['auth.backend'])->controller(AizUploadController::class)->group(function () {
         Route::any('/uploaded-files/file-info', 'file_info')->name('uploaded-files.info');
         Route::get('/uploaded-files/destroy/{id}', 'destroy')->name('uploaded-files.destroy');
         Route::post('/bulk-uploaded-files-delete', 'bulk_uploaded_files_delete')->name('bulk-uploaded-files-delete');
         Route::get('/all-file', 'all_file');
-    });
-});
-
-// AIZ Uploader
-Route::controller(AizUploadController::class)->group(function () {
-    Route::post('/aiz-uploader', 'show_uploader');
-    Route::post('/aiz-uploader/upload', 'upload');
-    Route::get('/aiz-uploader/get-uploaded-files', 'get_uploaded_files');
-    Route::post('/aiz-uploader/get_file_by_ids', 'get_preview_files');
-    Route::get('/aiz-uploader/download/{id}', 'attachment_download')->name('download_attachment');
+        Route::post('/aiz-uploader', 'show_uploader');
+        Route::post('/aiz-uploader/upload', 'upload');
+        Route::get('/aiz-uploader/get-uploaded-files', 'get_uploaded_files');
+        Route::post('/aiz-uploader/get_file_by_ids', 'get_preview_files');
+        Route::get('/aiz-uploader/download/{id}', 'attachment_download')->name('download_attachment');        
+    });   
 });
