@@ -410,7 +410,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                                 data[i].file_name +
                                 '" class="img-fit">';
                         } else {
-                            thumb = '<i class="la la-file-text"></i>';
+                            thumb = '<i class="ti ti-file-text"></i>';
                         }
                         var html =
                             '<div class="aiz-file-box-wrap" aria-hidden="' +
@@ -501,7 +501,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                                         data[i].file_name +
                                         '" class="img-fit">';
                                 } else {
-                                    thumb = '<i class="la la-file-text"></i>';
+                                    thumb = '<i class="ti ti-file-text"></i>';
                                 }
                                 var html =
                                     '<div class="d-flex justify-content-between align-items-center mt-2 file-preview-item" data-id="' +
@@ -568,7 +568,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
             //                 AIZ.uploader.data.allFiles[index].file_name +
             //                 '" class="img-fit">';
             //         } else {
-            //             thumb = '<i class="la la-file-text"></i>';
+            //             thumb = '<i class="ti ti-file-text"></i>';
             //         }
             //         var html =
             //             '<div class="d-flex justify-content-between align-items-center mt-2 file-preview-item" data-id="' +

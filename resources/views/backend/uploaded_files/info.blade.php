@@ -1,25 +1,25 @@
-<div >
-	<div class="form-group">
+<div>
+	<div class="form-group mb-2">
 		<label>{{ __('File Name') }}</label>
 		<input type="text" class="form-control" value="{{ $file->file_name }}" disabled>
 	</div>
-	<div class="form-group">
+	<div class="form-group mb-2">
 		<label>{{ __('File Type') }}</label>
 		<input type="text" class="form-control" value="{{ $file->type }}" disabled>
 	</div>
-	<div class="form-group">
+	<div class="form-group mb-2">
 		<label>{{ __('File Size') }}</label>
 		<input type="text" class="form-control" value="{{ formatBytes($file->file_size) }}" disabled>
 	</div>
-	<div class="form-group">
+	<div class="form-group mb-2">
 		<label>{{ __('Uploaded By') }}</label>
 		<input type="text" class="form-control" value="{{ $file->user->name }}" disabled>
 	</div>
-	<div class="form-group">
+	<div class="form-group mb-2">
 		<label>{{ __('Uploaded At') }}</label>
 		<input type="text" class="form-control" value="{{ $file->created_at }}" disabled>
 	</div>
-	<div class="form-group text-center">
+	<div class="form-group text-center mb-2">
 		@php
 			if($file->file_original_name == null){
 			    $file_name = __('Unknown');

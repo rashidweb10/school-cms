@@ -5,52 +5,56 @@
 @section('content')
 <div class="page-title-head d-flex align-items-center gap-2">
     <div class="flex-grow-1">
-        <h4 class="fs-16 text-uppercase fw-bold mb-0">Uploads</h4>
+        <h4 class="fs-16 text-uppercase fw-bold mb-0">All Uploads</h4>
     </div>
+	<div class="text-end">
+		<ol class="breadcrumb m-0 py-0 fs-13">
+			<li class="breadcrumb-item"><a href="{{ route('uploaded-files.create') }}">Upload a new file</a></li>
+		</ol>
+	</div>    
 </div>
 
 <div class="row">
 	<div class="col-12">
 		<div class="card">
-			<div class="card-body">
+			<div class="">
 
-			<div class="col-md-6 text-md-right">
-			<a href="{{ route('uploaded-files.create') }}" class="btn btn-circle btn-info">
-				<span>{{__('Upload New File')}}</span>
-			</a>
-		</div>
+<form id="sort_uploads" action="">
 
-			<form id="sort_uploads" action="">
-    <div class="card-header row g-3">
-        <div class="col">
-            <h5 class="mb-0 h6">{{__('All files')}}</h5>
-        </div>
-        <div class="dropdown mb-2 mb-md-0">
+<div class="card-header row g-3 align-items-center">
+    <div class="col-md-2">
+        <div class="dropdown">
             <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{__('Bulk Action')}}
+                {{ __('Bulk Action') }}
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item confirm-alert" href="javascript:void(0)" data-bs-target="#bulk-delete-modal">{{__('Delete selection')}}</a></li>
+                <li>
+                <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#bulk-delete-modal">
+                    {{ __('Delete selection') }}
+                </a>
+                </li>
             </ul>
         </div>
-        <div class="col-md-3 ms-auto me-0">
-            <select class="form-select form-select-sm" name="sort" onchange="sort_uploads()">
-                <option value="newest" @if($sort_by == 'newest') selected="" @endif>{{ __('Sort by newest') }}</option>
-                <option value="oldest" @if($sort_by == 'oldest') selected="" @endif>{{ __('Sort by oldest') }}</option>
-                <option value="smallest" @if($sort_by == 'smallest') selected="" @endif>{{ __('Sort by smallest') }}</option>
-                <option value="largest" @if($sort_by == 'largest') selected="" @endif>{{ __('Sort by largest') }}</option>
-            </select>
-        </div>
-        <div class="col-md-3">
-            <input type="text" class="form-control form-control-sm" name="search" placeholder="{{ __('Search your files') }}" value="{{ $search }}">
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary">{{ __('Search') }}</button>
-        </div>
     </div>
+    <div class="col-md-4">
+        <select class="form-select" name="sort" onchange="sort_uploads()">
+            <option value="newest" @if($sort_by == 'newest') selected @endif>{{ __('Sort by newest') }}</option>
+            <option value="oldest" @if($sort_by == 'oldest') selected @endif>{{ __('Sort by oldest') }}</option>
+            <option value="smallest" @if($sort_by == 'smallest') selected @endif>{{ __('Sort by smallest') }}</option>
+            <option value="largest" @if($sort_by == 'largest') selected @endif>{{ __('Sort by largest') }}</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" name="search" placeholder="{{ __('Search your files') }}" value="{{ $search }}">
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">{{ __('Search') }}</button>
+    </div>
+</div>
+
 
     <div class="card-body">
-        <div class="form-group">
+        <div class="form-group mb-3">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input check-all" id="select-all">
                 <label class="form-check-label" for="select-all">{{ __('Select All') }}</label>
@@ -70,23 +74,23 @@
                         $file_path = $file->external_link;
                     }
                 @endphp
-                <div class="col-2">
+                <div class="col-3">
                     <div class="aiz-file-box">
-                    <div class="dropdown-file">
-                    <a class="" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-dots-vertical"></i>
-                    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-        <li><a href="javascript:void(0)" class="dropdown-item" onclick="detailsInfo(this)" data-id="{{ $file->id }}">
-            <i class="las la-info-circle me-2"></i>{{ __('Details Info') }}</a></li>
-        <li><a href="{{ my_asset($file->file_name) }}" target="_blank" download="{{ $file_name }}.{{ $file->extension }}" class="dropdown-item">
-            <i class="la la-download me-2"></i>{{ __('Download') }}</a></li>
-        <li><a href="javascript:void(0)" class="dropdown-item" onclick="copyUrl(this)" data-url="{{ my_asset($file->file_name) }}">
-            <i class="las la-clipboard me-2"></i>{{ __('Copy Link') }}</a></li>
-        <li><a href="javascript:void(0)" class="dropdown-item confirm-delete" data-href="{{ route('uploaded-files.destroy', $file->id ) }}" data-bs-toggle="modal" data-bs-target="#delete-modal">
-            <i class="las la-trash me-2"></i>{{ __('Delete') }}</a></li>
-    </ul>
-</div>
+                        <div class="dropdown-file">
+                            <a class="" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="ti ti-dots-vertical"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a href="javascript:void(0)" class="dropdown-item" onclick="detailsInfo(this)" data-id="{{ $file->id }}">
+                                    <i class="las la-info-circle me-2"></i>{{ __('Details Info') }}</a></li>
+                                <li><a href="{{ my_asset($file->file_name) }}" target="_blank" download="{{ $file_name }}.{{ $file->extension }}" class="dropdown-item">
+                                    <i class="la la-download me-2"></i>{{ __('Download') }}</a></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item" onclick="copyUrl(this)" data-url="{{ my_asset($file->file_name) }}">
+                                    <i class="las la-clipboard me-2"></i>{{ __('Copy Link') }}</a></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item confirm-delete" data-href="{{ route('uploaded-files.destroy', $file->id ) }}" data-bs-toggle="modal" data-bs-target="#delete-modal">
+                                    <i class="las la-trash me-2"></i>{{ __('Delete') }}</a></li>
+                            </ul>
+                        </div>
 
                         <div class="select-box">
                             <div class="form-check">
@@ -99,9 +103,9 @@
                                 @if($file->type == 'image')
                                     <img  src="{{ $file_path }}" class="img-fluid">
                                 @elseif($file->type == 'video')
-                                <i class="ti ti-file"></i>
+                                <i class="ti ti-video"></i>
                                 @else
-                                <i class="ti ti-file-pdf"></i>
+                                <i class="ti ti-file-text"></i>
                                 @endif
                             </div>
                             <div class="card-body">
@@ -130,21 +134,20 @@
 </div>
 <div class="row">
 
-<div id="info-modal" class="modal fade">
-	<div class="modal-dialog modal-dialog-right">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title h6">{{ __('File Info') }}</h5>
-				<button type="button" class="close" data-dismiss="modal">
-				</button>
-			</div>
-			<div class="modal-body c-scrollbar-light position-relative" id="info-modal-content">
-				<div class="c-preloader text-center absolute-center">
+<div id="info-modal" class="modal fade" tabindex="-1" aria-labelledby="info-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-right">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title h6" id="info-modal-label">{{ __('File Info') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body c-scrollbar-light position-relative" id="info-modal-content">
+                <div class="c-preloader text-center absolute-center">
                     <i class="las la-spinner la-spin la-3x opacity-70"></i>
                 </div>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
