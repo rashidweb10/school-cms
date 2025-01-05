@@ -12,3 +12,7 @@
 
 <!-- Backend CSS -->
 <link href="{{ asset('backend/css/backend.css') }}" rel="stylesheet" type="text/css" />
+
+<!-- Aiz CSS -->
+<link href="{{ asset('backend/css/aiz-vendors.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('backend/css/aiz-core.css') }}" rel="stylesheet" type="text/css" /> 

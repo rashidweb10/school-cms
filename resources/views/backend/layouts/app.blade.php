@@ -11,6 +11,10 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('backend/img/favicon.ico') }}">
 
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="app-url" content="{{ url('/backend') }}">
+        <meta name="file-base-url" content="{{ asset('') }}">        
+
         @include('backend.partials.css')
         @include('backend.partials.js')
     </head>
