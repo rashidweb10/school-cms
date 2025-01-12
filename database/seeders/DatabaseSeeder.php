@@ -18,7 +18,22 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'role_id' => 1,
+            'company_id' => null,
             'password' => bcrypt('test@example.com'),
         ]);
+
+        User::factory()->create([
+            'name' => 'Test User 2',
+            'email' => 'test2@example.com',
+            'role_id' => 2,
+            'company_id' => 1,
+            'password' => bcrypt('test2@example.com'),
+        ]);        
+
+        $this->call([
+            CompanySeeder::class,
+            RoleSeeder::class,
+        ]);        
     }
 }

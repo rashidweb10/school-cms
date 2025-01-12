@@ -448,10 +448,10 @@
             <div class="topbar-item nav-user">
                 <div class="dropdown">
                     <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" data-bs-offset="0,19" type="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('backend/img/avatar-1.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image">
+                        {{--<img src="{{ asset('backend/img/avatar-1.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image">--}}
                         <span class="d-lg-flex flex-column gap-1 d-none">
-                            <h5 class="my-0">{{auth()->user()->name}}</h5>
-                            <h6 class="my-0 fw-normal">Superadmin</h6>
+                            <h5 class="my-0">{{ucfirst(auth()->user()->name)}}</h5>
+                            <h6 class="my-0 fw-normal">{{ucfirst(auth()->user()->role->name)}}</h6>
                         </span>
                         <i class="ti ti-chevron-down d-none d-lg-block align-middle ms-2"></i>
                     </a>

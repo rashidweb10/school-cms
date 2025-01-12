@@ -11,6 +11,15 @@ use Illuminate\Support\Str;
 
 class UploadController extends Controller
 {
+    protected $moduleName;
+
+    public function __construct()
+    {
+        //Module Name
+        $this->moduleName = 'Uploads';
+        view()->share('moduleName', $this->moduleName);
+    }
+
     public function index(Request $request)
     {
 

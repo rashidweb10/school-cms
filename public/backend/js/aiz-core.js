@@ -786,7 +786,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                                             '" class="img-fit">';
                                     } else {
                                         thumb =
-                                            '<i class="la la-file-text"></i>';
+                                            '<i class="ti ti-file-text"></i>';
                                     }
                                     var html =
                                         '<div class="d-flex justify-content-between align-items-center mt-2 file-preview-item" data-id="' +
@@ -816,7 +816,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                                         "</div>" +
                                         '<div class="remove">' +
                                         '<button class="btn btn-sm btn-link remove-attachment" type="button">' +
-                                        '<i class="la la-close"></i>' +
+                                        '<i class="ti ti-x"></i>' +
                                         "</button>" +
                                         "</div>" +
                                         "</div>";

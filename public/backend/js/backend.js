@@ -63,10 +63,82 @@ function closeConfirmModel() {
 }
 
 //jquery validator
-function initValidate(selector)
-{
-    $(selector).validate({});
+// function initValidate(selector)
+// {
+//     $(selector).validate({});
+// }
+
+// function initValidate(selector) {
+//     $(selector).validate({
+//         ignore: "", // Include hidden fields in validation
+//         errorPlacement: function (error, element) {
+//             if (element.prop("type") === "hidden") {
+//                 // Add error message for hidden fields in a specific container or after the field
+//                 error.insertAfter(element);
+//             } else {
+//                 error.insertAfter(element); // Default placement for visible fields
+//             }
+//         },
+//         rules: {
+//             // Example: Define rules for fields here
+//             hiddenFieldName: {
+//                 required: true
+//             }
+//         },
+//         messages: {
+//             // Example: Define custom messages for hidden fields
+//             hiddenFieldName: {
+//                 required: "This hidden field is required."
+//             }
+//         }
+//     });
+// }
+
+// function initValidate(selector)
+// {
+//     $(selector).validate({
+//         ignore: "", // Include hidden fields in validation
+//         //errorElement: 'div',
+//         errorPlacement: function (error, element) {
+//         error.addClass('invalid-feedback');
+//             element.closest('.form-group').append(error);
+//         },            
+//         highlight: function (element, errorClass, validClass) {
+//             //$(element).addClass('is-invalid');
+//         },
+//         unhighlight: function (element, errorClass, validClass) {
+//             //$(element).removeClass('is-invalid');
+//         }       
+//     });
+// }
+
+function initValidate(selector) {
+    const $form = $(selector);
+
+    $form.validate({
+        ignore: "", // Include hidden fields in validation
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            //$(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            //$(element).removeClass('is-invalid');
+        },
+    });
+
+    // Dynamically remove error when value changes
+    $form.on('change input', 'input, select, textarea', function () {
+        const $field = $(this);
+        if ($field.valid()) {
+            $field.removeClass('is-invalid');
+            $field.closest('.form-group').find('.invalid-feedback').remove();
+        }
+    });
 }
+
 
 //select2
 function initSelect2(selector) {

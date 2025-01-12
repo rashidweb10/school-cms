@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-title-head d-flex align-items-center gap-2">
 	<div class="flex-grow-1">
-		<h4 class="fs-16 text-uppercase fw-bold mb-0">Upload a new file</h4>
+		<h4 class="fs-16 text-uppercase fw-bold mb-0">New {{$moduleName}}</h4>
 	</div>
 
 	<div class="text-end">

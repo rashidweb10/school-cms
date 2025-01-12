@@ -60,7 +60,7 @@
         </li> 
         
         <li class="side-nav-item">
-            <a href="{{route('backend.schools')}}" class="side-nav-link">
+            <a href="{{route('companies.index')}}" class="side-nav-link">
                 <span class="menu-icon"><i class="ti ti-school"></i></span>
                 <span class="menu-text"> Schools </span>
             </a>

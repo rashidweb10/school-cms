@@ -138,6 +138,12 @@
 .file-preview.box.sm .file-preview-item {
     width: 100px;
 }
+
+.file-preview.box.sm {
+    display: flex
+;
+}
+
 .file-preview.box .file-preview-item {
     width: 160px;
     float: left;
@@ -145,6 +151,7 @@
     padding: 0;
     display: block !important;
     position: relative;
+    margin-bottom: 0.5rem;
 }
 .file-preview-item {
     padding: 8px;
