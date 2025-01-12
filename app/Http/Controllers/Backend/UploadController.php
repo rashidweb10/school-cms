@@ -22,7 +22,7 @@ class UploadController extends Controller
 
     public function index(Request $request)
     {
-
+        //dd(auth()->user()->role_id);
         $all_uploads = Upload::query();
         $search = null;
         $sort_by = null;
@@ -50,6 +50,10 @@ class UploadController extends Controller
                 $all_uploads->orderBy('created_at', 'desc');
                 break;
         }
+
+        if (auth()->user()->role_id != 1) {
+            $all_uploads->where('user_id', auth()->user()->id);
+        }        
 
         $all_uploads = $all_uploads->paginate(20)->appends(request()->query());
 
@@ -136,7 +140,8 @@ class UploadController extends Controller
 
     public function get_uploaded_files(Request $request)
     {
-        $uploads = Upload::where('user_id', Auth::user()->id);
+        //$uploads = Upload::where('user_id', Auth::user()->id);
+        $uploads = Upload::query();
         if ($request->search != null) {
             $uploads->where('file_original_name', 'like', '%' . $request->search . '%');
         }
@@ -159,6 +164,11 @@ class UploadController extends Controller
                     break;
             }
         }
+
+        if (auth()->user()->role_id != 1) {
+            $uploads->where('user_id', auth()->user()->id);
+        }  
+
         return $uploads->paginate(60)->appends(request()->query());
     }
 

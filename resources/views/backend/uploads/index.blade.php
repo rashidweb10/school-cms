@@ -14,6 +14,7 @@
 
 <div class="row">
 	<div class="col-12">
+        @include('backend.includes.alert-message')
 		<div class="card">
 			<div class="">
                 <form id="sort_uploads" action="">
