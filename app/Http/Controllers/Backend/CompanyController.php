@@ -110,22 +110,22 @@ class CompanyController extends Controller
             $metaFields = $request->input('meta', []); // Get all meta fields from the request
 
             foreach ($metaFields as $key => $value) {
-                if (!empty($value)) {
-                    // Check if the meta key exists for the current company
-                    $existingMeta = $company->meta()->where('meta_key', $key)->first();
+                // Check if the meta key exists for the current company
+                $existingMeta = $company->meta()->where('meta_key', $key)->first();
             
-                    if ($existingMeta) {
-                        // If the meta key exists, update it
-                        $existingMeta->update(['meta_value' => $value]);
-                    } else {
-                        // If the meta key does not exist, create a new record
+                if ($existingMeta) {
+                    // If the meta key exists, update it regardless of $value being empty
+                    $existingMeta->update(['meta_value' => $value]);
+                } else {
+                    // If the meta key does not exist, create a new record only if $value is not empty
+                    if (!empty($value)) {
                         $company->meta()->create([
                             'meta_key' => $key,
                             'meta_value' => $value
                         ]);
                     }
                 }
-            }
+            }            
 
             return redirect()->route('companies.edit', $company->id)->with('success', 'Company details updated successfully!');
 

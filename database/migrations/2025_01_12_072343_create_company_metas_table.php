@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
             $table->string('meta_key', 50);
-            $table->text('meta_value');
+            $table->longText('meta_value')->nullable();
             $table->timestamps();
         });
     }
