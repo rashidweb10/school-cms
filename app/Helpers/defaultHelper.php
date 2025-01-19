@@ -46,3 +46,55 @@ if (!function_exists('getCompanyList')) {
             : Company::all();
     }
 }
+
+if (! function_exists('formatDate')) {
+    /**
+     * Format date to dd/mm/yyyy.
+     *
+     * @param  string  $date
+     * @return string
+     */
+    function formatDate($date)
+    {
+        // Check if the date is not null or empty
+        if ($date) {
+            return \Carbon\Carbon::parse($date)->format('d/m/Y');
+        }
+        return null; // Return null if no date is provided
+    }
+}
+
+if (! function_exists('jsonDecodeAndPrint')) {
+    /**
+     * Decode a JSON string and return its values as a string.
+     *
+     * @param  string  $json
+     * @param  string  $separator  The separator between items when printing (default is a comma)
+     * @return string
+     */
+    function jsonDecodeAndPrint($json, $separator = ', ')
+    {
+        // Decode the JSON string into an array
+        $decoded = json_decode($json, true);
+
+        // Check for JSON errors
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return "";  // Return error message if decoding fails
+        }
+
+        // Return the values as a string with the given separator
+        return implode($separator, $decoded);
+    }
+}
+
+if (!function_exists('currentUser')) {
+    /**
+     * Get the currently authenticated user.
+     *
+     * @return \App\Models\User|null
+     */
+    function currentUser()
+    {
+        return \App\Models\User::find(Auth::id());
+    }
+}

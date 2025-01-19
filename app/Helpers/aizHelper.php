@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('my_asset')) {
     /**
@@ -11,6 +14,20 @@ if (!function_exists('my_asset')) {
     function my_asset($path, $secure = null)
     {
         return app('url')->asset($path, $secure);
+    }
+}
+
+if (!function_exists('uploaded_asset')) {
+    function uploaded_asset($id)
+    {
+        $asset = Cache::rememberForever('uploaded_asset_'.$id , function() use ($id) {
+            return \App\Models\Upload::find($id);
+        });
+
+        if ($asset != null) {
+            return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
+        }
+        return static_asset('assets/img/placeholder.jpg');
     }
 }
 

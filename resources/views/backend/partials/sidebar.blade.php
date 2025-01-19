@@ -77,9 +77,14 @@
                 <ul class="sub-menu">
                     <li class="side-nav-item">
                         <a href="{{ route('team-categories.index') }}" class="side-nav-link">
-                            <span class="menu-text">Categories</span>
+                            <span class="menu-text">List Categories</span>
                         </a>
                     </li>
+                    <li class="side-nav-item">
+                        <a href="{{ route('teams.index') }}" class="side-nav-link">
+                            <span class="menu-text">List Teams</span>
+                        </a>
+                    </li>                    
                 </ul>
             </div>
         </li>            
