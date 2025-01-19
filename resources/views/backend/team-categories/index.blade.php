@@ -6,15 +6,15 @@
         <h4 class="fs-16 text-uppercase fw-bold mb-0">{{$moduleName}}</h4>
     </div>
 </div>
-
+@include('backend.includes.alert-message')
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header border-bottom border-dashed align-items-center">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-8">
                         <form class="row g-3 align-items-center">
-                            <div class="col-md-8">
+                            <div class="col-md-4">
                                 <select name="company" class="form-select" id="status-select">
                                     <option value="" selected>--Select School--</option>
                                     @foreach ($companyList as $index => $row)
@@ -26,6 +26,9 @@
                                         @endif
                                     @endforeach
                                 </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="search" class="form-control" value="{{request()->get('search')}}" placeholder="search with Name, slug & description">
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-success btn-icon w-100">
@@ -40,10 +43,9 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-2 offset-md-5 text-end">
-                        <button type="button" class="btn btn-primary btn-icon w-100">
-                            <i class="ti ti-plus"></i> Add New
-                        </button>
+                    <div class="col-md-2 offset-md-2 text-end">
+                        <button onclick="smallModal('{{url(route('team-categories.create'))}}', 'Add New')"
+                        class="btn btn-primary btn-icon w-100"><i class="ti ti-plus"></i> Add New</button>        
                     </div>
                 </div>
             </div>
@@ -55,6 +57,7 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Slug</th>
+                                <th>Description</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -65,19 +68,21 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $row->name }}</td>
                                 <td><a target="_blank" href="{{ $row->slug }}">{{ $row->slug }}</a></td>
+                                <td>{{ truncateText($row->description, 25, '...') }}</td>
                                 <td>
                                 <span class="badge {{ $row->is_active ? 'bg-success' : 'bg-danger' }}">
                                     {{ $row->is_active ? 'Active' : 'Inactive' }}
                                 </span>                                    
                                 </td>
                                 <td>
-                                    <a href="{{ route('team-categories.edit', $row->id) }}" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
-                                    <a href="javascript:void(0);" onclick="confirmModal('{{ route('team-categories.edit', $row->id) }}', callbackTeamCategories )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>
+                                    <a href="javascript:void(0);" onclick="smallModal('{{url(route('team-categories.edit', $row->id))}}', 'Edit')" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
+                                    <a href="javascript:void(0);" onclick="confirmModal('{{ route('team-categories.destroy', $row->id) }}', callbackTeamCategories )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $pageData->appends(request()->input())->links() }}
                 </div> <!-- end table-responsive-->
             </div> <!-- end card body-->
         </div> <!-- end card -->

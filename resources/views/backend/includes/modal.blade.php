@@ -3,11 +3,13 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="largeModal-label">Loading...</h5>
+                <h5 class="modal-title" id="largeModal-label"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Loading...
+                <div class="text-center">
+                    <div class="spinner-border text-light m-2" role="status"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -18,18 +20,20 @@
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="smallModal-label">Loading...</h5>
+                <h5 class="modal-title" id="smallModal-label"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Loading...
+                <div class="text-center">
+                    <div class="spinner-border text-light m-2" role="status"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Confirmation Modal -->
-<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal-label" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal-label" aria-modal="true" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body text-center">

@@ -64,7 +64,25 @@
                 <span class="menu-icon"><i class="ti ti-school"></i></span>
                 <span class="menu-text"> Schools </span>
             </a>
-        </li>        
+        </li>    
+        
+        <li class="side-nav-item">
+            <a data-bs-toggle="collapse" href="#teamCategories" aria-expanded="false" aria-controls="sidebarTables"
+                class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-users"></i></span>
+                <span class="menu-text"> Teams </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="teamCategories">
+                <ul class="sub-menu">
+                    <li class="side-nav-item">
+                        <a href="{{ route('team-categories.index') }}" class="side-nav-link">
+                            <span class="menu-text">Categories</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>            
 
     </ul>
     <div class="clearfix"></div>

@@ -18,8 +18,12 @@ toastr.options = {
 
 //bootstarp modals
 function largeModal(url, header) {
-    $("#largeModal .modal-body").html("Loading...");
-    $("#largeModal .modal-title").html("Loading...");
+    $("#largeModal .modal-title").html("");
+    $("#largeModal .modal-body").html(`
+        <div class="text-center">
+            <div class="spinner-border text-light m-2" role="status"></div>
+        </div>
+    `);
 
     $("#largeModal").modal("show");
     $.ajax({
@@ -32,8 +36,12 @@ function largeModal(url, header) {
 }
 
 function smallModal(url, header) {
-    $("#smallModal .modal-body").html("Loading...");
-    $("#smallModal .modal-title").html("Loading...");
+    $("#smallModal .modal-title").html("");
+    $("#smallModal .modal-body").html(`
+        <div class="text-center">
+            <div class="spinner-border text-light m-2" role="status"></div>
+        </div>
+    `);
 
     $("#smallModal").modal("show");
     $.ajax({
@@ -52,6 +60,8 @@ function confirmModal(delete_url, param) {
 }
 
 $(".ajaxDeleteForm").submit(function (e) {
+    e.preventDefault();
+    alert(1);
     var form = $(this);
     ajaxSubmit(e, form, callBackFunction);
 });
@@ -152,7 +162,7 @@ function ajaxSubmit(e, form, callBackFunction) {
         
         var btn = $(form).find('button[type="submit"]');
         var btn_text = $(btn).html();
-        $(btn).html('<i class="fa fa-refresh fa-spin" aria-hidden="true"></i>');
+        $(btn).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
         $(btn).css('opacity', '0.7');
         $(btn).css('pointer-events', 'none');
 
@@ -171,20 +181,64 @@ function ajaxSubmit(e, form, callBackFunction) {
                 $(btn).html(btn_text);
                 $(btn).css('opacity', '1');
                 $(btn).css('pointer-events', 'inherit');
-
+            
                 if (response.status) {
+                    // If response status is true, show a success notification
                     Command: toastr["success"](response.notification, "Success");
-                    callBackFunction(response);
-                }else{
-                    if(typeof response.notification === 'object') {
-                        var errors = '';
-                        $.each( response.notification, function( key, msg ) {
-                            errors += '<div>' + (key + 1) + '. ' + msg + '</div>';
+                    callBackFunction(response); // Callback function if success
+                } else {
+                    // Handle case when response status is false (error from server)
+                    var errors = '';
+                    
+                    // Check if response.notification is an object (validation errors)
+                    if (typeof response.notification === 'object') {
+                        $.each(response.notification, function(key, msg) {
+                            // If msg is an array (multiple errors for the same field)
+                            if (Array.isArray(msg)) {
+                                $.each(msg, function(index, message) {
+                                    errors += '<div>' + message + '</div>';
+                                });
+                            } else {
+                                errors += '<div>' + msg + '</div>';
+                            }
                         });
-                        Command: toastr["error"](errors, "Alert");
-                    }else {
-                        Command: toastr["error"](response.notification, "Alert");
+                    } else {
+                        // Fallback error message if notification is not an object
+                        errors = response.notification || 'An unexpected error occurred.';
                     }
+                    
+                    // Show the errors in a toastr notification
+                    Command: toastr["error"](errors, "Alert");
+                }
+            },
+            error: function(xhr) {
+                $(btn).html(btn_text);
+                $(btn).css('opacity', '1');
+                $(btn).css('pointer-events', 'inherit');
+            
+                // Check if the status code is 422 (Laravel validation errors)
+                if (xhr.status === 422) {
+                    var errors = '';
+                    var response = xhr.responseJSON; // Get the response from Laravel
+            
+                    // Iterate over Laravel validation errors
+                    if (response && response.errors) {
+                        $.each(response.errors, function(key, msg) {
+                            // If msg is an array (multiple errors for the same field)
+                            if (Array.isArray(msg)) {
+                                $.each(msg, function(index, message) {
+                                    errors += '<div>' + message + '</div>';
+                                });
+                            } else {
+                                errors += '<div>' + msg + '</div>';
+                            }
+                        });
+                    }
+                    // Show the validation errors using toastr
+                    Command: toastr["error"](errors, "Alert");
+                } else {
+                    // Handle unexpected errors (non-validation errors)
+                    Command: toastr["error"]("An unexpected error occurred. Please try again later.", "Error");
                 }
             }
         });
@@ -200,4 +254,31 @@ function initDatatable(selector){
         ordering: true,
         info: true
     });   
+}
+
+function initTextEditor() {
+    tinymce.init({
+        selector: '.text-editor',
+        statusbar: false,
+        height: 300, // Set the desired height
+        //valid_elements: '*[*]', // Allows all HTML elements and attributes
+        //extended_valid_elements: 'p[style|class],a[href|target],strong,br',
+        //cleanup: false, // Prevent TinyMCE from cleaning up your HTML
+        //forced_root_block: false, // Avoid wrapping content in <p> if not needed
+        //entity_encoding: 'raw', // Preserve HTML entities as-is        
+        plugins: 'anchor advlist autolink lists link image charmap preview hr pagebreak ' +
+                'searchreplace wordcount visualblocks code fullscreen insertdatetime media nonbreaking ' +
+                'save table directionality emoticons template paste help',
+        // toolbar: 'undo redo | formatselect | bold italic underline strikethrough | ' +
+        //         'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+        //         'link anchor image media | forecolor backcolor removeformat | ' +
+        //         'preview code fullscreen | insertdatetime table emoticons | help',
+        setup: function(editor) {
+            editor.on('change keyup', function() {
+                editor.save(); // Sync content back to the <textarea>
+                $(editor.getElement()).valid(); // Trigger validation on the <textarea>
+                console.log(editor.getElement());
+            });
+        }
+    });    
 }

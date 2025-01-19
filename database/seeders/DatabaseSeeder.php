@@ -29,7 +29,15 @@ class DatabaseSeeder extends Seeder
             'role_id' => 2,
             'company_id' => 1,
             'password' => bcrypt('test2@example.com'),
-        ]);        
+        ]);   
+        
+        User::factory()->create([
+            'name' => 'Test User 3',
+            'email' => 'test3@example.com',
+            'role_id' => 2,
+            'company_id' => 2,
+            'password' => bcrypt('test3@example.com'),
+        ]);         
 
         $this->call([
             CompanySeeder::class,
