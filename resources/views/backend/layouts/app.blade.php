@@ -40,6 +40,9 @@
                 </div>
                 <!-- container -->
 
+                <!-- modals -->
+                @include('backend.includes.modal')
+
                 <!-- Footer Start -->
                 @include('backend.partials.footer')
                 <!-- end Footer -->

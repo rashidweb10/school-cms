@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->boolean('is_active')->default(1);
+            $table->unsignedBigInteger('company_id');
             $table->timestamps();
         });
     }

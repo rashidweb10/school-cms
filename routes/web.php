@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\CompanyController;
+use App\Http\Controllers\Backend\TeamCategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,5 +48,9 @@ Route::prefix('backend')->group(function () {
     
     Route::middleware('auth.backend')->group(function () {
         Route::resource('companies', CompanyController::class);
+    });  
+    
+    Route::middleware('auth.backend')->group(function () {
+        Route::resource('team-categories', TeamCategoryController::class);
     });   
 });

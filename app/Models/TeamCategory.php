@@ -8,7 +8,7 @@ class TeamCategory extends Model
 {
     //use HasFactory;
 
-    protected $fillable = ['slug', 'name', 'description', 'meta_title', 'meta_description', 'is_active'];
+    protected $fillable = ['slug', 'name', 'description', 'meta_title', 'meta_description', 'is_active', 'company_id'];
 
     public function teams()
     {
