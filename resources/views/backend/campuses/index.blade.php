@@ -18,17 +18,15 @@
                                 <select name="company" class="form-select" id="status-select">
                                     <option value="" selected>--Select School--</option>
                                     @foreach ($companyList as $index => $row)
-                                        @if(auth()->user()->company_id === null || auth()->user()->company_id == $row->id)
-                                            <option value="{{ $row->id }}" 
-                                                @if(request()->get('company') == $row->id) selected @endif>
-                                                {{ $row->name }}
-                                            </option>
-                                        @endif
+                                        <option value="{{ $row->id }}" 
+                                            @if(request()->get('company') == $row->id) selected @endif>
+                                            {{ $row->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="search" class="form-control" value="{{request()->get('search')}}" placeholder="search with Name, designation & description">
+                                <input type="text" name="search" class="form-control" value="{{request()->get('search')}}" placeholder="search with Name & description">
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-success btn-icon w-100">
@@ -44,7 +42,7 @@
                         </form>
                     </div>
                     <div class="col-md-2 offset-md-2 text-end">
-                        <button onclick="smallModal('{{url(route('teams.create'))}}', 'Add New')"
+                        <button onclick="smallModal('{{url(route($routeName . '.create'))}}', 'Add New')"
                         class="btn btn-primary btn-icon w-100"><i class="ti ti-plus"></i> Add New</button>        
                     </div>
                 </div>
@@ -56,9 +54,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Designation</th>
-                                <th>Categories</th>
                                 <th>Status</th>
+                                <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Actions</th>
                             </tr>
@@ -66,28 +63,18 @@
                         <tbody>
                             @foreach ($pageData as $index => $row)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td class="d-flex align-items-center">
-                                    <img src="{{ uploaded_asset($row->image) }}" width="32" height="32" class="rounded-circle me-2" alt="{{ $row->name }}">
-                                    <span>{{ $row->name }}</span>
-                                </td>                            
-                                <td>{{$row->designation}}</td>
+                                <td>{{ $index + 1 }}</td>                           
+                                <td>{{ $row->name }}</td>                                                           
                                 <td>
-                                    @foreach($row->categories as $category)
-                                        <span class="badge bg-dark text-light">{{ $category->name }}</span>
-                                        <!-- If you need to display additional pivot data (e.g., 'created_at') -->
-                                        <!-- <small class="text-muted">Created: {{ $category->pivot->created_at }}</small> -->
-                                    @endforeach
-                                </td>                                
-                                <td>
-                                    <span class="badge {{ $row->is_active ? 'bg-success' : 'bg-danger' }}">
-                                        {{ $row->is_active ? 'Active' : 'Inactive' }}
-                                    </span>                                    
+                                <span class="badge {{ $row->is_active ? 'bg-success' : 'bg-danger' }}">
+                                    {{ $row->is_active ? 'Active' : 'Inactive' }}
+                                </span>                                    
                                 </td>
+                                <td>{{ formatDatetime($row->created_at) }}</td>
                                 <td>{{ formatDatetime($row->updated_at) }}</td>
                                 <td>
-                                    <a href="javascript:void(0);" onclick="smallModal('{{url(route('teams.edit', $row->id))}}', 'Edit')" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
-                                    <a href="javascript:void(0);" onclick="confirmModal('{{ route('teams.destroy', $row->id) }}', callbackTeams )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>
+                                    <a href="javascript:void(0);" onclick="smallModal('{{url(route($routeName . '.edit', $row->id))}}', 'Edit')" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
+                                    <a href="javascript:void(0);" onclick="confirmModal('{{ route($routeName . '.destroy', $row->id) }}', callbackTeams )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach

@@ -87,7 +87,14 @@
                     </li>                    
                 </ul>
             </div>
-        </li>            
+        </li> 
+        
+        <li class="side-nav-item">
+            <a href="{{ route('campuses.index') }}" class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-building"></i></span>
+                <span class="menu-text"> Campus </span>
+            </a>
+        </li>        
 
     </ul>
     <div class="clearfix"></div>

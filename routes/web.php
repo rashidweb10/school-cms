@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\TeamCategoryController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\CampusController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,5 +58,9 @@ Route::prefix('backend')->group(function () {
 
     Route::middleware('auth.backend')->group(function () {
         Route::resource('teams', TeamController::class);
+    });   
+
+    Route::middleware('auth.backend')->group(function () {
+        Route::resource('campuses', CampusController::class);
     });   
 });

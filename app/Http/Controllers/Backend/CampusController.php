@@ -4,18 +4,22 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\TeamCategory;
-use App\Models\Team;
+use App\Models\Campus;
 
-class TeamController extends Controller
+class CampusController extends Controller
 {
     protected $moduleName;
+    protected $folderName;
+    protected $routeName;
 
     public function __construct()
     {
-        //Module Name
-        $this->moduleName = 'Teams';
+        $this->moduleName = 'Campus';
+        $this->folderName = 'campuses';
+        $this->routeName = 'campuses';
         view()->share('moduleName', $this->moduleName);
+        view()->share('folderName', $this->folderName);
+        view()->share('routeName', $this->routeName);
     }
 
     /**
@@ -28,7 +32,7 @@ class TeamController extends Controller
         $search = request()->input('search');
     
         // Start building the query
-        $query = Team::query();
+        $query = Campus::query();
     
         // Filter by authenticated user's company_id if available
         if (auth()->user()->company_id) {
@@ -43,9 +47,7 @@ class TeamController extends Controller
         if ($search) {
             $query->where(function($query) use ($search) {
                 $query->where('name', 'like', '%'.$search.'%')
-                    ->orWhere('slug', 'like', '%'.$search.'%')
-                    ->orWhere('description', 'like', '%'.$search.'%')
-                    ->orWhere('designation', 'like', '%'.$search.'%');
+                    ->orWhere('description', 'like', '%'.$search.'%');
             });
         }      
 
@@ -57,7 +59,7 @@ class TeamController extends Controller
         $companyList = getCompanyList();
     
         // Return the view with data
-        return view('backend.teams.index', compact('pageData', 'companyList'));
+        return view('backend.' . $this->folderName . '.index', compact('pageData', 'companyList'));
     }
 
     /**
@@ -65,8 +67,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $categories = TeamCategory::all();
-        return view('backend.teams.create', compact('categories'));
+        return view('backend.' . $this->folderName . '.create');
     }
 
     /**
@@ -77,32 +78,21 @@ class TeamController extends Controller
         // Validate form data
         $request->validate([
             'name' => 'required|string|min:3|max:200',
-            'image' => 'required|string',
-            'slug' => 'required|string|unique:teams,slug',
-            'designation' => 'required|string|max:200',
-            'categories' => 'required|array',
-            'categories.*' => 'exists:team_categories,id',
-            'description' => 'nullable|string',
+            'gallery' => 'required|string',
             'company_id' => 'required|exists:companies,id',
             'is_active' => 'required|boolean',
+            'description' => 'nullable|string',
         ]);
     
         try {
             // Insert the team record
-            $team = Team::create([
+            $team = Campus::create([
                 'name' => $request->name,
-                'image' => $request->image,
-                'slug' => $request->slug,
-                'designation' => $request->designation,
                 'description' => $request->description,
-                'company_id' => $request->company_id,
+                'gallery' => $request->gallery,
                 'is_active' => $request->is_active,
+                'company_id' => $request->company_id,
             ]);
-    
-            // Attach categories
-            if ($request->has('categories')) {
-                $team->categories()->attach($request->categories);
-            }
     
             // Return success response
             return response()->json(['status' => true, 'notification' => 'Record created successfully!']);
@@ -126,54 +116,45 @@ class TeamController extends Controller
      */
     public function edit(string $id)
     {
-        $pageData = Team::findOrFail($id);
-        $categories = TeamCategory::all();
-        return view('backend.teams.edit', compact('pageData','categories'));
+        $pageData = Campus::findOrFail($id);
+        return view('backend.' . $this->folderName . '.edit', compact('pageData'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, $id)
     {
         // Validate form data
         $request->validate([
             'name' => 'required|string|min:3|max:200',
-            'image' => 'required|string',
-            'slug' => 'required|string|unique:teams,slug,' . $team->id,
-            'designation' => 'required|string|max:200',
-            'categories' => 'required|array',
-            'categories.*' => 'exists:team_categories,id',
-            'description' => 'nullable|string',
+            'gallery' => 'required|string',
             'company_id' => 'required|exists:companies,id',
             'is_active' => 'required|boolean',
+            'description' => 'nullable|string',
         ]);
-
+    
         try {
+            // Find the team record
+            $team = Campus::findOrFail($id);
+    
             // Update the team record
             $team->update([
                 'name' => $request->name,
-                'image' => $request->image,
-                'slug' => $request->slug,
-                'designation' => $request->designation,
                 'description' => $request->description,
-                'company_id' => $request->company_id,
+                'gallery' => $request->gallery,
                 'is_active' => $request->is_active,
+                'company_id' => $request->company_id,
             ]);
-
-            // Sync categories
-            if ($request->has('categories')) {
-                $team->categories()->sync($request->categories);
-            }
-
+    
             // Return success response
             return response()->json(['status' => true, 'notification' => 'Record updated successfully!']);
-
+    
         } catch (\Exception $e) {
             // Return error response
             return response()->json(['status' => false, 'notification' => 'There was an error updating the record.']);
         }
-    }
+    }    
 
     /**
      * Remove the specified resource from storage.
@@ -182,20 +163,12 @@ class TeamController extends Controller
     {
         try {
             // Attempt to delete the record
-            Team::destroy($id);
-    
+            Campus::destroy($id);
             // Redirect back with a success message
-            return redirect()->route('teams.index')->with('success', 'Record deleted successfully!');
+            return redirect()->route($this->routeName . '.index')->with('success', 'Record deleted successfully!');
         } catch (\Exception $e) {
-            // Log the error message and stack trace
-            \Log::error('Error deleting TeamCategory record', [
-                'error_message' => $e->getMessage(),
-                'stack_trace' => $e->getTraceAsString(),
-                'team_id' => $id
-            ]);
-    
             // Redirect back with an error message
-            return redirect()->route('teams.index')->with('error', 'There was an error deleting the record.');
+            return redirect()->route($this->routeName . 'index')->with('error', 'There was an error deleting the record.');
         }
-    } 
+    }
 }

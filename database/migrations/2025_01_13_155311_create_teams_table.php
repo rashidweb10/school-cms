@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_active')->default(1);
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->timestamps();
         });
     }

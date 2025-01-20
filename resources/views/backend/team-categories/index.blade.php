@@ -56,9 +56,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Slug</th>
-                                <th>Description</th>
                                 <th>Status</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>                                
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -67,13 +67,13 @@
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $row->name }}</td>
-                                <td><a target="_blank" href="{{ $row->slug }}">{{ $row->slug }}</a></td>
-                                <td>{{ truncateText($row->description, 25, '...') }}</td>
                                 <td>
                                 <span class="badge {{ $row->is_active ? 'bg-success' : 'bg-danger' }}">
                                     {{ $row->is_active ? 'Active' : 'Inactive' }}
                                 </span>                                    
                                 </td>
+                                <td>{{ formatDatetime($row->created_at) }}</td>
+                                <td>{{ formatDatetime($row->updated_at) }}</td>                                
                                 <td>
                                     <a href="javascript:void(0);" onclick="smallModal('{{url(route('team-categories.edit', $row->id))}}', 'Edit')" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
                                     <a href="javascript:void(0);" onclick="confirmModal('{{ route('team-categories.destroy', $row->id) }}', callbackTeamCategories )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>

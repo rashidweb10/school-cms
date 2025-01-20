@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             TeamCategoriesSeeder::class,
             TeamsSeeder::class,
+            CampusSeeder::class,
         ]);        
     }
 }

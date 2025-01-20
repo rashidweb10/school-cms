@@ -64,6 +64,24 @@ if (! function_exists('formatDate')) {
     }
 }
 
+if (! function_exists('formatDatetime')) {
+    /**
+     * Format date and time to dd/mm/yyyy h:i A (AM/PM).
+     *
+     * @param  string  $date
+     * @return string|null
+     */
+    function formatDatetime($date)
+    {
+        // Check if the date is not null or empty
+        if ($date) {
+            return \Carbon\Carbon::parse($date)->format('d/m/Y h:i A');
+        }
+        return null; // Return null if no date is provided
+    }
+}
+
+
 if (! function_exists('jsonDecodeAndPrint')) {
     /**
      * Decode a JSON string and return its values as a string.

@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('team_categories', function (Blueprint $table) {
+        Schema::create('campuses', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
-            $table->string('name');
+            $table->string('name', 255);
             $table->longText('description')->nullable();
-            $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
-            $table->boolean('is_active')->default(1);
+            $table->longText('gallery')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('company_id')->nullable();
             $table->timestamps();
         });
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('team_categories');
+        Schema::dropIfExists('campuses');
     }
 };

@@ -140,8 +140,8 @@
 }
 
 .file-preview.box.sm {
-    display: flex
-;
+    /* display: flex */
+    display: flow;
 }
 
 .file-preview.box .file-preview-item {
