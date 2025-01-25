@@ -116,3 +116,22 @@ if (!function_exists('currentUser')) {
         return \App\Models\User::find(Auth::id());
     }
 }
+
+if (!function_exists('getYears')) {
+    /**
+     * Get an array of years from the specified start year to the end year.
+     *
+     * @param int $start The start year (default is 2020).
+     * @param int $end The end year (default is 2050).
+     * @return array An array containing the years from start to end (inclusive).
+     */
+    function getYears(int $start = 2020, int $end = 2050): array
+    {
+        // Ensure the start year is less than or equal to the end year
+        if ($start > $end) {
+            throw new InvalidArgumentException("Start year cannot be greater than end year.");
+        }
+
+        return range($start, $end);
+    }
+}

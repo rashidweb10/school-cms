@@ -1,0 +1,59 @@
+Route, folder, & module setting in teams & company table
+company to school 
+translate all the static values
+select filer of all module improve
+
+
+Page Manage
+https://www.nhssthane.com/ --landing 
+https://www.nhssthane.com/ --home 
+https://www.nhssthane.com/aboutus
+https://www.nhssthane.com/schoolinformation
+https://www.nhssthane.com/roadmap
+https://www.nhssthane.com/career
+https://www.nhssthane.com/disclosure
+https://www.nhssthane.com/curriculum
+https://www.nhssthane.com/admission
+
+Results
+https://www.nhssthane.com/toppers
+https://www.nhssthane.com/results/1
+https://www.nhssthane.com/results/2
+https://www.nhssthane.com/certificate
+
+Circulars
+https://www.nhssthane.com/circulars/13
+https://www.nhssthane.com/circulars/1
+
+Achivements
+https://www.nhssthane.com/achievements/1
+https://www.nhssthane.com/achievements/2
+https://www.nhssthane.com/achievements/3
+https://www.nhssthane.com/achievements/4
+https://www.nhssthane.com/achievements/5
+https://www.nhssthane.com/achievements/6
+https://www.nhssthane.com/achievements/7
+https://www.nhssthane.com/achievements/8
+https://www.nhssthane.com/achievements/9
+https://www.nhssthane.com/achievements/11
+https://www.nhssthane.com/achievements/12
+
+From Teams Management - DONE
+https://www.nhssthane.com/management
+https://www.nhssthane.com/founder
+https://www.nhssthane.com/chairman
+https://www.nhssthane.com/principal
+https://www.nhssthane.com/committee
+https://www.nhssthane.com/ourteam
+
+From Company Module - DONE
+https://www.nhssthane.com/contactus
+
+From Campus Module - DONE
+https://www.nhssthane.com/Campus 
+
+From Event Module - DONE
+https://www.nhssthane.com/events
+
+No need to work - DONE
+https://1nh.edusprint.in/1nh/Security

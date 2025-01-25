@@ -94,6 +94,13 @@
                 <span class="menu-icon"><i class="ti ti-building"></i></span>
                 <span class="menu-text"> Campus </span>
             </a>
+        </li>   
+        
+        <li class="side-nav-item">
+            <a href="{{ route('galleries.index') }}" class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-library-photo"></i></span>
+                <span class="menu-text"> Event Galleries </span>
+            </a>
         </li>        
 
     </ul>
