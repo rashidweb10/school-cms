@@ -10,6 +10,7 @@
 <!-- Additional JS Scripts-->
 <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
 <script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 
 <!-- Aiz Upload JS -->
 <script>

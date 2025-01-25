@@ -197,10 +197,31 @@ class UploadController extends Controller
         }
     }
 
+    // public function get_preview_files(Request $request)
+    // {
+    //     $ids = explode(',', $request->ids);
+    //     $files = Upload::whereIn('id', $ids)->get();
+    //     $new_file_array = [];
+    //     foreach ($files as $file) {
+    //         $file['file_name'] = my_asset($file->file_name);
+    //         if ($file->external_link) {
+    //             $file['file_name'] = $file->external_link;
+    //         }
+    //         $new_file_array[] = $file;
+    //     }
+
+    //     return $new_file_array;
+    // }
+
     public function get_preview_files(Request $request)
     {
         $ids = explode(',', $request->ids);
-        $files = Upload::whereIn('id', $ids)->get();
+    
+        // Retrieve files and maintain the order of $ids
+        $files = Upload::whereIn('id', $ids)
+            ->orderByRaw("FIELD(id, " . implode(',', $ids) . ")")
+            ->get();
+    
         $new_file_array = [];
         foreach ($files as $file) {
             $file['file_name'] = my_asset($file->file_name);
@@ -209,9 +230,10 @@ class UploadController extends Controller
             }
             $new_file_array[] = $file;
         }
-
+    
         return $new_file_array;
     }
+    
 
     public function all_file()
     {

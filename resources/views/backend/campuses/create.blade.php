@@ -74,6 +74,7 @@ $(document).ready(function() {
     initValidate('#create'); 
     initSelect2('.select2')
     initTextEditor();
+    AIZ.uploader.previewGenerate();
 
     // Handle form submission
     $("#create").submit(function(e) {
