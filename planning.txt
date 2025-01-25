@@ -7,13 +7,16 @@ select filer of all module improve
 Page Manage
 https://www.nhssthane.com/ --landing 
 https://www.nhssthane.com/ --home 
-https://www.nhssthane.com/aboutus
-https://www.nhssthane.com/schoolinformation
-https://www.nhssthane.com/roadmap
-https://www.nhssthane.com/career
 https://www.nhssthane.com/disclosure
-https://www.nhssthane.com/curriculum
-https://www.nhssthane.com/admission
+
+
+
+https://www.nhssthane.com/aboutus - DONE
+https://www.nhssthane.com/schoolinformation - DONE
+https://www.nhssthane.com/roadmap - DONE
+https://www.nhssthane.com/career - DONE
+https://www.nhssthane.com/curriculum - DONE
+https://www.nhssthane.com/admission - DONE
 
 Results
 https://www.nhssthane.com/toppers

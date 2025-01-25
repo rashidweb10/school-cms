@@ -64,7 +64,14 @@
                 <span class="menu-icon"><i class="ti ti-school"></i></span>
                 <span class="menu-text"> Schools </span>
             </a>
-        </li>    
+        </li>
+        
+        <li class="side-nav-item">
+            <a href="{{ route('pages.index') }}" class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-pencil"></i></span>
+                <span class="menu-text"> Pages </span>
+            </a>
+        </li>        
         
         <li class="side-nav-item">
             <a data-bs-toggle="collapse" href="#teamCategories" aria-expanded="false" aria-controls="sidebarTables"

@@ -46,6 +46,7 @@ class DatabaseSeeder extends Seeder
             TeamsSeeder::class,
             CampusSeeder::class,
             GallerySeeder::class,
+            PageSeeder::class,
         ]);        
     }
 }

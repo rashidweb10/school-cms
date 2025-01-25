@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\TeamCategoryController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\CampusController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\PageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,5 +68,9 @@ Route::prefix('backend')->group(function () {
 
     Route::middleware('auth.backend')->group(function () {
         Route::resource('galleries', GalleryController::class);
+    });   
+
+    Route::middleware('auth.backend')->group(function () {
+        Route::resource('pages', PageController::class);
     });   
 });

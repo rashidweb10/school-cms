@@ -151,9 +151,10 @@ function initValidate(selector) {
 
 
 //select2
-function initSelect2(selector) {
+function initSelect2(selector = '.select2') {
     $(selector).select2();
 }
+
 
 //Form Submition
 function ajaxSubmit(e, form, callBackFunction) {
@@ -282,3 +283,8 @@ function initTextEditor() {
         }
     });    
 }
+
+$(document).ready(function(){
+    initTextEditor();
+    initSelect2();
+});
