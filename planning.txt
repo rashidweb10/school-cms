@@ -5,12 +5,11 @@ select filer of all module improve
 
 
 Page Manage
-https://www.nhssthane.com/ --landing 
+
 https://www.nhssthane.com/ --home 
-https://www.nhssthane.com/disclosure
 
-
-
+https://www.nhssthane.com/ --landing - DONE
+https://www.nhssthane.com/disclosure - DONE
 https://www.nhssthane.com/aboutus - DONE
 https://www.nhssthane.com/schoolinformation - DONE
 https://www.nhssthane.com/roadmap - DONE

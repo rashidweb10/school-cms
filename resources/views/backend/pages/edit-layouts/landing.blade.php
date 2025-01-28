@@ -13,7 +13,10 @@ $vision_title = $pageData->meta->where('meta_key', 'vision_title')->first()->met
 $vision_description = $pageData->meta->where('meta_key', 'vision_description')->first()->meta_value ?? '';
 $value_title = $pageData->meta->where('meta_key', 'value_title')->first()->meta_value ?? '';
 $value_description = $pageData->meta->where('meta_key', 'value_description')->first()->meta_value ?? '';
+$landing_milestones = json_decode($pageData->meta->where('meta_key', 'landing_milestones')->first()->meta_value ?? '[]', true);
 $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
+$landing_quicklinks = json_decode($pageData->meta->where('meta_key', 'landing_quicklinks')->first()->meta_value ?? '[]', true);
+$landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updates')->first()->meta_value ?? '[]', true);
 @endphp
 
 <div class="row">
@@ -108,7 +111,82 @@ $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
 </div> 
 
 <div class="row">
-     <!--for milestones-->      
+    <div class="col-md-12">
+        <hr>
+        <h4 class="text-primary">Milestones</h4>
+    </div>    
+    <div class="{{$pageData->layout}}-target">
+        @if(isset($landing_milestones['itration']) && is_array($landing_milestones['itration']))
+            @foreach($landing_milestones['itration'] as $index => $itration)
+                <div class="row remove-parent">
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Milestones <span class="text-danger">*</span></label>
+                        <input value="{{ $index }}" name="meta[landing_milestones][itration][]" type="hidden" required>
+                    </div> 
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $landing_milestones['title'][$index] ?? '' }}" 
+                                name="meta[landing_milestones][title][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="3" 
+                                maxlength="200" 
+                                placeholder="E.g +1000" 
+                                required>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $landing_milestones['description'][$index] ?? '' }}" 
+                                name="meta[landing_milestones][description][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="3" 
+                                maxlength="200" 
+                                placeholder="E.g Years in Education" 
+                                required>
+                        </div>
+                    </div>                   
+                    <div class="col-md-auto">
+                        <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                            <i class="ti ti-x"></i>
+                        </button>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+    </div>
+    <button
+        type="button"
+        class="mt-1 btn btn-soft-success btn-icon w-100"
+        data-toggle="add-more"
+        data-content='
+            <div class="row remove-parent">
+                <div class="col-md-12">
+                    <label for="name" class="form-label">Milestones <span class="text-danger">*</span></label>
+                    <input value="data" name="meta[landing_milestones][itration][]" type="hidden" required>
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[landing_milestones][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="E.g +1000" required>
+                    </div>
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[landing_milestones][description][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="E.g Years in Education" required>
+                    </div>
+                </div>              
+                <div class="col-md-auto">
+                    <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                        <i class="ti ti-x"></i>
+                    </button>
+                </div>
+            </div>   
+        '
+        data-target=".{{$pageData->layout}}-target">
+        <i class="ti ti-plus"></i>
+        <span class="ml-2">Add More</span>
+    </button>     
 </div> 
 
 <div class="row">
@@ -124,6 +202,230 @@ $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
 
 
 
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+        <h4 class="text-primary">Updates</h4>
+    </div>    
+    <div class="updates-target">
+        @if(isset($landing_updates['itration']) && is_array($landing_updates['itration']))
+            @foreach($landing_updates['itration'] as $index => $itration)
+                <div class="row remove-parent">
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Updates <span class="text-danger">*</span></label>
+                        <input value="{{ $index }}" name="meta[landing_updates][itration][]" type="hidden" required>
+                    </div> 
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                                </div>
+                                <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                                <input type="hidden" 
+                                    name="meta[landing_updates][image][]" 
+                                    class="selected-files" 
+                                    value="{{ $landing_updates['image'][$index] ?? '' }}" 
+                                    required>
+                            </div>
+                            <div class="file-preview box sm"></div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $landing_updates['title'][$index] ?? '' }}" 
+                                name="meta[landing_updates][title][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="3" 
+                                maxlength="200" 
+                                placeholder="Enter Title" 
+                                required>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $landing_updates['url'][$index] ?? '' }}" 
+                                name="meta[landing_updates][url][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="3" 
+                                maxlength="200" 
+                                placeholder="Enter URL" 
+                                required>
+                        </div>
+                    </div>                                       
+                    <div class="col-md-auto">
+                        <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                            <i class="ti ti-x"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group mb-2">
+                            <textarea name="meta[landing_updates][description][]" class="form-control" rows="2" required>{{ $landing_updates['description'][$index] ?? '' }}</textarea>
+                        </div>                
+                    </div>         
+                </div>
+            @endforeach
+        @endif
+    </div>
+    <button
+        type="button"
+        class="mt-1 btn btn-soft-success btn-icon w-100"
+        data-toggle="add-more"
+        data-content='
+            <div class="row remove-parent">
+                <div class="col-md-12">
+                    <label for="name" class="form-label">Updates <span class="text-danger">*</span></label>
+                    <input value="data" name="meta[landing_updates][itration][]" type="hidden" required>
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                            </div>
+                            <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                            <input type="hidden" name="meta[landing_updates][image][]" class="selected-files" required>
+                        </div>
+                        <div class="file-preview box sm"></div>
+                    </div>
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[landing_updates][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter Title" required>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[landing_updates][url][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter URL" required>
+                    </div>
+                </div>                              
+                <div class="col-md-auto">
+                    <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                        <i class="ti ti-x"></i>
+                    </button>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group mb-2">
+                        <textarea name="meta[landing_updates][description][]" class="form-control" rows="2" required></textarea>
+                    </div>                
+                </div>                
+            </div>   
+        '
+        data-target=".updates-target">
+        <i class="ti ti-plus"></i>
+        <span class="ml-2">Add More</span>
+    </button>     
+</div>  
+
+
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+        <h4 class="text-primary">Quick links</h4>
+    </div>    
+    <div class="quicklinks-target">
+        @if(isset($landing_quicklinks['itration']) && is_array($landing_quicklinks['itration']))
+            @foreach($landing_quicklinks['itration'] as $index => $itration)
+                <div class="row remove-parent">
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Quick links <span class="text-danger">*</span></label>
+                        <input value="{{ $index }}" name="meta[landing_quicklinks][itration][]" type="hidden" required>
+                    </div> 
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                                </div>
+                                <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                                <input type="hidden" 
+                                    name="meta[landing_quicklinks][icon][]" 
+                                    class="selected-files" 
+                                    value="{{ $landing_quicklinks['icon'][$index] ?? '' }}" 
+                                    required>
+                            </div>
+                            <div class="file-preview box sm"></div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $landing_quicklinks['title'][$index] ?? '' }}" 
+                                name="meta[landing_quicklinks][title][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="3" 
+                                maxlength="200" 
+                                placeholder="Enter Title" 
+                                required>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $landing_quicklinks['url'][$index] ?? '' }}" 
+                                name="meta[landing_quicklinks][url][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="3" 
+                                maxlength="200" 
+                                placeholder="Enter URL" 
+                                required>
+                        </div>
+                    </div>                                       
+                    <div class="col-md-auto">
+                        <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                            <i class="ti ti-x"></i>
+                        </button>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+    </div>
+    <button
+        type="button"
+        class="mt-1 btn btn-soft-success btn-icon w-100"
+        data-toggle="add-more"
+        data-content='
+            <div class="row remove-parent">
+                <div class="col-md-12">
+                    <label for="name" class="form-label">Quick links <span class="text-danger">*</span></label>
+                    <input value="data" name="meta[landing_quicklinks][itration][]" type="hidden" required>
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                            </div>
+                            <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                            <input type="hidden" name="meta[landing_quicklinks][icon][]" class="selected-files" required>
+                        </div>
+                        <div class="file-preview box sm"></div>
+                    </div>
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[landing_quicklinks][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter Title" required>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[landing_quicklinks][url][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter URL" required>
+                    </div>
+                </div>                              
+                <div class="col-md-auto">
+                    <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                        <i class="ti ti-x"></i>
+                    </button>
+                </div>
+            </div>   
+        '
+        data-target=".quicklinks-target">
+        <i class="ti ti-plus"></i>
+        <span class="ml-2">Add More</span>
+    </button>     
+</div>  
 
 
 
@@ -145,11 +447,11 @@ About Image 2
 About title 2
 About Description 2
 
-vision mission values -- (with text & description) add more-->
+vision mission values -- (with text & description) add more
 
 Milestones with text & text - 1
 
-video url (youtube)
+video url (youtube)-->
 
 updates
 title, image, short description, url -- add more

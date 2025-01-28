@@ -17,7 +17,7 @@
     @csrf
     <div class="row">
         <!-- Company Details -->
-        <div class="col-lg-7">
+        <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
                     <h5 class="text-uppercase bg-light p-2 mt-0 mb-2">Primary section</h5>
@@ -35,7 +35,7 @@
         </div>
         
         <!-- Secondary Meta Data -->
-        <div class="col-lg-5">
+        <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="text-uppercase mt-0 mb-2 bg-light p-2">Setting Section</h5>
