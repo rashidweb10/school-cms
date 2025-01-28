@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="col-md-auto">
-                    <button type="button" class="mt-1 btn btn-icon btn-circle btn-sm btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                    <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                         <i class="ti ti-x"></i>
                     </button>
                 </div>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-md-auto">
-                <button type="button" class="mt-1 btn btn-icon btn-circle btn-sm btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
+                <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                     <i class="ti ti-x"></i>
                 </button>
             </div>
