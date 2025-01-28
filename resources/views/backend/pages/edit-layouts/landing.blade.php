@@ -426,35 +426,3 @@ $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updat
         <span class="ml-2">Add More</span>
     </button>     
 </div>  
-
-
-
-
-
-
-
-
-
-<hr>
-<!--Banner Title --done
-Banner Images - multiple
-
-About title
-About Description
-Schools - will directly come from companies
-
-About Image 2
-About title 2
-About Description 2
-
-vision mission values -- (with text & description) add more
-
-Milestones with text & text - 1
-
-video url (youtube)-->
-
-updates
-title, image, short description, url -- add more
-
-Quck links 
-title, image, url -- add more
