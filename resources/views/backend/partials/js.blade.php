@@ -1,15 +1,15 @@
 <!-- Theme Config Js -->
-<script src="{{ asset('backend/js/config.js') }}"></script>
+<script src="{{ asset('assets/backend/js/config.js') }}"></script>
 
 <!-- Vendor JS -->
-<script src="{{ asset('backend/js/vendor.min.js') }}"></script>
+<script src="{{ asset('assets/backend/js/vendor.min.js') }}"></script>
 
 <!-- App JS -->
-<script src="{{ asset('backend/js/app.js') }}"></script>
+<script src="{{ asset('assets/backend/js/app.js') }}"></script>
 
 <!-- Additional JS Scripts-->
-<script src="{{ asset('backend/js/toastr.min.js') }}"></script>
-<script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('assets/backend/js/toastr.min.js') }}"></script>
+<script src="{{ asset('assets/backend/js/jquery.validate.min.js') }}"></script>
 <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 
 <!-- Aiz Upload JS -->
@@ -38,8 +38,8 @@
         files: 'Files',
     }
 </script>
-<script src="{{ asset('backend/js/aiz-vendors.js') }}"></script>
-<script src="{{ asset('backend/js/aiz-core.js') }}" defer></script>
+<script src="{{ asset('assets/backend/js/aiz-vendors.js') }}"></script>
+<script src="{{ asset('assets/backend/js/aiz-core.js') }}" defer></script>
 
 <!-- DataTables Core -->
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -75,4 +75,4 @@
 <script src="https://cdn.tiny.cloud/1/{{env('TINYMCE_API_KEY')}}/tinymce/7.2.1-75/tinymce.min.js"></script>
 
 <!-- Backend JS -->
-<script src="{{ asset('backend/js/backend.js') }}"></script>
+<script src="{{ asset('assets/backend/js/backend.js') }}"></script>

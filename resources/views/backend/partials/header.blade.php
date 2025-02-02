@@ -5,13 +5,13 @@
             <!-- Brand Logo -->
             <a href="index.html" class="logo">
                 <span class="logo-light">
-                    <span class="logo-lg"><img src="{{ asset('backend/img/logo.png') }}" alt="logo"></span>
-                    <span class="logo-sm"><img src="{{ asset('backend/img/logo-sm.png') }}" alt="small logo"></span>
+                    <span class="logo-lg"><img src="{{ asset('assets/backend/img/logo.png') }}" alt="logo"></span>
+                    <span class="logo-sm"><img src="{{ asset('assets/backend/img/logo-sm.png') }}" alt="small logo"></span>
                 </span>
 
                 <span class="logo-dark">
-                    <span class="logo-lg"><img src="{{ asset('backend/img/logo-dark.png') }}" alt="dark logo"></span>
-                    <span class="logo-sm"><img src="{{ asset('backend/img/logo-sm.png') }}" alt="small logo"></span>
+                    <span class="logo-lg"><img src="{{ asset('assets/backend/img/logo-dark.png') }}" alt="dark logo"></span>
+                    <span class="logo-sm"><img src="{{ asset('assets/backend/img/logo-sm.png') }}" alt="small logo"></span>
                 </span>
             </a>
 
@@ -148,38 +148,38 @@
             <div class="topbar-item">
                 <div class="dropdown">
                     <button class="topbar-link" data-bs-toggle="dropdown" data-bs-offset="0,25" type="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('backend/img/us.svg') }}" alt="user-image" class="w-100 rounded" height="18" id="selected-language-image">
+                        <img src="{{ asset('assets/backend/img/us.svg') }}" alt="user-image" class="w-100 rounded" height="18" id="selected-language-image">
                     </button>
 
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="en">
-                            <img src="{{ asset('backend/img/us.svg') }}" alt="user-image" class="me-1 rounded" height="18" data-translator-image> <span class="align-middle">English</span>
+                            <img src="{{ asset('assets/backend/img/us.svg') }}" alt="user-image" class="me-1 rounded" height="18" data-translator-image> <span class="align-middle">English</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="hi">
-                            <img src="{{ asset('backend/img/in.svg') }}" alt="user-image" class="me-1 rounded" height="18" data-translator-image> <span class="align-middle">Hindi</span>
+                            <img src="{{ asset('assets/backend/img/in.svg') }}" alt="user-image" class="me-1 rounded" height="18" data-translator-image> <span class="align-middle">Hindi</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ asset('backend/img/de.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">German</span>
+                            <img src="{{ asset('assets/backend/img/de.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">German</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ asset('backend/img/it.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">Italian</span>
+                            <img src="{{ asset('assets/backend/img/it.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">Italian</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ asset('backend/img/es.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">Spanish</span>
+                            <img src="{{ asset('assets/backend/img/es.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">Spanish</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ asset('backend/img/ru.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">Russian</span>
+                            <img src="{{ asset('assets/backend/img/ru.svg') }}" alt="user-image" class="me-1 rounded" height="18"> <span class="align-middle">Russian</span>
                         </a>
 
                     </div>
@@ -227,7 +227,7 @@
                             <div class="dropdown-item notification-item py-2 text-wrap active" id="notification-1">
                                 <span class="d-flex align-items-center">
                                     <span class="me-3 position-relative flex-shrink-0">
-                                        <img src="{{ asset('backend/img/avatar-2.jpg') }}" class="avatar-md rounded-circle" alt="" />
+                                        <img src="{{ asset('assets/backend/img/avatar-2.jpg') }}" class="avatar-md rounded-circle" alt="" />
                                         <span class="position-absolute rounded-pill bg-danger notification-badge">
                                             <i class="ti ti-message-circle"></i>
                                             <span class="visually-hidden">unread messages</span>
@@ -250,7 +250,7 @@
                             <div class="dropdown-item notification-item py-2 text-wrap" id="notification-2">
                                 <span class="d-flex align-items-center">
                                     <span class="me-3 position-relative flex-shrink-0">
-                                        <img src="{{ asset('backend/img/avatar-4.jpg') }}" class="avatar-md rounded-circle" alt="" />
+                                        <img src="{{ asset('assets/backend/img/avatar-4.jpg') }}" class="avatar-md rounded-circle" alt="" />
                                         <span class="position-absolute rounded-pill bg-info notification-badge">
                                             <i class="ti ti-currency-dollar"></i>
                                             <span class="visually-hidden">unread messages</span>
@@ -294,7 +294,7 @@
                             <div class="dropdown-item notification-item py-2 text-wrap" id="notification-4">
                                 <span class="d-flex align-items-center">
                                     <span class="me-3 position-relative flex-shrink-0">
-                                        <img src="{{ asset('backend/img/avatar-2.jpg') }}" class="avatar-md rounded-circle" alt="" />
+                                        <img src="{{ asset('assets/backend/img/avatar-2.jpg') }}" class="avatar-md rounded-circle" alt="" />
                                         <span class="position-absolute rounded-pill bg-secondary notification-badge">
                                             <i class="ti ti-plus"></i>
                                             <span class="visually-hidden">unread messages</span>
@@ -317,7 +317,7 @@
                             <div class="dropdown-item notification-item py-2 text-wrap" id="notification-5">
                                 <span class="d-flex align-items-center">
                                     <span class="me-3 position-relative flex-shrink-0">
-                                        <img src="{{ asset('backend/img/avatar-2.jpg') }}" class="avatar-md rounded-circle" alt="" />
+                                        <img src="{{ asset('assets/backend/img/avatar-2.jpg') }}" class="avatar-md rounded-circle" alt="" />
                                         <span class="position-absolute rounded-pill bg-danger notification-badge">
                                             <i class="ti ti-heart-filled"></i>
                                             <span class="visually-hidden">unread messages</span>
@@ -365,19 +365,19 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="slack">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="slack">
                                         <span>Slack</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="Github">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="Github">
                                         <span>Gitlab</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="dribbble">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="dribbble">
                                         <span>Dribbble</span>
                                     </a>
                                 </div>
@@ -386,19 +386,19 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="bitbucket">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="bitbucket">
                                         <span>Bitbucket</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="dropbox">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="dropbox">
                                         <span>Dropbox</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="G Suite">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="G Suite">
                                         <span>G Cloud</span>
                                     </a>
                                 </div>
@@ -407,19 +407,19 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="bitbucket">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="bitbucket">
                                         <span>AWS</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="dropbox">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="dropbox">
                                         <span>Server</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#">
-                                        <img src="{{ asset('backend/img/slack.svg') }}" alt="G Suite">
+                                        <img src="{{ asset('assets/backend/img/slack.svg') }}" alt="G Suite">
                                         <span>Bootstrap</span>
                                     </a>
                                 </div>
@@ -448,7 +448,7 @@
             <div class="topbar-item nav-user">
                 <div class="dropdown">
                     <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" data-bs-offset="0,19" type="button" aria-haspopup="false" aria-expanded="false">
-                        {{--<img src="{{ asset('backend/img/avatar-1.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image">--}}
+                        {{--<img src="{{ asset('assets/backend/img/avatar-1.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image">--}}
                         <span class="d-lg-flex flex-column gap-1 d-none">
                             <h5 class="my-0">{{ucfirst(auth()->user()->name)}}</h5>
                             <h6 class="my-0 fw-normal">{{ucfirst(auth()->user()->role->name)}}</h6>
