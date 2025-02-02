@@ -21,6 +21,7 @@ Route::prefix('command')->group(function () {
     Route::get('view-cache', [CommandController::class, 'viewCache']);
     //Route::get('migrate', [CommandController::class, 'migrate']);
     Route::get('storage-link', [CommandController::class, 'storageLink']);
+    Route::get('key-generate', [CommandController::class, 'keyGenerate']);
 });
 
 Route::get('/', function () {

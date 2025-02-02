@@ -76,4 +76,10 @@ class CommandController extends Controller
         Artisan::call('storage:link');
         return "✅ Storage linked!";
     }
+
+    public function keyGenerate()
+    {
+        Artisan::call('key:generate', ['--force' => true]);
+        return "✅ New application key generated!";
+    }    
 }
