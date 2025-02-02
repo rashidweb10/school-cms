@@ -6,8 +6,7 @@ select filer of all module improve
 
 Page Manage
 
-https://www.nhssthane.com/ --home 
-
+https://www.nhssthane.com/ --home - DONE 
 https://www.nhssthane.com/ --landing - DONE
 https://www.nhssthane.com/disclosure - DONE
 https://www.nhssthane.com/aboutus - DONE
