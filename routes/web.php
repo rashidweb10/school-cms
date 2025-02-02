@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommandController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\UploadController;
 use App\Http\Controllers\Backend\CompanyController;
@@ -9,6 +10,18 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\CampusController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PageController;
+
+Route::prefix('command')->group(function () {
+    Route::get('cache-clear', [CommandController::class, 'cacheClear']);
+    Route::get('config-clear', [CommandController::class, 'configClear']);
+    Route::get('config-cache', [CommandController::class, 'configCache']);
+    Route::get('route-cache', [CommandController::class, 'routeCache']);
+    Route::get('route-clear', [CommandController::class, 'routeClear']);
+    Route::get('view-clear', [CommandController::class, 'viewClear']);
+    Route::get('view-cache', [CommandController::class, 'viewCache']);
+    //Route::get('migrate', [CommandController::class, 'migrate']);
+    Route::get('storage-link', [CommandController::class, 'storageLink']);
+});
 
 Route::get('/', function () {
     return view('welcome');
