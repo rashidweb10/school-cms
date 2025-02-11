@@ -60,13 +60,6 @@
         </li> 
         
         <li class="side-nav-item">
-            <a href="{{route('companies.index')}}" class="side-nav-link">
-                <span class="menu-icon"><i class="ti ti-school"></i></span>
-                <span class="menu-text"> Schools </span>
-            </a>
-        </li>
-        
-        <li class="side-nav-item">
             <a href="{{ route('pages.index') }}" class="side-nav-link">
                 <span class="menu-icon"><i class="ti ti-pencil"></i></span>
                 <span class="menu-text"> Pages </span>
@@ -95,13 +88,6 @@
                 </ul>
             </div>
         </li> 
-        
-        <li class="side-nav-item">
-            <a href="{{ route('campuses.index') }}" class="side-nav-link">
-                <span class="menu-icon"><i class="ti ti-building"></i></span>
-                <span class="menu-text"> Campus </span>
-            </a>
-        </li>   
         
         <li class="side-nav-item">
             <a href="{{ route('galleries.index') }}" class="side-nav-link">
