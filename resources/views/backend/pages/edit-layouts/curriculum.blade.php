@@ -1,6 +1,7 @@
 
 @php
-    $curriculum = json_decode($pageData->meta->where('meta_key', 'curriculum')->first()->meta_value, true);
+    $meta = $pageData->meta->where('meta_key', 'curriculum')->first();
+    $curriculum = $meta ? json_decode($meta->meta_value, true) : null;
 @endphp
 
 <div class="{{$pageData->layout}}-target">
