@@ -49,7 +49,7 @@ class PageSeeder extends Seeder
                 'seo_title' => 'About Us - NHSST Thane',
                 'seo_description' => 'Learn more about NHSST Thane.',
                 'seo_keywords' => 'about us, NHSST Thane',
-                'layout' => 'default',
+                'layout' => 'about',
                 'is_active' => true,
                 'company_id' => 1,
                 'meta' => [
@@ -57,13 +57,13 @@ class PageSeeder extends Seeder
                 ],
             ],
             [
-                'slug' => 'schoolinformation',
+                'slug' => 'why-we',
                 'language' => 'en',
-                'title' => 'School Information',
-                'content' => 'Details about our school information.',
-                'seo_title' => 'School Information - NHSST Thane',
-                'seo_description' => 'Know more about our school information.',
-                'seo_keywords' => 'school information, NHSST Thane',
+                'title' => 'Why We',
+                'content' => 'Details about our Why We.',
+                'seo_title' => 'Why We - NHSST Thane',
+                'seo_description' => 'Know more about our Why We.',
+                'seo_keywords' => 'Why We, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
                 'company_id' => 1,
@@ -134,6 +134,19 @@ class PageSeeder extends Seeder
                 'company_id' => 1,
                 'meta' => [],
             ],
+            [
+                'slug' => 'results',
+                'language' => 'en',
+                'title' => 'Results',
+                'content' => 'Learn about the results process.',
+                'seo_title' => 'Results - NHSST Thane',
+                'seo_description' => 'Know more about our results process.',
+                'seo_keywords' => 'results, NHSST Thane',
+                'layout' => 'results',
+                'is_active' => true,
+                'company_id' => 1,
+                'meta' => [],
+            ],            
         ];
 
         // Loop through the pages and create them with metadata

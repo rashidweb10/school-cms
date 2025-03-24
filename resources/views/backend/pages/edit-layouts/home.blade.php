@@ -19,6 +19,7 @@ $achievement_title = $pageData->meta->where('meta_key', 'achievement_title')->fi
 $achievement_description = $pageData->meta->where('meta_key', 'achievement_description')->first()->meta_value ?? '';
 $achievement_image = $pageData->meta->where('meta_key', 'achievement_image')->first()->meta_value ?? '';
 $home_awards = json_decode($pageData->meta->where('meta_key', 'home_awards')->first()->meta_value ?? '[]', true);
+$home_classrooms = json_decode($pageData->meta->where('meta_key', 'home_classrooms')->first()->meta_value ?? '[]', true);
 $home_quicklinks = json_decode($pageData->meta->where('meta_key', 'home_quicklinks')->first()->meta_value ?? '[]', true);
 $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->first()->meta_value ?? '[]', true);
 @endphp
