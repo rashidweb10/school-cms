@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\CampusController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PageController;
 
+require base_path('routes/livewire.php');
+
 Route::prefix('command')->group(function () {
     Route::get('cache-clear', [CommandController::class, 'cacheClear']);
     Route::get('config-clear', [CommandController::class, 'configClear']);
