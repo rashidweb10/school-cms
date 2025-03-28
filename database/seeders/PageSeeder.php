@@ -13,9 +13,9 @@ class PageSeeder extends Seeder
         // Array of pages to create
         $pages = [
             [
-                'slug' => 'landing',
+                'slug' => 'home',
                 'language' => 'en',
-                'title' => 'Landing',
+                'title' => 'Home - Landing',
                 'content' => 'Welcome to the landing page.',
                 'seo_title' => 'Landing - NHSST Thane',
                 'seo_description' => 'Welcome to NHSST Thane - Landing page.',
