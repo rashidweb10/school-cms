@@ -23,10 +23,6 @@ class RedirectIfAuthenticated
             return redirect()->route('backend.dashboard');
         }
 
-        // if (app()->environment('production') && $request->getHost() !== '127.0.0.1:8000') {
-        //     abort(403, 'Access denied.');
-        // }        
-
         return $next($request);
     }
 }
