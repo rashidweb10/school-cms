@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique(); // Unique slug for the page
+            //$table->string('slug')->unique(); // Unique slug for the page
+            $table->string('slug'); // Unique slug for the page
             $table->string('language', 5)->default('en'); // Language code (e.g., 'en', 'fr')
             $table->string('title'); // Page title
             $table->longText('content')->nullable(); // Page content

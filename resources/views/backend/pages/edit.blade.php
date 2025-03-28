@@ -48,7 +48,7 @@
                     <h5 class="text-uppercase mt-0 mb-2 bg-light p-2">Setting Section</h5>
                     <div class="mb-2 form-group">
                         <label for="slug" class="form-label">Slug <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" required>
+                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if($pageData->layout != 'default') readonly @endif required>
                     </div>
 
                     <!-- Company Dropdown -->

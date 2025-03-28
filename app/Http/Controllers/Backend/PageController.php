@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\PageMeta;
 use App\Models\Gallery;
+use Illuminate\Validation\Rule;
 
 class PageController extends Controller
 {
@@ -81,7 +82,15 @@ class PageController extends Controller
         // Validate form data
         $request->validate([
             'title' => 'required|string|min:3|max:255',
-            'slug' => 'required|string|unique:pages,slug|max:255',
+            //'slug' => 'required|string|unique:pages,slug|max:255',
+            'slug' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('pages')->where(function ($query) use ($request) {
+                    return $query->where('company_id', $request->company_id);
+                })
+            ],            
             'content' => 'required|string', 
             'seo_title' => 'nullable|string|max:255',
             'seo_description' => 'nullable|string|max:500',
@@ -135,7 +144,15 @@ class PageController extends Controller
         // Validate form data
         $request->validate([
             'title' => 'required|string|min:3|max:255',
-            'slug' => 'required|string|max:255|unique:pages,slug,' . $id, // Ignore current record slug for uniqueness
+            //'slug' => 'required|string|max:255|unique:pages,slug,' . $id, // Ignore current record slug for uniqueness
+            'slug' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('pages')->where(function ($query) use ($request) {
+                    return $query->where('company_id', $request->company_id);
+                })->ignore($id), // Ignore the current record
+            ],            
             'content' => 'nullable|string',
             'seo_title' => 'nullable|string|max:255',
             'seo_description' => 'nullable|string|max:500',

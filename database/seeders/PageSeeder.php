@@ -24,8 +24,8 @@ class PageSeeder extends Seeder
                 'is_active' => true,
                 'company_id' => 1,
                 'meta' => [
-                    ['meta_key' => 'custom_css', 'meta_value' => '.landing { background: #f4f4f4; }'],
-                    ['meta_key' => 'custom_js', 'meta_value' => 'console.log("Landing Page Loaded");'],
+                    ['meta_key' => 'custom_css', 'meta_value' => ''],
+                    ['meta_key' => 'custom_js', 'meta_value' => ''],
                 ],
             ],
             [
@@ -38,7 +38,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'home, NHSST Thane',
                 'layout' => 'home',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -51,7 +51,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'about us, NHSST Thane',
                 'layout' => 'about',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [
                     ['meta_key' => 'custom_css', 'meta_value' => '.about-us { font-size: 18px; }'],
                 ],
@@ -66,7 +66,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'Why We, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -79,7 +79,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'roadmap, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -92,7 +92,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'career, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -105,7 +105,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'disclosure, NHSST Thane',
                 'layout' => 'disclosure',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -118,7 +118,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'curriculum, NHSST Thane',
                 'layout' => 'curriculum',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -131,7 +131,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'admission, NHSST Thane',
                 'layout' => 'admission',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -144,13 +144,13 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'results, NHSST Thane',
                 'layout' => 'results',
                 'is_active' => true,
-                'company_id' => 1,
+                'company_id' => 2,
                 'meta' => [],
             ],            
         ];
 
         // Loop through the pages and create them with metadata
-        foreach (array_reverse($pages) as $pageData) {
+        foreach ($pages as $pageData) {
             $metaData = $pageData['meta'];
             unset($pageData['meta']); // Remove meta data from the main array
 

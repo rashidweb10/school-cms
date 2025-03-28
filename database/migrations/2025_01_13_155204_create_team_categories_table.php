@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('team_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
+            //$table->string('slug')->unique();
+            $table->string('slug');
             $table->string('name');
             $table->longText('description')->nullable();
             $table->string('meta_title')->nullable();
