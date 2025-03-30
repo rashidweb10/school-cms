@@ -154,7 +154,7 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                                 name="meta[home_milestones][title][]" 
                                 type="text" 
                                 class="form-control" 
-                                minlength="3" 
+                                minlength="1" 
                                 maxlength="200" 
                                 placeholder="E.g +1000" 
                                 required>
@@ -193,7 +193,7 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                 </div> 
                 <div class="col-md">
                     <div class="form-group mb-2">
-                        <input value="" name="meta[home_milestones][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="E.g +1000" required>
+                        <input value="" name="meta[home_milestones][title][]" type="text" class="form-control" minlength="1" maxlength="200" placeholder="E.g +1000" required>
                     </div>
                 </div> 
                 <div class="col-md">

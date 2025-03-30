@@ -1,3 +1,111 @@
-<footer>
+<!-- <footer>
     <p>&copy; 2025 School CMS. All rights reserved.</p>
+</footer> -->
+
+<footer class="footer pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Quick Links -->
+      <div class="col-md-3">
+        <div class="col-lg-12">
+          <h4 class="roboto">Quick Links</h4>
+          <div class="d-flex gap-5">
+            <ul class="footer-menu">
+              <li><a href="./index.php">> Home</a></li>
+              <li><a href="./about-us.php">> About Us</a></li>
+              <li><a href="./why-we.php">> Why We</a></li>
+              <li><a href="./curriculum.php">> Curriculum</a></li>
+              <li><a href="./alumni.php">> Alumni</a></li>
+            </ul>
+            <ul class="footer-menu">
+              <li><a href="./career.php">> Career</a></li>
+              <li><a href="#">> Admission</a></li>
+              <li><a href="./campusfacilities.php">> Campus</a></li>
+              <li><a href="./event.php">> Gallery</a></li>
+              <li><a href="./contact-us.php">> Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter & Magazine -->
+      <div class="col-md-3 paddlft60 pt-3 pt-md-0">
+        <div class="col-lg-12">
+          <h4 class="roboto">Newsletter & Magazine</h4>
+          <ul class="footer-menu">
+            <li><a href="#">> 2023 - 2024</a></li>
+            <li><a href="#">> 2024 - 2025</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Admission Counselling -->
+      <div class="col-md-4 ps-md-5 pt-3 pt-md-0">
+        <div class="col-lg-12">
+          <h4 class="roboto">Admission Counselling</h4>
+          <p class="pb-0 mb-0">Phone No: +91 7738292703</p>
+          <p>Email: nhsst.admission@newhorizonsms.com</p>
+        </div>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="col-md-2">
+        <div class="col-lg-12">
+          <h4 class="text-md-end roboto">Go Social</h4>
+          <div class="d-flex gap-2 justify-content-md-end">
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Address & QR Codes -->
+      <div class="col-md-6 pt-md-4 pt-3">
+        <p class="footer-copyright mb-0">
+          Kavesar, Ghodbunder Road, <br> Thane (W) - 400 615
+        </p>
+      </div>
+
+      <div class="col-md-6 pt-md-4 pt-3">
+        <div class="text-md-end footer_bottom_img">
+          <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" />
+        </div>
+        <div class="d-flex justify-content-md-end qrcode_img">
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}" /></a>
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}" /></a>
+        </div>
+        <div class="d-flex gap-3 justify-content-md-end">
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-apple-store.png') }}" /></a>
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" /></a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="col-md-12">
+        <hr>
+      </div>
+
+      <div class="col-md-6 order-md-1 order-2">
+        <p class="footer-privacy text-start pb-0 mb-0 pt-md-0 pt-3">
+          Copyright © 2024 New Horizon Scholars School Thane
+        </p>
+      </div>
+
+      <div class="col-md-6 order-md-2 order-1">
+        <div class="footer-privacy text-end">
+          <ul class="footer-menu">
+            <li><a href="#">Terms & Conditions</a></li>
+            <li>|</li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li>|</li>
+            <li><a href="./discloser.php">Support Mandatory Public Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </footer>

@@ -9,13 +9,13 @@ class Home extends Component
 {
     public function render()
     {
-        $page = Page::where('slug', 'home')->first();
+        $page = Page::where('company_id', config('custom.school_id'))->where('slug', 'home')->where('is_active', '1')->first();
         return view('livewire.frontend.home')->with([
             'pageData' => $page
         ])->layout('livewire.frontend.layouts.app', [
             'meta' => [
-                'title' => $page->seo_title ?? 'Default Title',
-                'description' => $page->seo_description ?? 'Default Description',
+                'title' => $page->seo_title ?? '',
+                'description' => $page->seo_description ?? '',
             ]
         ]);
     }

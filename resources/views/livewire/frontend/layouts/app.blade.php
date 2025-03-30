@@ -7,6 +7,7 @@
     @livewireStyles
 
     @include('livewire.frontend.partials.meta', ['meta' => $meta ?? []])
+    @include('livewire.frontend.partials.css')
 </head>
 <body>
 
@@ -17,6 +18,7 @@
     </main>
 
     @include('livewire.frontend.partials.footer')  {{-- Include Footer --}}
+    @include('livewire.frontend.partials.js')
 
     @livewireScripts
 </body>
