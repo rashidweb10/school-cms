@@ -7,6 +7,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 //New Middlewares
 use App\Http\Middleware\RedirectIfNotAuthenticated;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Middleware\AllowBackendAccess;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -22,7 +23,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->appendToGroup('auth.guest', [
             RedirectIfAuthenticated::class
-        ]);        
+        ]);      
+        $middleware->appendToGroup('auth.backend.access', [
+            AllowBackendAccess::class
+        ]);          
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

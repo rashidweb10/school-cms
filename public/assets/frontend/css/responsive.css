@@ -1,0 +1,236 @@
+@media(max-width:767px)
+{
+.scholar_section {
+    background: #fefddf;
+    padding-top: 0;
+}
+.border_8:before {
+    content: "";
+    position: absolute;
+    background: #fdee9d;
+    width: 100%;
+    height: 50%;
+    bottom: -20px;
+    margin-left: 0;
+}
+
+.border_8 {
+    margin-top: 35px;
+}
+.locatio_box {
+    width: 100%;
+            margin-top: 30px;
+}
+.padding100 {
+    padding-top: 0;
+}
+.paddlft60 {
+    padding-left: 15px !important;
+}
+html {
+    overflow-x: hidden;
+}
+#counter {
+    background: #fefddf;
+    padding: 25px 0px !important;
+}
+.locatio_box ul li {
+    font-size: 14px;
+    transform: skew(0deg);
+    width: 104%;
+        padding: 10px 13px 10px;
+}
+.locatio_box li p {
+    margin-bottom: 0;
+    transform: skew(0deg);
+}
+.news_box {
+    margin-bottom: 20px;
+}
+.footer_bottom_img img {
+    width: 150px;
+}
+.quickimg img {
+    width: 100%;
+    border: 1px solid #f6d876;
+    padding: 45px;
+    margin: 0 auto;
+    height: auto;
+}
+.locatio_box ul li i {
+    margin-right: 4px;
+}
+.admission_form {
+    border: 2px solid #f6d876;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    position: relative !important;
+    background: #fff;
+    margin-top: 0;
+    margin-right: 0;
+    width: 100%;
+    right: 0;
+    margin-top: 90px;
+}
+.locatio_box:after {
+    content: '';
+    position: absolute;
+    background: #ffffff00;
+    height: 87%;
+    width: 76%;
+    top: 0;
+    border: 1px solid #f6d876;
+    z-index: -1;
+    border-radius: 30px;
+    left: 36px;
+    margin-top: 54px;
+}
+.footer-privacy ul li {
+    list-style: none;
+    float: left;
+    padding-left: 0;
+    padding-right: 15px;
+}
+.classroom_box {
+    padding: 0px 0px;
+            margin-bottom: 50px;
+}
+.border_2:before {
+    width: 100%;
+    bottom: -8px;
+    margin-left: 0px;
+}
+.counter-value {
+    font-size: 34px;
+    color: #333;
+}
+.stastic p {
+    text-decoration: underline;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.skew-box p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    line-height: 25px;
+    transform: skew(0deg);
+}
+.skew-box {
+    position: absolute;
+    top: -25px;
+    background-color: #f6d876;
+    color: #000;
+    padding: 7px 34px 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    transform: skew(0deg);
+    display: inline-block;
+    margin-left: -2px;
+}
+body .admission_img {
+    width: 110px !important;
+    position: absolute;
+    left: 32%;
+    margin-top: -78px;
+}
+.header_text {
+    color: #333;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 0;
+    padding-top: 10px;
+    text-align: center;
+    padding-top: 0px;
+            margin-top: -10px;
+}
+body .admiistion_test {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-top: 0px;
+    text-align: center !important;
+    line-height: 20px;
+}
+.w-150 {
+    width: 90px;
+    position: relative;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.header_section_top p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    padding-top: 20px;
+    text-align: center;
+    padding-left:30px;
+}
+.banner_slider img {
+    height: 35vh;
+}
+.banner_slider {
+    height: 35vh;
+    object-fit: cover;
+}
+header {
+    background-image: url(./img/header-back.jpg);
+}
+.top_position {
+    position: relative;
+    width: 100%;
+    background: #fff;
+}
+.startimg::after {
+   display:none;
+}
+.logo_width {
+    position: relative;
+    top: 0px;
+    z-index: 9;
+    padding: 0px;
+}
+.classroom_box iframe {
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    position: relative;
+}
+section.gallery_section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.pl50 {
+    padding-left: 15px !important;
+}
+.footer_bottom_img {
+    margin-right: 65px;
+    margin-top: 25px;
+}
+.pt-70 {
+    padding-top: 30px !important;
+}
+
+.vission_box {
+    border: 1px solid #fdee9d;
+    padding: 30px 15px 25px 15px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    z-index: 99;
+    background: #fff;
+    height: 100%;
+}
+.pt83 {
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+}

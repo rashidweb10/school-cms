@@ -34,7 +34,7 @@ Route::get('/', function () {
 Route::prefix('backend')->group(function () {
 
     // Public login/logout routes
-    Route::get('/login', [AuthController::class, 'showLoginForm'])->middleware('auth.guest')->name('backend.login');
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->middleware(['auth.guest', 'auth.backend.access'])->name('backend.login');
     Route::post('/login', [AuthController::class, 'login'])->name('backend.login.submit');
     Route::get('/logout', [AuthController::class, 'logout'])->name('backend.logout');
 
