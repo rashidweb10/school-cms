@@ -42,7 +42,7 @@ class PageSeeder extends Seeder
                 'meta' => [],
             ],
             [
-                'slug' => 'aboutus',
+                'slug' => 'about-us',
                 'language' => 'en',
                 'title' => 'About Us',
                 'content' => 'This is the about us page content.',
@@ -146,7 +146,20 @@ class PageSeeder extends Seeder
                 'is_active' => true,
                 'company_id' => 2,
                 'meta' => [],
-            ],            
+            ],  
+            [
+                'slug' => 'alumini',
+                'language' => 'en',
+                'title' => 'Alumini',
+                'content' => 'Learn about the Alumini process.',
+                'seo_title' => 'Alumini - NHSST Thane',
+                'seo_description' => 'Know more about our Alumini process.',
+                'seo_keywords' => 'Alumini, NHSST Thane',
+                'layout' => 'default',
+                'is_active' => true,
+                'company_id' => 2,
+                'meta' => [],
+            ],                      
         ];
 
         // Loop through the pages and create them with metadata

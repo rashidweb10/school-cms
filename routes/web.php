@@ -11,7 +11,7 @@ use App\Http\Controllers\Backend\CampusController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PageController;
 
-require base_path('routes/livewire.php');
+use App\Http\Controllers\FrontendController;
 
 Route::prefix('command')->group(function () {
     Route::get('cache-clear', [CommandController::class, 'cacheClear']);
@@ -26,9 +26,23 @@ Route::prefix('command')->group(function () {
     Route::get('key-generate', [CommandController::class, 'keyGenerate']);
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendController::class, 'home'])->name('home');
+
+Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
+
+Route::get('/why-we', [FrontendController::class, 'why_we'])->name('why-we');
+
+Route::get('/roadmap', [FrontendController::class, 'roadmap'])->name('roadmap');
+
+Route::get('/career', [FrontendController::class, 'career'])->name('career');
+
+Route::get('/curriculum', [FrontendController::class, 'curriculum'])->name('curriculum');
+
+Route::get('/alumini', [FrontendController::class, 'alumini'])->name('alumini');
+
+Route::get('/contact', function () {
+    return view('frontend.pages.contact');
+})->name('contact');
 
 // Group routes under the 'backend' prefix
 Route::prefix('backend')->group(function () {

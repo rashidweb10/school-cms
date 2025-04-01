@@ -1,11 +1,6 @@
-<!-- <footer>
-    <p>&copy; 2025 School CMS. All rights reserved.</p>
-</footer> -->
-
 <footer class="footer pt-5 pb-4">
   <div class="container">
     <div class="row">
-      
       <!-- Quick Links -->
       <div class="col-md-3">
         <div class="col-lg-12">
@@ -49,63 +44,55 @@
         </div>
       </div>
 
-      <!-- Social Media Links -->
+      <!-- Go Social -->
       <div class="col-md-2">
         <div class="col-lg-12">
           <h4 class="text-md-end roboto">Go Social</h4>
           <div class="d-flex gap-2 justify-content-md-end">
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}"></a>
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}"></a>
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}"></a>
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}" alt="Facebook"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}" alt="Instagram"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}" alt="LinkedIn"></a>
+            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}" alt="YouTube"></a>
           </div>
         </div>
       </div>
 
       <!-- Address & QR Codes -->
       <div class="col-md-6 pt-md-4 pt-3">
-        <p class="footer-copyright mb-0">
-          Kavesar, Ghodbunder Road, <br> Thane (W) - 400 615
-        </p>
+        <p class="footer-copyright mb-0">Kavesar, Ghodbunder Road, <br> Thane (W) - 400 615</p>
       </div>
-
       <div class="col-md-6 pt-md-4 pt-3">
         <div class="text-md-end footer_bottom_img">
-          <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" />
+          <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" alt="EduSprint Pro Logo" />
         </div>
         <div class="d-flex justify-content-md-end qrcode_img">
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}" /></a>
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}" /></a>
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}" alt="QR Code 1" /></a>
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}" alt="QR Code 2" /></a>
         </div>
         <div class="d-flex gap-3 justify-content-md-end">
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-apple-store.png') }}" /></a>
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" /></a>
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-apple-store.png') }}" alt="Apple Store" /></a>
+          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" alt="Play Store" /></a>
         </div>
       </div>
 
-      <!-- Footer Bottom -->
+      <!-- Footer Privacy & Links -->
       <div class="col-md-12">
         <hr>
       </div>
-
       <div class="col-md-6 order-md-1 order-2">
-        <p class="footer-privacy text-start pb-0 mb-0 pt-md-0 pt-3">
-          Copyright © 2024 New Horizon Scholars School Thane
-        </p>
+        <p class="footer-privacy text-start pb-0 mb-0 pt-md-0 pt-3">Copyright © 2024 New Horizon Scholars School Thane</p>
       </div>
-
       <div class="col-md-6 order-md-2 order-1">
         <div class="footer-privacy text-end">
           <ul class="footer-menu">
             <li><a href="#">Terms & Conditions</a></li>
-            <li>|</li>
+            <li> | </li>
             <li><a href="#">Privacy Policy</a></li>
-            <li>|</li>
+            <li> | </li>
             <li><a href="./discloser.php">Support Mandatory Public Disclosure</a></li>
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </footer>

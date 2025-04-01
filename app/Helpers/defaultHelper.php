@@ -135,3 +135,51 @@ if (!function_exists('getYears')) {
         return range($start, $end);
     }
 }
+
+// if (!function_exists('frontend_asset')) {
+//     function frontend_asset($id)
+//     {
+//         $asset = Cache::rememberForever('frontend_asset_'.$id , function() use ($id) {
+//             return \App\Models\Upload::find($id);
+//         });
+
+//         if ($asset != null) {
+//             return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
+//         }
+//         return static_asset('assets/img/placeholder.jpg');
+//     }
+// }
+
+if (!function_exists('central_asset')) {
+    function central_asset($path)
+    {
+        return url($path);
+    }
+}
+
+if (!function_exists('uploaded_asset_name')) {
+    function uploaded_asset_name($id) {
+
+        $asset = Cache::rememberForever('uploaded_asset_name_'.$id , function() use ($id) {
+            return \App\Models\Upload::find($id);
+        });
+
+        $filename = 'Unknown';
+
+        if ($asset != null) {
+            $filename = $asset->file_original_name;
+        }
+                
+        // Extract filename without extension
+        $nameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
+        
+        // Replace underscores and hyphens with spaces
+        $formattedName = str_replace(['_', '-'], ' ', $nameWithoutExt);
+        
+        // Convert multiple spaces to a single space and trim excess spaces
+        $formattedName = preg_replace('/\s+/', ' ', trim($formattedName));
+    
+        // Capitalize each word
+        return ucwords($formattedName);
+    }
+}
