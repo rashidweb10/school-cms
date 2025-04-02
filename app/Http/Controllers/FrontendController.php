@@ -7,6 +7,7 @@ use App\Models\Page;
 use App\Models\PageMeta;
 use App\Models\Team;
 use App\Models\TeamCategory;
+use App\Models\Company;
 
 class FrontendController extends Controller
 {
@@ -16,7 +17,11 @@ class FrontendController extends Controller
         ->where('slug', 'home')
         ->where('company_id', config('custom.school_id'))
         ->firstOrFail();
-    
+        
+        if(config('custom.school_id') == 1){
+            $schools = Company::whereNot('id', 1)->where('is_active', 1)->get();
+            return view('frontend.pages.landing', compact('pageData', 'schools'));
+        }
         return view('frontend.pages.home', compact('pageData'));
     }
 

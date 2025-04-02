@@ -61,9 +61,9 @@ $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updat
         <input class="form-control" value="{{$about_title2}}" name="meta[about_title2]" type="text" required>
     </div>   
     <div class="col-md-6">
-        <label for="name" class="form-label">Image <span class="text-danger">*</span></label>
+        <label for="name" class="form-label">Images <span class="text-danger">*</span></label>
         <div class="form-group mb-2">
-            <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+            <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="true">
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
                 </div>
@@ -129,7 +129,7 @@ $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updat
                                 name="meta[landing_milestones][title][]" 
                                 type="text" 
                                 class="form-control" 
-                                minlength="3" 
+                                minlength="1" 
                                 maxlength="200" 
                                 placeholder="E.g +1000" 
                                 required>
@@ -168,7 +168,7 @@ $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updat
                 </div> 
                 <div class="col-md">
                     <div class="form-group mb-2">
-                        <input value="" name="meta[landing_milestones][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="E.g +1000" required>
+                        <input value="" name="meta[landing_milestones][title][]" type="text" class="form-control" minlength="1" maxlength="200" placeholder="E.g +1000" required>
                     </div>
                 </div> 
                 <div class="col-md">

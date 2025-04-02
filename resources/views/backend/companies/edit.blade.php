@@ -84,13 +84,13 @@
                         <input type="text" class="form-control" id="meta-phone2" name="meta[affiliation_no]" value="{{ old('meta.affiliation_no', $pageData->meta->where('meta_key', 'affiliation_no')->first()->meta_value ?? '') }}" placeholder="">
                     </div>                    
                     <div class="mb-3 form-group">
-                        <label for="meta-company-brouchure" class="form-label">{{ __('Brochure') }} <span class="text-danger">*</span></label>
+                        <label for="meta-company-brouchure" class="form-label">{{ __('Brochure') }}</label>
                         <div class="input-group" data-toggle="aizuploader" data-type="document" data-multiple="false">
                             <div class="input-group-prepend">
                                 <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
                             </div>
                             <div class="form-control file-amount">{{ __('Choose File') }}</div>
-                            <input type="hidden" id="meta-company-brouchure" name="meta[brochure_attachment]" value="{{ old('meta.brochure_attachment', $pageData->meta->where('meta_key', 'brochure_attachment')->first()->meta_value ?? '') }}" class="selected-files" required>
+                            <input type="hidden" id="meta-company-brouchure" name="meta[brochure_attachment]" value="{{ old('meta.brochure_attachment', $pageData->meta->where('meta_key', 'brochure_attachment')->first()->meta_value ?? '') }}" class="selected-files">
                         </div>
                         <div class="file-preview box sm"></div>
                     </div> 

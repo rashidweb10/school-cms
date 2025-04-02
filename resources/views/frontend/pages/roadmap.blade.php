@@ -5,7 +5,7 @@
 
 @section('content')
 
-@include('frontend.partials.breadcrumb', ['title' => null])
+@include('frontend.partials.breadcrumb', ['title' => $pageData->title])
 
 <section class="">
     <div class="container py-5">

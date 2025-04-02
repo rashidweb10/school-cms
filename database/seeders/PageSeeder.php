@@ -22,7 +22,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'landing, NHSST Thane',
                 'layout' => 'landing',
                 'is_active' => true,
-                'company_id' => 2,
+                'company_id' => 1,
                 'meta' => [
                     ['meta_key' => 'custom_css', 'meta_value' => ''],
                     ['meta_key' => 'custom_js', 'meta_value' => ''],
@@ -38,7 +38,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'home, NHSST Thane',
                 'layout' => 'home',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -51,7 +51,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'about us, NHSST Thane',
                 'layout' => 'about',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [
                     ['meta_key' => 'custom_css', 'meta_value' => '.about-us { font-size: 18px; }'],
                 ],
@@ -66,7 +66,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'Why We, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -79,7 +79,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'roadmap, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -92,7 +92,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'career, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -105,7 +105,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'disclosure, NHSST Thane',
                 'layout' => 'results',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -118,7 +118,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'curriculum, NHSST Thane',
                 'layout' => 'curriculum',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -131,7 +131,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'admission, NHSST Thane',
                 'layout' => 'admission',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],
             [
@@ -144,7 +144,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'results, NHSST Thane',
                 'layout' => 'results',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],  
             [
@@ -157,7 +157,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'Alumini, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ], 
             [
@@ -170,7 +170,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'Why We, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],   
             [
@@ -183,7 +183,7 @@ class PageSeeder extends Seeder
                 'seo_keywords' => 'Why We, NHSST Thane',
                 'layout' => 'default',
                 'is_active' => true,
-                'company_id' => 3,
+                'company_id' => 2,
                 'meta' => [],
             ],                                         
         ];

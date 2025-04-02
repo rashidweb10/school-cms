@@ -15,9 +15,16 @@ class CompanySeeder extends Seeder
     public function run(): void
     {
         $schools = [
-            'School Main', 'School 2 - Landing', 'School 3', 'School 4', 'School 5',
-            'School 6', 'School 7', 'School 8', 'School 9'
+            'School 1 - Landing', 'School 2', 'School 3', 'School 4', 'School 5', 'School 6', 'School 7', 'School 8'
         ];
+
+        User::factory()->create([
+            'name' => 'Superadmin',
+            'email' => 'superadmin@example.com',
+            'role_id' => 1,
+            'company_id' => null,
+            'password' => bcrypt('superadmin@example.com'),
+        ]);        
 
         foreach ($schools as $schoolName) {
             $company = Company::create([
@@ -48,10 +55,10 @@ class CompanySeeder extends Seeder
             // }
 
             User::factory()->create([
-                'name' => 'Admin - ' . ($company->name),
+                'name' => 'School admin ' . ($company->id),
                 'email' => 'school' . ($company->id) . '@example.com',
-                'role_id' => ($company->id == 1) ? 1 : 2,
-                'company_id' => ($company->id == 1) ? null : $company->id,
+                'role_id' => 2,
+                'company_id' => $company->id,
                 'password' => bcrypt('school' . ($company->id) . '@example.com'),
             ]);            
         }
