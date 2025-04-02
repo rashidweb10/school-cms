@@ -57,7 +57,7 @@
           </div>
           <div class="col-lg-4">
             <div class="position-relative">
-              <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="img/admission-img.png" alt="img" />
+              <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img" />
             </div>
           </div>
           <div class="col-lg-8 paddngrgt80">
