@@ -7,22 +7,27 @@
 
 @php
   $banner_title = $pageData->meta->where('meta_key', 'banner_title')->first()->meta_value ?? '';
-  $banner_images = $pageData->meta->where('meta_key', 'banner_images')->first()->meta_value ?? '';
+  $banner_images = explode(',', $pageData->meta->where('meta_key', 'banner_images')->first()->meta_value ?? '');
   $about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
   $about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
-  $about_title2 = $pageData->meta->where('meta_key', 'about_title2')->first()->meta_value ?? '';
-  $about_description2 = $pageData->meta->where('meta_key', 'about_description2')->first()->meta_value ?? '';
-  $about_image = $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '';
+  $about_image = explode(',', $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '');
   $mission_title = $pageData->meta->where('meta_key', 'mission_title')->first()->meta_value ?? '';
   $mission_description = $pageData->meta->where('meta_key', 'mission_description')->first()->meta_value ?? '';
   $vision_title = $pageData->meta->where('meta_key', 'vision_title')->first()->meta_value ?? '';
   $vision_description = $pageData->meta->where('meta_key', 'vision_description')->first()->meta_value ?? '';
   $value_title = $pageData->meta->where('meta_key', 'value_title')->first()->meta_value ?? '';
   $value_description = $pageData->meta->where('meta_key', 'value_description')->first()->meta_value ?? '';
-  $landing_milestones = json_decode($pageData->meta->where('meta_key', 'landing_milestones')->first()->meta_value ?? '[]', true);
-  $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
-  $landing_quicklinks = json_decode($pageData->meta->where('meta_key', 'landing_quicklinks')->first()->meta_value ?? '[]', true);
-  $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updates')->first()->meta_value ?? '[]', true);
+  $about_school_title = $pageData->meta->where('meta_key', 'about_school_title')->first()->meta_value ?? '';
+  $about_school_description = $pageData->meta->where('meta_key', 'about_school_description')->first()->meta_value ?? '';
+  $about_school_image = $pageData->meta->where('meta_key', 'about_school_image')->first()->meta_value ?? '';
+  $home_milestones = json_decode($pageData->meta->where('meta_key', 'home_milestones')->first()->meta_value ?? '[]', true);
+  $achievement_title = $pageData->meta->where('meta_key', 'achievement_title')->first()->meta_value ?? '';
+  $achievement_description = $pageData->meta->where('meta_key', 'achievement_description')->first()->meta_value ?? '';
+  $achievement_image = $pageData->meta->where('meta_key', 'achievement_image')->first()->meta_value ?? '';
+  $home_awards = json_decode($pageData->meta->where('meta_key', 'home_awards')->first()->meta_value ?? '[]', true);
+  $home_classrooms = json_decode($pageData->meta->where('meta_key', 'home_classrooms')->first()->meta_value ?? '[]', true);
+  $home_quicklinks = json_decode($pageData->meta->where('meta_key', 'home_quicklinks')->first()->meta_value ?? '[]', true);
+  $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->first()->meta_value ?? '[]', true);
 @endphp
 
 <div class="banner_slider">
