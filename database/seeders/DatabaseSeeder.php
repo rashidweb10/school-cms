@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             RoleSeeder::class,
             TeamCategoriesSeeder::class,
-            //TeamsSeeder::class,
+            TeamsSeeder::class,
             //CampusSeeder::class,
             //GallerySeeder::class,
             PageSeeder::class,

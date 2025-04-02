@@ -58,3 +58,24 @@ https://www.nhssthane.com/events
 
 No need to work - DONE
 https://1nh.edusprint.in/1nh/Security
+
+
+
+ADMIN FIXES
+Teams
+-- slug automation in categories
+-- layout option add in categories
+
+Pages
+-- reaoonly slugs
+-- add button remove
+
+Seeding 
+-- Make dynamic from company creation to users to teams & everuthong cteare at once
+
+Frontend
+-- contact form dynamic
+-- header dynamic
+-- footer dynamic
+-- banner 
+-- admmission image

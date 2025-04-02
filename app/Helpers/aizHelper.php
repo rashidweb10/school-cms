@@ -27,7 +27,7 @@ if (!function_exists('uploaded_asset')) {
         if ($asset != null) {
             return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
         }
-        return static_asset('assets/img/placeholder.jpg');
+        return static_asset('assets/frontend/img/placeholder.jpg');
     }
 }
 

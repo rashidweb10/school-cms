@@ -6,14 +6,14 @@
 <div class="row">
     <div class="col-md-12">
         <hr>
-        <h4 class="text-primary">Results Section</h4>
+        <h4 class="text-primary">Additional Section</h4>
     </div>    
     <div class="results-target">
         @if(isset($results['itration']) && is_array($results['itration']))
             @foreach($results['itration'] as $index => $itration)
                 <div class="row remove-parent">
                     <div class="col-md-12">
-                        <label for="name" class="form-label">Results Section <span class="text-danger">*</span></label>
+                        <label for="name" class="form-label">Section <span class="text-danger">*</span></label>
                         <input value="{{ $index }}" name="meta[results][itration][]" type="hidden" required>
                     </div> 
                     <div class="col-md">
@@ -60,7 +60,7 @@
         data-content='
             <div class="row remove-parent">
                 <div class="col-md-12">
-                    <label for="name" class="form-label">Results Section <span class="text-danger">*</span></label>
+                    <label for="name" class="form-label">Section <span class="text-danger">*</span></label>
                     <input value="data" name="meta[results][itration][]" type="hidden" required>
                 </div> 
                 <div class="col-md">

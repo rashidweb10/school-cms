@@ -71,14 +71,14 @@
                         <label for="meta-phone2" class="form-label">Secondary Phone</label>
                         <input type="text" class="form-control" id="meta-phone2" name="meta[phone2]" value="{{ old('meta.phone2', $pageData->meta->where('meta_key', 'phone2')->first()->meta_value ?? '') }}" placeholder="">
                     </div>
-                    <div class="mb-3 form-group">
+                    <!-- <div class="mb-3 form-group">
                         <label for="meta-address2" class="form-label">Secondary Address</label>
                         <input type="text" class="form-control" id="meta-address2" name="meta[address2]" value="{{ old('meta.address2', $pageData->meta->where('meta_key', 'address2')->first()->meta_value ?? '') }}" placeholder="">
                     </div>
                     <div class="mb-3 form-group">
                         <label for="meta-google-map-2" class="form-label">Secondary Google Map Embed</label>
                         <textarea class="form-control" id="meta-google-map-2" name="meta[google_map2]" rows="3" placeholder="">{{ old('meta.google_map2', $pageData->meta->where('meta_key', 'google_map2')->first()->meta_value ?? '') }}</textarea>
-                    </div>  
+                    </div>   -->
                     <div class="mb-3 form-group">
                         <label for="meta-affiliation" class="form-label">Affiliation No</label>
                         <input type="text" class="form-control" id="meta-phone2" name="meta[affiliation_no]" value="{{ old('meta.affiliation_no', $pageData->meta->where('meta_key', 'affiliation_no')->first()->meta_value ?? '') }}" placeholder="">
@@ -93,7 +93,31 @@
                             <input type="hidden" id="meta-company-brouchure" name="meta[brochure_attachment]" value="{{ old('meta.brochure_attachment', $pageData->meta->where('meta_key', 'brochure_attachment')->first()->meta_value ?? '') }}" class="selected-files" required>
                         </div>
                         <div class="file-preview box sm"></div>
-                    </div>                                       
+                    </div> 
+                    <div style="clear:both"></div>
+                    <div class="mb-3 form-group">
+                        <label for="meta-company-breadcrumb" class="form-label">{{ __('Page Breadcrumb') }}</label>
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                            </div>
+                            <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                            <input type="hidden" id="meta-company-breadcrumb" name="meta[page_breadcrumb]" value="{{ old('meta.page_breadcrumb', $pageData->meta->where('meta_key', 'page_breadcrumb')->first()->meta_value ?? '') }}" class="selected-files">
+                        </div>
+                        <div class="file-preview box sm"></div>
+                    </div> 
+                    <div style="clear:both"></div>
+                    <div class="mb-3 form-group">
+                        <label for="meta-company-admission-banner" class="form-label">{{ __('Admission Banner') }}</label>
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                            </div>
+                            <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                            <input type="hidden" id="meta-company-admission-banner" name="meta[admission_banner]" value="{{ old('meta.admission_banner', $pageData->meta->where('meta_key', 'admission_banner')->first()->meta_value ?? '') }}" class="selected-files">
+                        </div>
+                        <div class="file-preview box sm"></div>
+                    </div>                                                                              
                 </div>
             </div>            
         </div>

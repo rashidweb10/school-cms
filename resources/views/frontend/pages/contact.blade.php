@@ -1,8 +1,121 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Contact')
+@section('meta.title', 'Contact Us')
+@section('meta.description', 'Contact Us')
 
 @section('content')
-    <h1>Welcome to My Website</h1>
-    <p>This is the contact page.</p>
+
+@include('frontend.partials.breadcrumb', ['title' => "Contact Us"])
+
+<section class="embedcode pb-5">
+     <div class="container">
+     <iframe src="{{get_setting('google_map')}}" height="20" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
+ </section>
+    
+    
+    
+     <section class=" pb-md-5 pb-4 mt-4 position-relative">
+   <div class="container">
+     <div class="row">
+     <div class="col-12 col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+        <div class="row justify-content-xl-center">
+          <div class="col-12 col-xl-11">
+            <h3 class="robot_slab text_color pb-md-4 pb-1 pt-md-0 pt-4">Reach Us</h3>
+            <!--<p class="mb-5">We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.</p>-->
+            <div class="d-flex mb-md-2">
+             
+              <div>
+                <h5 class="mb-1 fs16">Location Address:</h5>
+                <p class="">{{get_setting('address')}}</p>
+              </div>
+            </div>
+            <div class="d-flex mb-md-4 mb-3">
+             
+              <div>
+                <h5 class="mb-1 fs16">Phone Number:</h5>
+                <p class="mb-0">
+                      <u>Admission Counselling:</u> <a href="tel:7738292703" class=" text-decoration-none" style="color:#000;">{{get_setting('phone')}}  </a>
+                </p>
+                 <p class="mb-0">
+                      <u>Office:</u><a href="tel:022-25972729" class=" text-decoration-none" style="color:#000;"> {{get_setting('phone2')}}</a>
+                </p>
+              </div>
+            </div>
+            <div class="d-flex">
+            
+              <div>
+                <h5 class="mb-1 fs16">Email:</h5>
+                <p class="mb-0">
+                  <u>Admission Counselling:</u> <a class="text-decoration-none text-black" style="color:#000;" href="mailto:{{get_setting('email')}}">{{get_setting('email')}}</a>
+                </p>               
+                <p class="mb-0">
+                  <u>General Enquiry:</u> <a class="text-decoration-none text-black" style="color:#000;" href="mailto:{{get_setting('email2')}}">{{get_setting('email2')}}</a>
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8 col-xl-6">
+          <h3 class="robot_slab text_color pb-md-4 pb-3 pt-md-0 pt-4">Write Us</h3>
+        <div class="card rounded-3">
+        
+          <div class="card-body p-4 p-md-4">
+            <form class="">
+             
+
+              <div class="row">
+                  
+                  <div class="col-md-6 mb-4">
+                   <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3Example1q" class="form-control" placeholder="Name" />
+                  </div>
+              </div>
+              
+               <div class="col-md-6 mb-4">
+                   <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3Example1q" class="form-control" placeholder="Select" />
+                  </div>
+              </div>
+              
+                <div class="col-md-6 mb-4">
+                   <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3Example1q" class="form-control" placeholder="Email ID" />
+                  </div>
+              </div>
+              
+                <div class="col-md-6 mb-4">
+                   <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3Example1q" class="form-control" placeholder="Mobile Number" />
+                  </div>
+              </div>
+              
+                <div class="col-md-12 mb-4">
+                   <div data-mdb-input-init class="form-outline">
+                    <textarea type="text" id="form3Example1q" class="form-control" placeholder="Message" /></textarea>
+                  </div>
+              </div>
+              
+             <div class="col-md-12 text-center">
+                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg mb-1 submit_bittons">Submit</button>
+             </div>
+              
+              </div>
+
+         
+             
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+      
+     </div>
+   </div>
+ </section>
+
 @endsection

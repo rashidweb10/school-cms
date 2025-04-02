@@ -1,5 +1,5 @@
 <div class="internal_banner">
-  <img src="{{ asset('assets/frontend/img/about-banner.png') }}" class="w-100">
+  <img src="{{ central_asset(uploaded_asset(get_setting('page_breadcrumb'))) }}" class="w-100">
 </div>
 
 @if($title)
@@ -15,7 +15,7 @@
       </div>
       <div class="col-lg-4">
         <div class="position-relative inner_adminssion">
-          <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ asset('assets/frontend/img/admission-img.png') }}" alt="img">
+          <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img">
         </div>
       </div>
     </div>

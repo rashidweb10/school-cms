@@ -3,7 +3,7 @@
     @method('PUT')
     <div class="row">
         <!-- Name -->
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="form-group mb-2">
                 <label for="name" class="form-label">Name</label>
                 <input value="{{ old('name', $pageData->name) }}" name="name" type="text" class="form-control" minlength="3" maxlength="200" required>
@@ -11,7 +11,7 @@
         </div>
 
         <!-- Slug -->
-        <div class="col-sm-6">
+        <div class="col-sm-6 d-none">
             <div class="form-group mb-2">
                 <label for="slug" class="form-label">Slug</label>
                 <input value="{{ old('slug', $pageData->slug) }}" name="slug" type="text" class="form-control" minlength="3" maxlength="200" required>

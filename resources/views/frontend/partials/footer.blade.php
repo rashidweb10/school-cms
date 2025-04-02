@@ -7,18 +7,18 @@
           <h4 class="roboto">Quick Links</h4>
           <div class="d-flex gap-5">
             <ul class="footer-menu">
-              <li><a href="./index.php">> Home</a></li>
-              <li><a href="./about-us.php">> About Us</a></li>
-              <li><a href="./why-we.php">> Why We</a></li>
-              <li><a href="./curriculum.php">> Curriculum</a></li>
-              <li><a href="./alumni.php">> Alumni</a></li>
+              <li><a href="{{route('home')}}"> Home</a></li>
+              <li><a href="{{route('about')}}"> About Us</a></li>
+              <li><a href="{{route('why-we')}}"> Why We</a></li>
+              <li><a href="{{route('curriculum')}}"> Curriculum</a></li>
+              <li><a href="{{route('alumini')}}"> Alumni</a></li>
             </ul>
             <ul class="footer-menu">
-              <li><a href="./career.php">> Career</a></li>
-              <li><a href="#">> Admission</a></li>
-              <li><a href="./campusfacilities.php">> Campus</a></li>
-              <li><a href="./event.php">> Gallery</a></li>
-              <li><a href="./contact-us.php">> Contact Us</a></li>
+              <li><a href="{{route('career')}}"> Career</a></li>
+              <li><a href="#"> Admission</a></li>
+              <li><a href="#"> Campus</a></li>
+              <li><a href="#"> Gallery</a></li>
+              <li><a href="{{route('contact')}}"> Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -39,8 +39,8 @@
       <div class="col-md-4 ps-md-5 pt-3 pt-md-0">
         <div class="col-lg-12">
           <h4 class="roboto">Admission Counselling</h4>
-          <p class="pb-0 mb-0">Phone No: +91 7738292703</p>
-          <p>Email: nhsst.admission@newhorizonsms.com</p>
+          <p class="pb-0 mb-0">Phone No: {{get_setting('phone')}}</p>
+          <p>Email: {{get_setting('email')}}</p>
         </div>
       </div>
 
@@ -49,29 +49,29 @@
         <div class="col-lg-12">
           <h4 class="text-md-end roboto">Go Social</h4>
           <div class="d-flex gap-2 justify-content-md-end">
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}" alt="Facebook"></a>
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}" alt="Instagram"></a>
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}" alt="LinkedIn"></a>
-            <a href="#"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}" alt="YouTube"></a>
+            <a target="_blank" href="{{get_setting('facebook_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}" alt="Facebook"></a>
+            <a target="_blank" href="{{get_setting('instagram_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}" alt="Instagram"></a>
+            <a target="_blank" href="{{get_setting('linkedin_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}" alt="LinkedIn"></a>
+            <a target="_blank" href="{{get_setting('youtube_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}" alt="YouTube"></a>
           </div>
         </div>
       </div>
 
       <!-- Address & QR Codes -->
       <div class="col-md-6 pt-md-4 pt-3">
-        <p class="footer-copyright mb-0">Kavesar, Ghodbunder Road, <br> Thane (W) - 400 615</p>
+        <p class="footer-copyright mb-0">{{get_setting('address')}}</p>
       </div>
       <div class="col-md-6 pt-md-4 pt-3">
         <div class="text-md-end footer_bottom_img">
           <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" alt="EduSprint Pro Logo" />
         </div>
         <div class="d-flex justify-content-md-end qrcode_img">
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}" alt="QR Code 1" /></a>
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}" alt="QR Code 2" /></a>
+          <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}" alt="QR Code 1" />
+          <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}" alt="QR Code 2" />
         </div>
         <div class="d-flex gap-3 justify-content-md-end">
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-apple-store.png') }}" alt="Apple Store" /></a>
-          <a href="#"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" alt="Play Store" /></a>
+          <a target="_blank" href="https://apps.apple.com/us/app/1newhorizon-app/id1312624582?platform=iphone"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-apple-store.png') }}" alt="Apple Store" /></a>
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=in.newhorizon.cspl&pli=1"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" alt="Play Store" /></a>
         </div>
       </div>
 
@@ -80,16 +80,16 @@
         <hr>
       </div>
       <div class="col-md-6 order-md-1 order-2">
-        <p class="footer-privacy text-start pb-0 mb-0 pt-md-0 pt-3">Copyright © 2024 New Horizon Scholars School Thane</p>
+        <p class="footer-privacy text-start pb-0 mb-0 pt-md-0 pt-3">Copyright © {{date('Y')}} {{get_setting('name')}}</p>
       </div>
       <div class="col-md-6 order-md-2 order-1">
         <div class="footer-privacy text-end">
           <ul class="footer-menu">
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="{{route('terms')}}">Terms & Conditions</a></li>
             <li> | </li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>
             <li> | </li>
-            <li><a href="./discloser.php">Support Mandatory Public Disclosure</a></li>
+            <li><a href="{{route('disclosure')}}">Support Mandatory Public Disclosure</a></li>
           </ul>
         </div>
       </div>

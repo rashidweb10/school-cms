@@ -15,8 +15,8 @@ class CompanySeeder extends Seeder
     public function run(): void
     {
         $schools = [
-            'School 1 - Main', 'School 2', 'School 3', 'School 4',
-            'School 5', 'School 6', 'School 7', 'School 8'
+            'School Main', 'School 2 - Landing', 'School 3', 'School 4', 'School 5',
+            'School 6', 'School 7', 'School 8', 'School 9'
         ];
 
         foreach ($schools as $schoolName) {
@@ -48,7 +48,7 @@ class CompanySeeder extends Seeder
             // }
 
             User::factory()->create([
-                'name' => 'School Admin ' . ($company->id),
+                'name' => 'Admin - ' . ($company->name),
                 'email' => 'school' . ($company->id) . '@example.com',
                 'role_id' => ($company->id == 1) ? 1 : 2,
                 'company_id' => ($company->id == 1) ? null : $company->id,

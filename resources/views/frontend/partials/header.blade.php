@@ -5,14 +5,14 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
-                    <p class="mrg_35 robot_slab">CBSE Affiliation No. 1130470</p>
+                    <p class="mrg_35 robot_slab">CBSE Affiliation No. {{get_setting('affiliation_no')}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p class="mrg_35 robot_slab text-center">FOR ADMISSION’S CALL: 7738292703</p>
+                    <p class="mrg_35 robot_slab text-center">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p>
                 </div>
                 <div class="col-md-4">
                     <p class="text-md-end robot_slab">
-                        <a href="" class="pe-3 discloser_link">MANDATORY PUBLIC DISCLOSURE</a>
+                        <a href="{{route('disclosure')}}" class="pe-3 discloser_link">MANDATORY PUBLIC DISCLOSURE</a>
                     </p>
                 </div>
             </div>
@@ -24,13 +24,13 @@
             <div class="row">
                 <div class="col-md-1 col-6 order-md-1 order-2">
                     <div class="logo_width">
-                        <a class="navbar-brand" href="">
-                            <img class="w-150" src="{{ asset('assets/frontend/img/logo.png') }}" />
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-12 order-md-2 order-1">
-                    <h4 class="header_text roboto mt-md-0 mt-2">New Horizon Scholars School</h4>
+                    <h4 class="header_text roboto mt-md-0 mt-2">{{get_setting('name')}}</h4>
                 </div>
                 <div class="col-md-4 col-6 order-md-2 order-3 d-lg-none d-block">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,13 +43,13 @@
                     <div class="d-flex browser_link">
                         <ul class="d-flex ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link robot_slab">
+                                <a target="_blank" class="nav-link robot_slab" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
                                     <img src="{{ asset('assets/frontend/img/icon-brochure-w.png') }}"> BROCHURE
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link robot_slab"
-                                    href="">
+                                <a target="_blank" class="nav-link robot_slab"
+                                    href="https://1nh.edusprint.in/1nh/Security">
                                     <img src="{{ asset('assets/frontend/img/icon-nhlogin-w.png') }}"> NH LOGIN
                                 </a>
                             </li>
@@ -103,8 +103,8 @@
                                                 <img src="{{ asset('assets/frontend/img/glry.png') }}"> GALLERY
                                             </a>
                                             <ul class="submenu">
-                                                <li><a href=""><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Events</a></li>
-                                                <li><a href=""><img src="{{ asset('assets/frontend/img/camp.png') }}"> Campus</a></li>
+                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Events</a></li>
+                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/camp.png') }}"> Campus</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -125,8 +125,8 @@
                                     </ul>
 
                                     <li class="nav-item">
-                                        <a class="nav-link robot_slab" aria-current="page" href="">
-                                            <img src="{{ asset('assets/frontend/img/icon-events-w.png') }}"> RESULT
+                                        <a class="nav-link robot_slab" aria-current="page" href="{{route('results')}}">
+                                            <img src="{{ asset('assets/frontend/img/icon-events-w.png') }}"> RESULTS
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -135,7 +135,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link robot_slab" aria-current="page" href="">
+                                        <a class="nav-link robot_slab" aria-current="page" href="{{route('contact')}}">
                                             <img src="{{ asset('assets/frontend/img/icon-contact-w.png') }}"> CONTACT US
                                         </a>
                                     </li>

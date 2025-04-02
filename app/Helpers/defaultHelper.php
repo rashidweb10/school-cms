@@ -157,6 +157,54 @@ if (!function_exists('central_asset')) {
     }
 }
 
+if (!function_exists('generateHtmlTableFromCsv')) {
+    function generateHtmlTableFromCsv($csvFilePath) {
+        $relativePath = str_replace(url('/storage'), 'storage', $csvFilePath);
+        $csvFilePath = public_path($relativePath);
+
+        if (!file_exists($csvFilePath) || !is_readable($csvFilePath)) {
+            return '<p>Error: File not found or unreadable.</p>';
+        }
+        
+        $file = fopen($csvFilePath, 'r');
+        $headers = fgetcsv($file); // Read the first row as headers
+        if (!$headers) {
+            return '<p>Error: Empty CSV file.</p>';
+        }
+        
+        $html = '<table class="table table-bordered table-hover">';
+        $html .= '<thead class="thead-dark"><tr>';
+        
+        foreach ($headers as $index => $header) {
+            $className = 'col_' . ($index + 1); // Dynamic class name
+            $html .= "<th scope='col' class='$className text-center'>" . htmlspecialchars($header) . "</th>";
+        }
+        
+        $html .= '</tr></thead><tbody>';
+        
+        while (($row = fgetcsv($file)) !== false) {
+            $html .= '<tr>';
+            foreach ($row as $index => $cell) {
+                $className = 'col_' . ($index + 1);
+                // Check if the cell contains a URL
+                if (filter_var($cell, FILTER_VALIDATE_URL)) {
+                    $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+                } else {
+                    $cell = htmlspecialchars($cell);
+                }
+                $html .= "<td class='$className text-center'>$cell</td>";
+            }
+            $html .= '</tr>';
+        }
+        
+        fclose($file);
+        
+        $html .= '</tbody></table>';
+        
+        return $html;
+    }  
+}
+
 if (!function_exists('uploaded_asset_name')) {
     function uploaded_asset_name($id) {
 
@@ -181,5 +229,44 @@ if (!function_exists('uploaded_asset_name')) {
     
         // Capitalize each word
         return ucwords($formattedName);
+    }
+}
+
+
+// if (!function_exists('get_setting')) {
+//     function get_setting($metaKey, $default = null) {
+//         $company = \App\Models\Company::with('meta')->where('id', config('custom.school_id'))->first();
+
+//         if (!$company) {
+//             return $default;
+//         }
+
+//         // First, check if the column exists in the companies table
+//         if (isset($company->$metaKey)) {
+//             return $company->$metaKey;
+//         }
+
+//         // Otherwise, check the meta table
+//         return $company->meta->where('meta_key', $metaKey)->first()->meta_value ?? $default;
+//     }
+// }
+
+if (!function_exists('get_setting')) {
+    function get_setting($metaKey, $default = null) {
+        return \Illuminate\Support\Facades\Cache::rememberForever("setting_" . config('custom.school_id') . "_{$metaKey}", function () use ($metaKey, $default) {
+            $company = \App\Models\Company::with('meta')->where('id', config('custom.school_id'))->first();
+
+            if (!$company) {
+                return $default;
+            }
+
+            // First, check if the column exists in the companies table
+            if (isset($company->$metaKey)) {
+                return $company->$metaKey;
+            }
+
+            // Otherwise, check the meta table
+            return $company->meta->where('meta_key', $metaKey)->first()->meta_value ?? $default;
+        });
     }
 }
