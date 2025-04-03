@@ -153,9 +153,17 @@ if (!function_exists('getYears')) {
 if (!function_exists('central_asset')) {
     function central_asset($path)
     {
-        return url($path);
+        $baseUrl = rtrim(config('custom.assets_url', env('ASSETS_URL', env('APP_URL'))), '/');
+
+        if (filter_var($path, FILTER_VALIDATE_URL)) {
+            $parsedUrl = parse_url($path);
+            $path = $parsedUrl['path'] ?? '';
+        }
+
+        return $baseUrl . '/' . ltrim($path, '/');
     }
 }
+
 
 if (!function_exists('generateHtmlTableFromCsv')) {
     function generateHtmlTableFromCsv($csvFilePath) {

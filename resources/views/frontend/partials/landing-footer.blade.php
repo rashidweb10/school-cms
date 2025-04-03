@@ -66,10 +66,10 @@
           <div class="col-md-12">
             <hr>
           </div>
-          <div class="col-md-6 order-md-1 order-2">
-            <p class="footer-privacy text-start pb-0 mb-0 pt-md-0 pt-3"> Copyright © {{date('Y')}} {{get_setting('name')}} </p>
+          <div class="col-md-12 order-md-1 order-2">
+            <p class="footer-privacy text-center pb-0 mb-0 pt-md-0 pt-3"> Copyright © {{date('Y')}} {{get_setting('name')}} </p>
           </div>
-          <div class="col-md-6 order-md-2 order-1">
+          <!-- <div class="col-md-6 order-md-2 order-1">
             <div class="footer-privacy text-end">
               <ul class="footer-menu">
                 <li>
@@ -81,7 +81,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </footer>
