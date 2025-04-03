@@ -32,16 +32,16 @@
             <div class="col-lg-12">
               <h4 Class="text-md-end roboto">Go Social</h4>
               <div class="d-flex gap-2 justify-content-md-end">
-                <a href="{{get_setting('facebook_url')}}">
+                <a target="_blank" href="{{get_setting('facebook_url')}}">
                   <img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}">
                 </a>
-                <a href="{{get_setting('instagram_url')}}">
+                <a target="_blank" href="{{get_setting('instagram_url')}}">
                   <img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}">
                 </a>
-                <a href="{{get_setting('linkedin_url')}}">
+                <a target="_blank" href="{{get_setting('linkedin_url')}}">
                   <img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}">
                 </a>
-                <a href="{{get_setting('youtube_url')}}">
+                <a target="_blank" href="{{get_setting('youtube_url')}}">
                   <img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}">
                 </a>
               </div>
