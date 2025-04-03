@@ -15,7 +15,7 @@
             </ul>
             <ul class="footer-menu">
               <li><a href="{{route('career')}}"> Career</a></li>
-              <li><a href="#"> Admission</a></li>
+              <li><a href="{{route('admission')}}"> Admission</a></li>
               <li><a href="#"> Campus</a></li>
               <li><a href="#"> Gallery</a></li>
               <li><a href="{{route('contact')}}"> Contact Us</a></li>

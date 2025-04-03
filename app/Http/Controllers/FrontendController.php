@@ -135,6 +135,16 @@ class FrontendController extends Controller
         ->firstOrFail();
     
         return view('frontend.pages.common', compact('pageData'));
+    }   
+
+    public function admission()
+    {
+        $pageData = Page::with('meta')->where('is_active', 1)
+        ->where('slug', 'admission')
+        ->where('company_id', config('custom.school_id'))
+        ->firstOrFail();
+    
+        return view('frontend.pages.admission', compact('pageData'));
     }    
 }
 

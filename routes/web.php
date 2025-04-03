@@ -50,6 +50,8 @@ Route::get('/terms-and-conditions', [FrontendController::class, 'terms'])->name(
 
 Route::get('/privacy-policy', [FrontendController::class, 'privacy_policy'])->name('privacy_policy');
 
+Route::get('/admission', [FrontendController::class, 'admission'])->name('admission');
+
 Route::get('/contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
