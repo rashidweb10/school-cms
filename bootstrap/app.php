@@ -8,6 +8,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\RedirectIfNotAuthenticated;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\AllowBackendAccess;
+use App\Http\Middleware\ProtectForms;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -26,7 +27,10 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);      
         $middleware->appendToGroup('auth.backend.access', [
             AllowBackendAccess::class
-        ]);          
+        ]);  
+        $middleware->appendToGroup('protect.forms', [
+            ProtectForms::class
+        ]);                
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

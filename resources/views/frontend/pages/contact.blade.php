@@ -64,50 +64,48 @@
         <div class="card rounded-3">
         
           <div class="card-body p-4 p-md-4">
-            <form class="">
-             
+
+          <!-- ✅ Contact Form -->
+            <form method="post" action="{{route('form.submit')}}" id="contactForm">
+               @include('frontend.components.form-alert')
+               @csrf
+              <input type="hidden" name="form_name" value="contact">
 
               <div class="row">
-                  
-                  <div class="col-md-6 mb-4">
-                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1q" class="form-control" placeholder="Name" />
-                  </div>
-              </div>
-              
-               <div class="col-md-6 mb-4">
-                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1q" class="form-control" placeholder="Select" />
-                  </div>
-              </div>
-              
                 <div class="col-md-6 mb-4">
-                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1q" class="form-control" placeholder="Email ID" />
+                  <div class="form-outline">
+                    <input type="text" name="name" class="form-control" placeholder="Name" required />
                   </div>
-              </div>
-              
+                </div>
+
                 <div class="col-md-6 mb-4">
-                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="form3Example1q" class="form-control" placeholder="Mobile Number" />
+                  <div class="form-outline">
+                    <input type="email" name="email" class="form-control" placeholder="Email ID" required />
                   </div>
-              </div>
-              
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="phone" class="form-control" placeholder="Mobile Number" required />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" required />
+                  </div>
+                </div>
+
                 <div class="col-md-12 mb-4">
-                   <div data-mdb-input-init class="form-outline">
-                    <textarea type="text" id="form3Example1q" class="form-control" placeholder="Message" /></textarea>
+                  <div class="form-outline">
+                    <textarea name="message" class="form-control" placeholder="Message" required></textarea>
                   </div>
-              </div>
-              
-             <div class="col-md-12 text-center">
-                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg mb-1 submit_bittons">Submit</button>
-             </div>
-              
-              </div>
+                </div>
 
-         
-             
-
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-success btn-lg mb-1 submit_bittons">Submit</button>
+                </div>
+              </div>
             </form>
 
           </div>

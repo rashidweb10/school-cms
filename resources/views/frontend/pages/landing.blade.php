@@ -53,58 +53,69 @@
           </div>
           <div class="col-lg-5">
             <div class="admission_form">
-                <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="img/admission-img.png" alt="img" />
+                <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img" />
                 
                 
                 <h4 class="robot_slab text_color pt-70">Admission Enquiry Form</h4>
-                <p><b>AY - 2025 - 2026</b></p>
+                <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p>
                 
-                <form id="" onsubmit="">
-      
-        <div class="row">
-            
-          <div class="col-md-12 mb-3">
-            <select id="groupSize" class="form-control" onchange="generateGroupForms()">
-            <option value="">--- Select City ---</option>
-            <option value="Thane">Thane</option>
-            <option value="Airoli">Navi Mumbai</option>
-          </select>
-          </div>
-          
-           <div class="col-md-12 mb-3">
-            <select id="groupSize" class="form-control" onchange="generateGroupForms()">
-            <option value="">--- Select School Name ---</option>
-            <option value="New Horizon Scholars School, Kavesar">New Horizon Scholars School, Kavesar</option>
-            <option value="New Horizon Scholars School, Vasant Lawns">New Horizon Scholars School, Vasant Lawns</option>
-            <option value="New Horizon Scholars School, Kolshet">New Horizon Scholars School, Kolshet</option>
-            <option value="New Horizon International School, Kolshet">New Horizon International School, Kolshet</option>
-            <option value="New Horizon Public School, Airoli">New Horizon Public School, Airoli</option>
-            <option value="New Horizon Scholars School, Airoli">New Horizon Scholars School, Airoli</option>
-            <option value="New Horizon Public School, New Panvel">New Horizon Public School, New Panvel</option>
-          </select>
-          </div>
-          
-          <div class="col-md-12 mb-3">
-            <input type="text" class="form-control" id="firm_name" name="firm_name" required="" placeholder="Select Standard*">
-          </div>
-          <div class="col-md-12 mb-3">
-            <input type="text" id="full_name" class="form-control" name="full_name" required="" placeholder="Parent's Name*">
-          </div>
-          
-           <div class="col-md-12 mb-3">
-            <input type="text" id="phone" class="form-control" name="phone" required="" placeholder="Mobile Number">
-          </div>
-          
-          <div class="col-md-12 mb-3">
-            <input type="email" id="email" class="form-control" name="email" required="" placeholder="Email ID" />
-          </div>
-          
-          <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" value="Submit">
-          </div>
-          
-        </div>
-      </form>
+                <!-- ✅ School Admission Form -->
+                <form method="post" action="{{ route('form.submit') }}" id="admissionForm">
+                  @include('frontend.components.form-alert')
+                  @csrf
+                  <input type="hidden" name="form_name" value="admission">
+
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <select name="city" class="form-control" required>
+                          <option value="">--- Select City ---</option>
+                          <option value="Thane">Thane</option>
+                          <option value="Airoli">Navi Mumbai</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <select name="school" class="form-control" required>
+                            <option value="">--- Select School Name ---</option>
+                            @foreach($schools as $school)
+                              <option value="{{ $school->name }}">{{ $school->name }}</option>
+                            @endforeach
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" name="standard" placeholder="Select Standard*" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" name="name" placeholder="Parent's Name*" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" name="phone" placeholder="Mobile Number*" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <input type="email" class="form-control" name="email" placeholder="Email ID*" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 text-center">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </form> 
               
             </div>
           </div>

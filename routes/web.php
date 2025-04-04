@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+//Backend
 use App\Http\Controllers\CommandController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\UploadController;
@@ -10,8 +12,11 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\CampusController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PageController;
+use App\Http\Controllers\Backend\FormController as BackendFormController;
 
+//Frontend
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\FormController;
 
 Route::prefix('command')->group(function () {
     Route::get('cache-clear', [CommandController::class, 'cacheClear']);
@@ -55,6 +60,8 @@ Route::get('/admission', [FrontendController::class, 'admission'])->name('admiss
 Route::get('/contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
+
+Route::post('/submit-form', [FormController::class, 'submit'])->middleware(['protect.forms','throttle:3,1'])->name('form.submit');
 
 // Group routes under the 'backend' prefix
 Route::prefix('backend')->group(function () {
@@ -114,5 +121,9 @@ Route::prefix('backend')->group(function () {
 
     Route::middleware('auth.backend')->group(function () {
         Route::resource('pages', PageController::class);
-    });   
+    });  
+    
+    Route::middleware('auth.backend')->group(function () {
+        Route::resource('forms', BackendFormController::class);
+    });     
 });

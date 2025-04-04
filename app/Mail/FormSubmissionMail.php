@@ -1,0 +1,30 @@
+<?php
+
+// app/Mail/FormSubmissionMail.php
+
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+class FormSubmissionMail extends Mailable implements ShouldQueue
+{
+    use Queueable, SerializesModels;
+
+    public $formName;
+    public $data;
+
+    public function __construct($formName, $data)
+    {
+        $this->formName = $formName;
+        $this->data = $data;
+    }
+
+    public function build()
+    {
+        return $this->subject("New {$this->formName} Form Submission")
+                    ->markdown('emails.form_submission');
+    }
+}
