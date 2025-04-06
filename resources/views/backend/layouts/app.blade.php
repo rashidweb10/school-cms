@@ -14,6 +14,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="app-url" content="{{ url('/backend') }}">
         <meta name="file-base-url" content="{{ asset('') }}">        
+        <meta name="front-file-base-url" content="{{ config('custom.assets_url') }}">        
 
         @include('backend.partials.css')
         @include('backend.partials.js')

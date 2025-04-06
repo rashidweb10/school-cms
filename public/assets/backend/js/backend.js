@@ -260,6 +260,9 @@ function initDatatable(selector){
 function initTextEditor() {
     tinymce.init({
         selector: '.text-editor',
+        relative_urls: false,
+        remove_script_host: false,
+        document_base_url: $('meta[name="front-file-base-url"]').attr('content'),        
         statusbar: false,
         height: 300, // Set the desired height
         //valid_elements: '*[*]', // Allows all HTML elements and attributes
