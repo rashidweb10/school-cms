@@ -5,7 +5,9 @@
 <script src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/aos.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/swiper.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
 
 <script>
   AOS.init({
@@ -37,17 +39,17 @@
     });
   });
 
-  Fancybox.bind("[data-fancybox]", {
-    Toolbar: {
-      display: ["zoom", "close"],
-    },
-    Thumbs: {
-      autoStart: true, // Automatically display thumbnails in the popup
-    },
-    Carousel: {
-      preload: 4, // Preload all 4 images in the group
-    },
-  });
+  // Fancybox.bind("[data-fancybox]", {
+  //   Toolbar: {
+  //     display: ["zoom", "close"],
+  //   },
+  //   Thumbs: {
+  //     autoStart: true, // Automatically display thumbnails in the popup
+  //   },
+  //   Carousel: {
+  //     preload: 4, // Preload all 4 images in the group
+  //   },
+  // });
 
   var a = 0;
   $(window).scroll(function() {

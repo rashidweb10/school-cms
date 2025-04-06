@@ -8,6 +8,7 @@ use App\Models\PageMeta;
 use App\Models\Team;
 use App\Models\TeamCategory;
 use App\Models\Company;
+use App\Models\Campus;
 
 class FrontendController extends Controller
 {
@@ -102,10 +103,10 @@ class FrontendController extends Controller
         return view('frontend.pages.results', compact('pageData'));
     }    
 
-    public function contact()
-    {
-        return view('frontend.pages.contact');
-    }
+    // public function contact()
+    // {
+    //     return view('frontend.pages.contact');
+    // }
 
     public function disclosure()
     {
@@ -146,5 +147,24 @@ class FrontendController extends Controller
     
         return view('frontend.pages.admission', compact('pageData'));
     }    
+
+    public function campus(Request $request, $id = null)
+    {
+        //tab contents
+        if($id){
+            $pageData = Campus::where('is_active', 1)
+            ->where('id', $id)
+            ->where('company_id', config('custom.school_id'))
+            ->first();            
+            return view('frontend.pages.campus-contents', compact('pageData'));
+        }
+        
+        //page
+        $pageData = Campus::where('is_active', 1)
+        ->where('company_id', config('custom.school_id'))
+        ->get();
+    
+        return view('frontend.pages.campus', compact('pageData'));
+    }     
 }
 

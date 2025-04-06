@@ -63,6 +63,10 @@ Route::get('/privacy-policy', [FrontendController::class, 'privacy_policy'])->na
 
 Route::get('/admission', [FrontendController::class, 'admission'])->name('admission');
 
+Route::get('/campus-facilities', [FrontendController::class, 'campus'])->name('campus');
+
+Route::get('/campus-facilities/{id}', [FrontendController::class, 'campus'])->name('campus.contents');
+
 Route::get('/contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');

@@ -14,7 +14,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <!-- Fancybox CSS -->
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/fancybox.css') }}">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+/>
 
 <style>
 /* Disclosure Link */
