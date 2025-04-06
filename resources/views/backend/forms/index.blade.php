@@ -85,7 +85,7 @@
                                     <th>{{ ucfirst(str_replace('_', ' ', $col)) }}</th>
                                 @endforeach                               
                                 <th>Date</th>
-                                <th>Actions</th>
+                                <!-- <th>Actions</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -102,9 +102,9 @@
                                     <td>{{ $formData[$col] ?? '-' }}</td>
                                 @endforeach                               
                                 <td>{{ formatDatetime($row->updated_at) }}</td>
-                                <td>
+                                <!-- <td>
 
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
                         </tbody>
