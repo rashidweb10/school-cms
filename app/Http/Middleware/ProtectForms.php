@@ -34,11 +34,11 @@ class ProtectForms
             }
         }
 
-        // 🧩 3. Optional: Block non-browser requests (optional)
-        // if (!$request->ajax() && !$request->expectsJson() && !$request->isMethod('post')) {
-        //     \Log::warning("Suspicious form access attempt from: $ip");
-        //     abort(403, 'Forbidden - Suspicious Request');
-        // }
+        //🧩 3. Optional: Block non-browser requests (optional)
+        if (!$request->ajax() && !$request->expectsJson() && !$request->isMethod('post')) {
+            \Log::warning("Suspicious form access attempt from: $ip");
+            abort(403, 'Forbidden - Suspicious Request');
+        }
 
         // ✅ 4. Filter for SQL Injection and XSS
         $suspiciousPatterns = [
@@ -55,6 +55,37 @@ class ProtectForms
                     Log::warning("Injection/XSS attempt on '$key' with value '$value' from $ip");
                     abort(403, 'Forbidden - Suspicious Input Detected');
                 }
+            }
+        } 
+        
+        // ✅ 5. File upload validation for forms like career, etc.
+        if ($request->hasFile()) {
+            foreach ($request->files as $key => $file) {
+                if (!$file->isValid()) {
+                    Log::warning("Invalid file upload in '$key' from IP: $ip");
+                    abort(403, 'Invalid file upload detected');
+                }
+
+                // Allowed MIME types
+                $allowedMimes = [
+                    'application/pdf',
+                    'application/msword',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    'image/jpeg',
+                    'image/png',
+                ];
+
+                // Check MIME type
+                if (!in_array($file->getMimeType(), $allowedMimeTypes)) {
+                    Log::warning("Disallowed file type '{$file->getMimeType()}' in '$key' from IP: $ip");
+                    abort(403, 'Disallowed file type');
+                }
+
+                // Max file size (in bytes) - 2MB
+                // if ($file->getSize() > 2 * 1024 * 1024) {
+                //     Log::warning("File too large in '$key' from IP: $ip. Size: {$file->getSize()} bytes");
+                //     abort(403, 'File too large. Max 2MB allowed.');
+                // }
             }
         }        
 
