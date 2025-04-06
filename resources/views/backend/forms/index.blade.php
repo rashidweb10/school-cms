@@ -13,13 +13,66 @@
             <div class="card-header border-bottom border-dashed align-items-center">
                 <div class="row">
                     <div class="col-md-8">
+                        <form class="row g-3 align-items-center">
+                            <div class="col-md-4">
+                                <select name="company" class="form-select" id="status-select">
+                                    <option value="" selected>--Select School--</option>
+                                    @foreach ($companyList as $index => $row)
+                                        <option value="{{ $row->id }}" 
+                                            @if(request()->get('company') == $row->id) selected @endif>
+                                            {{ $row->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="search" class="form-control" value="{{request()->get('search')}}" placeholder="search with Name & description">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-success btn-icon w-100">
+                                    <i class="ti ti-search"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="reset" class="btn btn-warning btn-icon w-100" 
+                                    onclick="window.location.href = '{{ url()->current() }}';">
+                                    <i class="ti ti-refresh"></i>
+                                </button>
+                            </div>
+                        </form>                        
                     </div>
-                    <div class="col-md-2 offset-md-2 text-end">
-        
+                    <div class="col-md-3 offset-md-1 text-end">
+                        @if(!auth()->user()->company_id)
+                        <div class="btn-group" role="group">
+                            @foreach($formNames as $name)
+                                <a href="{{ route('forms.by', ['form_name' => $name]) }}"
+                                class="btn btn-outline-primary {{ request()->segment(3) == $name ? 'active' : '' }}">
+                                    {{ ucfirst($name) }}
+                                </a>
+                            @endforeach
+                        </div>  
+                        @endif     
                     </div>
                 </div>
             </div>
             <div class="card-body">
+                @php
+                    $preferredOrder = ['school', 'standard', 'city', 'subject', 'message'];
+                    $extraColumns = collect($pageData->items())
+                        ->pluck('form_data')
+                        ->map(function($data) {
+                            // If already an array, just get keys; if JSON string, decode first
+                            $arr = is_array($data) ? $data : json_decode($data, true);
+                            return is_array($arr) ? array_keys($arr) : [];
+                        })
+                        ->flatten()
+                        ->unique()
+                        ->sortBy(function($col) use ($preferredOrder) {
+                            return array_search($col, $preferredOrder) !== false ? array_search($col, $preferredOrder) : 999;
+                        })                        
+                        ->values()
+                        ->toArray();
+                @endphp              
                 <div class="table-responsive-sm">
                     <table class="table table-striped">
                         <thead>
@@ -28,17 +81,26 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                @foreach($extraColumns as $col)
+                                    <th>{{ ucfirst(str_replace('_', ' ', $col)) }}</th>
+                                @endforeach                               
                                 <th>Date</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pageData as $index => $row)
+                            @php
+                                $formData = is_array($row->form_data) ? $row->form_data : json_decode($row->form_data, true);
+                            @endphp                            
                             <tr>
                                 <td>{{ $index + 1 }}</td>                           
                                 <td>{{ $row->name }}</td>                                                           
                                 <td>{{ $row->email }}</td>    
                                 <td>{{ $row->phone }}</td>
+                                @foreach ($extraColumns as $col)
+                                    <td>{{ $formData[$col] ?? '-' }}</td>
+                                @endforeach                               
                                 <td>{{ formatDatetime($row->updated_at) }}</td>
                                 <td>
 

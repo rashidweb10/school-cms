@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
-            $table->string('form_name');         // e.g. 'contact', 'career'
-            $table->string('name')->nullable();  // for searching
-            $table->string('email')->nullable(); // for searching
-            $table->string('phone')->nullable(); // for searching
-            $table->json('form_data');           // all fields saved here
+            $table->string('form_name');        
+            $table->string('name')->nullable(); 
+            $table->string('email')->nullable(); 
+            $table->string('phone')->nullable(); 
+            $table->string('ip');
+            $table->string('company_id')->nullable();   
+            $table->json('form_data');          
             $table->timestamps();
         });
     }

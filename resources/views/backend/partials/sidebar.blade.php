@@ -108,6 +108,13 @@
                 <span class="menu-icon"><i class="ti ti-library-photo"></i></span>
                 <span class="menu-text"> Event Galleries </span>
             </a>
+        </li>      
+        
+        <li class="side-nav-item">
+            <a href="{{ route('forms.by', ['form_name' => (auth()->user()->company_id == 1) ? 'admission' : 'contact']) }}" class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-message-question"></i></span>
+                <span class="menu-text"> Form Submissions </span>
+            </a>
         </li>        
 
     </ul>

@@ -71,7 +71,8 @@
                         <select name="city" class="form-control" required>
                           <option value="">--- Select City ---</option>
                           <option value="Thane">Thane</option>
-                          <option value="Airoli">Navi Mumbai</option>
+                          <option value="Navi Mumbai">Navi Mumbai</option>
+                          <option value="Raigad">Raigad</option>
                         </select>
                       </div>
                     </div>
@@ -81,7 +82,7 @@
                         <select name="school" class="form-control" required>
                             <option value="">--- Select School Name ---</option>
                             @foreach($schools as $school)
-                              <option value="{{ $school->name }}">{{ $school->name }}</option>
+                              <option data-id="{{ $school->id }}" value="{{ $school->name }}">{{ $school->name }}</option>
                             @endforeach
                         </select>
                       </div>
@@ -297,4 +298,39 @@
     </section>
     @endif 
 
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function () {
+    const $schoolSelect = $('select[name="school"]');
+    const $allOptions = $schoolSelect.find('option');
+
+    // Hide all school options except the first one on page load
+    $allOptions.not(':first').hide();
+
+    $('select[name="city"]').on('change', function () {
+        const city = $(this).val();
+
+        // Reset school dropdown
+        $schoolSelect.val('');
+        $allOptions.not(':first').hide(); // Hide all school options
+
+        // Show specific schools based on selected city
+        if (city === 'Thane') {
+            $allOptions.filter(function () {
+                return $(this).attr('data-id') === '2' || $(this).attr('data-id') === '3' || $(this).attr('data-id') === '4' || $(this).attr('data-id') === '5';
+            }).show();
+        } else if (city === 'Navi Mumbai') {
+            $allOptions.filter(function () {
+                return $(this).attr('data-id') === '6' || $(this).attr('data-id') === '7';
+            }).show();
+        } else if (city === 'Raigad') {
+            $allOptions.filter(function () {
+                return $(this).attr('data-id') === '8';
+            }).show();
+        }
+    });
+});
+</script>
 @endsection

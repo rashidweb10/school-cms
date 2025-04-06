@@ -61,6 +61,19 @@ Route::get('/contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
 
+Route::get('/test-mail', function () {
+    try {
+        Mail::raw('Test email from Laravel using Gmail SMTP.', function ($message) {
+            $message->to('rashidk.developer@gmail.com')
+                    ->subject('Gmail SMTP Test');
+        });
+
+        return '✅ Mail sent!';
+    } catch (\Exception $e) {
+        return '❌ Error: ' . $e->getMessage();
+    }
+});
+
 Route::post('/submit-form', [FormController::class, 'submit'])->middleware(['protect.forms','throttle:3,1'])->name('form.submit');
 
 // Group routes under the 'backend' prefix
@@ -124,6 +137,6 @@ Route::prefix('backend')->group(function () {
     });  
     
     Route::middleware('auth.backend')->group(function () {
-        Route::resource('forms', BackendFormController::class);
-    });     
+        Route::get('forms-by/{form_name}', [BackendFormController::class, 'index'])->name('forms.by');
+    });
 });

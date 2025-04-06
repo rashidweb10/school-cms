@@ -23,10 +23,13 @@ class FormController extends Controller
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'form_data' => $formData,
+            'ip' => request()->ip(),
+            'company_id' => config('custom.school_id'),
         ]);
 
         Mail::to(config('mail.from.address'))
             ->queue(new FormSubmissionMail($formName, $validatedData));
+            
 
         return redirect()->back()->with('success', 'Enquiry submitted successfully');
     }
