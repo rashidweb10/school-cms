@@ -81,5 +81,41 @@ class CommandController extends Controller
     {
         Artisan::call('key:generate', ['--force' => true]);
         return "✅ New application key generated!";
+    } 
+    
+    public function queueWork()
+    {
+        Artisan::call('queue:work', ['--once' => true]); // Process one job
+        return 'Queue processed one job.';
+    }
+    
+    public function queueRetry($id = null)
+    {
+        Artisan::call('queue:retry', [$id ? $id : 'all']);
+        return 'Queue retry command executed.';
+    }
+    
+    public function queueFailed()
+    {
+        Artisan::call('queue:failed');
+        return nl2br(Artisan::output()); // Show failed jobs
+    }
+    
+    public function queueForget($id)
+    {
+        Artisan::call('queue:forget', ['id' => $id]);
+        return "Forgot failed job: $id";
+    }
+    
+    public function queueFlush()
+    {
+        Artisan::call('queue:flush');
+        return 'Flushed all failed jobs.';
+    }  
+    
+    public function optimizeClear()
+    {
+        Artisan::call('optimize:clear');
+        return 'Optimize cleared successfully.';
     }    
 }

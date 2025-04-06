@@ -29,6 +29,12 @@ Route::prefix('command')->group(function () {
     //Route::get('migrate', [CommandController::class, 'migrate']);
     Route::get('storage-link', [CommandController::class, 'storageLink']);
     Route::get('key-generate', [CommandController::class, 'keyGenerate']);
+    Route::get('optimize-clear', [CommandController::class, 'optimizeClear']);
+    Route::get('queue-work', [CommandController::class, 'queueWork']);
+    Route::get('queue-retry/{id?}', [CommandController::class, 'queueRetry']); // optional id
+    Route::get('queue-failed', [CommandController::class, 'queueFailed']);
+    Route::get('queue-forget/{id}', [CommandController::class, 'queueForget']);
+    Route::get('queue-flush', [CommandController::class, 'queueFlush']);    
 });
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
