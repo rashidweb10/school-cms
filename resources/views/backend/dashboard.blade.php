@@ -9,25 +9,25 @@
     $pageCount = \App\Models\Page::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
-        return $query->where('company_id', config('custom.school_id'));
+        //return $query->where('company_id', config('custom.school_id'));
     })->count();
 
     $teamCount = \App\Models\Team::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
-        return $query->where('company_id', config('custom.school_id'));
+        //return $query->where('company_id', config('custom.school_id'));
     })->count();    
 
     $campusCount = \App\Models\Campus::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
-        return $query->where('company_id', config('custom.school_id'));
+        //return $query->where('company_id', config('custom.school_id'));
     })->count();    
 
     $eventCount = \App\Models\Gallery::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
-        return $query->where('company_id', config('custom.school_id'));
+        //return $query->where('company_id', config('custom.school_id'));
     })->count();     
 
     $mediaCount = \App\Models\Upload::when(auth()->user()?->company_id, function ($query, $companyId) {
@@ -39,7 +39,7 @@
     $formCount = \App\Models\Form::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
-        return $query->where('company_id', config('custom.school_id'));
+        //return $query->where('company_id', config('custom.school_id'));
     })->count();   
      
 @endphp
