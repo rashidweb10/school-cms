@@ -103,7 +103,7 @@
                                                 <img src="{{ asset('assets/frontend/img/glry.png') }}"> GALLERY
                                             </a>
                                             <ul class="submenu">
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Events</a></li>
+                                                <li><a href="{{route('events')}}"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Events</a></li>
                                                 <li><a href="{{route('campus')}}"><img src="{{ asset('assets/frontend/img/camp.png') }}"> Campus</a></li>
                                             </ul>
                                         </li>

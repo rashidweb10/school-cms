@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
-@section('meta.title', "Campus")
-@section('meta.description', "Campus")
+@section('meta.title', "Events")
+@section('meta.description', "Events")
 
 @section('content')
 
@@ -19,11 +19,6 @@
 
 
 <style>
-    .camp_section {
-        padding-bottom: 50px;
-    }
-
-
     .titlt_col {
         padding: 40px 0px 40px 25px;
         background-color: #fdee9d;
@@ -51,13 +46,13 @@
         background-color: #fff;
     }
 
-    .curriculum_container thead tr {
+    /* .curriculum_container thead tr {
         background-color: #fdee9d;
 
-    }
+    } */
 
 
-    .curriculum_container .cri_col-1 {
+    /* .curriculum_container .cri_col-1 {
         text-align: center;
         width: 5%;
         font-weight: normal;
@@ -66,7 +61,7 @@
 
     .curriculum_container .cri_col-6 {
         text-align: center;
-    }
+    } */
 
     .cri-pdf-btn {
         background-color: #fdee9d;
@@ -87,63 +82,35 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 8px 0px 10px 0px;
+        padding: 8px 0px 0px 0px;
+        transform: translateY(-17px);
+
+    }
+
+    .event_box:hover img {
+        transform: scale(1.02);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .event_name p {
+        color: #222;
+        background-color: #ddd;
+        width: 90%;
+        text-align: center;
+        font-weight: 500;
+        border-radius: 8px;
     }
 
     .ev_img_col {
-        padding: 26px 26px 26px 43px;
+        padding: 16px 16px 16px 43px;
         /* background-color: #fdee9d; */
         border-top: 1px solid #fdee9d;
         border-right: 1px solid #fdee9d;
         border-bottom: 1px solid #fdee9d;
     }
-
-
-    .ev_img_col img:hover {
-        transform: scale(1.03);
-        transition: all 0.3s ease-in-out;
-    }
 </style>
 
-@include('frontend.partials.breadcrumb', ['title' => "Campus"])
-
-
-{{--<section class=" camp_section position-relative">
-    <div class="container  curriculum_container">
-        <div class="row">
-            <div class="col-md-2 titlt_col">
-                <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="camp_tabs_1" data-bs-toggle="pill" href="#camp_tab_1" role="tab" aria-controls="camp_tab_1" aria-selected="true">Biology Lab</a>
-                    <a class="nav-link" id="camp_tabs_2" data-bs-toggle="pill" href="#camp_tab_2" role="tab" aria-controls="camp_tab_2" aria-selected="false">Physics Lab</a>
-                </div>
-            </div>
-            <div class="col-md-10 ev_img_col  ">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="camp_tab_1" role="tabpanel" aria-labelledby="camp_tabs_1">
-                        <div class="gallery row g-5">
-                            <div class="event_box col-md-4">
-                                <a href="https://www.nhssthane.com/img_upload/NHSST/1728192387_b77cff732bc1b245134d.jpg" data-fancybox="gallery" data-caption="Event image 1">
-                                    <img src="https://www.nhssthane.com/img_upload/NHSST/1728192387_b77cff732bc1b245134d.jpg" alt=" Event Image 1">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="camp_tab_2" role="tabpanel" aria-labelledby="camp_tabs_2">
-                        <div class="gallery row g-4">
-                            <div class="event_box col-md-4">
-                                <a href="https://www.nhssthane.com/img_upload/NHSST/1728192387_b77cff732bc1b245134d.jpg" class="bounce" data-fancybox="gallery" data-caption="Event image 1">
-                                    <img src="https://www.nhssthane.com/img_upload/NHSST/1728192387_b77cff732bc1b245134d.jpg" alt=" Event Image 1">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>--}}
+@include('frontend.partials.breadcrumb', ['title' => "Events"])
 
 
 <section class="camp_section position-relative">
@@ -153,16 +120,16 @@
       <div class="col-md-2 titlt_col">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             @php $i = 1; @endphp
-            @foreach($pageData as $page)
+            @foreach($pageData as $year)
                 <a class="nav-link {{ $i == 1 ? 'active' : '' }}"
                 id="camp_tabs_{{ $i }}"
-                data-url="{{ route('campus.contents', ['id' => $page->id]) }}"
+                data-url="{{ route('events.contents', ['year' => $year]) }}"
                 data-bs-toggle="pill"
                 href="#camp_dynamic_tab"
                 role="tab"
                 aria-controls="camp_dynamic_tab"
                 aria-selected="{{ $i == 1 ? 'true' : 'false' }}">
-                    {{ $page->name }}
+                    {{ $year }}
                 </a>
                 @php $i++; @endphp
             @endforeach

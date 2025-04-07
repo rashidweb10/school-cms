@@ -9,6 +9,7 @@ use App\Models\Team;
 use App\Models\TeamCategory;
 use App\Models\Company;
 use App\Models\Campus;
+use App\Models\Gallery;
 
 class FrontendController extends Controller
 {
@@ -166,5 +167,27 @@ class FrontendController extends Controller
     
         return view('frontend.pages.campus', compact('pageData'));
     }     
+
+    public function events(Request $request, $year = null)
+    {
+        //tab contents
+        if($year){
+            $pageData = Gallery::where('is_active', 1)
+            ->where('year', $year)
+            ->where('company_id', config('custom.school_id'))
+            ->get();            
+            return view('frontend.pages.events-contents', compact('pageData'));
+        }
+        
+        //page
+        $pageData = Gallery::where('is_active', 1)
+        ->where('company_id', config('custom.school_id'))
+        ->select('year')
+        ->distinct()
+        ->orderBy('year', 'desc') // optional: sort descending
+        ->pluck('year');
+    
+        return view('frontend.pages.events', compact('pageData'));
+    }    
 }
 
