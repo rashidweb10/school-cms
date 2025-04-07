@@ -165,6 +165,54 @@ if (!function_exists('central_asset')) {
 }
 
 
+// if (!function_exists('generateHtmlTableFromCsv')) {
+//     function generateHtmlTableFromCsv($csvFilePath) {
+//         $relativePath = str_replace(url('/storage'), 'storage', $csvFilePath);
+//         $csvFilePath = public_path($relativePath);
+
+//         if (!file_exists($csvFilePath) || !is_readable($csvFilePath)) {
+//             return '<p>Error: File not found or unreadable.</p>';
+//         }
+        
+//         $file = fopen($csvFilePath, 'r');
+//         $headers = fgetcsv($file); // Read the first row as headers
+//         if (!$headers) {
+//             return '<p>Error: Empty CSV file.</p>';
+//         }
+        
+//         $html = '<table class="table table-bordered table-hover">';
+//         $html .= '<thead class="thead-dark"><tr>';
+        
+//         foreach ($headers as $index => $header) {
+//             $className = 'col_' . ($index + 1); // Dynamic class name
+//             $html .= "<th scope='col' class='$className text-center'>" . htmlspecialchars($header) . "</th>";
+//         }
+        
+//         $html .= '</tr></thead><tbody>';
+        
+//         while (($row = fgetcsv($file)) !== false) {
+//             $html .= '<tr>';
+//             foreach ($row as $index => $cell) {
+//                 $className = 'col_' . ($index + 1);
+//                 // Check if the cell contains a URL
+//                 if (filter_var($cell, FILTER_VALIDATE_URL)) {
+//                     $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+//                 } else {
+//                     $cell = htmlspecialchars($cell);
+//                 }
+//                 $html .= "<td class='$className text-center'>$cell</td>";
+//             }
+//             $html .= '</tr>';
+//         }
+        
+//         fclose($file);
+        
+//         $html .= '</tbody></table>';
+        
+//         return $html;
+//     }  
+// }
+
 if (!function_exists('generateHtmlTableFromCsv')) {
     function generateHtmlTableFromCsv($csvFilePath) {
         $relativePath = str_replace(url('/storage'), 'storage', $csvFilePath);
@@ -173,44 +221,55 @@ if (!function_exists('generateHtmlTableFromCsv')) {
         if (!file_exists($csvFilePath) || !is_readable($csvFilePath)) {
             return '<p>Error: File not found or unreadable.</p>';
         }
-        
+
         $file = fopen($csvFilePath, 'r');
-        $headers = fgetcsv($file); // Read the first row as headers
+        $headers = fgetcsv($file);
         if (!$headers) {
             return '<p>Error: Empty CSV file.</p>';
         }
-        
+
         $html = '<table class="table table-bordered table-hover">';
         $html .= '<thead class="thead-dark"><tr>';
-        
+
         foreach ($headers as $index => $header) {
-            $className = 'col_' . ($index + 1); // Dynamic class name
-            $html .= "<th scope='col' class='$className text-center'>" . htmlspecialchars($header) . "</th>";
+            $className = 'col_' . ($index + 1);
+            $html .= "<th scope='col' class='$className text-left'>" . htmlspecialchars($header) . "</th>";
         }
-        
+
         $html .= '</tr></thead><tbody>';
-        
+
         while (($row = fgetcsv($file)) !== false) {
             $html .= '<tr>';
             foreach ($row as $index => $cell) {
                 $className = 'col_' . ($index + 1);
-                // Check if the cell contains a URL
-                if (filter_var($cell, FILTER_VALIDATE_URL)) {
-                    $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+
+                if (filter_var($cell, FILTER_VALIDATE_URL) || preg_match('/^(\/?storage\/)/', $cell)) {
+                    $ext = strtolower(pathinfo(parse_url($cell, PHP_URL_PATH), PATHINFO_EXTENSION));
+                    $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'];
+
+                    if (in_array($ext, $imageExtensions)) {
+                        //$cell = "<img src='" . htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' />";
+                        $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank'><img src='" . htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
+
+                    } else {
+                        $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+                    }
                 } else {
                     $cell = htmlspecialchars($cell);
+                    $cell = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $cell);
+                    $cell = nl2br($cell);
                 }
-                $html .= "<td class='$className text-center'>$cell</td>";
+
+                $html .= "<td class='$className text-left'>$cell</td>";
             }
             $html .= '</tr>';
         }
-        
+
         fclose($file);
-        
         $html .= '</tbody></table>';
-        
+
         return $html;
-    }  
+    }
 }
 
 if (!function_exists('uploaded_asset_name')) {
