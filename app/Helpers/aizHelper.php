@@ -17,17 +17,62 @@ if (!function_exists('my_asset')) {
     }
 }
 
+// if (!function_exists('uploaded_asset')) {
+//     function uploaded_asset($id)
+//     {
+//         $asset = Cache::rememberForever('uploaded_asset_'.$id , function() use ($id) {
+//             return \App\Models\Upload::find($id);
+//         });
+
+//         if ($asset != null) {
+//             return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
+//         }
+//         return static_asset('assets/frontend/img/placeholder.jpg');
+//     }
+// }
 if (!function_exists('uploaded_asset')) {
-    function uploaded_asset($id)
+    function uploaded_asset($id, $thumb = null)
     {
-        $asset = Cache::rememberForever('uploaded_asset_'.$id , function() use ($id) {
+        $asset = Cache::rememberForever('uploaded_asset_' . $id, function () use ($id) {
             return \App\Models\Upload::find($id);
         });
 
-        if ($asset != null) {
-            return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
+        // Fallback if asset not found
+        if ($asset === null) {
+            return static_asset('assets/frontend/img/placeholder.jpg');
         }
-        return static_asset('assets/frontend/img/placeholder.jpg');
+        
+        // Thumbnail Image
+        if ($thumb !== null && $asset->type === 'image') {
+            //var_dump(1);exit;
+            $originalPath = $asset->file_name;
+
+            // Thumbnail sizes mapping
+            $sizes = [
+                0 => [150, 150],
+                1 => [300, 300],
+                2 => [600, 400],
+            ];
+
+            if (isset($sizes[$thumb])) {
+                
+                [$w, $h] = $sizes[$thumb];
+                $pathInfo = pathinfo($originalPath);
+
+                $filename = $pathInfo['filename'];
+                $thumbName = $filename . '.' . $pathInfo['extension'];
+                $thumbRelativePath = 'storage/thumbs/' . "{$w}x{$h}/" . $thumbName;
+
+                // If thumbnail exists, return it
+                if (file_exists(public_path($thumbRelativePath))) {
+                    
+                    return my_asset($thumbRelativePath);
+                }
+            }
+        }
+        
+        // Return original or external
+        return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
     }
 }
 

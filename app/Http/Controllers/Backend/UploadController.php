@@ -125,7 +125,7 @@ class UploadController extends Controller
                 }
 
                 $size = $request->file('aiz_file')->getSize();
-                $path = $request->file('aiz_file')->store('uploads/'.date("Y").'/'.date("m"), 'public');
+                $path = $request->file('aiz_file')->store('uploads/'.date("Y").'/'.date("m"), 'public');                
 
                 $upload->extension = $extension;
                 $upload->file_name = 'storage/'.$path;
@@ -133,6 +133,9 @@ class UploadController extends Controller
                 $upload->type = $type[$upload->extension];
                 $upload->file_size = $size;
                 $upload->save();
+
+                makeImageThumbnail($upload->file_name, 150, 150);
+                makeImageThumbnail($upload->file_name, 300, 300);                
             }
             return '{}';
         }
@@ -273,4 +276,27 @@ class UploadController extends Controller
         $file = Upload::findOrFail($request['id']);
         return view('backend.uploads.info', compact('file'));
     }
+
+    public function generate_all_thumbnails()
+    {
+        // Standard thumbnail sizes
+        $sizes = [
+            [150, 150],
+            [300, 300],
+        ];
+    
+        // Get all image uploads
+        $images = Upload::where('type', 'image')->get();
+    
+        foreach ($images as $image) {
+            foreach ($sizes as [$width, $height]) {
+                makeImageThumbnail($image->file_name, $width, $height);
+            }
+        }
+    
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Thumbnails regenerated for all existing images.'
+        ]);
+    }    
 }

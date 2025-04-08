@@ -15,7 +15,7 @@
                     data-caption="{{ uploaded_asset_name($data->thumbnail) ?? '' }}."
                 >
                     <img 
-                        src="{{ central_asset(uploaded_asset($data->thumbnail)) }}" 
+                        src="{{ central_asset(uploaded_asset($data->thumbnail, 1)) }}" 
                         alt="{{ uploaded_asset_name($data->thumbnail) }}">
                 </a>
 
@@ -31,7 +31,7 @@
                             data-fancybox="gallery_{{ $index }}"
                             data-caption="{{ uploaded_asset_name($image) ?? '' }}."
                             class="d-none">
-                            <img src="{{ central_asset(uploaded_asset($image)) }}" alt="{ uploaded_asset_name($image) ?? '' }}">
+                            <img src="{{ central_asset(uploaded_asset($image, 1)) }}" alt="{ uploaded_asset_name($image) ?? '' }}">
                         </a>
                     @endif
                 @endforeach

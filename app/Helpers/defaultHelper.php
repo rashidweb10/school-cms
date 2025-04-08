@@ -1,6 +1,9 @@
 <?php
 
 use App\Models\Company;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Drivers\Gd\Driver;
 
 if (!function_exists('truncate_text')) {
     /**
@@ -136,20 +139,6 @@ if (!function_exists('getYears')) {
     }
 }
 
-// if (!function_exists('frontend_asset')) {
-//     function frontend_asset($id)
-//     {
-//         $asset = Cache::rememberForever('frontend_asset_'.$id , function() use ($id) {
-//             return \App\Models\Upload::find($id);
-//         });
-
-//         if ($asset != null) {
-//             return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
-//         }
-//         return static_asset('assets/img/placeholder.jpg');
-//     }
-// }
-
 if (!function_exists('central_asset')) {
     function central_asset($path)
     {
@@ -163,55 +152,6 @@ if (!function_exists('central_asset')) {
         return $baseUrl . '/' . ltrim($path, '/');
     }
 }
-
-
-// if (!function_exists('generateHtmlTableFromCsv')) {
-//     function generateHtmlTableFromCsv($csvFilePath) {
-//         $relativePath = str_replace(url('/storage'), 'storage', $csvFilePath);
-//         $csvFilePath = public_path($relativePath);
-
-//         if (!file_exists($csvFilePath) || !is_readable($csvFilePath)) {
-//             return '<p>Error: File not found or unreadable.</p>';
-//         }
-        
-//         $file = fopen($csvFilePath, 'r');
-//         $headers = fgetcsv($file); // Read the first row as headers
-//         if (!$headers) {
-//             return '<p>Error: Empty CSV file.</p>';
-//         }
-        
-//         $html = '<table class="table table-bordered table-hover">';
-//         $html .= '<thead class="thead-dark"><tr>';
-        
-//         foreach ($headers as $index => $header) {
-//             $className = 'col_' . ($index + 1); // Dynamic class name
-//             $html .= "<th scope='col' class='$className text-center'>" . htmlspecialchars($header) . "</th>";
-//         }
-        
-//         $html .= '</tr></thead><tbody>';
-        
-//         while (($row = fgetcsv($file)) !== false) {
-//             $html .= '<tr>';
-//             foreach ($row as $index => $cell) {
-//                 $className = 'col_' . ($index + 1);
-//                 // Check if the cell contains a URL
-//                 if (filter_var($cell, FILTER_VALIDATE_URL)) {
-//                     $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
-//                 } else {
-//                     $cell = htmlspecialchars($cell);
-//                 }
-//                 $html .= "<td class='$className text-center'>$cell</td>";
-//             }
-//             $html .= '</tr>';
-//         }
-        
-//         fclose($file);
-        
-//         $html .= '</tbody></table>';
-        
-//         return $html;
-//     }  
-// }
 
 if (!function_exists('generateHtmlTableFromCsv')) {
     function generateHtmlTableFromCsv($csvFilePath) {
@@ -299,25 +239,6 @@ if (!function_exists('uploaded_asset_name')) {
     }
 }
 
-
-// if (!function_exists('get_setting')) {
-//     function get_setting($metaKey, $default = null) {
-//         $company = \App\Models\Company::with('meta')->where('id', config('custom.school_id'))->first();
-
-//         if (!$company) {
-//             return $default;
-//         }
-
-//         // First, check if the column exists in the companies table
-//         if (isset($company->$metaKey)) {
-//             return $company->$metaKey;
-//         }
-
-//         // Otherwise, check the meta table
-//         return $company->meta->where('meta_key', $metaKey)->first()->meta_value ?? $default;
-//     }
-// }
-
 if (!function_exists('get_setting')) {
     function get_setting($metaKey, $default = null) {
         return \Illuminate\Support\Facades\Cache::rememberForever("setting_" . config('custom.school_id') . "_{$metaKey}", function () use ($metaKey, $default) {
@@ -335,5 +256,84 @@ if (!function_exists('get_setting')) {
             // Otherwise, check the meta table
             return $company->meta->where('meta_key', $metaKey)->first()->meta_value ?? $default;
         });
+    }
+}
+
+// if (!function_exists('makeImageThumbnail')) {
+//     function makeImageThumbnail($relativePath, $width = 150, $height = 150, $quality = 80) {
+        
+//         try {
+
+//             $publicPath = public_path($relativePath);
+
+//             if (!file_exists($publicPath)) {
+//                 return null;
+//             }
+
+//             $pathInfo = pathinfo($relativePath);
+//             $originalFileName = $pathInfo['filename'] . '.' . $pathInfo['extension'];
+//             $thumbDir = "storage/thumbs/{$width}x{$height}";
+//             $thumbRelativePath = "$thumbDir/{$originalFileName}";
+//             $thumbPublicPath = public_path($thumbRelativePath);
+
+//             // Create thumbnail only if it doesn't exist
+//             if (!file_exists($thumbPublicPath)) {
+//                 $manager = new ImageManager(new Driver());
+
+//                 // Ensure thumbnail directory exists
+//                 if (!file_exists(public_path($thumbDir))) {
+//                     mkdir(public_path($thumbDir), 0777, true);
+//                 }
+
+//                 // Resize + crop using cover (like object-fit: cover)
+//                 $manager->read($publicPath)
+//                     ->cover($width, $height)
+//                     ->save($thumbPublicPath, $quality);
+//             }
+
+//             return asset($thumbRelativePath);
+
+//         } catch (\Throwable $e) {
+//             return null;
+//         }
+//     }
+// }
+
+if (!function_exists('makeImageThumbnail')) {
+    function makeImageThumbnail($relativePath, $width = 150, $height = 150, $quality = 80) {
+        try {
+            $publicPath = public_path($relativePath);
+
+            if (!file_exists($publicPath)) {
+                return null;
+            }
+
+            $pathInfo = pathinfo($relativePath);
+            $originalFileName = $pathInfo['basename']; // abc.jpg
+
+            // Thumbnail directory (e.g., storage/thumbs/150x150/)
+            $thumbDir = "storage/thumbs/{$width}x{$height}";
+            $thumbRelativePath = "{$thumbDir}/{$originalFileName}";
+            $thumbPublicPath = public_path($thumbRelativePath);
+
+            // Create the directory if it doesn't exist
+            if (!file_exists(public_path($thumbDir))) {
+                mkdir(public_path($thumbDir), 0777, true);
+            }
+
+            // Only create thumbnail if it doesn't exist
+            if (!file_exists($thumbPublicPath)) {
+                $manager = new ImageManager(new Driver());
+
+                $manager->read($publicPath)
+                    ->cover($width, $height)
+                    ->save($thumbPublicPath, $quality);
+            }
+
+            return asset($thumbRelativePath);
+
+        } catch (\Throwable $e) {
+            return null;
+        }
     }
 }
