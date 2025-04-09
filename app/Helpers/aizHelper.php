@@ -64,10 +64,23 @@ if (!function_exists('uploaded_asset')) {
                 $thumbRelativePath = 'storage/thumbs/' . "{$w}x{$h}/" . $thumbName;
 
                 // If thumbnail exists, return it
-                if (file_exists(public_path($thumbRelativePath))) {
+                // if (file_exists(public_path($thumbRelativePath))) {
                     
-                    return my_asset($thumbRelativePath);
+                //     return my_asset($thumbRelativePath);
+                // }
+                // If thumbnail exists, return it
+                $remoteUrl = rtrim(config('custom.assets_url'), '/') . '/' . ltrim($thumbRelativePath, '/');
+                $cacheKey = 'remote_thumb_exists_' . md5($thumbRelativePath);
+
+                $exists = Cache::remember($cacheKey, 86400, function () use ($remoteUrl) {
+                    $headers = @get_headers($remoteUrl);
+                    return $headers && strpos($headers[0], '200') !== false;
+                });
+
+                if ($exists) {
+                    return $remoteUrl;
                 }
+
             }
         }
         
