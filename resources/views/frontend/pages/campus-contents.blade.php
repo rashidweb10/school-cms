@@ -13,7 +13,7 @@
 @if(!empty($gallery_images))
     <div class="gallery row g-4">
         @foreach($gallery_images as $index => $id)
-            <div class="event_box col-md-4">
+            <div class="event_box col-md-3">
                 <a href="{{ central_asset(uploaded_asset($id)) }}" class="bounce" data-fancybox="gallery" data-caption="{{ uploaded_asset_name($id) }}">
                     <img src="{{ central_asset(uploaded_asset($id, 1)) }}" alt="{{ uploaded_asset_name($id) }}">
                 </a>

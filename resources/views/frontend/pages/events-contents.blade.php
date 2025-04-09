@@ -5,7 +5,7 @@
             @php
                 $gallery_images = array_filter(explode(',', $data->gallery ?? ''));
             @endphp        
-            <div class="event_box col-md-4">
+            <div class="event_box col-md-3">
 
                 {{-- Thumbnail --}}
                 <a 
