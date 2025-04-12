@@ -128,7 +128,7 @@
         @endphp
 
         <li class="side-nav-item">
-            <a href="{{ rtrim($baseUrl, '/') . '/command/optimize-clear?back=true' }}" class="side-nav-link">
+            <a target="_blank" href="{{ rtrim($baseUrl, '/') . '/command/optimize-clear?back=true' }}" class="side-nav-link">
                 <span class="menu-icon"><i class="ti ti-refresh"></i></span>
                 <span class="menu-text"> Clear Cache </span>
             </a>
