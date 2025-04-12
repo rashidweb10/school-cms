@@ -10,6 +10,7 @@ use App\Models\TeamCategory;
 use App\Models\Company;
 use App\Models\Campus;
 use App\Models\Gallery;
+use Illuminate\Support\Facades\Cache;
 
 class FrontendController extends Controller
 {
@@ -171,13 +172,26 @@ class FrontendController extends Controller
     public function events(Request $request, $year = null)
     {
         //tab contents
-        if($year){
-            $pageData = Gallery::where('is_active', 1)
-            ->where('year', $year)
-            ->where('company_id', config('custom.school_id'))
-            ->get();            
+        // if($year){
+        //     $pageData = Gallery::where('is_active', 1)
+        //     ->where('year', $year)
+        //     ->where('company_id', config('custom.school_id'))
+        //     ->get();            
+        //     return view('frontend.pages.events-contents', compact('pageData'));
+        // }
+
+        if ($year) {
+            $cacheKey = 'gallery_' . $year;
+        
+            $pageData = Cache::remember($cacheKey, now()->addMinutes(10), function () use ($year) {
+                return Gallery::where('is_active', 1)
+                    ->where('year', $year)
+                    ->where('company_id', config('custom.school_id'))
+                    ->get();
+            });
+        
             return view('frontend.pages.events-contents', compact('pageData'));
-        }
+        }        
         
         //page
         $pageData = Gallery::where('is_active', 1)
