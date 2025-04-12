@@ -118,7 +118,14 @@ class CommandController extends Controller
         Artisan::call('optimize:clear');
 
         if ($request->has('back') && $request->boolean('back')) {
-            //return redirect()->back()->with('success', 'Optimize cleared successfully.');
+            return response()->make(
+                '<script>
+                    alert("Cache cleared successfully.");
+                    window.close();
+                </script>',
+                200,
+                ['Content-Type' => 'text/html']
+            );
         }
 
         return 'Optimize cleared successfully.';
