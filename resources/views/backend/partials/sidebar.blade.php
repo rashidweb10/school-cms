@@ -115,7 +115,25 @@
                 <span class="menu-icon"><i class="ti ti-message-question"></i></span>
                 <span class="menu-text"> Form Submissions </span>
             </a>
-        </li>        
+        </li>   
+        
+        @php
+            //use Illuminate\Support\Facades\DB;
+
+            $companyId = auth()->user()->company_id;
+
+            $baseUrl = $companyId
+                ? DB::table('companies')->where('id', $companyId)->value('website')
+                : config('app.url'); // fallback to your APP_URL in .env
+        @endphp
+
+        <li class="side-nav-item">
+            <a href="{{ rtrim($baseUrl, '/') . '/command/optimize-clear?back=true' }}" class="side-nav-link">
+                <span class="menu-icon"><i class="ti ti-refresh"></i></span>
+                <span class="menu-text"> Clear Cache </span>
+            </a>
+        </li>
+       
 
     </ul>
     <div class="clearfix"></div>

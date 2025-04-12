@@ -113,9 +113,14 @@ class CommandController extends Controller
         return 'Flushed all failed jobs.';
     }  
     
-    public function optimizeClear()
+    public function optimizeClear(Request $request)
     {
         Artisan::call('optimize:clear');
+
+        if ($request->has('back') && $request->boolean('back')) {
+            return redirect()->back()->with('status', 'Optimize cleared successfully.');
+        }
+
         return 'Optimize cleared successfully.';
     }    
 }
