@@ -373,7 +373,19 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                                 placeholder="Enter Title" 
                                 required>
                         </div>
-                    </div>                                      
+                    </div>  
+                    <div class="col-md">
+                        <div class="form-group mb-2">
+                            <input value="{{ $home_classrooms['url'][$index] ?? '' }}" 
+                                name="meta[home_classrooms][url][]" 
+                                type="text" 
+                                class="form-control" 
+                                minlength="1" 
+                                maxlength="200" 
+                                placeholder="Enter URL" 
+                                required>
+                        </div>
+                    </div>                                                        
                     <div class="col-md-auto">
                         <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                             <i class="ti ti-x"></i>
@@ -409,7 +421,12 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                     <div class="form-group mb-2">
                         <input value="" name="meta[home_classrooms][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter Title" required>
                     </div>
-                </div>                              
+                </div> 
+                <div class="col-md">
+                    <div class="form-group mb-2">
+                        <input value="" name="meta[home_classrooms][url][]" type="text" class="form-control" minlength="1" maxlength="200" placeholder="Enter URL" required>
+                    </div>
+                </div>                                             
                 <div class="col-md-auto">
                     <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                         <i class="ti ti-x"></i>
@@ -471,7 +488,7 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                                 name="meta[home_updates][url][]" 
                                 type="text" 
                                 class="form-control" 
-                                minlength="3" 
+                                minlength="1" 
                                 maxlength="200" 
                                 placeholder="Enter URL" 
                                 required>
@@ -520,7 +537,7 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                 </div>
                 <div class="col-md">
                     <div class="form-group mb-2">
-                        <input value="" name="meta[home_updates][url][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter URL" required>
+                        <input value="" name="meta[home_updates][url][]" type="text" class="form-control" minlength="1" maxlength="200" placeholder="Enter URL" required>
                     </div>
                 </div>                              
                 <div class="col-md-auto">
@@ -589,7 +606,7 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                                 name="meta[home_quicklinks][url][]" 
                                 type="text" 
                                 class="form-control" 
-                                minlength="3" 
+                                minlength="1" 
                                 maxlength="200" 
                                 placeholder="Enter URL" 
                                 required>
@@ -633,7 +650,7 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
                 </div>
                 <div class="col-md">
                     <div class="form-group mb-2">
-                        <input value="" name="meta[home_quicklinks][url][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Enter URL" required>
+                        <input value="" name="meta[home_quicklinks][url][]" type="text" class="form-control" minlength="1" maxlength="200" placeholder="Enter URL" required>
                     </div>
                 </div>                              
                 <div class="col-md-auto">

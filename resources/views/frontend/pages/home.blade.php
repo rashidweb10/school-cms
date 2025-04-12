@@ -219,12 +219,14 @@
           
             @foreach($home_classrooms['itration'] as $index => $itration)
               <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                <a class="text-decoration-none text-dark" href="{{$home_classrooms['url'][$index]}}">
                 <div class="classroom_box border_2 position-relative">
                   <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($home_classrooms['image'][$index])) }}" alt="Image 1">
                   <div class=" text-center pt-3">
                     <p class="centered-text roboto">{{$home_classrooms['title'][$index]}}</p>
                   </div>
                 </div>
+                </a>
               </div>
             @endforeach
           
@@ -247,6 +249,7 @@
           
             @foreach($home_updates['itration'] as $index => $itration)          
               <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                <a class="text-decoration-none text-dark" href="{{$home_updates['url'][$index]}}">
                 <div class="news_box">
                     <div class="news_img"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_updates['image'][$index])) }}" alt="Image 1"></div>
                     <div class=" text-center pt-3">
@@ -254,6 +257,7 @@
                     <p class="centered-text roboto">{{$home_updates['description'][$index]}}</p>
                   </div>
                 </div>
+                </a>
               </div>
             @endforeach
           
@@ -277,12 +281,14 @@
           
           @foreach($home_quicklinks['itration'] as $index => $itration)          
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-              <div class="quick_link_box">
-                  <div class="quickimg"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_quicklinks['icon'][$index])) }}" alt="Image 1"></div>
-              </div>
-               <div class=" text-center pt-3">
+              <a class="text-decoration-none text-dark" href="{{$home_quicklinks['url'][$index]}}">
+                <div class="quick_link_box">
+                    <div class="quickimg"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_quicklinks['icon'][$index])) }}" alt="Image 1"></div>
+                </div>
+                <div class=" text-center pt-3">
                   <p class="centered-text roboto">{{$home_quicklinks['title'][$index]}}</p>
                 </div>
+              </a>
             </div>
           @endforeach
            

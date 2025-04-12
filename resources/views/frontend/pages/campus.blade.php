@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
-@section('meta.title', "Campus")
-@section('meta.description', "Campus")
+@section('meta.title', "Campus - ". get_setting('name'))
+@section('meta.description', "Campus - ".get_setting('name'))
 
 @section('content')
 
