@@ -54,37 +54,43 @@
     @include('backend.includes.dashboard-card', [
         'name' => 'Pages',
         'icon' => 'ti ti-pencil',
-        'count' => $pageCount
+        'count' => $pageCount,
+        'url' => route('pages.index'),
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Teams',
         'icon' => 'ti ti-users',
-        'count' => $teamCount
+        'count' => $teamCount,
+        'url' => route('teams.index'),
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Campus',
         'icon' => 'ti ti-building',
-        'count' => $campusCount
+        'count' => $campusCount,
+        'url' => route('campuses.index'),
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Event Galleries',
         'icon' => 'ti ti-library-photo',
-        'count' => $eventCount
+        'count' => $eventCount,
+        'url' => route('galleries.index'),
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Media Uploads',
         'icon' => 'ti ti-file-upload',
-        'count' => $mediaCount
+        'count' => $mediaCount,
+        'url' => route('uploaded-files.index'),
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Form Submissions',
         'icon' => 'ti ti-message-question',
-        'count' => $formCount
+        'count' => $formCount,
+        'url' => route('forms.by', ['form_name' => (auth()->user()->company_id == 1) ? 'admission' : 'contact']),
     ])
 </div>
 @endsection

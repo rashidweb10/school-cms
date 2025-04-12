@@ -57,7 +57,7 @@ class PageController extends Controller
 
         $query->orderBy('id', 'desc');
     
-        $pageData = $query->paginate(5);
+        $pageData = $query->paginate(25);
     
         // Get dropdown data for companies
         $companyList = getCompanyList();

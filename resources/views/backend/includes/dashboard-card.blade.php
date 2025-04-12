@@ -1,6 +1,7 @@
 <div class="col-3">
     <div class="card overflow-hidden">
         <div class="card-body">
+            <a href="{{ $url }}">
             <h5 class="text-muted fs-13 text-uppercase" title="{{ $name }}">{{ $name }}</h5>
             <div class="d-flex align-items-center gap-2 my-2 py-1">
                 <div class="user-img fs-42 flex-shrink-0">
@@ -8,8 +9,9 @@
                         <i class="{{ $icon }}"></i>
                     </span>
                 </div>
-                <h3 class="mb-0 fw-bold">{{ $count }}</h3>
+                <h3 class="mb-0 fw-bold text-dark">{{ $count }}</h3>
             </div>
+            </a>
         </div>
     </div>
 </div>
