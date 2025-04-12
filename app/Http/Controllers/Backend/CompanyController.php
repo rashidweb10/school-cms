@@ -101,6 +101,7 @@ class CompanyController extends Controller
             $company->email = $request->input('email');
             $company->phone = $request->input('phone');
             $company->address = $request->input('address');
+            $company->website = $request->input('website');
             $company->google_map = $request->input('google_map');
             $company->meta_title = $request->input('meta_title');
             $company->meta_description = $request->input('meta_description');

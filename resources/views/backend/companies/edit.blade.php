@@ -39,7 +39,7 @@
                     </div>                    
                     <div class="mb-3 mt-1 form-group">
                         <label for="company-website" class="form-label">Website <span class="text-danger">*</span></label>
-                        <input type="url" id="company-website" name="website" value="{{ old('website', $pageData->website) }}" class="form-control" placeholder="" required>
+                        <input type="url" id="company-website" name="website" value="{{ $pageData->website }}" class="form-control" placeholder="" required>
                     </div>                    
                     <div class="mb-3 form-group">
                         <label for="company-email" class="form-label">Email <span class="text-danger">*</span></label>
