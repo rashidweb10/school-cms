@@ -7,6 +7,40 @@
 <script src="{{ asset('assets/frontend/js/swiper.min.js') }}"></script>
 <!-- Fancybox JS -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{ config('custom.recaptcha_site_key') }}"></script>
+<script>
+    function protect_with_recaptcha_v3(formElement, action) {
+        event.preventDefault();
+
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ config('custom.recaptcha_site_key') }}', { action: action }).then(function (token) {
+                // Create or update recaptcha_token input
+                let tokenInput = formElement.querySelector('[name="recaptcha_token"]');
+                if (!tokenInput) {
+                    tokenInput = document.createElement('input');
+                    tokenInput.type = 'hidden';
+                    tokenInput.name = 'recaptcha_token';
+                    formElement.appendChild(tokenInput);
+                }
+                tokenInput.value = token;
+
+                //alert(token);
+
+                // Create or update recaptcha_action input
+                let actionInput = formElement.querySelector('[name="recaptcha_action"]');
+                if (!actionInput) {
+                    actionInput = document.createElement('input');
+                    actionInput.type = 'hidden';
+                    actionInput.name = 'recaptcha_action';
+                    formElement.appendChild(actionInput);
+                }
+                actionInput.value = action;
+
+                formElement.submit();
+            });
+        });
+    }
+</script>
 
 
 <script>
@@ -51,25 +85,51 @@
   //   },
   // });
 
+  // var a = 0;
+  // $(window).scroll(function() {
+  //   var oTop = $('#counter').offset().top - window.innerHeight;
+  //   if (a == 0 && $(window).scrollTop() > oTop) {
+  //     $('.counter-value').each(function() {
+  //       var $this = $(this),
+  //           countTo = $this.attr('data-count');
+  //       $( { countNum: $this.text() }).animate({ countNum: countTo }, {
+  //         duration: 2000,
+  //         easing: 'swing',
+  //         step: function() {
+  //           $this.text(Math.floor(this.countNum));
+  //         },
+  //         complete: function() {
+  //           $this.text(this.countNum);
+  //         }
+  //       });
+  //     });
+  //     a = 1;
+  //   }
+  // });
+
   var a = 0;
-  $(window).scroll(function() {
-    var oTop = $('#counter').offset().top - window.innerHeight;
-    if (a == 0 && $(window).scrollTop() > oTop) {
-      $('.counter-value').each(function() {
-        var $this = $(this),
-            countTo = $this.attr('data-count');
-        $( { countNum: $this.text() }).animate({ countNum: countTo }, {
-          duration: 2000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-          }
-        });
+$(window).scroll(function() {
+  var $counter = $('#counter');
+  if ($counter.length === 0) return; // exit if #counter does not exist
+
+  var oTop = $counter.offset().top - window.innerHeight;
+  if (a === 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
+      var $this = $(this),
+          countTo = $this.attr('data-count');
+      $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+        duration: 2000,
+        easing: 'swing',
+        step: function() {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function() {
+          $this.text(this.countNum);
+        }
       });
-      a = 1;
-    }
-  });
+    });
+    a = 1;
+  }
+});
+
 </script>

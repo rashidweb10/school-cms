@@ -60,7 +60,7 @@
                 <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p>
                 
                 <!-- ✅ School Admission Form -->
-                <form method="post" action="{{ route('form.submit') }}" id="admissionForm">
+                <form method="post" action="{{ route('form.submit') }}" id="admissionForm" onsubmit="protect_with_recaptcha_v3(this, 'admission')">
                   @include('frontend.components.form-alert')
                   @csrf
                   <input type="hidden" name="form_name" value="admission">

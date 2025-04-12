@@ -33,5 +33,5 @@
         scrollTop: $(".form-message-section").offset().top - 100 // adjust offset as needed
       }, 500);
     }
-  }, 1000);
+  }, 1500);
 </script>

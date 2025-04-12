@@ -9,6 +9,7 @@ use App\Http\Middleware\RedirectIfNotAuthenticated;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\AllowBackendAccess;
 use App\Http\Middleware\ProtectForms;
+use App\Http\Middleware\VerifyRecaptcha;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -30,7 +31,10 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);  
         $middleware->appendToGroup('protect.forms', [
             ProtectForms::class
-        ]);                
+        ]);   
+        $middleware->appendToGroup('recaptcha', [
+            VerifyRecaptcha::class
+        ]);                     
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

@@ -73,14 +73,14 @@ Route::get('/contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
 
-Route::post('/submit-form', [FormController::class, 'submit'])->middleware(['protect.forms','throttle:3,1'])->name('form.submit');
+Route::post('/submit-form', [FormController::class, 'submit'])->middleware(['protect.forms','recaptcha','throttle:3,1'])->name('form.submit');
 
 // Group routes under the 'backend' prefix
 Route::prefix('backend')->group(function () {
 
     // Public login/logout routes
     Route::get('/login', [AuthController::class, 'showLoginForm'])->middleware(['auth.guest', 'auth.backend.access'])->name('backend.login');
-    Route::post('/login', [AuthController::class, 'login'])->name('backend.login.submit');
+    Route::post('/login', [AuthController::class, 'login'])->middleware(['recaptcha','throttle:10,60'])->name('backend.login.submit');
     Route::get('/logout', [AuthController::class, 'logout'])->name('backend.logout');
 
     // Authenticated admin routes

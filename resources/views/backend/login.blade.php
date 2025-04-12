@@ -25,7 +25,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('backend.login.submit') }}" method="POST" class="text-start mb-3">
+                <form action="{{ route('backend.login.submit') }}" method="POST" onsubmit="protect_with_recaptcha_v3(this, 'login')" class="text-start mb-3">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label" for="email">Email</label>

@@ -66,7 +66,7 @@
           <div class="card-body p-4 p-md-4">
 
           <!-- ✅ Contact Form -->
-            <form method="post" action="{{route('form.submit')}}" id="contactForm">
+            <form method="post" action="{{route('form.submit')}}" id="contactForm" onsubmit="protect_with_recaptcha_v3(this, 'contact')">
                @include('frontend.components.form-alert')
                @csrf
               <input type="hidden" name="form_name" value="contact">

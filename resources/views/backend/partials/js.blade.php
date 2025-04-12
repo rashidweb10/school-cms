@@ -76,3 +76,39 @@
 
 <!-- Backend JS -->
 <script src="{{ asset('assets/backend/js/backend.js') }}"></script>
+
+<!-- Recaptcha v3 JS -->
+<script src="https://www.google.com/recaptcha/api.js?render={{ config('custom.recaptcha_site_key') }}"></script>
+<script>
+    function protect_with_recaptcha_v3(formElement, action) {
+        event.preventDefault();
+
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ config('custom.recaptcha_site_key') }}', { action: action }).then(function (token) {
+                // Create or update recaptcha_token input
+                let tokenInput = formElement.querySelector('[name="recaptcha_token"]');
+                if (!tokenInput) {
+                    tokenInput = document.createElement('input');
+                    tokenInput.type = 'hidden';
+                    tokenInput.name = 'recaptcha_token';
+                    formElement.appendChild(tokenInput);
+                }
+                tokenInput.value = token;
+
+                //alert(token);
+
+                // Create or update recaptcha_action input
+                let actionInput = formElement.querySelector('[name="recaptcha_action"]');
+                if (!actionInput) {
+                    actionInput = document.createElement('input');
+                    actionInput.type = 'hidden';
+                    actionInput.name = 'recaptcha_action';
+                    formElement.appendChild(actionInput);
+                }
+                actionInput.value = action;
+
+                formElement.submit();
+            });
+        });
+    }
+</script>

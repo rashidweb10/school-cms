@@ -59,7 +59,7 @@ class ProtectForms
         } 
         
         // ✅ 5. File upload validation for forms like career, etc.
-        if ($request->hasFile()) {
+        //if ($request->hasFile()) {
             foreach ($request->files as $key => $file) {
                 if (!$file->isValid()) {
                     Log::warning("Invalid file upload in '$key' from IP: $ip");
@@ -87,7 +87,7 @@ class ProtectForms
                 //     abort(403, 'File too large. Max 2MB allowed.');
                 // }
             }
-        }        
+        //}        
 
         // ✅ Optional: If you're using reCAPTCHA v3, you can validate here
         // (Let me know if you want that too)
