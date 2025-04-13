@@ -76,8 +76,10 @@ $circularSlugs = DB::table('pages')
     ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
     ->implode('|');  // Combine slugs into a regular expression pattern
 
+$circularSlugs = $circularSlugs ?: 'nonexistent_slug_that_will_never_match';    
+
 Route::get('{slug}', [FrontendController::class, 'circulars'])
-    ->where('slug', $circularSlugs);
+    ->where('slug', $circularSlugs ?? 'none');
 
 Route::get('/contact', function () {
     return view('frontend.pages.contact');
