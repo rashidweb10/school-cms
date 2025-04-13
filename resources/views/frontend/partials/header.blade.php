@@ -112,6 +112,7 @@
                                     $circulars = DB::table('pages')->where('is_active', 1)
                                         ->where('layout', 'circulars')
                                         ->where('company_id', config('custom.school_id'))
+                                        ->orderBy('id', 'desc')
                                         ->get();                                    
                                     @endphp
                                     <ul class="menu nav-item">
@@ -119,6 +120,7 @@
                                         <a href="javascript:void(0)" class="nav-link robot_slab">
                                             <img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> CIRCULARS
                                         </a>
+                                        @if($circulars->isNotEmpty())
                                         <ul class="submenu">
                                             @foreach($circulars as $item)
                                                 <li>
@@ -129,6 +131,7 @@
                                                 </li>
                                             @endforeach
                                         </ul>
+                                        @endif
                                         </li>
                                     </ul>
 
