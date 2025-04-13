@@ -70,8 +70,12 @@ Route::get('/campus-facilities/{id}', [FrontendController::class, 'campus'])->na
 Route::get('/events', [FrontendController::class, 'events'])->name('events');
 Route::get('/events/{year}', [FrontendController::class, 'events'])->name('events.contents');
 
-$circularSlugs = DB::table('pages')->where('layout', 'circulars')->pluck('slug')->toArray();
-$circularSlugs = implode('|', $circularSlugs);
+$circularSlugs = DB::table('pages')
+    ->where('layout', 'circulars')
+    ->pluck('slug')
+    ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
+    ->implode('|');  // Combine slugs into a regular expression pattern
+
 Route::get('{slug}', [FrontendController::class, 'circulars'])
     ->where('slug', $circularSlugs);
 
