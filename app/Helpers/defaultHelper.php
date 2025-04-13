@@ -165,7 +165,8 @@ if (!function_exists('generateHtmlTableFromCsv')) {
         $file = fopen($csvFilePath, 'r');
         $headers = fgetcsv($file);
         if (!$headers) {
-            return '<p>Error: Empty CSV file.</p>';
+            //return '<p>Error: Empty CSV file.</p>';
+            return '<p>Data Not Found</p>';
         }
 
         $html = '<table class="table table-bordered table-hover">';

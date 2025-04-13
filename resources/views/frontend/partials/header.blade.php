@@ -108,19 +108,27 @@
                                             </ul>
                                         </li>
                                     </ul>
-
+                                    @php 
+                                    $circulars = DB::table('pages')->where('is_active', 1)
+                                        ->where('layout', 'circulars')
+                                        ->where('company_id', config('custom.school_id'))
+                                        ->get();                                    
+                                    @endphp
                                     <ul class="menu nav-item">
                                         <li>
-                                            <a href="#" class="nav-link robot_slab">
-                                                <img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> CIRCULARS
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/right_a.png') }}"> 2024-2025</a></li>
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/right_a.png') }}"> 2023-2024</a></li>
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/right_a.png') }}"> 2022-2023</a></li>
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/right_a.png') }}"> 2021-2022</a></li>
-                                                <li><a href="#"><img src="{{ asset('assets/frontend/img/right_a.png') }}"> 2020-2021</a></li>
-                                            </ul>
+                                        <a href="javascript:void(0)" class="nav-link robot_slab">
+                                            <img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> CIRCULARS
+                                        </a>
+                                        <ul class="submenu">
+                                            @foreach($circulars as $item)
+                                                <li>
+                                                    <a href="{{ url($item->slug) }}">
+                                                        <img src="{{ asset('assets/frontend/img/right_a.png') }}">
+                                                        {{ $item->title }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                         </li>
                                     </ul>
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 //Backend
 use App\Http\Controllers\CommandController;
@@ -68,6 +69,11 @@ Route::get('/campus-facilities/{id}', [FrontendController::class, 'campus'])->na
 
 Route::get('/events', [FrontendController::class, 'events'])->name('events');
 Route::get('/events/{year}', [FrontendController::class, 'events'])->name('events.contents');
+
+$circularSlugs = DB::table('pages')->where('layout', 'circulars')->pluck('slug')->toArray();
+$circularSlugs = implode('|', $circularSlugs);
+Route::get('{slug}', [FrontendController::class, 'circulars'])
+    ->where('slug', $circularSlugs);
 
 Route::get('/contact', function () {
     return view('frontend.pages.contact');

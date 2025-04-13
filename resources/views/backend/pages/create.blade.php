@@ -39,6 +39,23 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="text-uppercase mt-0 mb-2 bg-light p-2">Setting Section</h5>
+
+                    <!-- Layout Dropdown -->
+                    <div class="form-group mb-2">
+                        <label for="layout" class="form-label">Layout <span class="text-danger">*</span></label>
+                        @php
+                            $layouts = ['default'];
+                        @endphp
+
+                        <select name="layout" class="form-select select2" required>
+                            @foreach ($layouts as $layout)
+                                <option value="{{ $layout }}">
+                                    {{ ucfirst($layout) }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div> 
+
                     <div class="mb-2 form-group">
                         <label for="slug" class="form-label">Slug <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}" placeholder="Enter Slug" required>

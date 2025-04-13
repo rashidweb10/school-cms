@@ -46,9 +46,27 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="text-uppercase mt-0 mb-2 bg-light p-2">Setting Section</h5>
+
+                    <!-- Layout Dropdown -->
+                    <div class="form-group mb-2">
+                        <label for="layout" class="form-label">Layout <span class="text-danger">*</span></label>
+                        @php
+                            $layouts = ['default', 'home', 'landing', 'about', 'admission', 'curriculum', 'results', 'circulars', 'achivements'];
+                        @endphp
+
+                        <select name="layout" class="form-select select2" required>
+                            <option value="">-- Select Layout --</option>
+                            @foreach ($layouts as $layout)
+                                <option value="{{ $layout }}" {{ (isset($pageData) && $pageData->layout === $layout) ? 'selected' : '' }}>
+                                    {{ ucfirst($layout) }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div> 
+
                     <div class="mb-2 form-group">
                         <label for="slug" class="form-label">Slug <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if($pageData->layout != 'default') readonly @endif required>
+                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if( !in_array($pageData->layout, ['default', 'circulars']) ) readonly @endif required>
                     </div>
 
                     <!-- Company Dropdown -->
