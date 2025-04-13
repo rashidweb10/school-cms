@@ -51,7 +51,8 @@ class PageController extends Controller
             $query->where(function($query) use ($search) {
                 $query->where('title', 'like', '%'.$search.'%')
                     ->orWhere('slug', 'like', '%'.$search.'%')
-                    ->orWhere('content', 'like', '%'.$search.'%');
+                    ->orWhere('content', 'like', '%'.$search.'%')
+                    ->orWhere('layout', 'like', '%'.$search.'%');
             });
         }      
 

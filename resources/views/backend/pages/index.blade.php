@@ -26,7 +26,7 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="search" class="form-control" value="{{request()->get('search')}}" placeholder="search with Name & year">
+                                <input type="text" name="search" class="form-control" value="{{request()->get('search')}}" placeholder="search">
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-success btn-icon w-100">
