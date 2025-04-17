@@ -8,11 +8,24 @@
 </div>
 @include('backend.includes.alert-message')
 <div class="row">
+    
+    <!-- Menu Manage -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body p-1">
+                <div class="col-md-2">
+                    <button onclick="smallModal('{{url(route($module . '.group.create'))}}', '{{__('Create a new menu')}}')"
+                    class="btn btn-link btn-icon w-100">{{__("Create a new menu")}}</button>        
+                </div>
+            </div>
+        </div>            
+    </div>
+
     <!-- Menu Form -->
     <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="bg-light p-2 mt-0 mb-2">Manage Menu Items</h5>
+                <h5 class="fw-bold">{{__("Create Menu Item")}}</h5>
                 <form method="post" id="menu-form" action="{{route('menu.store')}}" class="form">
                     @csrf
                     <input type="hidden" name="id" id="menu-id">
@@ -42,7 +55,7 @@
 
                     <input type="hidden" name="parent_id" id="parent_id">
                     <div class="text-end">
-                        <button type="submit" class="btn btn-primary btn-sm">Add to Menu</button>
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="ti ti-plus"></i> {{__("Add to Menu")}}</button>
                     </div>
                 </form>                
             </div>
@@ -53,9 +66,11 @@
     <div class="col-lg-8">
         <div class="card">
             <div class="card-body">
-                <h5 class="bg-light p-2 mt-0 mb-2">Menu Structure</h5>
+                <h5 class="fw-bold mb-2">{{__("Menu Structure")}}</h5>
                 <div class="dd" id="nestable"></div>
-                <button class="btn btn-success mt-3" id="save-order">Save Menu</button>
+                <div class="text-end mt-2">
+                    <button class="btn btn-sm btn-success" id="save-order"><i class="ti ti-pencil"></i> {{__("Save Changes")}}</button>
+                </div>
             </div>
         </div>            
     </div>
@@ -90,7 +105,6 @@
 
 <!-- Menu JS -->
 <script defer>
-    initValidate('.form');
 
     const renderMenu = (items) => {
         const buildList = (items) => {
@@ -146,13 +160,6 @@
         let menus = @json($menus);
         renderMenu(menus);
 
-        // $('#menu-form').on('submit', function (e) {
-        //     e.preventDefault();
-        //     $.post("{{ route('menu.store') }}", $(this).serialize(), function () {
-        //         location.reload();
-        //     });
-        // });
-
         $(document).on('click', '.edit', function () {
             $('#menu-id').val($(this).data('id'));
             $('#title').val($(this).data('title'));
@@ -186,5 +193,7 @@
             });
         });
     });
+
+    initValidate('.form');
 </script>
 @endsection

@@ -153,7 +153,11 @@ Route::prefix('backend')->group(function () {
     });
 
     Route::middleware('auth.backend')->group(function () {
-        Route::get('menu', [\App\Http\Controllers\Backend\MenuController::class, 'index'])->name('menu.index');
+
+        Route::get('menus/group/create', [\App\Http\Controllers\Backend\MenuController::class, 'group_create'])->name('menu.group.create');
+        Route::get('menus/group/store', [\App\Http\Controllers\Backend\MenuController::class, 'group_store'])->name('menu.group.store');
+
+        Route::get('menu/{groupId?}', [\App\Http\Controllers\Backend\MenuController::class, 'index'])->name('menu.index');
         Route::post('menu/store', [\App\Http\Controllers\Backend\MenuController::class, 'store'])->name('menu.store');
         Route::post('menu/update-order', [\App\Http\Controllers\Backend\MenuController::class, 'updateOrder'])->name('backend.menu.updateOrder');
         Route::delete('menu/{id}', [\App\Http\Controllers\Backend\MenuController::class, 'destroy'])->name('backend.menu.destroy');

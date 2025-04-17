@@ -17,11 +17,16 @@ class MenuController extends Controller
         view()->share('module', $this->module);
     }    
 
-    public function index()
+    public function index($groupId = null)
     {
         $menus = Menu::orderBy('order')->get()->toArray();
-        return view('backend.menu.index', compact('menus'));
+        return view('backend.' . $this->module . '.index', compact('menus'));
     }
+
+    public function group_create()
+    {
+        return view('backend.' . $this->module . '.group-create');
+    }    
 
     public function store(Request $request)
     {
