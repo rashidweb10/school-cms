@@ -161,10 +161,10 @@ header li.nav-item.dropdown li:last-child a {
     margin-left: 10px;
 }
 
-.banner_slider .carousel-item img {
+/* .banner_slider .carousel-item img {
     animation: zoomAnimation 7s ease-in-out infinite;
-    /* 5-second zoom effect */
-}
+    
+} */
 
 @keyframes zoomAnimation {
     0% {
