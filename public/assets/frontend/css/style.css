@@ -1034,7 +1034,7 @@ section.gallery_section .bgcolor {
     top: 2px;
 }
 .owl-nav button.owl-next {
-    background: #0c8bb4 !important;
+    background: #666 !important;
     color: #fff !important;
     height: 30px;
     width: 30px;
@@ -1042,7 +1042,7 @@ section.gallery_section .bgcolor {
 }
 
 .owl-nav button.owl-prev {
-    background: #0c8bb4 !important;
+    background: #666 !important;
     color: #fff !important;
     height: 30px;
     width: 30px;
