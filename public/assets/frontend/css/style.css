@@ -1858,9 +1858,9 @@ body .position_tops a {
 
 .inner-skew
 {
-        width: 500px;
+    width: 500px;
     padding: 5px 40px 8px;
-        top: 40px;
+    top: -24px;
 }
 
 .inner_adminssion .admission_img {
