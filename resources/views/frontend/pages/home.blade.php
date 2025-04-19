@@ -107,7 +107,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
-            <div class="card service-card card-inverse">
+            <div class="card service-card card-inverse hvr-bounce-in">
               <div class="card-block text-center px-md-5 p-3 py-md-4">
                 <img src="{{ asset('assets/frontend/img/icon-smart-education.png') }}">
                 <h4 class="card-title fw-normal text_color roboto">{{$mission_title}}</h4>
@@ -116,7 +116,7 @@
             </div>
           </div>
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
-            <div class="card service-card card-inverse">
+            <div class="card service-card card-inverse hvr-bounce-in">
               <div class="card-block text-center px-md-5 p-3 py-md-4">
                 <img src="{{ asset('assets/frontend/img/icon-knowladge-hub.png') }}">
                 <h4 class="card-title fw-normal text_color roboto">{{$vision_title}}</h4>
@@ -125,7 +125,7 @@
             </div>
           </div>
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
-            <div class="card service-card card-inverse">
+            <div class="card service-card card-inverse hvr-bounce-in">
               <div class="card-block text-center px-md-5 p-3 py-md-4">
                 <img src="{{ asset('assets/frontend/img/icon-neo-kids.png') }}">
                 <h4 class="card-title fw-normal text_color roboto">{{$value_title}}</h4>

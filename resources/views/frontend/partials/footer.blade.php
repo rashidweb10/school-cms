@@ -9,15 +9,15 @@
             <ul class="footer-menu">
               <li><a href="{{route('home')}}"> Home</a></li>
               <li><a href="{{route('about')}}"> About Us</a></li>
-              <li><a href="{{route('why-we')}}"> Why We</a></li>
+              <li><a href="{{route('events')}}"> Events</a></li>
               <li><a href="{{route('curriculum')}}"> Curriculum</a></li>
               <li><a href="{{route('alumini')}}"> Alumni</a></li>
             </ul>
             <ul class="footer-menu">
-              <li><a href="{{route('career')}}"> Career</a></li>
+              
               <li><a href="{{route('admission')}}"> Admission</a></li>
               <li><a href="{{route('campus')}}"> Campus</a></li>
-              <li><a href="{{route('events')}}"> Gallery</a></li>
+              <li><a href="{{route('results')}}"> Results</a></li>
               <li><a href="{{route('contact')}}"> Contact Us</a></li>
             </ul>
           </div>
