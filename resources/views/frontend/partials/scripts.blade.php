@@ -181,3 +181,28 @@ $(window).scroll(function() {
       });
     });
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = new bootstrap.Carousel('#carouselExampleIndicators', {
+      interval: false,
+      ride: false,
+      pause: true,
+      wrap: true
+    });
+
+    const hoverArea = document.querySelector('#carouselExampleIndicators');
+
+    let slideInterval;
+
+    hoverArea.addEventListener('mouseenter', () => {
+      slideInterval = setInterval(() => {
+        carousel.next();
+      }, 3000); // 3 seconds
+    });
+
+    hoverArea.addEventListener('mouseleave', () => {
+      clearInterval(slideInterval);
+    });
+  });
+</script>
