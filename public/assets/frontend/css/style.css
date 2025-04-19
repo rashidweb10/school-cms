@@ -157,6 +157,10 @@ header li.nav-item.dropdown li:last-child a {
     top: -5px;
     z-index: 9;
 }
+
+.grecaptcha-badge {
+    display: none !important;
+}
 .position_tops li {
     margin-left: 10px;
 }
