@@ -192,16 +192,24 @@
             </div>
           </div>
           
-            @foreach($home_awards['itration'] as $index => $itration)
-          <div class="col-lg-3 aos-init aos-animate position-relative">
-            <div class="about_border border_9 position-relative">
-              <a href="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" data-fancybox="gallery1">
-                <img class="jbox-img rotate w-100 hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" alt="">
-              </a>
+
+          <div class="owl-carousel achievements">
+          @foreach($home_awards['itration'] as $index => $itration)
+            <div class="item">
+                  <div class="aos-init aos-animate position-relative">
+                  <div class="about_border border_9 position-relative">
+                    <a href="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" data-fancybox="gallery1">
+                      <img class="jbox-img rotate w-100 hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" alt="">
+                    </a>
+                  </div>
+                    <p class="text-center pt-1">{{$home_awards['title'][$index]}}</p>
+                </div>
             </div>
-            <p class="text-center pt-1">{{$home_awards['title'][$index]}}</p>
-          </div>
             @endforeach
+          </div>
+           
+          
+            
           
            <!-- <div class="read-more text-center">
               <a href="#" class="btn-2">View All</a>
