@@ -1038,7 +1038,7 @@ section.gallery_section .bgcolor {
     color: #fff !important;
     height: 30px;
     width: 30px;
-    border-radius: 0px;
+    border-radius: 50px;
 }
 
 .owl-nav button.owl-prev {
@@ -1046,7 +1046,7 @@ section.gallery_section .bgcolor {
     color: #fff !important;
     height: 30px;
     width: 30px;
-    border-radius: 0px;
+    border-radius: 50px;
 }
 
 
@@ -2044,4 +2044,21 @@ section.vission_mission {
 .images_border img {
     padding: 20px;
     position: relative;
+}
+
+.news_update .owl-nav.disabled 
+{
+    display: block !important;
+}
+
+.news_update button.owl-next {
+    position: absolute;
+    top: 36%;
+    right: -3%;
+}
+
+.news_update button.owl-prev {
+    position: absolute;
+    top: 36%;
+    left: -3%;
 }

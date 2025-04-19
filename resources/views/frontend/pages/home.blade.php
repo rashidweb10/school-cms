@@ -255,8 +255,13 @@
             </div>
           </div>
           
+
+          <div class="owl-carousel news_update">
+             
+          
             @foreach($home_updates['itration'] as $index => $itration)          
-              <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <div class="item">
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                 <a class="text-decoration-none text-dark" href="{{$home_updates['url'][$index]}}">
                 <div class="news_box">
                     <div class="news_img"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_updates['image'][$index])) }}" alt="Image 1"></div>
@@ -267,8 +272,9 @@
                 </div>
                 </a>
               </div>
+              </div>
             @endforeach
-          
+            </div>
             
           </div>
         </div>
