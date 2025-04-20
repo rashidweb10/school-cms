@@ -145,7 +145,7 @@
               <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($about_school_image)) }}" alt="img" />
             </div>
           </div>
-          <div class="col-lg-18 text-center">
+          <div class="col-lg-8 text-center">
             <div class="text-start mb-md-4 mb-2 pt-md-0 pt-lg-5">
               <h3 class="roboto text_color text-center fw-normal">{{$about_school_title}}</h3>
             </div>
