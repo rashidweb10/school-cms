@@ -113,7 +113,17 @@ class FrontendController extends Controller
         ->firstOrFail();
     
         return view('frontend.pages.circulars', compact('pageData'));
-    }    
+    }  
+    
+    public function achivements($slug)
+    {
+        $pageData = Page::with('meta')->where('is_active', 1)
+        ->where('slug', $slug)
+        ->where('company_id', config('custom.school_id'))
+        ->firstOrFail();
+    
+        return view('frontend.pages.achivements', compact('pageData'));
+    }     
 
     // public function contact()
     // {
