@@ -49,29 +49,29 @@
     once: true, // Whether animation should happen only once
   });
 
-  $(document).ready(function() {
-    $(".owl-carousel").owlCarousel({
-      items: 5, // Default number of items
-      loop: true, // Loop through items
-      margin: 65, // Space between items
-      nav: true, // Show next/prev buttons
-      dots: true, // Show pagination dots
-      autoplay: true, // Autoplay the carousel
-      autoplayTimeout: 3000, // Autoplay interval in ms
-      autoplayHoverPause: true, // Pause on mouse hover
-      responsive: {
-        0: {
-          items: 1 // Number of items for mobile view (width 0px and up)
-        },
-        768: {
-          items: 3 // Number of items for tablets (width 768px and up)
-        },
-        1024: {
-          items: 3 // Number of items for desktops (width 1024px and up)
-        }
-      }
-    });
-  });
+  // $(document).ready(function() {
+  //   $(".owl-carousel").owlCarousel({
+  //     items: 5, // Default number of items
+  //     loop: true, // Loop through items
+  //     margin: 65, // Space between items
+  //     nav: true, // Show next/prev buttons
+  //     dots: true, // Show pagination dots
+  //     autoplay: true, // Autoplay the carousel
+  //     autoplayTimeout: 3000, // Autoplay interval in ms
+  //     autoplayHoverPause: true, // Pause on mouse hover
+  //     responsive: {
+  //       0: {
+  //         items: 1 // Number of items for mobile view (width 0px and up)
+  //       },
+  //       768: {
+  //         items: 3 // Number of items for tablets (width 768px and up)
+  //       },
+  //       1024: {
+  //         items: 3 // Number of items for desktops (width 1024px and up)
+  //       }
+  //     }
+  //   });
+  // });
 
   // Fancybox.bind("[data-fancybox]", {
   //   Toolbar: {
@@ -133,3 +133,53 @@ $(window).scroll(function() {
 });
 
 </script>
+
+
+<script>
+    $(document).ready(function(){
+      $(".achievements").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          768: {
+            items: 3
+          },
+          1024: {
+            items: 4
+          }
+        }
+      });
+    });
+  </script>
+
+
+<script>
+    $(document).ready(function(){
+      $(".news_update").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          768: {
+            items: 3
+          },
+          1024: {
+            items: 3
+          }
+        }
+      });
+    });
+  </script>
+
+  

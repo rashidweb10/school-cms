@@ -79,7 +79,7 @@
                                     <ul class="menu nav-item">
                                         <li>
                                             <a href="{{route('about')}}" class="nav-link robot_slab">
-                                                <img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> ABOUT US
+                                                <img src="{{ asset('assets/frontend/img/info.png') }}"> ABOUT US
                                             </a>
                                             <ul class="submenu p-2">
                                                 <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why We</a></li>
@@ -153,7 +153,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link robot_slab" aria-current="page" href="{{route('alumini')}}">
-                                            <img src="{{ asset('assets/frontend/img/icon-events-w.png') }}"> ALUMNI
+                                            <img src="{{ asset('assets/frontend/img/student.png') }}"> ALUMNI
                                         </a>
                                     </li>
                                     <li class="nav-item">

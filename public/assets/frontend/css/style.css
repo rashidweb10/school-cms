@@ -157,14 +157,18 @@ header li.nav-item.dropdown li:last-child a {
     top: -5px;
     z-index: 9;
 }
+
+.grecaptcha-badge {
+    display: none !important;
+}
 .position_tops li {
     margin-left: 10px;
 }
 
-.banner_slider .carousel-item img {
+/* .banner_slider .carousel-item img {
     animation: zoomAnimation 7s ease-in-out infinite;
-    /* 5-second zoom effect */
-}
+    
+} */
 
 @keyframes zoomAnimation {
     0% {
@@ -1034,19 +1038,19 @@ section.gallery_section .bgcolor {
     top: 2px;
 }
 .owl-nav button.owl-next {
-    background: #0c8bb4 !important;
+    background: #666 !important;
     color: #fff !important;
     height: 30px;
     width: 30px;
-    border-radius: 0px;
+    border-radius: 50px;
 }
 
 .owl-nav button.owl-prev {
-    background: #0c8bb4 !important;
+    background: #666 !important;
     color: #fff !important;
     height: 30px;
     width: 30px;
-    border-radius: 0px;
+    border-radius: 50px;
 }
 
 
@@ -1314,11 +1318,11 @@ a.flip-box-button {
 }
 .carousel-control-next {
     right: 0;
-     top: 30% !important;
+     top: 5% !important;
 }
 .carousel-control-prev {
     left: 0;
-    top: 30% !important;
+    top: 5% !important;
 }
 
 .col-md-5.pt-md-4.pt-2.d-md-flex.d-flex.justify-content-center.align-items-center.order-md-0.order-1 {
@@ -1749,7 +1753,7 @@ ul.about_listing li img {
 
 .skew-box p {
    margin: 0;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 400;
     color: #000;
     line-height: 43px;
@@ -1854,9 +1858,9 @@ body .position_tops a {
 
 .inner-skew
 {
-        width: 500px;
+    width: 500px;
     padding: 5px 40px 8px;
-        top: 40px;
+    top: -24px;
 }
 
 .inner_adminssion .admission_img {
@@ -2044,4 +2048,21 @@ section.vission_mission {
 .images_border img {
     padding: 20px;
     position: relative;
+}
+
+.news_update .owl-nav.disabled 
+{
+    display: block !important;
+}
+
+.news_update button.owl-next {
+    position: absolute;
+    top: 36%;
+    right: -3%;
+}
+
+.news_update button.owl-prev {
+    position: absolute;
+    top: 36%;
+    left: -3%;
 }

@@ -31,7 +31,7 @@
 @endphp
 
 <div class="banner_slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000"  data-bs-pause="hover">
         <!-- Carousel items -->
         <div class="carousel-inner">
         @foreach($banner_images as $index => $id)
@@ -40,6 +40,17 @@
             </div>
         @endforeach
         </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <!-- Next button -->
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
       </div>
 
     </div>
@@ -57,7 +68,10 @@
           </div>
           <div class="col-lg-4">
             <div class="position-relative">
-              <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img" />
+              <a target="_blank" href="https://school.maptek.online/">
+                 <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img" />
+            </a>  
+            
             </div>
           </div>
           <div class="col-lg-8 paddngrgt80">
@@ -93,7 +107,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
-            <div class="card service-card card-inverse">
+            <div class="card service-card card-inverse hvr-bounce-in">
               <div class="card-block text-center px-md-5 p-3 py-md-4">
                 <img src="{{ asset('assets/frontend/img/icon-smart-education.png') }}">
                 <h4 class="card-title fw-normal text_color roboto">{{$mission_title}}</h4>
@@ -102,7 +116,7 @@
             </div>
           </div>
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
-            <div class="card service-card card-inverse">
+            <div class="card service-card card-inverse hvr-bounce-in">
               <div class="card-block text-center px-md-5 p-3 py-md-4">
                 <img src="{{ asset('assets/frontend/img/icon-knowladge-hub.png') }}">
                 <h4 class="card-title fw-normal text_color roboto">{{$vision_title}}</h4>
@@ -111,7 +125,7 @@
             </div>
           </div>
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
-            <div class="card service-card card-inverse">
+            <div class="card service-card card-inverse hvr-bounce-in">
               <div class="card-block text-center px-md-5 p-3 py-md-4">
                 <img src="{{ asset('assets/frontend/img/icon-neo-kids.png') }}">
                 <h4 class="card-title fw-normal text_color roboto">{{$value_title}}</h4>
@@ -125,13 +139,13 @@
     </section>
     <section class="scholar_section mt-lg-5 pb-lg-5 position-relative z-index-9">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="border_8 pb-5 position-relative">
               <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($about_school_image)) }}" alt="img" />
             </div>
           </div>
-          <div class="col-lg-12">
+          <div class="col-lg-8 text-center">
             <div class="text-start mb-md-4 mb-2 pt-md-0 pt-lg-5">
               <h3 class="roboto text_color text-center fw-normal">{{$about_school_title}}</h3>
             </div>
@@ -192,16 +206,24 @@
             </div>
           </div>
           
-            @foreach($home_awards['itration'] as $index => $itration)
-          <div class="col-lg-3 aos-init aos-animate position-relative">
-            <div class="about_border border_9 position-relative">
-              <a href="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" data-fancybox="gallery1">
-                <img class="jbox-img rotate w-100 hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" alt="">
-              </a>
+
+          <div class="owl-carousel achievements">
+          @foreach($home_awards['itration'] as $index => $itration)
+            <div class="item">
+                  <div class="aos-init aos-animate position-relative">
+                  <div class="about_border border_9 position-relative">
+                    <a href="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" data-fancybox="gallery1">
+                      <img class="jbox-img rotate w-100 hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_awards['image'][$index])) }}" alt="">
+                    </a>
+                  </div>
+                    <p class="text-center pt-1">{{$home_awards['title'][$index]}}</p>
+                </div>
             </div>
-            <p class="text-center pt-1">{{$home_awards['title'][$index]}}</p>
-          </div>
             @endforeach
+          </div>
+           
+          
+            
           
            <!-- <div class="read-more text-center">
               <a href="#" class="btn-2">View All</a>
@@ -247,8 +269,13 @@
             </div>
           </div>
           
+
+          <div class="owl-carousel news_update">
+             
+          
             @foreach($home_updates['itration'] as $index => $itration)          
-              <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <div class="item">
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                 <a class="text-decoration-none text-dark" href="{{$home_updates['url'][$index]}}">
                 <div class="news_box">
                     <div class="news_img"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_updates['image'][$index])) }}" alt="Image 1"></div>
@@ -259,8 +286,9 @@
                 </div>
                 </a>
               </div>
+              </div>
             @endforeach
-          
+            </div>
             
           </div>
         </div>
