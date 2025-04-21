@@ -213,8 +213,8 @@ if (!function_exists('generateHtmlTableFromCsv')) {
     }
 }
 
-if (!function_exists('uploaded_asset_name')) {
-    function uploaded_asset_name($id) {
+if (!function_exists('uploaded_asset_name_old')) {
+    function uploaded_asset_name_old($id) {
 
         $asset = Cache::rememberForever('uploaded_asset_name_'.$id , function() use ($id) {
             return \App\Models\Upload::find($id);
@@ -237,6 +237,81 @@ if (!function_exists('uploaded_asset_name')) {
     
         // Capitalize each word
         return ucwords($formattedName);
+    }
+}
+
+if (!function_exists('generateHtmlTableFromCsv')) {
+    function generateHtmlTableFromCsv($csvFilePath) {
+        // Handle external URLs
+        if (filter_var($csvFilePath, FILTER_VALIDATE_URL)) {
+            // Try to fetch the remote CSV
+            try {
+                $fileContent = @file_get_contents($csvFilePath);
+                if (!$fileContent) {
+                    return '<p>Error: Could not read remote file.</p>';
+                }
+
+                $file = fopen('php://temp', 'r+');
+                fwrite($file, $fileContent);
+                rewind($file);
+            } catch (\Exception $e) {
+                return '<p>Error: ' . $e->getMessage() . '</p>';
+            }
+        } else {
+            // Handle local file
+            $relativePath = str_replace(url('/storage'), 'storage', $csvFilePath);
+            $csvFilePath = public_path($relativePath);
+
+            if (!file_exists($csvFilePath) || !is_readable($csvFilePath)) {
+                return '<p>Error: File not found or unreadable.</p>';
+            }
+
+            $file = fopen($csvFilePath, 'r');
+        }
+
+        // Parse CSV
+        $headers = fgetcsv($file);
+        if (!$headers) return '<p>Data Not Found</p>';
+
+        $html = '<table class="table table-bordered table-hover">';
+        $html .= '<thead class="thead-dark"><tr>';
+
+        foreach ($headers as $index => $header) {
+            $className = 'col_' . ($index + 1);
+            $html .= "<th scope='col' class='$className text-left'>" . htmlspecialchars($header) . "</th>";
+        }
+
+        $html .= '</tr></thead><tbody>';
+
+        while (($row = fgetcsv($file)) !== false) {
+            $html .= '<tr>';
+            foreach ($row as $index => $cell) {
+                $className = 'col_' . ($index + 1);
+
+                if (filter_var($cell, FILTER_VALIDATE_URL) || preg_match('/^(\/?storage\/)/', $cell)) {
+                    $ext = strtolower(pathinfo(parse_url($cell, PHP_URL_PATH), PATHINFO_EXTENSION));
+                    $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'];
+
+                    if (in_array($ext, $imageExtensions)) {
+                        $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank'><img src='" . htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
+                    } else {
+                        $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+                    }
+                } else {
+                    $cell = htmlspecialchars($cell);
+                    $cell = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $cell);
+                    $cell = nl2br($cell);
+                }
+
+                $html .= "<td class='$className text-left'>$cell</td>";
+            }
+            $html .= '</tr>';
+        }
+
+        fclose($file);
+        $html .= '</tbody></table>';
+
+        return $html;
     }
 }
 
