@@ -153,8 +153,8 @@ if (!function_exists('central_asset')) {
     }
 }
 
-if (!function_exists('generateHtmlTableFromCsv')) {
-    function generateHtmlTableFromCsv($csvFilePath) {
+if (!function_exists('generateHtmlTableFromCsv_old')) {
+    function generateHtmlTableFromCsv_old($csvFilePath) {
         $relativePath = str_replace(url('/storage'), 'storage', $csvFilePath);
         $csvFilePath = public_path($relativePath);
 
@@ -210,33 +210,6 @@ if (!function_exists('generateHtmlTableFromCsv')) {
         $html .= '</tbody></table>';
 
         return $html;
-    }
-}
-
-if (!function_exists('uploaded_asset_name_old')) {
-    function uploaded_asset_name_old($id) {
-
-        $asset = Cache::rememberForever('uploaded_asset_name_'.$id , function() use ($id) {
-            return \App\Models\Upload::find($id);
-        });
-
-        $filename = 'Unknown';
-
-        if ($asset != null) {
-            $filename = $asset->file_original_name;
-        }
-                
-        // Extract filename without extension
-        $nameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
-        
-        // Replace underscores and hyphens with spaces
-        $formattedName = str_replace(['_', '-'], ' ', $nameWithoutExt);
-        
-        // Convert multiple spaces to a single space and trim excess spaces
-        $formattedName = preg_replace('/\s+/', ' ', trim($formattedName));
-    
-        // Capitalize each word
-        return ucwords($formattedName);
     }
 }
 
@@ -312,6 +285,34 @@ if (!function_exists('generateHtmlTableFromCsv')) {
         $html .= '</tbody></table>';
 
         return $html;
+    }
+}
+
+
+if (!function_exists('uploaded_asset_name')) {
+    function uploaded_asset_name($id) {
+
+        $asset = Cache::rememberForever('uploaded_asset_name_'.$id , function() use ($id) {
+            return \App\Models\Upload::find($id);
+        });
+
+        $filename = 'Unknown';
+
+        if ($asset != null) {
+            $filename = $asset->file_original_name;
+        }
+                
+        // Extract filename without extension
+        $nameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
+        
+        // Replace underscores and hyphens with spaces
+        $formattedName = str_replace(['_', '-'], ' ', $nameWithoutExt);
+        
+        // Convert multiple spaces to a single space and trim excess spaces
+        $formattedName = preg_replace('/\s+/', ' ', trim($formattedName));
+    
+        // Capitalize each word
+        return ucwords($formattedName);
     }
 }
 
