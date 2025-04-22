@@ -89,7 +89,7 @@ $achivementSlugs = DB::table('pages')
 
 $achivementSlugs = $achivementSlugs ?: 'nonexistent_slug_that_will_never_match';    
 
-Route::get('{slug}', [FrontendController::class, 'achivements'])
+Route::get('{slug1}', [FrontendController::class, 'achivements'])
     ->where('slug', $achivementSlugs ?? 'none');
 
 // Route::get('/contact', function () {

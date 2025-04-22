@@ -115,10 +115,10 @@ class FrontendController extends Controller
         return view('frontend.pages.circulars', compact('pageData'));
     }  
     
-    public function achivements($slug)
+    public function achivements($slug1)
     {
         $pageData = Page::with('meta')->where('is_active', 1)
-        ->where('slug', $slug)
+        ->where('slug', $slug1)
         ->where('company_id', config('custom.school_id'))
         ->firstOrFail();
     
