@@ -4,7 +4,8 @@
         @foreach($pageData as $index => $data)
             @php
                 $gallery_images = array_filter(explode(',', $data->gallery ?? ''));
-                $image_thumb_name = uploaded_asset_name($data->thumbnail) ?? '';
+                //$image_thumb_name = uploaded_asset_name($data->thumbnail) ?? '';
+                $image_thumb_name = "Image ".$index;
             @endphp        
             <div class="event_box col-md-3">
 
@@ -28,7 +29,8 @@
                 @foreach($gallery_images as $image)
                     @if($image != $data->thumbnail)
                         @php
-                            $image_gallery_name = uploaded_asset_name($image) ?? '';
+                            //$image_gallery_name = uploaded_asset_name($image) ?? '';
+                            $image_gallery_name = "Image";
                         @endphp                     
                         <a 
                             href="{{ central_asset(uploaded_asset($image)) }}"

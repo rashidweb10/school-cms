@@ -87,10 +87,21 @@
                                                 <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}"> Curriculum Guidelines</a></li>
                                                 <li>
                                                     <a href="#"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Achievements</a>
+                                                    @php 
+                                                    $achivements = DB::table('pages')->where('is_active', 1)
+                                                        ->where('layout', 'achivements')
+                                                        ->where('company_id', config('custom.school_id'))
+                                                        ->orderBy('id', 'desc')
+                                                        ->get();                                    
+                                                    @endphp                                                    
+                                                    
+                                                    @if($achivements->isNotEmpty())
                                                     <ul class="submenu">
-                                                        <li><a href="#">2024-2026</a></li>
-                                                        <li><a href="#">2023-2025</a></li>
+                                                        @foreach($achivements as $item)
+                                                            <li><a href="{{ url($item->slug) }}">{{ $item->title }}</a></li>
+                                                        @endforeach
                                                     </ul>
+                                                    @endif
                                                 </li>
                                                 <li><a href="{{route('career')}}"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Careers</a></li>
                                             </ul>

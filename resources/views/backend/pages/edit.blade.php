@@ -66,7 +66,7 @@
 
                     <div class="mb-2 form-group">
                         <label for="slug" class="form-label">Slug <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if( !in_array($pageData->layout, ['default', 'circulars']) ) readonly @endif required>
+                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if( !in_array($pageData->layout, ['default', 'circulars', 'achivements']) ) readonly @endif required>
                     </div>
 
                     <!-- Company Dropdown -->

@@ -81,9 +81,20 @@ $circularSlugs = $circularSlugs ?: 'nonexistent_slug_that_will_never_match';
 Route::get('{slug}', [FrontendController::class, 'circulars'])
     ->where('slug', $circularSlugs ?? 'none');
 
-Route::get('/contact', function () {
-    return view('frontend.pages.contact');
-})->name('contact');
+$achivementSlugs = DB::table('pages')
+    ->where('layout', 'achivements')
+    ->pluck('slug')
+    ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
+    ->implode('|');  // Combine slugs into a regular expression pattern
+
+$achivementSlugs = $achivementSlugs ?: 'nonexistent_slug_that_will_never_match';    
+
+Route::get('{slug1}', [FrontendController::class, 'achivements'])
+    ->where('slug', $achivementSlugs ?? 'none');
+
+// Route::get('/contact', function () {
+//     return view('frontend.pages.contact');
+// })->name('contact');
 
 Route::post('/submit-form', [FormController::class, 'submit'])->middleware(['protect.forms','recaptcha','throttle:3,1'])->name('form.submit');
 
