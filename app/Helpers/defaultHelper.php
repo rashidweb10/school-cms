@@ -266,9 +266,9 @@ if (!function_exists('generateHtmlTableFromCsv')) {
                     $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'];
 
                     if (in_array($ext, $imageExtensions)) {
-                        $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank'><img src='" . htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
+                        $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank'><img src='" . htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
                     } else {
-                        $cell = "<a href='" . htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+                        $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
                     }
                 } else {
                     $cell = htmlspecialchars($cell);
