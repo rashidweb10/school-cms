@@ -2066,3 +2066,17 @@ section.vission_mission {
     top: 36%;
     left: -3%;
 }
+
+.top_position {
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease;
+    background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #00000000 100%);
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+  }
