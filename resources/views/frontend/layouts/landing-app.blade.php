@@ -281,6 +281,17 @@
         },
     });
     </script>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const topEl = document.querySelector(".top_position");
+    if (window.scrollY > 60) { // adjust value as needed
+      topEl.classList.add("fixed-top");
+    } else {
+      topEl.classList.remove("fixed-top");
+    }
+  });
+</script>
     @yield('scripts')
 
 </body>
