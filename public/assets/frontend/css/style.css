@@ -2080,3 +2080,26 @@ section.vission_mission {
     z-index: 1000;
     background-color: #333;
   }
+
+  a.result_vm_btn {
+    background: #fdee9d;
+    color: #000;
+    text-decoration: none;
+    padding: 5px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+a.result_vm_btn:hover {
+    background: #e63221;
+    color: #fff;
+}
+
+.dis_table_1 th.col_3.text-left {
+    width: 25%;
+}
+
+
+.dis_table_1 th.col_1.text-left {
+    width: 7%;
+}

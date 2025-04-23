@@ -258,7 +258,7 @@
           <div class="row">
               <div class="col-lg-12 aos-init aos-animate">
             <div class="text-start mb-md-5 mb-4 pt-2">
-              <h3 class="roboto text_color text-center">News & Updates</h3>
+              <h3 class="roboto text_color text-center">Recent Updates</h3>
             </div>
           </div>
           
