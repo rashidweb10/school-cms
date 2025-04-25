@@ -3,7 +3,7 @@
 </div>
 
 @if($title)
-<section class="  pt-4 pt-md-5 pb-md-5 position-relative">
+<section class="  pt-4 pt-md-5 pb-md-2 position-relative">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 ">

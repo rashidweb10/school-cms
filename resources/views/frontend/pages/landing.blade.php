@@ -26,7 +26,7 @@
 @endphp
 
 <div class="banner_slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000"  data-bs-pause="hover">
         <!-- Indicators
         <div class="carousel-indicators"><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button></div> -->
         <!-- Carousel items -->
@@ -37,6 +37,17 @@
                 </div>
             @endforeach
         </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <!-- Next button -->
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
       </div>
     </div>
     <!--about us section start-->
@@ -125,7 +136,7 @@
             <div class="locatio_box">
                 <ul>
                     @foreach($schools as $school)
-                    <li class="hvr-bounce-in loationtext_hover"><p><a href="{{$school->website}}"><i class="fa-solid fa-caret-right"></i>{{$school->name}} </a></p></li>
+                    <li class="hvr-bounce-in loationtext_hover"><p><a target="_blank" href="{{$school->website}}"><i class="fa-solid fa-caret-right"></i>{{$school->name}} </a></p></li>
                     @endforeach
                   </ul>
             </div>
@@ -247,7 +258,7 @@
           <div class="row">
               <div class="col-lg-12 aos-init aos-animate">
             <div class="text-start mb-md-5 mb-4 pt-2">
-              <h3 class="roboto text_color text-center">News & Updates</h3>
+              <h3 class="roboto text_color text-center">Recent Updates</h3>
             </div>
           </div>
           

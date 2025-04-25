@@ -58,11 +58,13 @@
         top: 100%;
         left: 0;
         background-color: #fccf00;
-        border-top: 5px solid transparent;
+        border-top: 0px solid transparent;
         width: 220px;
         z-index: 1000;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
+        padding-left:0px !important;
+         padding-right:0px !important;
     }
 
     .menu > li:hover > .submenu {
@@ -281,6 +283,17 @@
         },
     });
     </script>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const topEl = document.querySelector(".top_position");
+    if (window.scrollY > 60) { // adjust value as needed
+      topEl.classList.add("fixed-top");
+    } else {
+      topEl.classList.remove("fixed-top");
+    }
+  });
+</script>
     @yield('scripts')
 
 </body>

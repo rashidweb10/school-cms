@@ -34,12 +34,14 @@
                                 @if(isset($curriculum['attachments'][$index]))
                                     @foreach(explode(',', $curriculum['attachments'][$index]) as $attachment)
                                         <div class="col-md-3">
+                                            <div class="carriculam_images1">
                                             <a href="{{ central_asset(uploaded_asset($attachment)) }}" target="_blank">
                                                 <img src="{{ asset('assets/frontend/img/pdf-icon.png') }}" class="img-fluid" alt="pdf">
                                             </a>
                                             <div class="cu-pdf-name">
                                                 <p>{{ uploaded_asset_name($attachment) }}</p>
                                             </div>
+                                              </div>
                                         </div>
                                     @endforeach
                                 @endif
@@ -134,7 +136,7 @@
     .tab-panel {
         padding: 2rem;
         /* background: #fefddf; */
-        border: 1px solid #e33337;
+        border: 1px solid #999;
         border-radius: 5px;
         display: none;
         transform-origin: top;

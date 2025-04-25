@@ -46,7 +46,7 @@ header li a {
 .top_position {
     position: absolute;
     width: 100%;
-      background: linear-gradient(180deg, #00000000 0%, #00000045 -17%, #000000c7 50%, #00000000 100%);
+    background: linear-gradient(180deg, #00000000 0%, #0000003b 40%, #00000047 50%, #00000000 100%);
 }
 header .container-fluid {
     padding: 0;
@@ -161,24 +161,29 @@ header li.nav-item.dropdown li:last-child a {
     margin-left: 10px;
 }
 
-.banner_slider .carousel-item img {
+/* .banner_slider .carousel-item img {
     animation: zoomAnimation 7s ease-in-out infinite;
-    /* 5-second zoom effect */
-}
+    
+} */
 
-@keyframes zoomAnimation {
+/* @keyframes zoomAnimation {
     0% {
         transform: scale(1);
-        /* Start at normal size */
+        
     }
 
     100% {
         transform: scale(1.2);
-        /* Zoom in by 20% */
+       
     }
-}
+} */
 
-
+.fixed-top {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+  }
 .blink_bg {
     background: #afa27f;
     color: #fff !important;
@@ -2036,4 +2041,8 @@ section.gallery_section {
 
 .vission_box::before {
 display:none;
+}
+
+.grecaptcha-badge {
+    display: none !important;
 }
