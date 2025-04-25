@@ -136,7 +136,7 @@
             <div class="locatio_box">
                 <ul>
                     @foreach($schools as $school)
-                    <li class="hvr-bounce-in loationtext_hover"><p><a href="{{$school->website}}"><i class="fa-solid fa-caret-right"></i>{{$school->name}} </a></p></li>
+                    <li class="hvr-bounce-in loationtext_hover"><p><a target="_blank" href="{{$school->website}}"><i class="fa-solid fa-caret-right"></i>{{$school->name}} </a></p></li>
                     @endforeach
                   </ul>
             </div>
