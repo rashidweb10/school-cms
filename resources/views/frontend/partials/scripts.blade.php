@@ -188,7 +188,7 @@ $(window).scroll(function() {
       topEl.classList.add("fixed-top");
     } else {
       topEl.classList.remove("fixed-top");
-    }
+    } 
   });
 </script>
   
@@ -204,5 +204,5 @@ $(document).ready(function () {
             $(this).closest('li').children('a.nav-link').removeClass('active');
         }
     );
-});
+}); 
 </script>
