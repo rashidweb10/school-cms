@@ -51,7 +51,7 @@ class GalleryController extends Controller
             });
         }      
 
-        $query->orderBy('year', 'desc');
+        $query->orderBy('year', 'desc')->orderBy('created_at', 'desc');
     
         $pageData = $query->paginate(25);
     
