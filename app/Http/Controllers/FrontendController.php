@@ -94,6 +94,16 @@ class FrontendController extends Controller
     
         return view('frontend.pages.common', compact('pageData'));
     }  
+
+    public function awards()
+    {
+        $pageData = Page::with('meta')->where('is_active', 1)
+        ->where('slug', 'awards')
+        ->where('company_id', config('custom.school_id'))
+        ->firstOrFail();
+    
+        return view('frontend.pages.awards', compact('pageData'));
+    }  
     
     public function results()
     {

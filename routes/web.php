@@ -70,6 +70,8 @@ Route::get('/campus-facilities/{id}', [FrontendController::class, 'campus'])->na
 Route::get('/events', [FrontendController::class, 'events'])->name('events');
 Route::get('/events/{year}', [FrontendController::class, 'events'])->name('events.contents');
 
+Route::get('/awards', [FrontendController::class, 'awards'])->name('awards');
+
 // $circularSlugs = DB::table('pages')
 //     ->where('layout', 'circulars')
 //     ->pluck('slug')

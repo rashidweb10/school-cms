@@ -222,12 +222,9 @@
             @endforeach
           </div>
            
-          
-            
-          
-           <!-- <div class="read-more text-center">
-              <a href="#" class="btn-2">View All</a>
-            </div> -->
+           <div class="read-more text-center">
+              <a href="{{url('awards')}}" class="btn-2">View All</a>
+            </div>
         </div>
       </div>
     </section>
