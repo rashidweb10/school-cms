@@ -204,76 +204,91 @@
 @endphp
 
 <!-- Intra Section -->
-<section id="circulars" class="circulars section">
+<section id="school-activities" class="section">
     <div class="container">
-        <h3>Intra School Activities</h3>
-        <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-delay="100">
-            @if(isset($intra['itration']) && is_array($intra['itration']))
-                @foreach($intra['itration'] as $index => $iteration)
-                    <li class="nav-item col-md-2 col-sm-12 col-lg-2">
-                        <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#intra-tab-{{ $index }}">
-                            <i class="bi bi-box-seam"></i>
-                            <h4 class="d-none d-lg-block">{{ $intra['title'][$index] ?? 'Result' }}</h4>
-                        </a>
-                    </li>
-                @endforeach
-            @endif
+        <ul class="nav nav-tabs mb-4" id="activityTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="intra-tab" data-bs-toggle="tab" data-bs-target="#intra" type="button" role="tab">
+                    Intra School Activities
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="inter-tab" data-bs-toggle="tab" data-bs-target="#inter" type="button" role="tab">
+                    Inter School Activities
+                </button>
+            </li>
         </ul>
 
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-            @if(isset($intra['itration']) && is_array($intra['itration']))
-                @foreach($intra['itration'] as $index => $iteration)
-                    <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="intra-tab-{{ $index }}">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4 class="r_tab_heading">{{ $intra['title'][$index] ?? 'Result' }}</h4>
+        <div class="tab-content" id="activityTabsContent">
+            <!-- Intra School Activities Tab -->
+            <div class="tab-pane fade show active" id="intra" role="tabpanel" aria-labelledby="intra-tab">
+                <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-delay="100">
+                    @if(isset($intra['itration']) && is_array($intra['itration']))
+                        @foreach($intra['itration'] as $index => $iteration)
+                            <li class="nav-item col-md-2 col-sm-12 col-lg-2">
+                                <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#intra-tab-{{ $index }}">
+                                    <i class="bi bi-box-seam"></i>
+                                    <h4 class="d-none d-lg-block">{{ $intra['title'][$index] ?? 'Result' }}</h4>
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+
+                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                    @if(isset($intra['itration']) && is_array($intra['itration']))
+                        @foreach($intra['itration'] as $index => $iteration)
+                            <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="intra-tab-{{ $index }}">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="r_tab_heading">{{ $intra['title'][$index] ?? 'Result' }}</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($intra['image'][$index]))) !!}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="table-responsive">
-                                {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($intra['image'][$index]))) !!}
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+
+            <!-- Inter School Activities Tab -->
+            <div class="tab-pane fade" id="inter" role="tabpanel" aria-labelledby="inter-tab">
+                <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-delay="100">
+                    @if(isset($inter['itration']) && is_array($inter['itration']))
+                        @foreach($inter['itration'] as $index => $iteration)
+                            <li class="nav-item col-md-2 col-sm-12 col-lg-2">
+                                <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#inter-tab-{{ $index }}">
+                                    <i class="bi bi-box-seam"></i>
+                                    <h4 class="d-none d-lg-block">{{ $inter['title'][$index] ?? 'Result' }}</h4>
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+
+                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                    @if(isset($inter['itration']) && is_array($inter['itration']))
+                        @foreach($inter['itration'] as $index => $iteration)
+                            <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="inter-tab-{{ $index }}">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="r_tab_heading">{{ $inter['title'][$index] ?? 'Result' }}</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($inter['image'][$index]))) !!}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                @endforeach
-            @endif
+                        @endforeach
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Inter Section -->
-<section id="circulars" class="circulars section">
-    <div class="container">
-        <h3>Inter School Activities</h3>
-        <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-delay="100">
-            @if(isset($inter['itration']) && is_array($inter['itration']))
-                @foreach($inter['itration'] as $index => $iteration)
-                    <li class="nav-item col-md-2 col-sm-12 col-lg-2">
-                        <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#inter-tab-{{ $index }}">
-                            <i class="bi bi-box-seam"></i>
-                            <h4 class="d-none d-lg-block">{{ $inter['title'][$index] ?? 'Result' }}</h4>
-                        </a>
-                    </li>
-                @endforeach
-            @endif
-        </ul>
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-            @if(isset($inter['itration']) && is_array($inter['itration']))
-                @foreach($inter['itration'] as $index => $iteration)
-                    <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="inter-tab-{{ $index }}">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4 class="r_tab_heading">{{ $inter['title'][$index] ?? 'Result' }}</h4>
-                            </div>
-                            <div class="table-responsive">
-                                {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($inter['image'][$index]))) !!}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            @endif
-        </div>
-    </div>
-</section>
 
 
 @endsection
