@@ -51,7 +51,7 @@
                     <div class="form-group mb-2">
                         <label for="layout" class="form-label">Layout <span class="text-danger">*</span></label>
                         @php
-                            $layouts = ['default', 'home', 'landing', 'about', 'admission', 'curriculum', 'results', 'circulars', 'achivements', 'awards'];
+                            $layouts = ['default', 'home', 'landing', 'about', 'admission', 'curriculum', 'results', 'circulars', 'achivements', 'awards','newsletter'];
                         @endphp
 
                         <select name="layout" class="form-select select2" required>
@@ -66,7 +66,7 @@
 
                     <div class="mb-2 form-group">
                         <label for="slug" class="form-label">Slug <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if( !in_array($pageData->layout, ['default', 'circulars', 'achivements']) ) readonly @endif required>
+                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug', $pageData->slug) }}" placeholder="Enter Slug" @if( !in_array($pageData->layout, ['default', 'circulars', 'achivements', 'newsletter']) ) readonly @endif required>
                     </div>
 
                     <!-- Company Dropdown -->
