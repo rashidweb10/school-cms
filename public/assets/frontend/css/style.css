@@ -2103,3 +2103,11 @@ a.result_vm_btn:hover {
 .dis_table_1 th.col_1.text-left {
     width: 7%;
 }
+
+.carriculam_images1 img
+{
+    width: 100px !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
