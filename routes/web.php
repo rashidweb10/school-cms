@@ -70,27 +70,27 @@ Route::get('/campus-facilities/{id}', [FrontendController::class, 'campus'])->na
 Route::get('/events', [FrontendController::class, 'events'])->name('events');
 Route::get('/events/{year}', [FrontendController::class, 'events'])->name('events.contents');
 
-$circularSlugs = DB::table('pages')
-    ->where('layout', 'circulars')
-    ->pluck('slug')
-    ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
-    ->implode('|');  // Combine slugs into a regular expression pattern
+// $circularSlugs = DB::table('pages')
+//     ->where('layout', 'circulars')
+//     ->pluck('slug')
+//     ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
+//     ->implode('|');  // Combine slugs into a regular expression pattern
 
-$circularSlugs = $circularSlugs ?: 'nonexistent_slug_that_will_never_match';    
+// $circularSlugs = $circularSlugs ?: 'nonexistent_slug_that_will_never_match';    
 
-Route::get('{slug}', [FrontendController::class, 'circulars'])
-    ->where('slug', $circularSlugs ?? 'none');
+// Route::get('{slug}', [FrontendController::class, 'circulars'])
+//     ->where('slug', $circularSlugs ?? 'none');
 
-$achivementSlugs = DB::table('pages')
-    ->where('layout', 'achivements')
-    ->pluck('slug')
-    ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
-    ->implode('|');  // Combine slugs into a regular expression pattern
+// $achivementSlugs = DB::table('pages')
+//     ->where('layout', 'achivements')
+//     ->pluck('slug')
+//     ->map(fn($slug) => preg_quote($slug, '/'))  // Escape special characters
+//     ->implode('|');  // Combine slugs into a regular expression pattern
 
-$achivementSlugs = $achivementSlugs ?: 'nonexistent_slug_that_will_never_match';    
+// $achivementSlugs = $achivementSlugs ?: 'nonexistent_slug_that_will_never_match';    
 
-Route::get('{slug1}', [FrontendController::class, 'achivements'])
-    ->where('slug', $achivementSlugs ?? 'none');
+// Route::get('{slug1}', [FrontendController::class, 'achivements'])
+//     ->where('slug', $achivementSlugs ?? 'none');
 
 // Route::get('/contact', function () {
 //     return view('frontend.pages.contact');
@@ -163,3 +163,22 @@ Route::prefix('backend')->group(function () {
         Route::get('forms-by/{form_name}', [BackendFormController::class, 'index'])->name('forms.by');
     });
 });
+
+
+//Page Routes
+Route::get('{slug}', function ($slug) {
+    $page = DB::table('pages')->where('slug', $slug)->first();
+
+    if (!$page) {
+        abort(404);
+    }
+
+    switch ($page->layout) {
+        case 'circulars':
+            return app(FrontendController::class)->circulars($page->slug);
+        case 'achivements':
+            return app(FrontendController::class)->achivements($page->slug);
+        default:
+            abort(404);
+    }
+})->where('slug', '.*');
