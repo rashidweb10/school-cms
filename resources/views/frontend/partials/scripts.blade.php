@@ -192,3 +192,17 @@ $(window).scroll(function() {
   });
 </script>
   
+<script>
+$(document).ready(function () {
+    $('.submenu').hover(
+        function () {
+            // On hover in
+            $(this).closest('li').children('a.nav-link').addClass('active');
+        },
+        function () {
+            // On hover out
+            $(this).closest('li').children('a.nav-link').removeClass('active');
+        }
+    );
+});
+</script>

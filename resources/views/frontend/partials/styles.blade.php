@@ -56,11 +56,13 @@
     top: 100%;
     left: 0;
     background-color: #fccf00;
-    border-top: 5px solid transparent;
+    border-top: 0px solid transparent;
     width: 220px;
     z-index: 1000;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    padding-left:0px !important;
+    padding-right:0px !important;
 }
 
 .menu > li:hover > .submenu {
