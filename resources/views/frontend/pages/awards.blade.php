@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
           
           @foreach($awards['itration'] as $index => $itration)
-          <div class="col-md-3 achievements">
+          <div class="col-md-3">
                   <div class="aos-init aos-animate position-relative">
                   <div class="about_border border_9 position-relative">
                     <a href="{{ central_asset(uploaded_asset($awards['image'][$index])) }}" data-fancybox="gallery1">
