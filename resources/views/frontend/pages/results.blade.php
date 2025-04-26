@@ -229,9 +229,14 @@
                             <div class="col-12">
                                 <h4 class="r_tab_heading">{{ $results['title'][$index] ?? 'Result' }}</h4>
                             </div>
+                            @if(strtolower($results['title'][$index]) == "toppers")
+                                <div id="yearFilterButtons"></div>
+                                {!! generateHtmlTableFromCsv('https://school.maptek.online/storage/uploads/2025/04/j3WGbxq5UxkCi6VusaIIAE3qPpWnppkUBhWFP7T9.csv', 'dataTable') !!}
+                            @else
                             <div class="table-responsive">
                                 {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index]))) !!}
                             </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -245,7 +250,64 @@
 
 
 @section('scripts')
-<script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Step 1: Extract available years from non-blank year cells
+    var years = new Set();
+    $('#dataTable tbody tr').each(function() {
+        var yearText = $(this).find('td.col_1').text().trim();
+        if (yearText !== '') {
+            years.add(yearText);
+        }
+    });
+
+    // Step 2: Sort years (max to min)
+    var yearArray = Array.from(years).sort(function(a, b) {
+        return b - a;
+    });
+
+    // Step 3: Build year filter buttons
+    var buttonsHtml = '';
+    yearArray.forEach(function(year, index) {
+        buttonsHtml += '<button type="button" class="btn btn-primary m-1 yearFilterBtn" data-year="' + year + '">' + year + '</button>';
+    });
+    $('#yearFilterButtons').html(buttonsHtml);
+
+    // Step 4: Filter table function (ONLY matching rows)
+    function filterTable(selectedYear) {
+        $('#dataTable tbody tr').each(function() {
+            var yearText = $(this).find('td.col_1').text().trim();
+            //console.log(selectedYear+" : "+yearText);
+            if (yearText == selectedYear) {
+                console.log(selectedYear+" : "+yearText + " : Show");
+                $(this).show();
+            } else {
+
+                console.log(selectedYear+" : "+yearText + " : Hide");
+                $(this).hide();
+            }
+        });
+    }
+
+    // Step 5: Button click event
+    $(document).on('click', '.yearFilterBtn', function() {
+        var selectedYear = $(this).data('year');
+
+        // Change button active style
+        $('.yearFilterBtn').removeClass('btn-success').addClass('btn-primary');
+        $(this).removeClass('btn-primary').addClass('btn-success');
+
+        filterTable(selectedYear);
+    });
+
+    // Step 6: Default select first year
+    if (yearArray.length > 0) {
+        filterTable(yearArray[0]);
+        $('.yearFilterBtn[data-year="' + yearArray[0] + '"]').removeClass('btn-primary').addClass('btn-success');
+    }
+});
 </script>
+
 @endsection
