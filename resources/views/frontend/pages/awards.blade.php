@@ -15,9 +15,9 @@
     <section class="awards_achievements pt-4 pt-md-5 pb-5 position-relative">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="owl-carousel achievements">
+          
           @foreach($awards['itration'] as $index => $itration)
-            <div class="item">
+          <div class="col-md-3 achievements">
                   <div class="aos-init aos-animate position-relative">
                   <div class="about_border border_9 position-relative">
                     <a href="{{ central_asset(uploaded_asset($awards['image'][$index])) }}" data-fancybox="gallery1">
@@ -28,7 +28,6 @@
                 </div>
             </div>
             @endforeach
-          </div>
         </div>
       </div>
     </section>
