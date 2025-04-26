@@ -224,6 +224,9 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
             } else {
                 params["sort"] = "newest";
             }
+
+            params["type"] = AIZ.uploader.data.type; //new
+
             $.get(url, params, function (data, status) {
                 //console.log(data);
                 if (typeof data == "string") {

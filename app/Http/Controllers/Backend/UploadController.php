@@ -170,7 +170,9 @@ class UploadController extends Controller
 
         if (auth()->user()->role_id != 1) {
             $uploads->where('user_id', auth()->user()->id);
-        }  
+        } 
+        
+        $uploads->where('type', $request->type); //new
 
         return $uploads->paginate(60)->appends(request()->query());
     }
