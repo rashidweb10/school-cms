@@ -31,10 +31,20 @@
       <div class="col-md-3 paddlft60 pt-3 pt-md-0">
         <div class="col-lg-12">
           <h4 class="roboto">Newsletter & Magazine</h4>
+          @php 
+            $newsletter = DB::table('pages')->where('is_active', 1)
+              ->where('layout', 'newsletter')
+              ->where('company_id', config('custom.school_id'))
+              ->orderBy('id', 'desc')
+              ->get();                                    
+          @endphp 
+          @if($newsletter->isNotEmpty())          
           <ul class="footer-menu">
-            <li><a href="#">> 2023 - 2024</a></li>
-            <li><a href="#">> 2024 - 2025</a></li>
+            @foreach($newsletter as $item)
+              <li><a href="{{ url($item->slug) }}">{{ $item->title }}</a></li>
+            @endforeach
           </ul>
+          @endif
         </div>
       </div>
 
