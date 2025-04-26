@@ -54,6 +54,10 @@
                         <input type="text" id="company-address" name="address" value="{{ old('address', $pageData->address) }}" class="form-control" placeholder="e.g : 123 Main St, City, Country" required>
                     </div>
                     <div class="mb-3 form-group">
+                        <label for="meta-location" class="form-label">Location <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="meta-location" name="meta[location]" value="{{ old('meta.location', $pageData->meta->where('meta_key', 'location')->first()->meta_value ?? '') }}" placeholder="" required>
+                    </div>                    
+                    <div class="mb-3 form-group">
                         <label for="company-google-map" class="form-label">Google Map Embed</label>
                         <textarea class="form-control" id="company-google-map" name="google_map" rows="3" placeholder="Paste Google Map iframe">{{ old('google_map', $pageData->google_map) }}</textarea>
                     </div>

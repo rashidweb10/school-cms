@@ -22,7 +22,7 @@ class FrontendController extends Controller
         ->firstOrFail();
         
         if(config('custom.school_id') == 1){
-            $schools = Company::whereNot('id', 1)->where('is_active', 1)->get();
+            $schools = Company::with('meta')->whereNot('id', 1)->where('is_active', 1)->get();
             return view('frontend.pages.landing', compact('pageData', 'schools'));
         }
         return view('frontend.pages.home', compact('pageData'));
