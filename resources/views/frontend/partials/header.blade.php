@@ -29,7 +29,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-12 order-md-2 order-1">
+                <div class="col-md-5 col-12 order-md-2 order-1">
                     <h4 class="header_text roboto mt-md-0 mt-2">{{get_setting('name')}}</h4>
                 </div>
                 <div class="col-md-4 col-6 order-md-2 order-3 d-lg-none d-block">
@@ -39,7 +39,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div class="col-md-7 col-3 order-md-3 d-lg-block d-none">
+                <div class="col-md-6 col-3 order-md-3 d-lg-block d-none">
                     <div class="d-flex browser_link">
                         <ul class="d-flex ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -84,6 +84,7 @@
                                             <ul class="submenu p-2">
                                                 <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why We</a></li>
                                                 <li><a href="{{route('roadmap')}}"><img src="{{ asset('assets/frontend/img/road-maps.png') }}"> Road Map</a></li>
+                                                <li><a href="{{route('awards')}}"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Awards</a></li>
                                                 <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}"> Curriculum Guidelines</a></li>
                                                 <li>
                                                     <a href="#"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Achievements</a>

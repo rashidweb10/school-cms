@@ -19,6 +19,7 @@
               <li><a href="{{route('admission')}}"> Admission</a></li>
               <li><a href="{{route('campus')}}"> Campus</a></li>
               <li><a href="{{route('results')}}"> Results</a></li>
+              <li><a href="{{route('awards')}}"> Awards</a></li>
               <li><a href="{{route('contact')}}"> Contact Us</a></li>
               <li><a href="https://1nh.edusprint.in/1nh/Security"> NH LOGIN</a></li>
             </ul>
