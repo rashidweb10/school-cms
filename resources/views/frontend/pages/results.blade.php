@@ -255,8 +255,8 @@
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function() {
-
-    $('#dataTable').DataTable({
+    // Initialize DataTable first
+    var table = $('#dataTable').DataTable({
         "paging": true,
         "info": true,
         "ordering": true,
@@ -284,37 +284,43 @@ $(document).ready(function() {
     });
     $('#yearFilterButtons').html(buttonsHtml);
 
-    // Step 4: Filter table function (ONLY matching rows)
-    function filterTable(selectedYear) {
-        $('#dataTable tbody tr').each(function() {
-            var yearText = $(this).find('td.col_1').text().trim();
-            //console.log(selectedYear+" : "+yearText);
-            if (yearText == selectedYear) {
-                console.log(selectedYear+" : "+yearText + " : Show");
-                $(this).show();
-            } else {
+    // Step 4: Custom filter for DataTable
+    $.fn.dataTable.ext.search.push(
+        function(settings, data, dataIndex) {
+            var selectedYear = $('.yearFilterBtn.btn-success').data('year');
+            var yearColText = data[0].trim(); // 0 = first column
+            var rowYear = yearColText !== '' ? yearColText : null;
 
-                console.log(selectedYear+" : "+yearText + " : Hide");
-                $(this).hide();
+            // If blank, take previous non-blank year
+            if (rowYear == null && dataIndex > 0) {
+                for (var i = dataIndex - 1; i >= 0; i--) {
+                    var prevRowYear = table.row(i).data()[0].trim();
+                    if (prevRowYear !== '') {
+                        rowYear = prevRowYear;
+                        break;
+                    }
+                }
             }
-        });
-    }
+
+            if (selectedYear === undefined || selectedYear === "") {
+                return true;
+            }
+
+            return rowYear == selectedYear;
+        }
+    );
 
     // Step 5: Button click event
     $(document).on('click', '.yearFilterBtn', function() {
-        var selectedYear = $(this).data('year');
-
-        // Change button active style
         $('.yearFilterBtn').removeClass('btn-success').addClass('btn-primary');
         $(this).removeClass('btn-primary').addClass('btn-success');
 
-        filterTable(selectedYear);
+        table.draw(); // re-draw DataTable with new filter
     });
 
-    // Step 6: Default select first year
+    // Step 6: Default click first year
     if (yearArray.length > 0) {
-        filterTable(yearArray[0]);
-        $('.yearFilterBtn[data-year="' + yearArray[0] + '"]').removeClass('btn-primary').addClass('btn-success');
+        $('.yearFilterBtn[data-year="' + yearArray[0] + '"]').trigger('click');
     }
 });
 </script>
