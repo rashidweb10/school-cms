@@ -87,7 +87,7 @@ class CommandController extends Controller
     {
         // Artisan::call('queue:work', ['--once' => true]); // Process one job
         Artisan::call('queue:work');
-        return 'Queue processed one job.';
+        return 'Queue processed all jobs.';
     }
     
     public function queueRetry($id = null)
