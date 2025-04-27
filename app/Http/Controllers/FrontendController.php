@@ -145,10 +145,10 @@ class FrontendController extends Controller
         return view('frontend.pages.newsletter', compact('pageData'));
     }     
 
-    // public function contact()
-    // {
-    //     return view('frontend.pages.contact');
-    // }
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+    }
 
     public function disclosure()
     {
