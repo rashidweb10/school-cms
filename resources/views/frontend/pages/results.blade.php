@@ -231,7 +231,7 @@
                             </div>
                             @if(strtolower($results['title'][$index]) == "toppers")
                                 <div id="yearFilterButtons"></div>
-                                {!! generateHtmlTableFromCsv('https://school.maptek.online/storage/uploads/2025/04/j3WGbxq5UxkCi6VusaIIAE3qPpWnppkUBhWFP7T9.csv', 'dataTable') !!}
+                                {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index])), 'dataTable') !!}
                             @else
                             <div class="table-responsive">
                                 {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index]))) !!}
