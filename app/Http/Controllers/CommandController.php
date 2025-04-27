@@ -87,6 +87,7 @@ class CommandController extends Controller
     {
         Artisan::call('queue:work', ['--once' => true]); // Process one job
         //Artisan::call('queue:work');
+        var_dump("Queue processed all jobs.");
         return 'Queue processed all jobs.';
     }
     
