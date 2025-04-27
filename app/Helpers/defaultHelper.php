@@ -214,7 +214,7 @@ if (!function_exists('generateHtmlTableFromCsv_old')) {
 }
 
 if (!function_exists('generateHtmlTableFromCsv')) {
-    function generateHtmlTableFromCsv($csvFilePath, $id = null, $class = null) {
+    function generateHtmlTableFromCsv($csvFilePath, $id = null, $class = []) {
         // Handle external URLs
         if (filter_var($csvFilePath, FILTER_VALIDATE_URL)) {
             // Try to fetch the remote CSV
@@ -246,7 +246,7 @@ if (!function_exists('generateHtmlTableFromCsv')) {
         $headers = fgetcsv($file);
         if (!$headers) return '<p>Data Not Found</p>';
 
-        $html = '<table id="'.$id.'" class="table table-bordered table-hover">';
+        $html = '<table id="'.$id.'" class="table '.implode(" ", $class).' table-bordered table-hover">';
         $html .= '<thead class="thead-dark"><tr>';
 
         foreach ($headers as $index => $header) {

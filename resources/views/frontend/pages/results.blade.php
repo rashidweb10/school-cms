@@ -231,7 +231,7 @@
                             </div>
                             @if(strtolower($results['title'][$index]) == "toppers")
                                 <div id="yearFilterButtons"></div>
-                                {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index])), 'dataTable') !!}
+                                {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index])), 'dataTable', ['toppersDatatable']) !!}
                             @else
                             <div class="table-responsive">
                                 {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index]))) !!}
