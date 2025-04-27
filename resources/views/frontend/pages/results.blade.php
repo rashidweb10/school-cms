@@ -260,7 +260,8 @@ $(document).ready(function() {
         "paging": true,
         "info": true,
         "ordering": true,
-        "searching": true
+        "searching": true,
+        "order": [[3, "desc"]]
     });
 
     // Step 1: Extract available years from non-blank year cells
