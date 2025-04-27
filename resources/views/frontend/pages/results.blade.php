@@ -259,9 +259,8 @@ $(document).ready(function() {
     var table = $('#dataTable').DataTable({
         "paging": true,
         "info": true,
-        "ordering": true,
+        "ordering": false,
         "searching": true,
-        "order": [[3, "desc"]]
     });
 
     // Step 1: Extract available years from non-blank year cells
