@@ -140,7 +140,7 @@
       <div class="col-md-10 ev_img_col">
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="camp_dynamic_tab" role="tabpanel" aria-labelledby="camp_tabs_1">
-            <div class="tab-loader text-center">Loading...</div>
+            <div class="tab-loader text-center"></div>
           </div>
         </div>
       </div>
