@@ -257,7 +257,7 @@
 $(document).ready(function() {
     // Initialize DataTable first
     var table = $('#dataTable').DataTable({
-        "paging": true,
+        "paging": false,
         "info": true,
         "ordering": false,
         "searching": true,
