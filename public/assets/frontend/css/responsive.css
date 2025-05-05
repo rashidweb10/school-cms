@@ -483,4 +483,12 @@ display:none;
 .tabss-nav {
    overflow: scroll;
 }
+.carricullam_padd {
+    padding: 0px !important;
+    margin-top: 0;
+}
+
+section.cariculam-section .tab-panel {
+    padding-top: 90px;
+}
 }
