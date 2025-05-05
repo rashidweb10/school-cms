@@ -476,4 +476,11 @@ display:none;
     padding-left: 30px !important;
     padding-right: 30px !important;
 }
+.roadmap_section img
+{
+    height: auto !important;
+}
+.tabss-nav {
+   overflow: scroll;
+}
 }

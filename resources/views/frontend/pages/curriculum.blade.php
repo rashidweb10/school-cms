@@ -33,7 +33,7 @@
                             <div class="row g-5">
                                 @if(isset($curriculum['attachments'][$index]))
                                     @foreach(explode(',', $curriculum['attachments'][$index]) as $attachment)
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-6 carricullam_padd">
                                             <div class="carriculam_images1">
                                             <a href="{{ central_asset(uploaded_asset($attachment)) }}" target="_blank">
                                                 <img src="{{ asset('assets/frontend/img/pdf-icon.png') }}" class="img-fluid" alt="pdf">
