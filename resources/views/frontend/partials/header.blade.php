@@ -8,10 +8,10 @@
                     <p class="mrg_35 robot_slab">CBSE Affiliation No. {{get_setting('affiliation_no')}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p class="mrg_35 robot_slab text-center">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p>
+                    <p class="mrg_35 robot_slab text-center mobile_nones">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p>
                 </div>
                 <div class="col-md-4">
-                    <p class="text-md-end robot_slab">
+                    <p class="text-md-end robot_slab mobile_nones">
                         <a href="{{route('disclosure')}}" class="pe-3 discloser_link">MANDATORY PUBLIC DISCLOSURE</a>
                     </p>
                 </div>

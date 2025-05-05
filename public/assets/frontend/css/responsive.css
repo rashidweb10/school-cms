@@ -13,6 +13,36 @@
     bottom: -20px;
     margin-left: 0;
 }
+.fixed-top {
+    position: relative !important;
+}
+.awards_achievements .owl-nav {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+
+.news_update .owl-nav {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+.news_update button.owl-next {
+    position: relative;
+    top: auto;
+    right: 0;
+}
+.news_update button.owl-prev {
+    position: relative;
+    top: auto;
+    left: 0;
+}
+.mobile_nones
+{
+    display: none !important;
+}
 header {
     border-bottom: 0px solid #fccf00;
 }
