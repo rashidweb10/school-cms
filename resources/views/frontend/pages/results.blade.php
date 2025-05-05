@@ -33,7 +33,7 @@
     }
 
     .results .nav-link i {
-        padding-right: 15px;
+        padding-right: 0px;
         font-size: 40px;
     }
 
