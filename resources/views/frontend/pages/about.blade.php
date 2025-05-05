@@ -30,7 +30,7 @@
 
         </div>
       </div>
-      <div class="col-lg-12 pt-md-0 pt-5">
+      <div class="col-lg-12 pt-md-0 pt-md-5 pt-4">
       <p>{!! $about_description !!}</p>
       </div>
     </div>
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="scrollable-tabs">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-md-3" id="pills-tab" role="tablist">
                     @foreach($categories as $index => $category)
                         <li class="nav-item" role="presentation">
                             <button class="nav-link {{ $index == 0 ? 'active' : '' }}" 
@@ -84,13 +84,13 @@
                                 @foreach($category->teams as $team)
                                 <div class="col-md-4">
                                   <div class="row">
-                                    <div class="col-md-12 col-6 pb-3">
+                                    <div class="col-md-12 col-12 pb-3">
                                       <div class="founder_box">
                                         <div class="founder_img position-relative">
                                           <img src="{{ central_asset(uploaded_asset($team->image)) }}" alt="{{$team->name}}" />
                                         </div>
                                         <h4 class="fs-6 text-center pt-3 mb-0">{{$team->name}}</h4>
-                                        <p class="text-center">{{$team->designation}}</p>
+                                        <p class="text-center pb-md-3 mb-0 pb-0">{{$team->designation}}</p>
                                       </div>
                                     </div>
                                   </div>
@@ -105,7 +105,7 @@
                             {{-- Template 2: Category has teams --}}
                             <div class="row d-flex">
                                 @foreach($category->teams as $team)
-                                <div class=" col-12 col-md-4 p-3">
+                                <div class=" col-12 col-md-4 p-md-3">
                                   <!-- <div class="lightbox_img_wrap">
                                     <img class="lightbox-enabled" src="{{ central_asset(uploaded_asset($team->image)) }}"
                                       data-imgsrc="{{ central_asset(uploaded_asset($team->image)) }}">
