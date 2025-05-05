@@ -2122,3 +2122,7 @@ a.result_vm_btn:hover {
     background: #fdee9d;
     color: #333;
 }
+
+.btn-check:focus+.btn-success, .btn-success:focus {
+    box-shadow: none !important;
+}
