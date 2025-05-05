@@ -485,7 +485,7 @@ display:none;
 }
 .carricullam_padd {
     padding: 0px !important;
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 
 section.cariculam-section .tab-panel {
