@@ -2111,3 +2111,14 @@ a.result_vm_btn:hover {
     margin-right: auto;
     display: block;
 }
+
+#yearFilterButtons button {
+    border: transparent;
+    padding: 11px 34px 9px 34px;
+    transition: 0.3s;
+    border-radius: 0;
+    cursor: pointer;
+    height: 100%;
+    background: #fdee9d;
+    color: #333;
+}
