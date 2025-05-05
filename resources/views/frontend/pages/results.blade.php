@@ -229,9 +229,14 @@
                             <div class="col-12">
                                 <h4 class="r_tab_heading">{{ $results['title'][$index] ?? 'Result' }}</h4>
                             </div>
+                            @if(strtolower($results['title'][$index]) == "toppers")
+                                <div id="yearFilterButtons"></div>
+                                {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index])), 'dataTable', ['toppersDatatable']) !!}
+                            @else
                             <div class="table-responsive">
                                 {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($results['image'][$index]))) !!}
                             </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -245,7 +250,80 @@
 
 
 @section('scripts')
-<script>
 
+<link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Initialize DataTable first
+    var table = $('#dataTable').DataTable({
+        "paging": false,
+        "info": true,
+        "ordering": true,
+        "searching": true,
+        order: [[3, 'desc']]
+    });
+
+    // Step 1: Extract available years from non-blank year cells
+    var years = new Set();
+    $('#dataTable tbody tr').each(function() {
+        var yearText = $(this).find('td.col_1').text().trim();
+        if (yearText !== '') {
+            years.add(yearText);
+        }
+    });
+
+    // Step 2: Sort years (max to min)
+    var yearArray = Array.from(years).sort(function(a, b) {
+        return b - a;
+    });
+
+    // Step 3: Build year filter buttons
+    var buttonsHtml = '';
+    yearArray.forEach(function(year, index) {
+        buttonsHtml += '<button type="button" class="btn btn-primary m-1 yearFilterBtn" data-year="' + year + '">' + year + '</button>';
+    });
+    $('#yearFilterButtons').html(buttonsHtml);
+
+    // Step 4: Custom filter for DataTable
+    $.fn.dataTable.ext.search.push(
+        function(settings, data, dataIndex) {
+            var selectedYear = $('.yearFilterBtn.btn-success').data('year');
+            var yearColText = data[0].trim(); // 0 = first column
+            var rowYear = yearColText !== '' ? yearColText : null;
+
+            // If blank, take previous non-blank year
+            if (rowYear == null && dataIndex > 0) {
+                for (var i = dataIndex - 1; i >= 0; i--) {
+                    var prevRowYear = table.row(i).data()[0].trim();
+                    if (prevRowYear !== '') {
+                        rowYear = prevRowYear;
+                        break;
+                    }
+                }
+            }
+
+            if (selectedYear === undefined || selectedYear === "") {
+                return true;
+            }
+
+            return rowYear == selectedYear;
+        }
+    );
+
+    // Step 5: Button click event
+    $(document).on('click', '.yearFilterBtn', function() {
+        $('.yearFilterBtn').removeClass('btn-success').addClass('btn-primary');
+        $(this).removeClass('btn-primary').addClass('btn-success');
+
+        table.draw(); // re-draw DataTable with new filter
+    });
+
+    // Step 6: Default click first year
+    if (yearArray.length > 0) {
+        $('.yearFilterBtn[data-year="' + yearArray[0] + '"]').trigger('click');
+    }
+});
 </script>
+
 @endsection

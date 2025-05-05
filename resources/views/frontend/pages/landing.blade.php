@@ -93,7 +93,10 @@
                         <select name="school" class="form-control" required>
                             <option value="">--- Select School Name ---</option>
                             @foreach($schools as $school)
-                              <option data-id="{{ $school->id }}" value="{{ $school->name }}">{{ $school->name }}</option>
+                              <option data-id="{{ $school->id }}" value="{{ $school->name }}">
+                                {{ $school->name }},
+                                {{$school->meta->where('meta_key', 'location')->first()->meta_value ?? ''}}
+                              </option>
                             @endforeach
                         </select>
                       </div>
@@ -136,7 +139,7 @@
             <div class="locatio_box">
                 <ul>
                     @foreach($schools as $school)
-                    <li class="hvr-bounce-in loationtext_hover"><p><a target="_blank" href="{{$school->website}}"><i class="fa-solid fa-caret-right"></i>{{$school->name}} </a></p></li>
+                    <li class="hvr-bounce-in loationtext_hover"><p><a target="_blank" href="{{$school->website}}"><i class="fa-solid fa-caret-right"></i>{{$school->name}}, {{$school->meta->where('meta_key', 'location')->first()->meta_value ?? ''}} </a></p></li>
                     @endforeach
                   </ul>
             </div>

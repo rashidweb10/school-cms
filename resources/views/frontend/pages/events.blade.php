@@ -140,7 +140,7 @@
       <div class="col-md-10 ev_img_col">
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="camp_dynamic_tab" role="tabpanel" aria-labelledby="camp_tabs_1">
-            <div class="tab-loader text-center">Loading...</div>
+            <div class="tab-loader text-center"></div>
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@
     });
 </script>
 
-<script>
+<!--<script>
 $(document).ready(function () {
   // Load content when a tab is clicked
   $('.nav-link').on('shown.bs.tab', function (e) {
@@ -210,6 +210,103 @@ $(document).ready(function () {
   // Auto-trigger first tab load
   $('.nav-link.active').trigger('shown.bs.tab');
 });
+</script>-->
+
+<script>
+$(document).ready(function () {
+  let ajaxStartTime = 0;
+
+  // Load content when a tab is clicked
+  $('.nav-link').on('shown.bs.tab', function (e) {
+    const $tab = $(e.target);
+    const url = $tab.data('url');
+    const $target = $('#camp_dynamic_tab');
+
+    // Disable all tab clicks temporarily
+    $('.nav-link').addClass('disabled').css('pointer-events', 'none');
+
+    // Show loader
+
+    let skeletonHTML = '';
+for (let i = 0; i < 4; i++) { // show 4 skeleton boxes
+  skeletonHTML += `
+    <div class="event_box col-md-3 skeleton">
+      <a class="bounce" style="pointer-events: none;">
+        <div class="img-placeholder"></div>
+      </a>
+      <div class="event_name">
+        <p class="text-placeholder"></p>
+      </div>
+    </div>
+  `;
+}
+$target.html('<div class="row">' + skeletonHTML + '</div>');
+
+    //$target.html('<div class="text-center">Loading...</div>');
+
+    // Record start time
+    ajaxStartTime = Date.now();
+
+    $.ajax({
+      url: url,
+      method: 'GET',
+      dataType: 'html',
+      success: function (data) {
+        $target.html(data);
+      },
+      error: function (xhr, status, error) {
+        console.error("AJAX Error:", error);
+        //$target.html('<div class="text-danger">Failed to load content.</div>');
+        $target.html('<div class="row">' + skeletonHTML + '</div>');
+      },
+      complete: function () {
+        // Record end time
+        const ajaxEndTime = Date.now();
+        const elapsedSeconds = ((ajaxEndTime - ajaxStartTime) / 1000).toFixed(2);
+
+        console.log(`⏱️ Load time: ${elapsedSeconds} seconds`);
+
+        // Re-enable all tabs after AJAX completes
+        $('.nav-link').removeClass('disabled').css('pointer-events', 'auto');
+      }
+    });
+  });
+
+  // Auto-trigger first tab load
+  $('.nav-link.active').trigger('shown.bs.tab');
+});
 </script>
+
+<style>
+/* Skeleton base animation */
+.skeleton .img-placeholder,
+.skeleton .text-placeholder {
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f0f0f0 50%, #e0e0e0 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.2s infinite;
+}
+
+.img-placeholder {
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  border-radius: 8px;
+}
+
+.text-placeholder {
+  height: 20px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+</style>
+
 
 @endsection

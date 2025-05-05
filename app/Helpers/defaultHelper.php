@@ -214,7 +214,7 @@ if (!function_exists('generateHtmlTableFromCsv_old')) {
 }
 
 if (!function_exists('generateHtmlTableFromCsv')) {
-    function generateHtmlTableFromCsv($csvFilePath) {
+    function generateHtmlTableFromCsv($csvFilePath, $id = null, $class = []) {
         // Handle external URLs
         if (filter_var($csvFilePath, FILTER_VALIDATE_URL)) {
             // Try to fetch the remote CSV
@@ -246,7 +246,7 @@ if (!function_exists('generateHtmlTableFromCsv')) {
         $headers = fgetcsv($file);
         if (!$headers) return '<p>Data Not Found</p>';
 
-        $html = '<table class="table table-bordered table-hover">';
+        $html = '<table id="'.$id.'" class="table '.implode(" ", $class).' table-bordered table-hover">';
         $html .= '<thead class="thead-dark"><tr>';
 
         foreach ($headers as $index => $header) {
@@ -266,7 +266,7 @@ if (!function_exists('generateHtmlTableFromCsv')) {
                     $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'];
 
                     if (in_array($ext, $imageExtensions)) {
-                        $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank'><img src='" . htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
+                        $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank'><img class='img-thumbnail' src='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
                     } else {
                         $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
                     }

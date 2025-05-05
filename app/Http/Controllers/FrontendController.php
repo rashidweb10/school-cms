@@ -22,7 +22,7 @@ class FrontendController extends Controller
         ->firstOrFail();
         
         if(config('custom.school_id') == 1){
-            $schools = Company::whereNot('id', 1)->where('is_active', 1)->get();
+            $schools = Company::with('meta')->whereNot('id', 1)->where('is_active', 1)->get();
             return view('frontend.pages.landing', compact('pageData', 'schools'));
         }
         return view('frontend.pages.home', compact('pageData'));
@@ -145,10 +145,10 @@ class FrontendController extends Controller
         return view('frontend.pages.newsletter', compact('pageData'));
     }     
 
-    // public function contact()
-    // {
-    //     return view('frontend.pages.contact');
-    // }
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+    }
 
     public function disclosure()
     {

@@ -29,6 +29,9 @@ class FormController extends Controller
 
         Mail::to(config('mail.from.address'))
             ->queue(new FormSubmissionMail($formName, $validatedData));
+
+        // Mail::to(config('mail.from.address'))
+        // ->send(new FormSubmissionMail($formName, $validatedData));        
             
 
         return redirect()->back()->with('success', 'Enquiry submitted successfully');

@@ -54,7 +54,7 @@ Route::get('/alumini', [FrontendController::class, 'alumini'])->name('alumini');
 
 Route::get('/results', [FrontendController::class, 'results'])->name('results');
 
-Route::get('/contact-us', [FrontendController::class, 'results'])->name('contact');
+Route::get('/contact-us', [FrontendController::class, 'contact'])->name('contact');
 
 Route::get('/disclosure', [FrontendController::class, 'disclosure'])->name('disclosure');
 
