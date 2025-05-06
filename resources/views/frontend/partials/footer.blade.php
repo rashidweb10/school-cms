@@ -78,6 +78,8 @@
         <div class="text-md-end footer_bottom_img">
           <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" alt="EduSprint Pro Logo" />
         </div>
+
+        <p class="qr_text">Scan this QR Code to Login/Access your Portal</p>
         <div class="d-flex justify-content-md-end qrcode_img">
           <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}" alt="QR Code 1" />
           <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}" alt="QR Code 2" />

@@ -491,4 +491,7 @@ display:none;
 section.cariculam-section .tab-panel {
     padding-top: 90px;
 }
+p.qr_text {
+    text-align: left;
+}
 }
