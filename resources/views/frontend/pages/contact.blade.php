@@ -7,7 +7,7 @@
 
 @include('frontend.partials.breadcrumb', ['title' => "Contact Us"])
 
-<section class="embedcode pb-5">
+<section class="embedcode pb-md-5">
      <div class="container">
      <iframe src="{{get_setting('google_map')}}" height="20" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      </div>
