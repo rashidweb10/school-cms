@@ -11,7 +11,7 @@
 $attachment = $pageData->meta->where('meta_key', 'attachment')->first()->meta_value ?? '';
 @endphp
 
-<section class="py-5 bg-light">
+<section class="py-md-5 py-md-3 bg-light">
     <div class="container">
         <div class="row">
             <div class="table-responsive">

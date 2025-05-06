@@ -210,10 +210,10 @@
         <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-delay="100">
             @if(isset($intra['itration']) && is_array($intra['itration']))
                 @foreach($intra['itration'] as $index => $iteration)
-                    <li class="nav-item col-md-2 col-sm-12 col-lg-2">
+                    <li class="nav-item col-md-2 col-sm-12 col-lg-2 col-6 mb-md-0 mb-3">
                         <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#intra-tab-{{ $index }}">
                             <i class="bi bi-box-seam"></i>
-                            <h4 class="d-none d-lg-block">{{ $intra['title'][$index] ?? 'Result' }}</h4>
+                            <h4 class="d-lg-block">{{ $intra['title'][$index] ?? 'Result' }}</h4>
                         </a>
                     </li>
                 @endforeach

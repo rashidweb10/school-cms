@@ -494,4 +494,7 @@ section.cariculam-section .tab-panel {
 p.qr_text {
     text-align: left;
 }
+#circulars {
+    padding: 10px 0px 20px 0px;
+}
 }
