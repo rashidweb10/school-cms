@@ -509,8 +509,12 @@ p.qr_text {
     line-height: 17px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 0 !important;
 }
 .ev_img_col {
-    padding: 16px 16px 16px 16px !important; 
+    padding: 50px 16px 16px 16px !important; 
+}
+.event_main_box {
+    margin-top: 6px;
 }
 }
