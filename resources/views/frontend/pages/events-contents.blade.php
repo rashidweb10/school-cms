@@ -7,7 +7,7 @@
                 //$image_thumb_name = uploaded_asset_name($data->thumbnail) ?? '';
                 $image_thumb_name = "Image ".$index;
             @endphp        
-            <div class="event_box col-md-3">
+            <div class="event_box col-md-3 col-6 event_main_box">
 
                 {{-- Thumbnail --}}
                 <a 
