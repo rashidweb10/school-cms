@@ -517,4 +517,20 @@ p.qr_text {
 .event_main_box {
     margin-top: 6px;
 }
+.titlt_col {
+    padding: 25px 0px 25px 15px !important;
+}
+.camp_section h1 {
+    font-size: 22px;
+}
+#yearFilterButtons button {
+    border: transparent;
+    padding: 7px 25px 9px 25px !important;
+    transition: 0.3s;
+    border-radius: 0;
+    cursor: pointer;
+    height: auto !important;
+    background: #fdee9d;
+    color: #333;
+}
 }
