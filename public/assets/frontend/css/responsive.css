@@ -533,4 +533,7 @@ p.qr_text {
     background: #fdee9d;
     color: #333;
 }
+.submit_bittons {
+    font-size: 14px !important;
+}
 }
