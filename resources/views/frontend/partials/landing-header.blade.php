@@ -21,14 +21,14 @@
     <header>
       <div class="container">
         <div class="row">
-          <div class="col-md-1 col-12">
+          <div class="col-md-1 col-3">
             <div class="logo_width">
               <a class="navbar-brand" href="{{ route('home') }}">
                 <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" />
               </a>
             </div>
           </div>
-          <div class="col-md-4 col-12">
+          <div class="col-md-4 col-9">
             <h4 class="header_text roboto">{{get_setting('name')}}</h4>
           </div>
           <div class="col-md-7 col-12">

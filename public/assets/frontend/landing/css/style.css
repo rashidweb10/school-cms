@@ -2046,3 +2046,11 @@ display:none;
 .grecaptcha-badge {
     display: none !important;
 }
+
+p.qr_text {
+    text-align: right;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+    padding-top: 6px;
+    font-size: 12px;
+}

@@ -164,7 +164,7 @@
       <div class="container">
         <div class="row">
              <div class="col-lg-6">
-            <div class=" mb-md-4 mb-2 pt-md-0 pt-5">
+            <div class=" mb-md-4 mb-2 pt-md-0 pt-4">
               <h3 class="roboto text_color fw-normal">{{$about_title2}}</h3>
             </div>
             <p class="">{!! $about_description2 !!}</p>
