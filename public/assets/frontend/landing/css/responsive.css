@@ -193,7 +193,7 @@ header {
     background-image: url(./img/header-back.jpg);
 }
 .top_position {
-    position: relative;
+    position: relative !important;
     width: 100%;
     background: #fff;
 }
