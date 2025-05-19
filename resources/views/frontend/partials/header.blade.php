@@ -43,9 +43,11 @@
                     <div class="d-flex browser_link">
                         <ul class="d-flex ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
+                                @if(get_setting('brochure_attachment'))
                                 <a target="_blank" class="nav-link robot_slab" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
                                     <img src="{{ asset('assets/frontend/img/icon-brochure-w.png') }}"> BROCHURE
                                 </a>
+                                @endif
                             </li>
                             <li class="nav-item">
                                 <a target="_blank" class="nav-link robot_slab"
