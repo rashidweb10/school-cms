@@ -165,7 +165,7 @@
             @foreach($home_milestones['itration'] as $index => $itration)
                 <div class="col-md-3 col-6 text-center">
                     <div class="stastic @if($loop->last) @else startimg @endif">
-                        <div class="counter-value robot_slab" data-count="50">{{$home_milestones['title'][$index]}}</div>
+                        <div class="counter-value robot_slab" data-count="{{$home_milestones['title'][$index]}}">1+</div>
                         <p class="robot_slab">{{$home_milestones['description'][$index]}}</p>
                     </div>
                 </div>
