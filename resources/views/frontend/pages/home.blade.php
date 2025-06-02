@@ -311,7 +311,7 @@
                     <div class="quickimg"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($home_quicklinks['icon'][$index])) }}" alt="Image 1"></div>
                 </div>
                 <div class=" text-center pt-3">
-                  <p class="centered-text roboto">{{$home_quicklinks['title'][$index]}}</p>
+                  <p class="centered-text roboto">{{$home_quicklinks['title'][$index]}}</p> 
                 </div>
               </a>
             </div>
