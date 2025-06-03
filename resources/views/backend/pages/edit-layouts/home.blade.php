@@ -22,6 +22,7 @@ $home_awards = json_decode($pageData->meta->where('meta_key', 'home_awards')->fi
 $home_classrooms = json_decode($pageData->meta->where('meta_key', 'home_classrooms')->first()->meta_value ?? '[]', true);
 $home_quicklinks = json_decode($pageData->meta->where('meta_key', 'home_quicklinks')->first()->meta_value ?? '[]', true);
 $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->first()->meta_value ?? '[]', true);
+$video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
 @endphp
 
 <div class="row">
@@ -132,7 +133,11 @@ $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->
     <div class="col-md-12 form-group mb-2">
         <label for="content" class="form-label">Description <span class="text-danger">*</span></label>
         <textarea name="meta[about_school_description]" class="form-control text-editor" rows="4" required>{{$about_school_description}}</textarea>
-    </div>     
+    </div> 
+    <div class="col-md-12 form-group mb-2">
+        <label for="name" class="form-label">Video<span class="text-danger"></span></label>
+        <input class="form-control" value="{{$video}}" name="meta[video]" type="text">
+    </div>         
 </div>
 
 <div class="row">

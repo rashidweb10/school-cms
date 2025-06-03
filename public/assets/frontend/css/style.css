@@ -2134,3 +2134,10 @@ p.qr_text {
     padding-top: 6px;
     font-size: 12px;
 }
+
+.classroom_box iframe {
+    width: 90%;
+    height: 450px;
+    margin-left: 5%;
+    position: relative;
+}

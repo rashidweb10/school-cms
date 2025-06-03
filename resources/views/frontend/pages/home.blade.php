@@ -28,6 +28,7 @@
   $home_classrooms = json_decode($pageData->meta->where('meta_key', 'home_classrooms')->first()->meta_value ?? '[]', true);
   $home_quicklinks = json_decode($pageData->meta->where('meta_key', 'home_quicklinks')->first()->meta_value ?? '[]', true);
   $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->first()->meta_value ?? '[]', true);
+  $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
 @endphp
 
 <div class="banner_slider">
@@ -145,7 +146,7 @@
               <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($about_school_image)) }}" alt="img" />
             </div>
           </div>
-          <div class="col-lg-8 text-center">
+          <div class="col-lg-10 text-center">
             <div class="text-start mb-md-4 mb-2 pt-md-0 pt-lg-5">
               <h3 class="roboto text_color text-center fw-normal">{{$about_school_title}}</h3>
             </div>
@@ -153,6 +154,12 @@
             <div class="read-more text-center">
               <a href="" class="btn-2">Read More</a>
             </div>
+            <div class="classroom_box mt-3">
+              @if($video)
+                <iframe width="100%" height="100%" src="{{$video}}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              @endif
+            </div>
+           
           </div>
         </div>
       </div>
