@@ -70,7 +70,16 @@
                     <div class="mb-3 form-group">
                         <label for="meta-email2" class="form-label">Secondary Email</label>
                         <input type="email" class="form-control" id="meta-email2" name="meta[email2]" value="{{ old('meta.email2', $pageData->meta->where('meta_key', 'email2')->first()->meta_value ?? '') }}" placeholder="">
-                    </div>                    
+                    </div>   
+                    <div class="mb-3 form-group">
+                        <label for="meta-general-enquiry" class="form-label">General Enquiry</label>
+                        <input type="email" class="form-control" id="meta-general-enquiry" name="meta[general_enquiry]" value="{{ old('meta.general_enquiry', $pageData->meta->where('meta_key', 'general_enquiry')->first()->meta_value ?? '') }}" placeholder="">
+                    </div>
+
+                    <div class="mb-3 form-group">
+                        <label for="meta-admission-enquiry" class="form-label">Admission Enquiry</label>
+                        <input type="email" class="form-control" id="meta-admission-enquiry" name="meta[admission_enquiry]" value="{{ old('meta.admission_enquiry', $pageData->meta->where('meta_key', 'admission_enquiry')->first()->meta_value ?? '') }}" placeholder="">
+                    </div>                                     
                     <div class="mb-3 form-group">
                         <label for="meta-phone2" class="form-label">Secondary Phone</label>
                         <input type="text" class="form-control" id="meta-phone2" name="meta[phone2]" value="{{ old('meta.phone2', $pageData->meta->where('meta_key', 'phone2')->first()->meta_value ?? '') }}" placeholder="">
