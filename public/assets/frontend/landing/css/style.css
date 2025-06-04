@@ -178,11 +178,17 @@ header li.nav-item.dropdown li:last-child a {
     }
 } */
 
+.radio_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 19px;
+    margin-bottom: 11px;
+}
 .fixed-top {
     position: fixed;
     top: 0;
     z-index: 1000;
-    background-color: #333;
+    background-color: transparent;
   }
 .blink_bg {
     background: #afa27f;

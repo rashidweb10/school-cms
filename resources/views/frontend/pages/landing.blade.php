@@ -70,6 +70,20 @@
                 <h4 class="robot_slab text_color pt-70">Admission Enquiry Form</h4>
                 <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p>
                 
+
+              <div class="radio_buttons">
+                <div class="">
+                    <input type="radio" id="General-Enquiry" name="fav_language" value="HTML">
+                    <label for="General-Enquiry">General Enquiry</label>
+                </div>
+
+                <div class="">
+                    <input type="radio" id="Admission-Counseling" name="fav_language" value="CSS">
+                    <label for="Admission-Counseling">Admission Counseling</label>
+                </div>
+              </div>
+
+
                 <!-- ✅ School Admission Form -->
                 <form method="post" action="{{ route('form.submit') }}" id="admissionForm" onsubmit="protect_with_recaptcha_v3(this, 'admission')">
                   @include('frontend.components.form-alert')
