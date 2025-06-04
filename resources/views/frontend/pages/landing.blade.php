@@ -118,7 +118,15 @@
 
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
-                        <input type="text" class="form-control" name="standard" placeholder="Select Standard*" required>
+                          <select name="standard" class="form-control" required>
+                            <option value="">--- Select Standard ---</option>
+                            @for($i = 1; $i <= 12; $i++)
+                              <option value="{{ $i }}{{ $i == 1 ? 'st' : ($i == 2 ? 'nd' : ($i == 3 ? 'rd' : 'th')) }} Standard">
+                                {{ $i }}{{ $i == 1 ? 'st' : ($i == 2 ? 'nd' : ($i == 3 ? 'rd' : 'th')) }} Standard
+                              </option>
+                            @endfor
+                          </select>                        
+                        <!-- <input type="text" class="form-control" name="standard" placeholder="Select Standard*" required> -->
                       </div>
                     </div>
 
@@ -239,11 +247,10 @@
   <section id="counter" class="statistics-section about-us">
     <div class="container">
       <div class="row">
-      
           @foreach($landing_milestones['itration'] as $index => $itration)
               <div class="col-md-3 col-6 text-center">
                   <div class="stastic @if($loop->last) @else startimg @endif">
-                      <div class="counter-value robot_slab" data-count="50">{{$landing_milestones['title'][$index]}}</div>
+                      <div class="counter-value robot_slab" data-count="{{$landing_milestones['title'][$index]}}">1+</div>
                       <p class="robot_slab">{{$landing_milestones['description'][$index]}}</p>
                   </div>
               </div>

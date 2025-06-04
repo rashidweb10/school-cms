@@ -318,7 +318,7 @@ if (!function_exists('uploaded_asset_name')) {
 
 if (!function_exists('get_setting')) {
     function get_setting($metaKey, $default = null) {
-        return \Illuminate\Support\Facades\Cache::rememberForever("setting_" . config('custom.school_id') . "_{$metaKey}", function () use ($metaKey, $default) {
+        //return \Illuminate\Support\Facades\Cache::rememberForever("setting_" . config('custom.school_id') . "_{$metaKey}", function () use ($metaKey, $default) {
             $company = \App\Models\Company::with('meta')->where('id', config('custom.school_id'))->first();
 
             if (!$company) {
@@ -332,7 +332,7 @@ if (!function_exists('get_setting')) {
 
             // Otherwise, check the meta table
             return $company->meta->where('meta_key', $metaKey)->first()->meta_value ?? $default;
-        });
+        //});
     }
 }
 
