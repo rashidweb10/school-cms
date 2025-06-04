@@ -24,7 +24,7 @@ class FormController extends Controller
             'phone' => $request->input('phone'),
             'form_data' => $formData,
             'ip' => request()->ip(),
-            'company_id' => config('custom.school_id'),
+            'company_id' => $request->input('company_id') ?? config('custom.school_id') //config('custom.school_id'),
         ]);
 
         Mail::to(config('mail.from.address'))
@@ -40,7 +40,7 @@ class FormController extends Controller
     private function getValidationRules($formName)
     {
         switch ($formName) {
-            case 'admission':
+            case 'landing':
                 return [
                     'form_name' => 'required|max:20',
                     'name' => 'required|string|max:50',
@@ -49,6 +49,7 @@ class FormController extends Controller
                     'standard' => 'nullable|string|max:50',                    
                     'city' => 'nullable|string|max:50',                    
                     'school' => 'nullable|string|max:100',                    
+                    'enquiry_type' => 'nullable|string|max:20',                    
                 ];
             case 'contact':
                 return [
@@ -58,6 +59,7 @@ class FormController extends Controller
                     'phone' => 'nullable|digits_between:10,15|max:50',
                     'subject' => 'nullable|string|max:100',
                     'message' => 'required|string|max:150',
+                    'enquiry_type' => 'nullable|string|max:20',
                 ];
             default:
                 return [

@@ -74,9 +74,22 @@
                 <form method="post" action="{{ route('form.submit') }}" id="admissionForm" onsubmit="protect_with_recaptcha_v3(this, 'admission')">
                   @include('frontend.components.form-alert')
                   @csrf
-                  <input type="hidden" name="form_name" value="admission">
+                  <input type="hidden" name="form_name" value="landing">
+                  <input type="hidden" name="company_id" value="">
 
                   <div class="row">
+                    <div class="col-md-12 mb-3 d-flex">
+                      <label  class="form-label d-block mb-2" style="margin-right: 20px;">Enquiry Type</label>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="enquiry_type" id="enquiryGeneral" value="General" checked>
+                        <label class="form-check-label" for="enquiryGeneral">General</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="enquiry_type" id="enquiryAdmission" value="Admission">
+                        <label class="form-check-label" for="enquiryAdmission">Admission</label>
+                      </div>
+                    </div>
+
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
                         <select name="city" class="form-control" required>
@@ -356,6 +369,12 @@ $(document).ready(function () {
             }).show();
         }
     });
+
+    $schoolSelect.on('change', function () {
+      const selectedDataId = $(this).find('option:selected').data('id'); // get data-id
+      $('input[name="company_id"]').val(selectedDataId); // set it to the hidden input
+    });
+
 });
 </script>
 @endsection
