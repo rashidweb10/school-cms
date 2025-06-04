@@ -2078,7 +2078,7 @@ section.vission_mission {
     position: fixed;
     top: 0;
     z-index: 1000;
-    background-color: #333;
+    background-color: transparent;
   }
 
   a.result_vm_btn {
