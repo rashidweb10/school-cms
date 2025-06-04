@@ -71,7 +71,7 @@
                 <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p>
                 
 
-              <div class="radio_buttons">
+              <!-- <div class="radio_buttons">
                 <div class="">
                     <input type="radio" id="General-Enquiry" name="fav_language" value="HTML">
                     <label for="General-Enquiry">General Enquiry</label>
@@ -81,7 +81,7 @@
                     <input type="radio" id="Admission-Counseling" name="fav_language" value="CSS">
                     <label for="Admission-Counseling">Admission Counseling</label>
                 </div>
-              </div>
+              </div> -->
 
 
                 <!-- ✅ School Admission Form -->
