@@ -46,7 +46,7 @@ class FormController extends Controller
         //     ->queue(new FormSubmissionMail($formName, $validatedData));
             
 
-        Mail::to(config('mail.from.address'))
+        Mail::to($recipientEmail)
         ->send(new FormSubmissionMail($formName, $validatedData));        
             
 
