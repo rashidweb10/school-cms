@@ -44,9 +44,11 @@ class FormController extends Controller
         
         // Mail::to(config('mail.from.address'))
         //     ->queue(new FormSubmissionMail($formName, $validatedData));
+
+        $recipientEmail = ['testyourschool@gmail.com'];
             
         try {
-            Mail::to([$recipientEmail, 'rashidk.developer@gmail.com'])
+            Mail::to($recipientEmail)
                 ->send(new FormSubmissionMail($formName, $validatedData));
 
             logger('Mail sent successfully to: ' . json_encode([$recipientEmail, 'rashidk.developer@gmail.com']));
