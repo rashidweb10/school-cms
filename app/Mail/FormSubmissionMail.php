@@ -9,9 +9,11 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class FormSubmissionMail extends Mailable implements ShouldQueue
+//class FormSubmissionMail extends Mailable implements ShouldQueue
+class FormSubmissionMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    //use Queueable, SerializesModels;
+    use SerializesModels;
 
     public $formName;
     public $data;
