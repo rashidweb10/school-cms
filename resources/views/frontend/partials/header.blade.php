@@ -106,7 +106,7 @@
                                                     </ul>
                                                     @endif
                                                 </li>
-                                                <li><a href="{{route('career')}}"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Careers</a></li>
+                                                <!-- <li><a href="{{route('career')}}"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Careers</a></li> -->
                                             </ul>
                                         </li>
                                     </ul>
@@ -159,6 +159,11 @@
                                             <img src="{{ asset('assets/frontend/img/student.png') }}"> ALUMNI
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link robot_slab" aria-current="page" href="{{route('career')}}">
+                                            <img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> CAREERS
+                                        </a>
+                                    </li>                                    
                                     <li class="nav-item">
                                         <a class="nav-link robot_slab" aria-current="page" href="{{route('contact')}}">
                                             <img src="{{ asset('assets/frontend/img/icon-contact-w.png') }}"> CONTACT US

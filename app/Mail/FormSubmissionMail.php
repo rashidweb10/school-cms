@@ -26,7 +26,7 @@ class FormSubmissionMail extends Mailable
 
     public function build()
     {
-        return $this->subject("New {$this->formName} Form Submission")
+        return $this->subject(config('custom.app_name'))
                     ->markdown('emails.form_submission');
     }
 }

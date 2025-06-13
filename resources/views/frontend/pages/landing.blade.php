@@ -110,7 +110,7 @@
                           <option value="">--- Select City ---</option>
                           <option value="Thane">Thane</option>
                           <option value="Navi Mumbai">Navi Mumbai</option>
-                          <option value="Raigad">Raigad</option>
+                          <option value="Panvel">Panvel</option>
                         </select>
                       </div>
                     </div>
@@ -377,7 +377,7 @@ $(document).ready(function () {
             $allOptions.filter(function () {
                 return $(this).attr('data-id') === '6' || $(this).attr('data-id') === '7';
             }).show();
-        } else if (city === 'Raigad') {
+        } else if (city === 'Panvel') {
             $allOptions.filter(function () {
                 return $(this).attr('data-id') === '8';
             }).show();
