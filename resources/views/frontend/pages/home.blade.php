@@ -104,7 +104,7 @@
         </div>
       </div>
     </section>
-    <section class="service-categories text-xs-center">
+    <section class="service-categories text-xs-center d-none">
       <div class="container">
         <div class="row">
           <div class="col-md-4 p-md-4 mb-md-0 mb-4">
@@ -263,7 +263,7 @@
     @endif
     
     @if(isset($home_updates['itration']) && is_array($home_updates['itration']))
-    <section class="news_section">
+    <section class="news_section d-none">
       <div class="pb-4 pt-4 pb-md-5 pt-md-5">
         <div class="container">
           <div class="row">
@@ -301,7 +301,7 @@
     @endif
     
     @if(isset($home_quicklinks['itration']) && is_array($home_quicklinks['itration']))
-    <section class="quicklinks light_bgs">
+    <section class="quicklinks light_bgs d-none">
       <div class="pb-4 pt-4 pb-md-5 pt-md-5">
         <div class="container">
           <div class="row">

@@ -308,7 +308,7 @@
     @endif
 
 @if(isset($landing_quicklinks['itration']) && is_array($landing_quicklinks['itration']))
-    <section class="quicklinks light_bgs">
+    <section class="quicklinks light_bgs d-none">
       <div class="pb-4 pt-4 pb-md-5 pt-md-5">
         <div class="container">
           <div class="row">

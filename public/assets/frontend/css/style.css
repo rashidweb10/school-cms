@@ -1539,7 +1539,7 @@ section.about_section .container {
        background: linear-gradient(180deg, #fefddf 0%, #fefddf 25%, #fefddf 80%, #ffffff 100%);
     border-top: 0px solid #fccf00;
     margin-top: -90px;
-      padding-bottom: 210px;
+      padding-bottom: 10px;
     padding-left: 80px;
     padding-right: 90px;
 }
