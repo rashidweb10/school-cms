@@ -71,7 +71,7 @@
                 <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p>
                 
 
-              <div class="radio_buttons">
+              <!-- <div class="radio_buttons">
                 <div class="">
                     <input type="radio" id="General-Enquiry" name="fav_language" value="HTML">
                     <label for="General-Enquiry">General Enquiry</label>
@@ -81,23 +81,36 @@
                     <input type="radio" id="Admission-Counseling" name="fav_language" value="CSS">
                     <label for="Admission-Counseling">Admission Counseling</label>
                 </div>
-              </div>
+              </div> -->
 
 
                 <!-- ✅ School Admission Form -->
                 <form method="post" action="{{ route('form.submit') }}" id="admissionForm" onsubmit="protect_with_recaptcha_v3(this, 'admission')">
                   @include('frontend.components.form-alert')
                   @csrf
-                  <input type="hidden" name="form_name" value="admission">
+                  <input type="hidden" name="form_name" value="landing">
+                  <input type="hidden" name="company_id" value="">
 
                   <div class="row">
+                    <div class="col-md-12 mb-3 d-flex d-none">
+                      <label  class="form-label d-block mb-2" style="margin-right: 20px;">Enquiry Type</label>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="enquiry_type" id="enquiryGeneral" value="General" >
+                        <label class="form-check-label" for="enquiryGeneral">General</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="enquiry_type" id="enquiryAdmission" value="Admission" checked>
+                        <label class="form-check-label" for="enquiryAdmission">Admission</label>
+                      </div>
+                    </div>
+
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
                         <select name="city" class="form-control" required>
                           <option value="">--- Select City ---</option>
                           <option value="Thane">Thane</option>
                           <option value="Navi Mumbai">Navi Mumbai</option>
-                          <option value="Raigad">Raigad</option>
+                          <option value="Panvel">Panvel</option>
                         </select>
                       </div>
                     </div>
@@ -364,12 +377,18 @@ $(document).ready(function () {
             $allOptions.filter(function () {
                 return $(this).attr('data-id') === '6' || $(this).attr('data-id') === '7';
             }).show();
-        } else if (city === 'Raigad') {
+        } else if (city === 'Panvel') {
             $allOptions.filter(function () {
                 return $(this).attr('data-id') === '8';
             }).show();
         }
     });
+
+    $schoolSelect.on('change', function () {
+      const selectedDataId = $(this).find('option:selected').data('id'); // get data-id
+      $('input[name="company_id"]').val(selectedDataId); // set it to the hidden input
+    });
+
 });
 </script>
 @endsection

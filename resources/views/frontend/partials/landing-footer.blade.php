@@ -20,7 +20,7 @@
           
            <div class="col-md-4 pt-md-0 pt-4 pl50">
             <div class="col-lg-12">
-              <h4 class="roboto">Conatct for Admission</h4>
+              <h4 class="roboto">Contact for Admission</h4>
              <p class="pb-0 mb-0">Phone No: {{get_setting('phone')}}</p>
              <p>Email: {{get_setting('email')}}</p>
             </div>

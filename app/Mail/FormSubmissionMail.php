@@ -9,9 +9,11 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class FormSubmissionMail extends Mailable implements ShouldQueue
+//class FormSubmissionMail extends Mailable implements ShouldQueue
+class FormSubmissionMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    //use Queueable, SerializesModels;
+    use SerializesModels;
 
     public $formName;
     public $data;
@@ -24,7 +26,7 @@ class FormSubmissionMail extends Mailable implements ShouldQueue
 
     public function build()
     {
-        return $this->subject("New {$this->formName} Form Submission")
+        return $this->subject(config('custom.app_name'))
                     ->markdown('emails.form_submission');
     }
 }
