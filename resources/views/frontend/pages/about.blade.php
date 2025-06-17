@@ -176,14 +176,14 @@
         </div>
       </div>
 
-      <div class="col-lg-4 aos-init aos-animate position-relative">
+      <!-- <div class="col-lg-4 aos-init aos-animate position-relative">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$value_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
           <p class="text-center">{{$value_description}}</p>
           <i class="fa-solid fa-quote-left right_icons"></i>
         </div>
-      </div>
+      </div> -->
 
 
     </div>
