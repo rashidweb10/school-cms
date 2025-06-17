@@ -77,7 +77,7 @@
           </div>
           <div class="col-lg-8 paddngrgt80">
             <div class="text-start mb-md-4 mb-2 pt-4">
-                <p class="pb-0 mb-0 pt-3">School Features</p>
+                <p class="pb-0 mb-0 pt-3" style="font-weight: 500;"><b>Salient Features</b></p>
               <h3 class="roboto text_color roboto">{!! $about_title !!}</h3>
             </div>
             {!! $about_description !!}
@@ -209,7 +209,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 aos-init aos-animate">
             <div class="text-start mb-md-4 mb-2 pt-2">
-              <h3 class="roboto text_color text-center">Awards & Achievements </h3>
+              <h3 class="roboto text_color text-center">Awards & Accolades </h3>
             </div>
           </div>
           
