@@ -7,7 +7,7 @@
 
 @include('frontend.partials.breadcrumb', ['title' => $pageData->title])
 
-<section class="py-md-5 py-md-3 bg-light">
+<section class="pb-5">
     <div class="container">
         <div class="row">
             <div class="12">

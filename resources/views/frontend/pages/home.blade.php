@@ -151,8 +151,8 @@
               <h3 class="roboto text_color text-center fw-normal">{{$about_school_title}}</h3>
             </div>
             <p class="text-center padd190">{!! $about_school_description !!}</p>
-            <div class="read-more text-center">
-              <a href="" class="btn-2">Read More</a>
+            <div class="read-more text-center mb-5">
+              <a href="/about-us" class="btn-2">Read More</a>
             </div>
             <div class="classroom_box mt-3">
               @if($video)

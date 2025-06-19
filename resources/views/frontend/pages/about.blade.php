@@ -106,6 +106,7 @@
                             <div class="row d-flex">
                                 @foreach($category->teams as $team)
                                 <div class=" col-12 col-md-4 p-md-3">
+                                  <div class="leader_mamber_img">
                                   <!-- <div class="lightbox_img_wrap">
                                     <img class="lightbox-enabled" src="{{ central_asset(uploaded_asset($team->image)) }}"
                                       data-imgsrc="{{ central_asset(uploaded_asset($team->image)) }}">
@@ -113,6 +114,7 @@
                                   <a href="{{ central_asset(uploaded_asset($team->image)) }}" data-fancybox="teams">
                                     <img width="100%" class="" src="{{ central_asset(uploaded_asset($team->image)) }}" alt="">
                                   </a>                                  
+                                </div>
                                 </div>
                                 @endforeach
                             </div>
