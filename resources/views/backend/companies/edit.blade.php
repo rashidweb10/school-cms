@@ -92,6 +92,12 @@
                         <label for="meta-google-map-2" class="form-label">Secondary Google Map Embed</label>
                         <textarea class="form-control" id="meta-google-map-2" name="meta[google_map2]" rows="3" placeholder="">{{ old('meta.google_map2', $pageData->meta->where('meta_key', 'google_map2')->first()->meta_value ?? '') }}</textarea>
                     </div>   -->
+
+                    <div class="mb-3 form-group">
+                        <label for="meta-affiliation" class="form-label">Board Name</label>
+                        <input type="text" class="form-control" id="meta-board-name" name="meta[board_name]" value="{{ old('meta.board_name', $pageData->meta->where('meta_key', 'board_name')->first()->meta_value ?? '') }}" placeholder="">
+                    </div>
+
                     <div class="mb-3 form-group">
                         <label for="meta-affiliation" class="form-label">Affiliation No</label>
                         <input type="text" class="form-control" id="meta-phone2" name="meta[affiliation_no]" value="{{ old('meta.affiliation_no', $pageData->meta->where('meta_key', 'affiliation_no')->first()->meta_value ?? '') }}" placeholder="">

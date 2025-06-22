@@ -123,7 +123,7 @@
                             {{-- Template 3: No teams in category --}}
                             <div class="row">
                                 @foreach($category->teams as $team)
-                                <div class="col-md-3 col-lg-3 col-sm-1">
+                                <div class="col-md-4 col-lg-4 col-sm-1">
                                   <div class="leader_mamber_img">
                                     <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{$team->name}}">
                                   </div>
@@ -511,5 +511,19 @@
     e.stopPropagation();
 
   })
+</script>
+<script>
+  setTimeout(function () {
+      // Find the Management tab
+      var $management = $('button:contains("Management")').closest('li');
+
+      // Find the Principal's Desk tab
+      var $principal = $('button:contains("Principal\'s Desk")').closest('li');
+
+      // Move Management before Principal
+      if ($management.length && $principal.length) {
+          $management.insertBefore($principal);
+      }
+  }, 1000); // 1 second delay
 </script>
 @endsection

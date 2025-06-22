@@ -208,7 +208,7 @@
     </section>
 
     @if(isset($home_awards['itration']) && is_array($home_awards['itration']))
-    <section class="awards_achievements pt-4 pt-md-5 pb-5 position-relative">
+    <section class="awards_achievements pt-4 pt-md-5 pb-0 position-relative">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12 aos-init aos-animate">
@@ -240,6 +240,31 @@
       </div>
     </section>
     @endif
+
+  <section class="vission_mission pt-5 pb-4 position-relative">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+          <div class="vission_box position-relative">
+            <h4 class="roboto text_color text-center">{{$mission_title_2}}</h4>
+            <i class="fa-solid fa-quote-left left_icons"></i>
+            <p class="text-center">{{$mission_description_2}}</p>
+            <i class="fa-solid fa-quote-left right_icons"></i>
+          </div>
+        </div>
+
+        <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+          <div class="vission_box position-relative">
+            <h4 class="roboto text_color text-center">{{$vision_title_2}}</h4>
+            <i class="fa-solid fa-quote-left left_icons"></i>
+            <p class="text-center">{{$vision_description_2}}</p>
+            <i class="fa-solid fa-quote-left right_icons"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>     
 
     @if(isset($home_classrooms['itration']) && is_array($home_classrooms['itration']))
     <section class="gallery_section">
@@ -332,30 +357,5 @@
         </div>
       </div>
     </section>
-    @endif 
-
-<section class="vission_mission pt-5 pb-4 position-relative">
-  <div class="container">
-    <div class="row justify-content-center">
-
-      <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
-        <div class="vission_box position-relative">
-          <h4 class="roboto text_color text-center">{{$mission_title_2}}</h4>
-          <i class="fa-solid fa-quote-left left_icons"></i>
-          <p class="text-center">{{$mission_description_2}}</p>
-          <i class="fa-solid fa-quote-left right_icons"></i>
-        </div>
-      </div>
-
-      <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
-        <div class="vission_box position-relative">
-          <h4 class="roboto text_color text-center">{{$vision_title_2}}</h4>
-          <i class="fa-solid fa-quote-left left_icons"></i>
-          <p class="text-center">{{$vision_description_2}}</p>
-          <i class="fa-solid fa-quote-left right_icons"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>    
+    @endif    
 @endsection
