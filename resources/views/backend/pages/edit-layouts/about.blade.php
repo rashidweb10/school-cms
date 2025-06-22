@@ -54,7 +54,7 @@
 <div class="row">
     <div class="col-md-12">
         <hr>
-        <h4 class="text-primary">Mission, Vision & Values Section</h4>
+        <h4 class="text-primary">Mission & Vision Section</h4>
     </div>     
     <div class="col-md-6 form-group mb-2">
         <label for="name" class="form-label">Title<span class="text-danger">*</span></label>
@@ -72,14 +72,14 @@
         <label for="content" class="form-label">Description<span class="text-danger">*</span></label>
         <textarea name="meta[vision_description]" class="form-control" rows="2" required>{{$vision_description}}</textarea>
     </div>  
-    <div class="col-md-6 form-group mb-2">
+    <!-- <div class="col-md-6 form-group mb-2">
         <label for="name" class="form-label">Title<span class="text-danger">*</span></label>
         <input class="form-control" value="{{$value_title}}" name="meta[value_title]" type="text" required>
     </div>   
     <div class="col-md-6 form-group mb-2">
         <label for="content" class="form-label">Description<span class="text-danger">*</span></label>
         <textarea name="meta[value_description]" class="form-control" rows="2" required>{{$value_description}}</textarea>
-    </div>             
+    </div>              -->
 </div> 
 
 <div class="row">

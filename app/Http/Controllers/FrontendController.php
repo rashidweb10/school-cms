@@ -35,12 +35,20 @@ class FrontendController extends Controller
         ->where('company_id', config('custom.school_id'))
         ->firstOrFail();
 
+        // $categories = TeamCategory::with(['teams' => function ($query) {
+        //     $query->where('is_active', 1);
+        //     $query->where('company_id', config('custom.school_id'));
+        // }])
+        // ->whereHas('teams') // Ensure only categories with teams are fetched
+        // ->get();  
+
         $categories = TeamCategory::with(['teams' => function ($query) {
-            $query->where('is_active', 1);
-            $query->where('company_id', config('custom.school_id'));
+            $query->where('is_active', 1)
+                ->where('company_id', config('custom.school_id'));
         }])
-        ->whereHas('teams') // Ensure only categories with teams are fetched
-        ->get();  
+        ->where('is_active', 1)
+        ->where('company_id', config('custom.school_id'))
+        ->get();        
     
         return view('frontend.pages.about', compact('pageData', 'categories'));
     }
@@ -94,6 +102,16 @@ class FrontendController extends Controller
     
         return view('frontend.pages.common', compact('pageData'));
     }  
+
+    public function default($slug)
+    {
+        $pageData = Page::with('meta')->where('is_active', 1)
+        ->where('slug', $slug)
+        ->where('company_id', config('custom.school_id'))
+        ->firstOrFail();
+    
+        return view('frontend.pages.common', compact('pageData'));
+    }    
 
     public function awards()
     {

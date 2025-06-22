@@ -65,7 +65,8 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $categories = TeamCategory::all();
+        //$categories = TeamCategory::all();
+        $categories = TeamCategory::where('is_active', 1)->where('company_id', config('custom.school_id'))->get();
         return view('backend.teams.create', compact('categories'));
     }
 
@@ -127,7 +128,8 @@ class TeamController extends Controller
     public function edit(string $id)
     {
         $pageData = Team::findOrFail($id);
-        $categories = TeamCategory::all();
+        //$categories = TeamCategory::all();
+        $categories = TeamCategory::where('is_active', 1)->where('company_id', config('custom.school_id'))->get();
         return view('backend.teams.edit', compact('pageData','categories'));
     }
 
