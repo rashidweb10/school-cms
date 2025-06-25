@@ -262,6 +262,32 @@
     </section>
     @endif
     
+
+    <section class="vission_mission pt-5 pb-5 position-relative">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 aos-init aos-animate position-relative mb-md-0 mb-4">
+        <div class="vission_box position-relative">
+          <h4 class="roboto text_color text-center">Our Mission</h4>
+          <i class="fa-solid fa-quote-left left_icons"></i>
+          <p class="text-center">To provide holistic education that fosters excellence, growth, and responsibility, empowering students to thrive and contribute to their communities.</p>
+          <i class="fa-solid fa-quote-left right_icons"></i>
+        </div>
+      </div>
+
+      <div class="col-lg-6 aos-init aos-animate position-relative mb-md-0 mb-4">
+        <div class="vission_box position-relative">
+          <h4 class="roboto text_color text-center">Our Vision</h4>
+          <i class="fa-solid fa-quote-left left_icons"></i>
+          <p class="text-center">To inspire and empower students to reach their full potential, fostering lifelong learning, compassionate leadership, and innovation for a transformative future.</p>
+          <i class="fa-solid fa-quote-left right_icons"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     @if(isset($home_updates['itration']) && is_array($home_updates['itration']))
     <section class="news_section d-none">
       <div class="pb-4 pt-4 pb-md-5 pt-md-5">

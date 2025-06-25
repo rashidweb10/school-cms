@@ -52,7 +52,7 @@
                             <li class="nav-item">
                                 <a target="_blank" class="nav-link robot_slab"
                                     href="https://1nh.edusprint.in/1nh/Security">
-                                    <img src="{{ asset('assets/frontend/img/icon-nhlogin-w.png') }}"> 1NH LOGIN
+                                    <img src="{{ asset('assets/frontend/img/icon-nhlogin-w.png') }}"> 1NH
                                 </a>
                             </li>
                         </ul>
