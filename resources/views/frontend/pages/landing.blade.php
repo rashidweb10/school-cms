@@ -115,7 +115,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-12 mb-3">
+                    <!-- <div class="col-md-12 mb-3">
                       <div class="form-outline">
                         <select name="school" class="form-control" required>
                             <option value="">--- Select School Name ---</option>
@@ -127,19 +127,47 @@
                             @endforeach
                         </select>
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
-                          <select name="standard" class="form-control" required>
-                            <option value="">--- Select Standard ---</option>
-                            @for($i = 1; $i <= 12; $i++)
-                              <option value="{{ $i }}{{ $i == 1 ? 'st' : ($i == 2 ? 'nd' : ($i == 3 ? 'rd' : 'th')) }} Standard">
-                                {{ $i }}{{ $i == 1 ? 'st' : ($i == 2 ? 'nd' : ($i == 3 ? 'rd' : 'th')) }} Standard
-                              </option>
-                            @endfor
-                          </select>                        
-                        <!-- <input type="text" class="form-control" name="standard" placeholder="Select Standard*" required> -->
+                        <select name="school" class="form-control" required>
+                          <option value="">--- Select School Name ---</option>
+                          @foreach($schools as $school)
+                            @php
+                              $location = optional($school->meta->where('meta_key', 'location')->first())->meta_value;
+                              $boardName = optional($school->meta->where('meta_key', 'board_name')->first())->meta_value;
+                            @endphp
+                            <option data-id="{{ $school->id }}" value="{{ $school->name }}{{ $location ? ', ' . $location : '' }}{{ $boardName ? ' (' . $boardName . ')' : '' }}">
+                              {{ $school->name }}
+                              {{ $location ? ', ' . $location : '' }}
+                              {{ $boardName ? ' (' . $boardName . ')' : '' }}
+                            </option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div>                    
+
+                    <div class="col-md-12 mb-3">
+                      <div class="form-outline">
+                        <select name="standard" class="form-control" required>
+                          <option value="">--- Select Standard ---</option>
+                          <option value="Nursery">Nursery</option>
+                          <option value="Jr. KG">Jr. KG</option>
+                          <option value="Sr. KG">Sr. KG</option>
+                          <option value="I">I Standard</option>
+                          <option value="II">II Standard</option>
+                          <option value="III">III Standard</option>
+                          <option value="IV">IV Standard</option>
+                          <option value="V">V Standard</option>
+                          <option value="VI">VI Standard</option>
+                          <option value="VII">VII Standard</option>
+                          <option value="VIII">VIII Standard</option>
+                          <option value="IX">IX Standard</option>
+                          <option value="X">X Standard</option>
+                          <option value="XI">XI Standard</option>
+                          <option value="XII">XII Standard</option>
+                        </select>                      
                       </div>
                     </div>
 
@@ -170,7 +198,7 @@
             </div>
           </div>
           
-          <div class="col-lg-6 pt55">
+          <!-- <div class="col-lg-6 pt55">
             <div class="locatio_box">
                 <ul>
                     @foreach($schools as $school)
@@ -178,7 +206,31 @@
                     @endforeach
                   </ul>
             </div>
+          </div> -->
+
+          <div class="col-lg-6 pt55">
+            <div class="locatio_box">
+              <ul>
+                @foreach($schools as $school)
+                  @php
+                    $location = optional($school->meta->where('meta_key', 'location')->first())->meta_value;
+                    $boardName = optional($school->meta->where('meta_key', 'board_name')->first())->meta_value;
+                  @endphp
+                  <li class="hvr-bounce-in loationtext_hover">
+                    <p>
+                      <a target="_blank" href="{{ $school->website }}">
+                        <i class="fa-solid fa-caret-right"></i>
+                        {{ $school->name }}
+                        {{ $location ? ', ' . $location : '' }}
+                        {{ $boardName ? ' (' . $boardName . ')' : '' }}
+                      </a>
+                    </p>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
+
           
           <div class="col-lg-6">
             <div class="text-start mb-md-4 mb-2 pt-4">

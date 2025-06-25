@@ -23,6 +23,10 @@ $home_classrooms = json_decode($pageData->meta->where('meta_key', 'home_classroo
 $home_quicklinks = json_decode($pageData->meta->where('meta_key', 'home_quicklinks')->first()->meta_value ?? '[]', true);
 $home_updates = json_decode($pageData->meta->where('meta_key', 'home_updates')->first()->meta_value ?? '[]', true);
 $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
+$mission_title_2 = $pageData->meta->where('meta_key', 'mission_title_2')->first()->meta_value ?? '';
+$mission_description_2 = $pageData->meta->where('meta_key', 'mission_description_2')->first()->meta_value ?? '';
+$vision_title_2 = $pageData->meta->where('meta_key', 'vision_title_2')->first()->meta_value ?? '';
+$vision_description_2 = $pageData->meta->where('meta_key', 'vision_description_2')->first()->meta_value ?? '';
 @endphp
 
 <div class="row">
@@ -670,3 +674,26 @@ $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
         <span class="ml-2">Add More</span>
     </button>     
 </div>  
+
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+        <h4 class="text-primary">Mission & Vision Section</h4>
+    </div>     
+    <div class="col-md-6 form-group mb-2">
+        <label for="name" class="form-label">Title<span class="text-danger">*</span></label>
+        <input class="form-control" value="{{$mission_title_2}}" name="meta[mission_title_2]" type="text" required>
+    </div>   
+    <div class="col-md-6 form-group mb-2">
+        <label for="content" class="form-label">Description<span class="text-danger">*</span></label>
+        <textarea name="meta[mission_description_2]" class="form-control" rows="2" required>{{$mission_description_2}}</textarea>
+    </div> 
+    <div class="col-md-6 form-group mb-2">
+        <label for="name" class="form-label">Title<span class="text-danger">*</span></label>
+        <input class="form-control" value="{{$vision_title_2}}" name="meta[vision_title_2]" type="text" required>
+    </div>   
+    <div class="col-md-6 form-group mb-2">
+        <label for="content" class="form-label">Description<span class="text-danger">*</span></label>
+        <textarea name="meta[vision_description_2]" class="form-control" rows="2" required>{{$vision_description_2}}</textarea>
+    </div>  
+</div> 

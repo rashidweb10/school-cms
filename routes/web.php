@@ -180,9 +180,11 @@ Route::get('{slug}', function ($slug) {
             return app(FrontendController::class)->circulars($page->slug);
         case 'achivements':
             return app(FrontendController::class)->achivements($page->slug);
-            case 'newsletter':
-                return app(FrontendController::class)->newsletter($page->slug);            
+        case 'newsletter':
+            return app(FrontendController::class)->newsletter($page->slug);  
+        case 'default':
+            return app(FrontendController::class)->default($page->slug);           
         default:
-            abort(404);
+            abort(404, 'Route needs to be manually define.');
     }
 })->where('slug', '.*');
