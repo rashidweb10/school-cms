@@ -45,6 +45,7 @@ Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 Route::get('/why-we', [FrontendController::class, 'why_we'])->name('why-we');
 
 Route::get('/roadmap', [FrontendController::class, 'roadmap'])->name('roadmap');
+Route::get('/curriculum-test', [FrontendController::class, 'curriculumtest'])->name('curriculumtest');
 
 Route::get('/career', [FrontendController::class, 'career'])->name('career');
 

@@ -71,7 +71,17 @@ class FrontendController extends Controller
         ->firstOrFail();
     
         return view('frontend.pages.roadmap', compact('pageData'));
-    }   
+    } 
+    
+    public function curriculumtest()
+    {
+        $pageData = Page::with('meta')->where('is_active', 1)
+        ->where('slug', 'curriculumtest')
+        ->where('company_id', config('custom.school_id'))
+        ->firstOrFail();
+    
+        return view('frontend.pages.curcurriculumtestriculum', compact('pageData'));
+    } 
 
     public function curriculum()
     {
