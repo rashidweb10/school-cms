@@ -57,7 +57,7 @@
                         </li>
                     @endforeach
                     <!-- Static "School Information" Tab -->
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item d-none" role="presentation">
                         <button class="nav-link" id="tab_school_info" 
                             data-bs-toggle="pill" 
                             data-bs-target="#content_school_info" 
@@ -123,7 +123,7 @@
                             {{-- Template 3: No teams in category --}}
                             <div class="row">
                                 @foreach($category->teams as $team)
-                                <div class="col-md-4 col-lg-4 col-sm-1">
+                                <div class="col-md-3 col-lg-3 col-12">
                                   <div class="leader_mamber_img">
                                     <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{$team->name}}">
                                   </div>
@@ -139,7 +139,7 @@
                     </div>
                 @endforeach
                 <!-- Static "School Information" Tab Content -->
-                <div class="tab-pane fade" id="content_school_info" role="tabpanel" aria-labelledby="tab_school_info">
+                <div class="tab-pane fade d-none" id="content_school_info" role="tabpanel" aria-labelledby="tab_school_info">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">

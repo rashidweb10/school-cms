@@ -200,6 +200,11 @@ header {
 .startimg::after {
    display:none;
 }
+
+
+#counter .col-md-3.col-6.text-center {
+    width: 50% !important;
+}
 .logo_width {
     position: relative;
     top: 0px;

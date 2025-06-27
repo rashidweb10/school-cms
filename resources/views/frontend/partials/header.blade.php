@@ -84,7 +84,7 @@
                                                 <img src="{{ asset('assets/frontend/img/info.png') }}"> ABOUT US
                                             </a>
                                             <ul class="submenu p-2">
-                                                <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why We</a></li>
+                                                <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why New Horizon</a></li>
                                                 <li><a href="{{route('roadmap')}}"><img src="{{ asset('assets/frontend/img/road-maps.png') }}"> Road Map</a></li>
                                                 <li><a href="{{route('awards')}}"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Awards</a></li>
                                                 <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}"> Curriculum Guidelines</a></li>
