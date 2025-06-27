@@ -123,8 +123,8 @@
                             {{-- Template 3: No teams in category --}}
                             <div class="row">
                                 @foreach($category->teams as $team)
-                                <div class="col-md-3 col-lg-3 col-12">
-                                  <div class="leader_mamber_img">
+                                <div class="col-md-4 col-lg-4 col-12">
+                                  <div class="leader_mamber_img leader_mamber_img1">
                                     <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{$team->name}}">
                                   </div>
                                   <div class="leader_mamber_dtl text-center">

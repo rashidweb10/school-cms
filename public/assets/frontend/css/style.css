@@ -1724,6 +1724,15 @@ ul.about_listing li img {
 #counter .col-md-3.col-6.text-center {
     width: 20% !important;
 }
+
+.leader_mamber_img1 {
+    padding: 15px;
+    position: relative;
+    z-index: 10;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .stastic {
     position: relative;
 }
