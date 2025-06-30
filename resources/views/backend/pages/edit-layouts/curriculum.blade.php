@@ -9,7 +9,7 @@
         @foreach($curriculum['itration'] as $index => $itration)
             <div class="row remove-parent">
                 <div class="col-md-12">
-                    <label for="name" class="form-label">Title & Attachments <span class="text-danger">*</span></label>
+                    <label for="name" class="form-label">Curriculum Information <span class="text-danger">*</span></label>
                     <input value="{{ $index }}" name="meta[curriculum][itration][]" type="hidden" required>
                 </div> 
                 <div class="col-md">
@@ -24,27 +24,26 @@
                             required>
                     </div>
                 </div>   
-                <div class="col-md-6">
+                <div class="col-md">
                     <div class="form-group mb-2">
-                        <div class="input-group" data-toggle="aizuploader" data-type="document" data-multiple="true">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
-                            </div>
-                            <div class="form-control file-amount">{{ __('Choose File') }}</div>
-                            <input type="hidden" 
-                                name="meta[curriculum][attachments][]" 
-                                class="selected-files" 
-                                value="{{ $curriculum['attachments'][$index] ?? '' }}" 
-                                required>
-                        </div>
-                        <div class="file-preview box sm"></div>
+                        <input value="{{ $curriculum['icon'][$index] ?? '' }}" 
+                            name="meta[curriculum][icon][]" 
+                            type="text" 
+                            class="form-control" 
+                            minlength="3" 
+                            maxlength="200" 
+                            placeholder="Icon" 
+                            required>
                     </div>
                 </div>
+                <div class="col-md">
+                    <textarea name="meta[curriculum][description][]" class="form-control" rows="2" placeholder="Description" required>{{ $curriculum['description'][$index] ?? '' }}</textarea>
+                </div>                
                 <div class="col-md-auto">
                     <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                         <i class="ti ti-x"></i>
                     </button>
-                </div>
+                </div>                
             </div>
         @endforeach
     @endif
@@ -56,7 +55,7 @@
     data-content='
         <div class="row remove-parent">
             <div class="col-md-12">
-                <label for="name" class="form-label">Title & Attachments <span class="text-danger">*</span></label>
+                <label for="name" class="form-label">Curriculum Information <span class="text-danger">*</span></label>
                 <input value="data" name="meta[curriculum][itration][]" type="hidden" required>
             </div> 
             <div class="col-md">
@@ -64,23 +63,26 @@
                     <input value="" name="meta[curriculum][title][]" type="text" class="form-control" minlength="3" maxlength="200" placeholder="Title" required>
                 </div>
             </div>   
-            <div class="col-md-6">
+            <div class="col-md">
                 <div class="form-group mb-2">
-                    <div class="input-group" data-toggle="aizuploader" data-type="document" data-multiple="true">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
-                        </div>
-                        <div class="form-control file-amount">{{ __('Choose File') }}</div>
-                        <input type="hidden" name="meta[curriculum][attachments][]" class="selected-files" required>
-                    </div>
-                    <div class="file-preview box sm"></div>
+                    <input value="" 
+                        name="meta[curriculum][icon][]" 
+                        type="text" 
+                        class="form-control" 
+                        minlength="3" 
+                        maxlength="200" 
+                        placeholder="Icon" 
+                        required>
                 </div>
+            </div>            
+            <div class="col-md">
+                <textarea name="meta[curriculum][description][]" class="form-control" rows="2" placeholder="Description" required></textarea>
             </div>
             <div class="col-md-auto">
                 <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                     <i class="ti ti-x"></i>
                 </button>
-            </div>
+            </div>             
         </div>   
     '
     data-target=".{{$pageData->layout}}-target">
