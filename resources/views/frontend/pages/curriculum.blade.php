@@ -12,6 +12,106 @@
 
 @include('frontend.partials.breadcrumb', ['title' => $pageData->title])
 
+<div class="curriculum-test">
+
+  <!-- Intro Text -->
+  <div class="text-center pt-5 pb-4 position-relative z-3">
+    {!! $pageData->content !!}
+  </div>
+
+  <!-- Stats Circle -->
+  <div class="d-flex justify-content-center mb-5 position-relative z-3">
+    <div class="position-relative">
+      <div class="stats-circle text-center">
+        <div class="text-white display-4 fw-black mb-2">{{count($curriculum['itration'] ?? 0)}}</div>
+        <div class="text-white fw-bold fs-5">CORE<br>AREAS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Curriculum Cards -->
+  <div class="container px-4 pb-5 position-relative z-3">
+    <div class="row g-4 justify-content-center">
+@php
+$backgrounds = [
+    'linear-gradient(135deg, #60a5fa 0%, #2563eb 100%)',
+    'linear-gradient(135deg, #4ade80 0%, #16a34a 100%)',
+    'linear-gradient(135deg, #fb923c 0%, #ea580c 100%)',
+    'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+    'linear-gradient(135deg, #f472b6 0%, #db2777 100%)'
+];
+@endphp
+
+@if(isset($curriculum['itration']) && is_array($curriculum['itration']))
+    @foreach($curriculum['itration'] as $index => $itration)
+        <div class="col-12 col-md-6 col-lg-4 col-xl">
+            <div class="curriculum-card" style="background: {{ $backgrounds[$index % count($backgrounds)] }};">
+            <div class="bg-pattern"><div></div><div></div><div></div></div>
+            <div class="card-icon"><i class="fa-solid {{ $curriculum['icon'][$index] ?? '' }} text-white"></i></div>
+            <h3 class="text-white fs-5 fw-black mb-3"> {{ $curriculum['title'][$index] ?? '' }}</h3>
+            <p class="text-white small opacity-95 fw-medium" style="line-height: 1.75;">
+                 {{ $curriculum['description'][$index] ?? '' }}
+            </p>
+            <div class="d-flex align-items-center gap-2 mt-3 text-white position-absolute" style="bottom: 16px; left: 24px;">
+                <span class="small fw-bold">Active Implementation</span>
+            </div>
+            </div>
+        </div>
+    @endforeach
+@endif    
+
+
+    </div>
+  </div>
+
+</div>
+
+
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- @extends('frontend.layouts.app')
+
+@section('meta.title', $pageData->seo_title)
+@section('meta.description', $pageData->seo_description)
+
+@section('content')
+
+@php
+    $meta = $pageData->meta->where('meta_key', 'curriculum')->first();
+    $curriculum = $meta ? json_decode($meta->meta_value, true) : null;
+@endphp
+
+@include('frontend.partials.breadcrumb', ['title' => $pageData->title])
+
 <section class="cariculam-section">
     <div class="container">
         <div class="row">
@@ -248,4 +348,4 @@
     });
 </script>
 
-@endsection
+@endsection --}}
