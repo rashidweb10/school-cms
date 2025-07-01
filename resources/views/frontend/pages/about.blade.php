@@ -82,7 +82,7 @@
                             {{-- Template 1: Category name contains "Desk" --}}
                             <div class="row">
                                 @foreach($category->teams as $team)
-                                <div class="col-md-4">
+                                <div class="col-md-4 funder_left">
                                   <div class="row">
                                     <div class="col-md-12 col-12 pb-3">
                                       <div class="founder_box">
@@ -95,7 +95,7 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-md-8 pl30">
+                                <div class="col-md-8 pl30 funder_right">
                                   <p>{!! $team->description !!}</p>
                                 </div>
                                 @endforeach
