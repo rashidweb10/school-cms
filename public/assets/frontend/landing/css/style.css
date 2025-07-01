@@ -1847,12 +1847,12 @@ body .position_tops a {
     font-size: 16px;
     transform: skew(25deg);
     display: inline-block;
-    width: 450px;
+    width: 500px;
 }
 #counter .col-md-3.col-6.text-center {
     width: 20% !important;
 }
-.locatio_box {position: relative;width: 450px;margin-left: auto;margin-right: auto;}
+.locatio_box {position: relative;width: 500px;margin-left: auto;margin-right: auto;}
 
 .locatio_box ul li i {
     background: #f00;

@@ -2164,17 +2164,13 @@ p.qr_text {
 }
 
 .curriculum-test .curriculum-card {
-    height: 320px;
+    height: 290px;
     border-radius: 1.5rem;
     padding: 1.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.curriculum-test .curriculum-card:hover {
-    transform: scale(1.05) rotate(1deg);
 }
 
 .curriculum-test .card-icon {
@@ -2320,4 +2316,38 @@ div#content_1 .funder_left .founder_img::before {
     bottom: 0;
     margin-left: 7%;
     z-index: 0;
+}
+
+.mtt10
+{
+    margin-top: -10px;
+}
+
+
+section#results th, section#results td {
+    text-align: center;
+}
+
+ul.why_we_origin li strong {
+    font-size: 16px;
+    display: block;
+    font-weight: 600;
+}
+
+ul.why_we_origin li {
+    list-style: square;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+ul.submenu.p-2 li ul.submenu li a {
+    color: #000 !important;
+}
+
+ul.submenu.p-2 li ul.submenu li a:hover {
+    color: #fff !important;
+}
+.headingfonts
+{
+    font-size: 22px;
+    font-weight: 400;
 }

@@ -208,7 +208,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function () {
   // Load content when a tab is clicked
   $('.nav-link').on('shown.bs.tab', function (e) {
@@ -243,6 +243,48 @@ $(document).ready(function () {
   // Auto-trigger first tab load
   $('.nav-link.active').trigger('shown.bs.tab');
 });
+</script>-->
+
+
+<script>
+$(document).ready(function () {
+  // Load content when a tab is clicked
+  $('.nav-link').on('shown.bs.tab', function (e) {
+    const $tab = $(e.target);
+    const url = $tab.data('url');
+    const $target = $('#camp_dynamic_tab');
+
+    // Disable all tab clicks temporarily
+    $('.nav-link').addClass('disabled').css('pointer-events', 'none');
+
+    // Show loader
+    $target.html('<div class="text-center">Loading...</div>');
+
+    $.ajax({
+      url: url,
+      method: 'GET',
+      dataType: 'html',
+      success: function (data) {
+        $target
+          .hide()            // hide first
+          .html(data)        // update content
+          .slideDown(400);   // animate slide down
+      },
+      error: function (xhr, status, error) {
+        console.error("AJAX Error:", error);
+        $target.html('<div class="text-danger">Failed to load content.</div>');
+      },
+      complete: function () {
+        // Re-enable all tabs after AJAX completes
+        $('.nav-link').removeClass('disabled').css('pointer-events', 'auto');
+      }
+    });
+  });
+
+  // Auto-trigger first tab load
+  $('.nav-link.active').trigger('shown.bs.tab');
+});
 </script>
+
 
 @endsection

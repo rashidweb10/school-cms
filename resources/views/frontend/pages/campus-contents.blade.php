@@ -3,7 +3,7 @@
 @endphp
 
 @if(!empty($pageData->name))
-    <h1>Campus : {{ $pageData->name }}</h1>
+    <h1 class="headingfonts">Campus : {{ $pageData->name }}</h1>
 @endif
 
 @if(!empty($pageData->description))
