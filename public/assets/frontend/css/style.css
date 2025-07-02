@@ -1729,7 +1729,7 @@ ul.about_listing li img {
     padding: 15px;
     position: relative;
     z-index: 10;
-    width: 65%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -2350,4 +2350,10 @@ ul.submenu.p-2 li ul.submenu li a:hover {
 {
     font-size: 22px;
     font-weight: 400;
+}
+
+.about_tabs div#content_4 {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
