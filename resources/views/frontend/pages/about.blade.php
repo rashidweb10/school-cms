@@ -120,20 +120,39 @@
                             </div>
 
                         @else
-                            {{-- Template 3: No teams in category --}}
-                            <div class="row">
-                                @foreach($category->teams as $team)
-                                <div class="col-md-4 col-lg-4 col-12">
-                                  <div class="leader_mamber_img leader_mamber_img1">
-                                    <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{$team->name}}">
-                                  </div>
-                                  <div class="leader_mamber_dtl text-center">
-                                    <h5 class="fs-6 text-center pt-3 mb-0"> {{ $team->name }} </h5>
-                                    <p>{{ $team->designation }}</p>
-                                  </div>
+                        {{-- Template 3: No teams in category --}}
+                                @php
+                                    $firstRowTeams = $category->teams->sortBy('id')->take(2);
+                                    $secondRowTeams = $category->teams->sortBy('id')->skip(2);
+                                @endphp
+                                
+                                <div class="row justify-content-center">
+                                    @foreach($firstRowTeams as $team)
+                                    <div class="col-md-4 col-lg-4 col-12">
+                                        <div class="leader_mamber_img leader_mamber_img1">
+                                            <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{ $team->name }}">
+                                        </div>
+                                        <div class="leader_mamber_dtl text-center">
+                                            <h5 class="fs-6 text-center pt-3 mb-0">{{ $team->name }}</h5>
+                                            <p>{{ $team->designation }}</p>
+                                        </div>
+                                    </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
-                            </div>
+                                
+                                <div class="row mt-4">
+                                    @foreach($secondRowTeams as $team)
+                                    <div class="col-md-4 col-lg-4 col-12">
+                                        <div class="leader_mamber_img leader_mamber_img1">
+                                            <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{ $team->name }}">
+                                        </div>
+                                        <div class="leader_mamber_dtl text-center">
+                                            <h5 class="fs-6 text-center pt-3 mb-0">{{ $team->name }}</h5>
+                                            <p>{{ $team->designation }}</p>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
                         @endif
 
                     </div>
