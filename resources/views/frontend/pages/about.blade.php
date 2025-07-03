@@ -81,24 +81,25 @@
                         @if(Str::contains(strtolower($category->name), 'desk'))
                             {{-- Template 1: Category name contains "Desk" --}}
                             <div class="row">
+                                {{-- Images Section --}}
                                 @foreach($category->teams as $team)
-                                <div class="col-md-4 funder_left">
-                                  <div class="row">
-                                    <div class="col-md-12 col-12 pb-3">
-                                      <div class="founder_box">
-                                        <div class="founder_img position-relative">
-                                          <img src="{{ central_asset(uploaded_asset($team->image)) }}" alt="{{$team->name}}" />
+                                    <div class="col-md-3 col-12">
+                                        <div class="founder_box founde_tabs1">
+                                            <div class="founder_img founder_img1 position-relative">
+                                                <img src="{{ central_asset(uploaded_asset($team->image)) }}" alt="{{$team->name}}" />
+                                            </div>
+                                            <h4 class="fs-6 text-center pt-3 mb-0">{{$team->name}}</h4>
+                                            <p class="text-center pb-md-3 mb-0 pb-0">{{$team->designation}}</p>
                                         </div>
-                                        <h4 class="fs-6 text-center pt-3 mb-0">{{$team->name}}</h4>
-                                        <p class="text-center pb-md-3 mb-0 pb-0">{{$team->designation}}</p>
-                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-8 pl30 funder_right">
-                                  <p>{!! $team->description !!}</p>
-                                </div>
                                 @endforeach
+                            
+                                {{-- Descriptions Section --}}
+                                <div class="col-md-12 pl30 funder_right">
+                                    @foreach($category->teams as $team)
+                                        <p>{!! $team->description !!}</p>
+                                    @endforeach
+                                </div>
                             </div>
 
                         @elseif(Str::contains(strtolower($category->name), 'team'))
