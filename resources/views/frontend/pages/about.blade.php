@@ -19,6 +19,72 @@
 @endphp
 
 @include('frontend.partials.breadcrumb', ['title' => $pageData->title])
+
+
+<style>
+
+div#content_1 {
+    border: 2px solid #e5cd4f;
+    border-radius: 35px;
+    padding: 30px;
+    margin-top: 110px;
+        width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#content_2 {
+    border: 2px solid #e5cd4f;
+    border-radius: 35px;
+    padding: 30px;
+    margin-top: 110px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#content_3 {
+    border: 2px solid #e5cd4f;
+    border-radius: 35px;
+    padding: 30px;
+    margin-top: 110px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+   div#content_1 .tabs1_content
+    {
+        justify-content: center;
+    margin-top: -150px;
+    }
+    
+    div#content_2 .tabs1_content
+    {
+        justify-content: center;
+    margin-top: -150px;
+    }
+    
+    div#content_3 .tabs1_content
+    {
+        justify-content: center;
+    margin-top: -150px;
+    }
+    
+    div#content_1 .funder_right
+    {
+        text-align:center;
+    }
+    
+    div#content_2 .funder_right
+    {
+        text-align:center;
+    }
+    
+    div#content_3 .funder_right
+    {
+        text-align:center;
+    }
+</style>
 <section class="aboutpg_section pb-md-5">
   <div class="container">
     <div class="row">
@@ -80,7 +146,7 @@
 
                         @if(Str::contains(strtolower($category->name), 'desk'))
                             {{-- Template 1: Category name contains "Desk" --}}
-                            <div class="row">
+                            <div class="row tabs1_content">
                                 {{-- Images Section --}}
                                 @foreach($category->teams as $team)
                                     <div class="col-md-3 col-12">

@@ -7,14 +7,13 @@
                 //$image_thumb_name = uploaded_asset_name($data->thumbnail) ?? '';
                 $image_thumb_name = "Image ".$index;
             @endphp        
-            <div class="event_box col-md-3 col-6 event_main_box">
+            <div class="event_box col-md-4 col-6 event_main_box">
 
                 {{-- Thumbnail --}}
                 <a 
                     href="{{ central_asset(uploaded_asset($data->thumbnail)) }}" 
                     class="bounce" 
                     data-fancybox="gallery_{{ $index }}"
-                    data-caption="{{ $image_thumb_name }}"
                 >
                     <img 
                         src="{{ central_asset(uploaded_asset($data->thumbnail)) }}" 
@@ -35,7 +34,7 @@
                         <a 
                             href="{{ central_asset(uploaded_asset($image)) }}"
                             data-fancybox="gallery_{{ $index }}"
-                            data-caption="{{ $image_gallery_name }}"
+                           
                             class="d-none">
                             <img class="lazy-load" data-src="{{ central_asset(uploaded_asset($image)) }}" alt="{{ $image_gallery_name }}">
                         </a>

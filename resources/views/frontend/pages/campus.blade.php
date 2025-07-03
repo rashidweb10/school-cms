@@ -93,9 +93,9 @@
     .ev_img_col {
         padding: 26px 26px 26px 43px;
         /* background-color: #fdee9d; */
-        border-top: 1px solid #fdee9d;
-        border-right: 1px solid #fdee9d;
-        border-bottom: 1px solid #fdee9d;
+        /*border-top: 1px solid #fdee9d;*/
+        /*border-right: 1px solid #fdee9d;*/
+        /*border-bottom: 1px solid #fdee9d;*/
     }
 
 
@@ -253,6 +253,11 @@ $(document).ready(function () {
     const $tab = $(e.target);
     const url = $tab.data('url');
     const $target = $('#camp_dynamic_tab');
+
+    // Scroll to top of the section with smooth animation
+    $('html, body').animate({
+      scrollTop: $('.camp_section').offset().top - 150 // Adjust -50 if you have a fixed header
+    }, 500);
 
     // Disable all tab clicks temporarily
     $('.nav-link').addClass('disabled').css('pointer-events', 'none');

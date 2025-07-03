@@ -104,9 +104,9 @@
     .ev_img_col {
         padding: 16px 16px 16px 43px;
         /* background-color: #fdee9d; */
-        border-top: 1px solid #fdee9d;
-        border-right: 1px solid #fdee9d;
-        border-bottom: 1px solid #fdee9d;
+        /*border-top: 1px solid #fdee9d;*/
+        /*border-right: 1px solid #fdee9d;*/
+        /*border-bottom: 1px solid #fdee9d;*/
     }
 </style>
 
@@ -230,7 +230,7 @@ $(document).ready(function () {
     let skeletonHTML = '';
 for (let i = 0; i < 4; i++) { // show 4 skeleton boxes
   skeletonHTML += `
-    <div class="event_box col-md-3 col-6 skeleton">
+    <div class="event_box col-md-4 col-6 skeleton">
       <a class="bounce" style="pointer-events: none;">
         <div class="img-placeholder"></div>
       </a>

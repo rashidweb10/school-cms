@@ -1920,7 +1920,7 @@ body .position_tops a {
     background: #fdee9d;
     width: 64%;
     height: 30%;
-    bottom: 0;
+    bottom: 3px;
     margin-left: 18%;
     z-index: 0;
 }
@@ -1933,6 +1933,7 @@ body .position_tops a {
 .about_tabs ul#pills-tab {
     margin-top: -44px;
     margin-left: 20px;
+        justify-content: center;
 }
 .about_tabs .nav-pills .nav-link {
     background: 0 0;
@@ -2354,4 +2355,11 @@ ul.submenu.p-2 li ul.submenu li a:hover {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+    .fancybox__slide {
+        padding-bottom: 10px !important;
+        padding-top: 20px !important;
+    }
 }
