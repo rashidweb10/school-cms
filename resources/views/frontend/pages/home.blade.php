@@ -36,7 +36,7 @@
 @endphp
 
 <div class="banner_slider">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000"  data-bs-pause="hover">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
         <!-- Carousel items -->
         <div class="carousel-inner">
         @foreach($banner_images as $index => $id)
