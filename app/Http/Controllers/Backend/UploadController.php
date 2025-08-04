@@ -130,7 +130,8 @@ class UploadController extends Controller
                 }
 
                 $size = $request->file('aiz_file')->getSize();
-                $path = $request->file('aiz_file')->store('uploads/'.date("Y").'/'.date("m"), 'public');                
+                $schoolId = isset(Auth::user()->company_id) ? 's' . Auth::user()->company_id : 'a';
+                $path = $request->file('aiz_file')->store('uploads/'.$schoolId.'/'.date("Y").'/'.date("m"), 'public');                
 
                 $upload->extension = $extension;
                 $upload->file_name = 'storage/'.$path;
