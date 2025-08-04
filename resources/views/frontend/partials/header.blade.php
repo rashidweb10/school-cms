@@ -126,7 +126,7 @@
                                     $circulars = DB::table('pages')->where('is_active', 1)
                                         ->where('layout', 'circulars')
                                         ->where('company_id', config('custom.school_id'))
-                                        ->orderBy('id', 'desc')
+                                        ->orderBy('id', 'asc')
                                         ->get();                                    
                                     @endphp
                                     <ul class="menu nav-item">

@@ -8,7 +8,7 @@
           </div>
           
           <div class="col-md-4">
-              <p style="padding-top: 30px;" Class="mrg_35 robot_slab">@if( get_setting('affiliation_no') ) CBSE Affiliation No. {{get_setting('affiliation_no')}} @endif</p>
+              <p Class="pt-md-5 mrg_35 robot_slab">@if( get_setting('affiliation_no') ) CBSE Affiliation No. {{get_setting('affiliation_no')}} @endif</p>
           </div>
           
           <div class="col-md-6">

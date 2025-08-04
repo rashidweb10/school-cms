@@ -46,7 +46,7 @@ class FormController extends Controller
         //     ->queue(new FormSubmissionMail($formName, $validatedData));
 
         $recipientEmail = [$recipientEmail, 'enquiry@newhorizonsms.org'];
-        //$recipientEmail = ['rashidk.developer@gmail.com', 'enquiry@newhorizonsms.org'];
+        $recipientEmail = ['enquiry@newhorizonsms.org'];
             
         try {
             Mail::to($recipientEmail)

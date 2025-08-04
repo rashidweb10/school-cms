@@ -2033,12 +2033,12 @@ section.gallery_section {
     opacity: 0.6;
 }
 .right_icons{
-       position: absolute;
+        position: absolute;
     font-size: 59px;
-    margin-top: -46px;
+    margin-top: -48px;
     color: #fdee9d;
     opacity: 0.6;
-    right: 71px;
+    right: 30px;
     transform: rotate(180deg);
 }
 
@@ -2061,4 +2061,53 @@ p.qr_text {
     padding-bottom: 2px;
     padding-top: 6px;
     font-size: 12px;
+}
+.career_section {
+    background: #fefddf;
+    padding-top: 50px;
+}
+
+.career_buttons a
+{
+    position: relative; 
+    background: #fdee9d;
+    color: #000 !important; 
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-size: 17px; 
+    padding: 10px; 
+    font-weight: 300;
+    padding-left: 25px;
+    margin-top: 10px; 
+    border: 1px solid #fdee9d; 
+    display: inline-block; 
+    padding-right: 25px; 
+    cursor: pointer; 
+    transition: 1s all;
+}
+
+.border_81 {
+    margin-top: -93px;
+}
+.border_81:before {
+        content: "";
+    position: absolute;
+    background: #fdee9d;
+    width: 91%;
+    height: 50%;
+    bottom: -20px;
+    margin-left: 28px;
+}
+
+.top_position.fixed-top {
+    background: #fff;
+}
+
+
+.whatsapp {
+    position: fixed;
+    right: 19px;
+    bottom: 56px;
+    text-align: right;
+    z-index:99;
 }

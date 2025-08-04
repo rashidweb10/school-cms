@@ -10,7 +10,7 @@
 <section class="roadmap_section">
     <div class="container py-5">
         <div class="row">
-            <div class="12">
+            <div class="12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                 {!! $pageData->content !!}
             </div>
         </div>

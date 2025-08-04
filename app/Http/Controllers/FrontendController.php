@@ -71,9 +71,7 @@ class FrontendController extends Controller
         ->firstOrFail();
     
         return view('frontend.pages.roadmap', compact('pageData'));
-    } 
-    
-  
+    }   
 
     public function curriculum()
     {

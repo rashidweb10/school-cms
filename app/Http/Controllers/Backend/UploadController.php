@@ -26,6 +26,7 @@ class UploadController extends Controller
         $all_uploads = Upload::query();
         $search = null;
         $sort_by = null;
+        $extension =  $request->extension ?? null;
 
         if ($request->search != null) {
             $search = $request->search;
@@ -50,15 +51,19 @@ class UploadController extends Controller
                 $all_uploads->orderBy('created_at', 'desc');
                 break;
         }
+        
+        if ($extension != null) {
+            $all_uploads->where('extension', $extension);
+        }
 
         if (auth()->user()->role_id != 1) {
             $all_uploads->where('user_id', auth()->user()->id);
         }        
 
         $all_uploads = $all_uploads->paginate(20)->appends(request()->query());
+        $extensions = Upload::select('extension')->distinct()->pluck('extension');
 
-
-        return view('backend.uploads.index', compact('all_uploads', 'search', 'sort_by'));
+        return view('backend.uploads.index', compact('all_uploads', 'search', 'sort_by', 'extensions', 'extension'));
     }
 
     public function create()

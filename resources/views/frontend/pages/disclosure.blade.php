@@ -16,10 +16,10 @@
         @foreach($disclosure['itration'] as $index => $iteration)   
             <div class="container dis_table1 dis_table_1 mb-3">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                         <h4>{{ $disclosure['title'][$index] ?? 'Unknown' }}</h4>
                     </div>
-                    <div class="table-responsive ">
+                    <div class="table-responsive " data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                         {!! generateHtmlTableFromCsv(central_asset(uploaded_asset($disclosure['image'][$index]))) !!}
                     </div>
                 </div>

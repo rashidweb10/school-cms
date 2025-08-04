@@ -811,11 +811,17 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                                         data[i].extension +
                                         "</span>" +
                                         "</h6>" +
+                                        // "<p>" +
+                                        // AIZ.extra.bytesToSize(
+                                        //     data[i].file_size
+                                        // ) +
+                                        // "</p>" +
                                         "<p>" +
-                                        AIZ.extra.bytesToSize(
-                                            data[i].file_size
-                                        ) +
-                                        "</p>" +
+                                        AIZ.extra.bytesToSize(data[i].file_size) +
+                                        ' <a href="' + data[i].file_name + '" download="' + data[i].file_original_name + '.' + data[i].extension + '" class="text-muted" title="Download">' +
+                                        '<i class="ti ti-download fs-14"></i>' +
+                                        "</a>" +
+                                        "</p>" +                                        
                                         "</div>" +
                                         '<div class="remove">' +
                                         '<button class="btn btn-sm btn-link remove-attachment" type="button">' +

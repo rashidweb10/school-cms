@@ -75,7 +75,15 @@
                                 <td>{{ formatDatetime($row->created_at) }}</td>
                                 <td>{{ formatDatetime($row->updated_at) }}</td>
                                 <td>
-                                    <a href="{{ route($routeName . '.edit', $row->id) }}?layout={{$row->layout}}" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
+                                    @php
+                                        $restrictedSlugs = ['disclosure', 'curriculum', 'awards', 'roadmap', 'why-we', 'about-us', 'home'];
+                                    @endphp
+                                    
+                                    @if (auth()->user()->company_id == null || !in_array($row->slug, $restrictedSlugs))
+                                        <a href="{{ route($routeName . '.edit', $row->id) }}?layout={{ $row->layout }}" class="link-reset fs-20 p-1">
+                                            <i class="ti ti-pencil"></i>
+                                        </a>
+                                    @endif
                                     @if($row->layout == 'default')
                                     <a href="javascript:void(0);" onclick="confirmModal('{{ route($routeName . '.destroy', $row->id) }}', callback )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>
                                     @endif

@@ -1729,7 +1729,7 @@ ul.about_listing li img {
     padding: 15px;
     position: relative;
     z-index: 10;
-    width: 80%;
+    width: 86%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1986,13 +1986,13 @@ body .position_tops a {
     color: #fdee9d;
     opacity: 0.6;
 }
-.right_icons{
-       position: absolute;
+.right_icons {
+    position: absolute;
     font-size: 59px;
-    margin-top: -46px;
+    margin-top: -48px;
     color: #fdee9d;
     opacity: 0.6;
-    right: 71px;
+    right: 30px;
     transform: rotate(180deg);
 }
 
@@ -2086,6 +2086,7 @@ section.vission_mission {
     width: 100%;
     transition: all 0.3s ease;
     background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #00000000 100%);
+    z-index: 99;
   }
 
   .fixed-top {
@@ -2362,4 +2363,13 @@ ul.submenu.p-2 li ul.submenu li a:hover {
         padding-bottom: 10px !important;
         padding-top: 20px !important;
     }
+}
+
+
+.whatsapp {
+    position: fixed;
+    right: 19px;
+    bottom: 56px;
+    text-align: right;
+    z-index:99;
 }

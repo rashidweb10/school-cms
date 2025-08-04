@@ -4,4 +4,4 @@
 <meta name="description" content="@yield('meta.description', get_setting('meta_description'))">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon.png') }}"> 
+<link rel="icon" type="image/png" href="{{ asset('assets/frontend/img/favicon.png') }}"> 

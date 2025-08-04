@@ -33,7 +33,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <select class="form-select" name="sort" onchange="sort_uploads()">
                                 <option value="newest" @if($sort_by == 'newest') selected @endif>{{ __('Sort by newest') }}</option>
                                 <option value="oldest" @if($sort_by == 'oldest') selected @endif>{{ __('Sort by oldest') }}</option>
@@ -41,10 +41,18 @@
                                 <option value="largest" @if($sort_by == 'largest') selected @endif>{{ __('Sort by largest') }}</option>
                             </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                            <select name="extension" class="form-select" onchange="sort_uploads()">
+                                <option value="">-- Select File Type --</option>
+                                @foreach($extensions as $data)
+                                    <option value="{{ $data }}" @if($data == $extension) selected @endif>.{{ $data }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-3">
                             <input type="text" class="form-control" name="search" placeholder="{{ __('Search your files') }}" value="{{ $search }}">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <button type="submit" class="btn btn-primary w-100">{{ __('Search') }}</button>
                         </div>
                     </div>

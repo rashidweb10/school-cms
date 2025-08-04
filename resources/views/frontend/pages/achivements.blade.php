@@ -207,7 +207,7 @@
 <section id="circulars" class="circulars section">
     <div class="container">
         <h3>Intra School Activities</h3>
-        <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-delay="100">
+        <ul class="nav nav-circulars row d-flex" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             @if(isset($intra['itration']) && is_array($intra['itration']))
                 @foreach($intra['itration'] as $index => $iteration)
                     <li class="nav-item col-md-2 col-sm-12 col-lg-2 col-6 mb-md-0 mb-3">
@@ -220,7 +220,7 @@
             @endif
         </ul>
 
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="tab-content" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             @if(isset($intra['itration']) && is_array($intra['itration']))
                 @foreach($intra['itration'] as $index => $iteration)
                     <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="intra-tab-{{ $index }}">

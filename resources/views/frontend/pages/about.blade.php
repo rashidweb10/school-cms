@@ -88,7 +88,7 @@ div#content_3 {
 <section class="aboutpg_section pb-md-5">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
         <div class="pb-md-5 position-relative">
           <div class="border_11 inneraboutimg">
             <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($about_image)) }}" alt="img">
@@ -96,7 +96,7 @@ div#content_3 {
 
         </div>
       </div>
-      <div class="col-lg-12 pt-md-0 pt-md-5 pt-4">
+      <div class="col-lg-12 pt-md-0 pt-md-5 pt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <p>{!! $about_description !!}</p>
       </div>
     </div>
@@ -149,7 +149,7 @@ div#content_3 {
                             <div class="row tabs1_content">
                                 {{-- Images Section --}}
                                 @foreach($category->teams as $team)
-                                    <div class="col-md-3 col-12">
+                                    <div class="col-md-3 col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                                         <div class="founder_box founde_tabs1">
                                             <div class="founder_img founder_img1 position-relative">
                                                 <img src="{{ central_asset(uploaded_asset($team->image)) }}" alt="{{$team->name}}" />
@@ -161,7 +161,7 @@ div#content_3 {
                                 @endforeach
                             
                                 {{-- Descriptions Section --}}
-                                <div class="col-md-12 pl30 funder_right">
+                                <div class="col-md-12 pl30 funder_right" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                                     @foreach($category->teams as $team)
                                         <p>{!! $team->description !!}</p>
                                     @endforeach
@@ -172,7 +172,7 @@ div#content_3 {
                             {{-- Template 2: Category has teams --}}
                             <div class="row d-flex">
                                 @foreach($category->teams as $team)
-                                <div class=" col-12 col-md-4 p-md-3">
+                                <div class=" col-12 col-md-4 p-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                                   <div class="leader_mamber_img">
                                   <!-- <div class="lightbox_img_wrap">
                                     <img class="lightbox-enabled" src="{{ central_asset(uploaded_asset($team->image)) }}"
@@ -195,7 +195,7 @@ div#content_3 {
                                 
                                 <div class="row justify-content-center">
                                     @foreach($firstRowTeams as $team)
-                                    <div class="col-md-4 col-lg-4 col-12">
+                                    <div class="col-md-3 col-lg-3 col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                                         <div class="leader_mamber_img leader_mamber_img1">
                                             <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{ $team->name }}">
                                         </div>
@@ -207,9 +207,9 @@ div#content_3 {
                                     @endforeach
                                 </div>
                                 
-                                <div class="row mt-4">
+                                <div class="row justify-content-center">
                                     @foreach($secondRowTeams as $team)
-                                    <div class="col-md-4 col-lg-4 col-12">
+                                    <div class="col-md-3 col-lg-3 col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                                         <div class="leader_mamber_img leader_mamber_img1">
                                             <img src="{{ central_asset(uploaded_asset($team->image)) }}" class="img-fluid" alt="{{ $team->name }}">
                                         </div>
@@ -246,7 +246,7 @@ div#content_3 {
   <div class="container">
     <div class="row justify-content-center">
 
-      <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+      <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$mission_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
@@ -255,7 +255,7 @@ div#content_3 {
         </div>
       </div>
 
-      <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+      <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$vision_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>

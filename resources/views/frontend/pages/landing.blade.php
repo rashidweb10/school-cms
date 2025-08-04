@@ -197,7 +197,7 @@
               
             </div>
           </div>
-          
+           
           <!-- <div class="col-lg-6 pt55">
             <div class="locatio_box">
                 <ul>
@@ -208,7 +208,7 @@
             </div>
           </div> -->
 
-          <div class="col-lg-6 pt55">
+          <div class="col-lg-6 pt55" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
             <div class="locatio_box">
               <ul>
                 @foreach($schools as $school)
@@ -232,7 +232,7 @@
           </div>
 
           
-          <div class="col-lg-6">
+          <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
             <div class="text-start mb-md-4 mb-2 pt-4">
               
               <h3 class="roboto text_color roboto padding100">{{$about_title}}</h3>
@@ -250,14 +250,14 @@
 <section class="scholar_section mt-md-5 mt-3 pb-5">
       <div class="container">
         <div class="row">
-             <div class="col-lg-6">
+             <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
             <div class=" mb-md-4 mb-2 pt-md-0 pt-4">
               <h3 class="roboto text_color fw-normal">{{$about_title2}}</h3>
             </div>
             <p class="">{!! $about_description2 !!}</p>
           </div>
           
-          <div class="col-lg-6">
+          <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
               <div class="position-relative">
             <div class="border_8 ">
                <div class="owl-carousel group_schools">
@@ -278,7 +278,7 @@
 <section class="vission_mission pt-5 pb-4 position-relative">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+      <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$mission_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
@@ -287,7 +287,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+      <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$vision_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
@@ -296,7 +296,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 aos-init aos-animate position-relative">
+      <div class="col-lg-4 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$value_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
@@ -313,7 +313,7 @@
     <div class="container">
       <div class="row">
           @foreach($landing_milestones['itration'] as $index => $itration)
-              <div class="col-md-3 col-6 text-center">
+              <div class="col-md-3 col-6 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                   <div class="stastic @if($loop->last) @else startimg @endif">
                       <div class="counter-value robot_slab" data-count="{{$landing_milestones['title'][$index]}}">1+</div>
                       <p class="robot_slab">{{$landing_milestones['description'][$index]}}</p>
@@ -339,6 +339,39 @@
         </div>
       </div>
     </section>
+    
+    
+    <section class="scholar_section mt-md-5 mt-3 pb-5 career_section">
+      <div class="container">
+        <div class="row">
+             <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+            <div class=" mb-md-4 mb-2 pt-md-0 pt-4">
+              <h3 class="roboto text_color fw-normal">Career@New Horizon Scholars School</h3>
+            </div>
+            <p class="">We believe that our people are the foundation of our success. We’re always on the lookout for passionate, driven individuals who are eager to grow, innovate, and make an impact. Whether you're just starting out or bringing years of experience, we offer a dynamic work environment, opportunities for professional development, and a culture that values collaboration and creativity. Join us and be part of a team that's shaping the future.</p>
+              
+              <div class="text-left career_buttons"><a class="btn-2" style="" href="https://1nh.edusprint.in/1nh/HRManagement/JobOpening/JobOpeningIndexLanding" target="_blank" rel="noopener">Check-out latest openings</a></div>
+              
+              
+          </div>
+          
+          <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+              <div class="position-relative">
+            <div class="border_81 ">
+               <div class="owl-carousel group_schools">
+              @foreach($about_image as $id)
+                <div class="item"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($id)) }}" alt=""></div>
+              @endforeach
+            </div>
+            </div>
+            </div>
+           
+          </div>
+         
+        </div>
+      </div>
+    </section>
+    
 
 @if(isset($landing_updates['itration']) && is_array($landing_updates['itration']))
     <section class="news_section">

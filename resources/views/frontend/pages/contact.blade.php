@@ -7,7 +7,7 @@
 
 @include('frontend.partials.breadcrumb', ['title' => "Contact Us"])
 
-<section class="embedcode pb-md-5">
+<section class="embedcode pb-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
      <div class="container">
      <iframe src="{{get_setting('google_map')}}" height="20" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      </div>
@@ -18,7 +18,7 @@
      <section class=" pb-md-5 pb-4 mt-4 position-relative">
    <div class="container">
      <div class="row">
-     <div class="col-12 col-lg-6 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+     <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
         <div class="row justify-content-xl-center">
           <div class="col-12 col-xl-11">
             <h3 class="robot_slab text_color pb-md-4 pb-1 pt-md-0 pt-4">Reach Us</h3>
@@ -59,7 +59,7 @@
         </div>
       </div>
       
-      <div class="col-lg-8 col-xl-6">
+      <div class="col-lg-8 col-xl-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
           <h3 class="robot_slab text_color pb-md-4 pb-3 pt-md-0 pt-4">Write Us</h3>
         <div class="card rounded-3">
         

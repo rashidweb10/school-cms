@@ -208,7 +208,7 @@
 <!-- Results Section -->
 <section id="results" class="results section">
     <div class="container">
-        <ul class="nav nav-results row d-flex" data-aos="fade-up" data-aos-delay="100">
+        <ul class="nav nav-results row d-flex" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             @if(isset($results['itration']) && is_array($results['itration']))
                 @foreach($results['itration'] as $index => $iteration)
                     <li class="nav-item col-md-2 col-sm-12 col-lg-2 col-6 mb-md-0 mb-3">
@@ -221,7 +221,7 @@
             @endif
         </ul>
 
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="tab-content" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             @if(isset($results['itration']) && is_array($results['itration']))
                 @foreach($results['itration'] as $index => $iteration)
                     <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="results-tab-{{ $index }}">

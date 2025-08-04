@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+    
 @section('meta.title', $pageData->seo_title)
 @section('meta.description', $pageData->seo_description)
 
@@ -73,25 +73,25 @@
           </div>
           <div class="col-lg-4">
             <div class="position-relative">
-              <a target="_blank" href="https://school.maptek.online/">
+              <a target="_blank" href="https://newhorizonschools.org/">
                  <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img" />
             </a>  
             
             </div>
           </div>
-          <div class="col-lg-8 paddngrgt80">
+          <div class="col-lg-8 paddngrgt80" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
             <div class="text-start mb-md-4 mb-2 pt-4">
                 <p class="pb-0 mb-0 pt-3" style="font-weight: 500;"><b>Salient Features</b></p>
               <h3 class="roboto text_color roboto">{!! $about_title !!}</h3>
             </div>
             {!! $about_description !!}
           </div>
-          <div class="col-lg-2 col-12 pt55">
+          <div class="col-lg-2 col-12 pt55" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
             <div class="about_border border_5 position-relative">
               <img class="hvr-bounce-in w-100 paddlr30" src="{{ central_asset(uploaded_asset($about_image[0] ?? '')) }}" alt="img" />
             </div>
           </div>
-          <div class="col-lg-2 col-12 pt-5">
+          <div class="col-lg-2 col-12 pt-5" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
             <div class="row">
               <div class="col-lg-12 col-12">
                 <div class="about_border border_6 position-relative">
@@ -145,12 +145,12 @@
     <section class="scholar_section mt-lg-5 pb-lg-5 position-relative z-index-9">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-12">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div class="border_8 pb-5 position-relative">
               <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($about_school_image)) }}" alt="img" />
             </div>
           </div>
-          <div class="col-lg-10 text-center">
+          <div class="col-lg-10 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div class="text-start mb-md-4 mb-2 pt-md-0 pt-lg-5">
               <h3 class="roboto text_color text-center fw-normal">{{$about_school_title}}</h3>
             </div>
@@ -169,12 +169,12 @@
       </div>
     </section>
     @if(isset($home_milestones['itration']) && is_array($home_milestones['itration']))
-    <section id="counter" class="statistics-section about-us">
+    <section id="counter" class="statistics-section about-us" >
       <div class="container">
         <div class="row">
         
             @foreach($home_milestones['itration'] as $index => $itration)
-                <div class="col-md-3 col-6 text-center">
+                <div class="col-md-3 col-6 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <div class="stastic @if($loop->last) @else startimg @endif">
                         <div class="counter-value robot_slab" data-count="{{$home_milestones['title'][$index]}}">1+</div>
                         <p class="robot_slab">{{$home_milestones['description'][$index]}}</p>
@@ -191,11 +191,11 @@
       <div class="container paddlft50 pt-md-5">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-4">
-            <div class="about_border border_10" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <div class="about_border border_10" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
               <img class="hvr-bounce-in w-100" src="{{ central_asset(uploaded_asset($achievement_image)) }}" alt="img" />
             </div>
           </div>
-          <div class="col-lg-8 ps-md-4">
+          <div class="col-lg-8 ps-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
             <div class="education_box">
               <div class="text-start mb-md-3 mb-2 pt-2">
                 <h3 class="roboto text_color">{{$achievement_title}}</h3>
@@ -208,12 +208,12 @@
     </section>
 
     @if(isset($home_awards['itration']) && is_array($home_awards['itration']))
-    <section class="awards_achievements pt-4 pt-md-5 pb-0 position-relative">
+    <section class="awards_achievements pt-4 pt-md-5 pb-0 position-relative" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-12 aos-init aos-animate">
+          <div class="col-lg-12 aos-init aos-animate" >
             <div class="text-start mb-md-4 mb-2 pt-2">
-              <h3 class="roboto text_color text-center">Awards & Accolades </h3>
+              <h3 class="roboto text_color text-center">Awards & Accolades</h3>
             </div>
           </div>
           
@@ -245,7 +245,7 @@
     <div class="container">
       <div class="row justify-content-center">
 
-        <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+        <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
           <div class="vission_box position-relative">
             <h4 class="roboto text_color text-center">{{$mission_title_2}}</h4>
             <i class="fa-solid fa-quote-left left_icons"></i>
@@ -254,7 +254,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 aos-init aos-animate position-relative mb-md-0 mb-4">
+        <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
           <div class="vission_box position-relative">
             <h4 class="roboto text_color text-center">{{$vision_title_2}}</h4>
             <i class="fa-solid fa-quote-left left_icons"></i>
@@ -291,32 +291,6 @@
     </section>
     @endif
     
-
-    <section class="vission_mission pt-5 pb-5 position-relative">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-6 aos-init aos-animate position-relative mb-md-0 mb-4">
-        <div class="vission_box position-relative">
-          <h4 class="roboto text_color text-center">Our Mission</h4>
-          <i class="fa-solid fa-quote-left left_icons"></i>
-          <p class="text-center">To provide holistic education that fosters excellence, growth, and responsibility, empowering students to thrive and contribute to their communities.</p>
-          <i class="fa-solid fa-quote-left right_icons"></i>
-        </div>
-      </div>
-
-      <div class="col-lg-6 aos-init aos-animate position-relative mb-md-0 mb-4">
-        <div class="vission_box position-relative">
-          <h4 class="roboto text_color text-center">Our Vision</h4>
-          <i class="fa-solid fa-quote-left left_icons"></i>
-          <p class="text-center">To inspire and empower students to reach their full potential, fostering lifelong learning, compassionate leadership, and innovation for a transformative future.</p>
-          <i class="fa-solid fa-quote-left right_icons"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
     @if(isset($home_updates['itration']) && is_array($home_updates['itration']))
     <section class="news_section d-none">
       <div class="pb-4 pt-4 pb-md-5 pt-md-5">
