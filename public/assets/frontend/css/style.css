@@ -2373,3 +2373,8 @@ ul.submenu.p-2 li ul.submenu li a:hover {
     text-align: right;
     z-index:99;
 }
+
+
+.top_position.fixed-top .header_section_top {
+    background: #333;
+}
