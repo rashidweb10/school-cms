@@ -1953,7 +1953,9 @@ footer.footer {
     transform: skew(0deg);
     background: linear-gradient(to left, #e12025 50%, #ed7c1c 50%);
 }
-
+.header_section_top {
+    background: #333;
+}
 .footer_bottom_img {
     margin-right: 65px;
     margin-top:-20px;
@@ -2066,7 +2068,15 @@ p.qr_text {
     background: #fefddf;
     padding-top: 50px;
 }
-
+.whatsapp img{
+   animation: zoomInOut 2s infinite ease-in-out;
+            transform-origin: center;
+}
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
 .career_buttons a
 {
     position: relative; 

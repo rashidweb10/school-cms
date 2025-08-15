@@ -1,4 +1,4 @@
-<footer class="footer pt-5 pb-4">
+<footer class="footer pt-5 pb-3">
   <div class="container">
     <div class="row">
       <!-- Quick Links -->
@@ -49,7 +49,7 @@
       </div>
 
       <!-- Admission Counselling -->
-      <div class="col-md-4 ps-md-5 pt-3 pt-md-0">
+      <div class="col-md-3 ps-md-4 pt-3 pt-md-0">
         <div class="col-lg-12">
           <h4 class="roboto">Admission Counselling</h4>
           <p class="pb-0 mb-0">Phone No: {{get_setting('phone')}}</p>
@@ -58,24 +58,8 @@
       </div>
 
       <!-- Go Social -->
-      <div class="col-md-2">
-        <div class="col-lg-12">
-          <h4 class="text-md-end roboto">Go Social</h4>
-          <div class="d-flex gap-2 justify-content-md-end">
-            <a target="_blank" href="{{get_setting('facebook_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}" alt="Facebook"></a>
-            <a target="_blank" href="{{get_setting('instagram_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}" alt="Instagram"></a>
-            <a target="_blank" href="{{get_setting('linkedin_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}" alt="LinkedIn"></a>
-            <a target="_blank" href="{{get_setting('youtube_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}" alt="YouTube"></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Address & QR Codes -->
-      <div class="col-md-6 pt-md-4 pt-3">
-        <p class="footer-copyright mb-0">{{get_setting('address')}}</p>
-      </div>
-      <div class="col-md-6 pt-md-4 pt-3">
-        <div class="text-md-end footer_bottom_img">
+      <div class="col-md-3">
+         <div class="text-md-end footer_bottom_img">
           <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" alt="EduSprint Pro Logo" />
         </div>
 
@@ -89,6 +73,23 @@
           <a target="_blank" href="https://play.google.com/store/apps/details?id=in.newhorizon.cspl&pli=1"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" alt="Play Store" /></a>
         </div>
       </div>
+
+      <!-- Address & QR Codes -->
+      <div class="col-md-6 pt-md-0 pt-3 margintop-18">
+        <p class="footer-copyright mb-0">{{get_setting('address')}}</p>
+      </div>
+
+      <div class="col-md-6 pt-md-0 pt-3 ps-md-4 margintop-23">
+        <h4 class="roboto">Go Social</h4>
+          <div class="d-flex gap-2">
+            <a target="_blank" href="{{get_setting('facebook_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/fb.png') }}" alt="Facebook"></a>
+            <a target="_blank" href="{{get_setting('instagram_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/insta.png') }}" alt="Instagram"></a>
+            <a target="_blank" href="{{get_setting('linkedin_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/in.png') }}" alt="LinkedIn"></a>
+            <a target="_blank" href="{{get_setting('youtube_url')}}"><img class="w-20 hvr-bounce-in" src="{{ asset('assets/frontend/img/yt.png') }}" alt="YouTube"></a>
+          </div>
+      </div>
+
+
 
       <!-- Footer Privacy & Links -->
       <div class="col-md-12">

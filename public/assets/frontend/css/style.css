@@ -46,7 +46,7 @@ header li a {
 .top_position {
     position: absolute;
     width: 100%;
-        background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #00000000 100%);
+        background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #0000000a 100%);
 }
 header .container-fluid {
     padding: 0;
@@ -1861,9 +1861,18 @@ body .position_tops a {
 
 .footer_bottom_img {
     margin-right: 65px;
-    margin-top:-90px;
+    margin-top:0px;
+}
+.margintop-23 {
+    margin-top: -58px !important;
+}
+.header_section_top {
+    background: #333;
 }
 
+.margintop-18 {
+    margin-top: -18px !important;
+}
 .footer_bottom_img img {
     width: 130px;
     margin-bottom: 10px;
@@ -2085,7 +2094,7 @@ section.vission_mission {
     position: absolute;
     width: 100%;
     transition: all 0.3s ease;
-    background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #00000000 100%);
+    background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #0000000a 100%);
     z-index: 99;
   }
 
@@ -2372,4 +2381,16 @@ ul.submenu.p-2 li ul.submenu li a:hover {
     bottom: 56px;
     text-align: right;
     z-index:99;
+}
+.whatsapp img{
+   animation: zoomInOut 2s infinite ease-in-out;
+            transform-origin: center;
+}
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+.top_position.fixed-top .header_section_top {
+    background: #333;
 }
