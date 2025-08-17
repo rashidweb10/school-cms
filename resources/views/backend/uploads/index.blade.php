@@ -91,16 +91,27 @@
                                                     <i class="la la-download me-2"></i>{{ __('Download') }}</a></li>
                                                 <li><a href="javascript:void(0)" class="dropdown-item" onclick="copyUrl(this)" data-url="{{ my_asset($file->file_name) }}">
                                                     <i class="las la-clipboard me-2"></i>{{ __('Copy Link') }}</a></li>
-                                                <li><a href="javascript:void(0)" class="dropdown-item confirm-delete" data-href="{{ route('uploaded-files.destroy', $file->id ) }}" data-bs-toggle="modal" data-bs-target="#delete-modal">
-                                                    <i class="las la-trash me-2"></i>{{ __('Delete') }}</a></li>
+                                                @if(auth()->user()->role_id == 1 || $file->user_id == auth()->id())
+                                                    <li>
+                                                        <a href="javascript:void(0)" 
+                                                        class="dropdown-item confirm-delete" 
+                                                        data-href="{{ route('uploaded-files.destroy', $file->id) }}" 
+                                                        data-bs-toggle="modal" 
+                                                        data-bs-target="#delete-modal">
+                                                            <i class="las la-trash me-2"></i>{{ __('Delete') }}
+                                                        </a>
+                                                    </li>
+                                                @endif
                                             </ul>
                                         </div>
 
                                         <div class="select-box">
+                                            @if(auth()->user()->role_id == 1 || $file->user_id == auth()->id())
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input check-one" name="id[]" value="{{$file->id}}">
                                                 <label class="form-check-label"></label>
                                             </div>
+                                            @endif
                                         </div>
                                         <div class="card card-file aiz-uploader-select c-default" title="{{ $file_name }}.{{ $file->extension }}">
                                             <div class="card-file-thumb">

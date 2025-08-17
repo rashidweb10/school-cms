@@ -88,7 +88,7 @@
     
     
      <div class="whatsapp">
-     <a href="https://api.whatsapp.com/send?phone=7738292703" target="_blank" title="Contact Us">
+     <a href="https://api.whatsapp.com/send?phone={{get_setting('whatsapp_number')}}" target="_blank" title="Contact Us">
          <img class="hvr-bounce-in" src="{{ asset('assets/frontend/img/whatsap.png') }}" style="width: 46px;" title="Contact Us">
      </a>
  </div>

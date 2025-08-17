@@ -84,6 +84,10 @@
                         <label for="meta-phone2" class="form-label">Secondary Phone</label>
                         <input type="text" class="form-control" id="meta-phone2" name="meta[phone2]" value="{{ old('meta.phone2', $pageData->meta->where('meta_key', 'phone2')->first()->meta_value ?? '') }}" placeholder="">
                     </div>
+                    <div class="mb-3 form-group">
+                        <label for="meta-phone2" class="form-label">Whatsapp Number</label>
+                        <input type="text" class="form-control" id="meta-whatsapp_number" name="meta[whatsapp_number]" value="{{ old('meta.whatsapp_number', $pageData->meta->where('meta_key', 'whatsapp_number')->first()->meta_value ?? '') }}" placeholder="">
+                    </div>                    
                     <!-- <div class="mb-3 form-group">
                         <label for="meta-address2" class="form-label">Secondary Address</label>
                         <input type="text" class="form-control" id="meta-address2" name="meta[address2]" value="{{ old('meta.address2', $pageData->meta->where('meta_key', 'address2')->first()->meta_value ?? '') }}" placeholder="">
