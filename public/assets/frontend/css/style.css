@@ -2398,7 +2398,7 @@ ul.submenu.p-2 li ul.submenu li a:hover {
 .event_heights img
 {
         width: 100%;
-    height: 325px;
+    height: 325px !important;
     object-fit: cover;
     object-position: top;
 }
@@ -2408,7 +2408,7 @@ ul.submenu.p-2 li ul.submenu li a:hover {
     .event_heights img
 {
       
-    height: auto;
+    height: auto !important;
 }
 
 }
