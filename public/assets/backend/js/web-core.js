@@ -211,7 +211,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 true
             );
         },
-        getAllUploads: function (url, search_key = null, sort_key = null) {
+        getAllUploads: function (url, search_key = null, sort_key = null, company = null) {
             $(".aiz-uploader-all").html(
                 '<div class="align-items-center d-flex h-100 justify-content-center w-100"><div class="spinner-border" role="status"></div></div>'
             );
@@ -224,6 +224,10 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
             } else {
                 params["sort"] = "newest";
             }
+
+            if (company != null && company.length > 0) {
+                params["company"] = company;
+            }            
 
             params["type"] = AIZ.uploader.data.type; //new
 
@@ -295,7 +299,8 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 AIZ.uploader.getAllUploads(
                     AIZ.data.appUrl + "/aiz-uploader/get-uploaded-files",
                     value,
-                    $('[name="aiz-uploader-sort"]').val()
+                    $('[name="aiz-uploader-sort"]').val(),
+                    $('[name="aiz-uploader-company"]').val()
                 );
                 // if (AIZ.uploader.data.allFiles.length > 0) {
                 //     for (
@@ -329,7 +334,8 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 AIZ.uploader.getAllUploads(
                     AIZ.data.appUrl + "/aiz-uploader/get-uploaded-files",
                     $('[name="aiz-uploader-search"]').val(),
-                    value
+                    value,
+                    $('[name="aiz-uploader-company"]').val()
                 );
 
                 // if (value === "oldest") {
@@ -364,6 +370,17 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 //AIZ.uploader.updateUploaderFiles();
             });
         },
+        companyUploaderFiles: function () {
+            $('[name="aiz-uploader-company"]').on("change", function () {
+                var value = $(this).val();
+                AIZ.uploader.getAllUploads(
+                    AIZ.data.appUrl + "/aiz-uploader/get-uploaded-files",
+                    $('[name="aiz-uploader-search"]').val(),
+                    $('[name="aiz-uploader-sort"]').val(),
+                    value
+                );
+            });
+        },        
         addSelectedValue: function () {
             for (var i = 0; i < AIZ.uploader.data.allFiles.length; i++) {
                 if (
@@ -691,6 +708,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     AIZ.uploader.searchUploaderFiles();
                     AIZ.uploader.showSelectedFiles();
                     AIZ.uploader.dismissUploader();
+                    AIZ.uploader.companyUploaderFiles();
 
                     $("#uploader_next_btn").on("click", function () {
                         if (AIZ.uploader.data.next_page_url != null) {

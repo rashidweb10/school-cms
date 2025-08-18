@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Upload;
+use App\Models\User;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -178,7 +179,12 @@ class UploadController extends Controller
         if (auth()->user()->role_id != 1) {
             //$uploads->where('user_id', auth()->user()->id);
             $uploads->whereIn('user_id', [auth()->id(), 1]);
-        } 
+        }
+        
+        if ($request->company) {
+            // dd(User::where('company_id', $request->company)->value('id'));
+            $uploads->where('user_id', User::where('company_id', $request->company)->value('id'));
+        }        
         
         $uploads->where('type', $request->type); //new
 

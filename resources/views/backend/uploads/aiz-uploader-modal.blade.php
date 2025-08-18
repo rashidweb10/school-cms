@@ -31,6 +31,21 @@
                     <!-- End Input -->
                   </div>
                 </div>
+                <div class="col-xl-2 col-md-3 col-5">
+                  <div>
+                    <!-- Input -->
+                    <select name="aiz-uploader-company" class="form-select form-select-sm aiz-selectpicker" id="status-select">
+                        <option value="" selected>--Select School--</option>
+                        @foreach (getCompanyList() as $index => $row)
+                            <option value="{{ $row->id }}" 
+                                @if(request()->get('company') == $row->id) selected @endif>
+                                {{ $row->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <!-- End Input -->
+                  </div>
+                </div>
                 <div class="col-md-3 col-5">
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="aiz-show-selected" name="aiz-show-selected">
