@@ -126,7 +126,7 @@
     th,
     thead,
     tr {
-        border-color: #fdee9d;
+        border-color: #ececec;
         border-style: solid;
         border-width: 0;
     }
