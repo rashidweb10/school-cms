@@ -131,7 +131,7 @@
                     </div> 
                     <div style="clear:both"></div>
                     <div class="mb-3 form-group">
-                        <label for="meta-company-admission-banner" class="form-label">{{ __('Admission Banner') }}</label>
+                        <label for="meta-company-admission-banner" class="form-label">{{ __('Admission Banner Image') }}</label>
                         <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
                             <div class="input-group-prepend">
                                 <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
@@ -140,7 +140,12 @@
                             <input type="hidden" id="meta-company-admission-banner" name="meta[admission_banner]" value="{{ old('meta.admission_banner', $pageData->meta->where('meta_key', 'admission_banner')->first()->meta_value ?? '') }}" class="selected-files">
                         </div>
                         <div class="file-preview box sm"></div>
-                    </div>                                                                              
+                    </div> 
+                    <div style="clear:both"></div>
+                    <div class="mb-3 form-group">
+                        <label for="meta-affiliation" class="form-label">Admission Banner URL</label>
+                        <input type="text" class="form-control" id="meta-admission_banner_url" name="meta[admission_banner_url]" value="{{ old('meta.admission_banner_url', $pageData->meta->where('meta_key', 'admission_banner_url')->first()->meta_value ?? '') }}" placeholder="">
+                    </div>                                                                                                  
                 </div>
             </div>            
         </div>

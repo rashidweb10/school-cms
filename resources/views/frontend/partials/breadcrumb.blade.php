@@ -15,9 +15,9 @@
       </div>
       <div class="col-lg-4">
         <div class="position-relative inner_adminssion">
-        <a target="_blank" href="https://school.maptek.online/">
+        <a target="_blank" href="{{get_setting('admission_banner_url')}}">
           <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img">
-</a>
+        </a>
         </div>
       </div>
     </div>
