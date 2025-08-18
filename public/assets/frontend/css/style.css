@@ -2434,9 +2434,9 @@ thead.thead-dark th {
     margin-right: auto;
 }
 
-.about_tabs div#pills-tabContent .tab-pane:nth-child(2) .row.tabs1_content, 
-.about_tabs div#pills-tabContent .tab-pane:nth-child(3) .row.tabs1_content
-.about_tabs div#pills-tabContent .tab-pane:nth-child(4) .row.tabs1_content
+.about_tabs div#pills-tabContent .tab-pane:nth-child(2) .row, 
+.about_tabs div#pills-tabContent .tab-pane:nth-child(3) .row,
+.about_tabs div#pills-tabContent .tab-pane:nth-child(4) .row
 {
     justify-content: center;
     margin-top: -150px;
