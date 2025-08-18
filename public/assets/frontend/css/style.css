@@ -2402,7 +2402,22 @@ ul.submenu.p-2 li ul.submenu li a:hover {
     object-fit: cover;
     object-position: top;
 }
+thead.thead-dark th:nth-child(2) {
+    text-align: left;
+}
 
+thead.thead-dark th {
+    text-align: center;
+}
+
+
+#circulars td:nth-child(2) {
+    text-align: left;
+}
+
+#circulars td {
+    text-align: center;
+}
 @media(max-width:767px)
 {
     .event_heights img

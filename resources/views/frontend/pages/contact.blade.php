@@ -21,7 +21,7 @@
      <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
         <div class="row justify-content-xl-center">
           <div class="col-12 col-xl-11">
-            <h3 class="robot_slab text_color pb-md-4 pb-1 pt-md-0 pt-4">Reach Us</h3>
+            <h3 class="robot_slab fw-normal text_color pb-md-4 pb-1 pt-md-0 pt-4">Reach Us</h3>
             <!--<p class="mb-5">We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.</p>-->
             <div class="d-flex mb-md-2">
              
@@ -60,7 +60,7 @@
       </div>
       
       <div class="col-lg-8 col-xl-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
-          <h3 class="robot_slab text_color pb-md-4 pb-3 pt-md-0 pt-4">Write Us</h3>
+          <h3 class="robot_slab fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-4">Write Us</h3>
         <div class="card rounded-3">
         
           <div class="card-body p-4 p-md-4">

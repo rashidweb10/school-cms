@@ -153,7 +153,7 @@
     }
 
     .thead-dark {
-        background-color: #fdee9d;
+        background-color: #ececec;
     }
 
     .result_table {
@@ -190,12 +190,8 @@
 
 
     .result_vm_btn:hover {
-        text-decoration: none;
         color: #fff;
         background-color: #E31E24;
-        border-radius: 50px;
-        padding: 3px 15px;
-        transition: all 0.3s;
     }
 </style>
 

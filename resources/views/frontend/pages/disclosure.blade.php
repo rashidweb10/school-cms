@@ -59,7 +59,7 @@
     }
 
     .thead-dark {
-        background-color: #fdee9d;
+        background-color: #ececec;
     }
 
     .dis_table {
