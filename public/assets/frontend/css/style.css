@@ -2419,6 +2419,40 @@ thead.thead-dark th {
 #circulars td {
     text-align: center;
 }
+
+
+.about_tabs div#pills-tabContent .tab-pane:nth-child(1)
+ {
+    border: 2px solid #e5cd4f;
+    border-radius: 35px;
+    padding: 30px;
+    margin-top: 110px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about_tabs div#pills-tabContent .tab-pane:nth-child(2)
+ {
+    border: 2px solid #e5cd4f;
+    border-radius: 35px;
+    padding: 30px;
+    margin-top: 110px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about_tabs div#pills-tabContent .tab-pane:nth-child(4)
+ {
+    border: 2px solid #e5cd4f;
+    border-radius: 35px;
+    padding: 30px;
+    margin-top: 110px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media(max-width:767px)
 {
     .event_heights img
