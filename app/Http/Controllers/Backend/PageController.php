@@ -178,6 +178,17 @@ class PageController extends Controller
             // Handle meta fields
             $metaFields = $request->input('meta', []); // Get all meta fields from the request
 
+            // Get existing meta keys for this record
+            $existingMetaKeys = $record->meta()->pluck('meta_key')->toArray();
+
+            // Loop existing meta keys to check if they are missing in submitted request
+            foreach ($existingMetaKeys as $existingKey) {
+                // If submitted meta does not have this key, delete it
+                if (!array_key_exists($existingKey, $metaFields)) {
+                    $record->meta()->where('meta_key', $existingKey)->delete();
+                }
+            }            
+
             foreach ($metaFields as $key => $value) {
                 // Check if the meta key exists for the current page
                 $existingMeta = $record->meta()->where('meta_key', $key)->first();
@@ -197,7 +208,7 @@ class PageController extends Controller
                         ]);
                     }
                 }
-            }            
+            }              
     
             return redirect()->route($this->routeName . '.edit', $id)->with('success', 'Record updated successfully');
         } catch (\Exception $e) {

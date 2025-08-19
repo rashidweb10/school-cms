@@ -92,8 +92,8 @@
             @foreach($awards['itration'] as $index => $itration)
                 <div class="row remove-parent">
                     <div class="col-md-12">
-                        <label for="name" class="form-label">Awards & Achievements <span class="text-danger">*</span></label>
-                        <input value="{{ $index }}" name="meta[awards][itration][]" type="hidden" required>
+                        <label for="name" class="form-label">Awards & Achievements</label>
+                        <input value="{{ $index }}" name="meta[awards][itration][]" type="hidden">
                     </div> 
                     <div class="col-md">
                         <div class="form-group mb-2">
@@ -120,7 +120,7 @@
                                 minlength="3" 
                                 maxlength="200" 
                                 placeholder="Enter Title" 
-                                required>
+                                >
                         </div>
                     </div>                                      
                     <div class="col-md-auto">

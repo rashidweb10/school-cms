@@ -23,7 +23,7 @@
   <div class="d-flex justify-content-center mb-5 position-relative z-3">
     <div class="position-relative">
       <div class="stats-circle text-center">
-        <div class="text-white display-4 fw-black mb-2">{{count($curriculum['itration'] ?? 0)}}</div>
+        <div class="text-white display-4 fw-black mb-2">{{ count($curriculum['itration'] ?? []) }}</div>
         <div class="text-white fw-bold fs-5">CORE<br>AREAS</div>
       </div>
     </div>
