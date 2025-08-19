@@ -34,14 +34,14 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
 
 
     .features-one__single-icon {
-        position: relative;
-        display: block;
-        height: 100%;
-        background: #fd5523;
-        padding: 25px 0 26px;
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        margin-left: 10px;
+       position: relative;
+    display: block;
+    height: 100%;
+    background: transparent;
+    /* padding: 25px 0 26px; */
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: 10px;
     }
 
 
@@ -69,10 +69,10 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
 
 
     .features-one__single-content {
-        position: relative;
-        display: block;
-        padding: 32px 30px;
-        flex: 1 1;
+           position: relative;
+    display: block;
+    padding: 1px 25px;
+    flex: 1 1;
     }
 
 
