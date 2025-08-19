@@ -2445,6 +2445,11 @@ thead.thead-dark th {
     /*margin-top: -150px;*/
     margin-top: 0px;
 }
+
+.table-hover>tbody>tr:hover {
+    --bs-table-accent-bg: rgb(0 0 0 / 3%) !important;
+    color: var(--bs-table-hover-color);
+}
 @media(max-width:767px)
 {
     .event_heights img
