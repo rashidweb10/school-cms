@@ -48,7 +48,7 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
     .features-one__single-icon .icon i {
         position: relative;
         display: inline-block;
-        color: #fff;
+        color: #fd5523;
         font-size: 60px;
         line-height: 60px;
         transition: all .5s ease;
