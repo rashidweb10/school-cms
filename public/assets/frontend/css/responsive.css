@@ -552,6 +552,10 @@ p.qr_text {
 .ev_img_col {
     padding: 30px 16px 16px 16px !important; 
 }
+
+.submenu {
+    width: 100% !important;
+}
 .event_main_box {
     margin-top: 6px !important;
 }
