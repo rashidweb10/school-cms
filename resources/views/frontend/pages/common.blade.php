@@ -7,7 +7,7 @@
 
 @include('frontend.partials.breadcrumb', ['title' => $pageData->title])
 
-<section class="pb-5">
+<section class="pb-md-5 pb-4">
     <div class="container">
         <div class="row">
             <div class="12">

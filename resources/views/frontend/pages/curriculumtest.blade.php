@@ -179,7 +179,7 @@
     </div>
 
     <!-- Curriculum Cards -->
-    <div class="container px-4 pb-5 position-relative z-3">
+    <div class="container px-md-4 px-3 pb-5 position-relative z-3">
         <div class="row g-4 justify-content-center">
             <!-- Academics & Assessments -->
             <div class="col-12 col-md-6 col-lg-4 col-xl">

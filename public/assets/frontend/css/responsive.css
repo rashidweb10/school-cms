@@ -504,6 +504,7 @@ div#content_1 {
 .roadmap_section img
 {
     height: auto !important;
+    width: 100% !important;
 }
 .leader_mamber_img {
     width: 90%;
@@ -532,7 +533,7 @@ p.qr_text {
     text-align: left;
 }
 #circulars {
-    padding: 10px 0px 20px 0px;
+    padding: 10px 0px 20px 0px !important;
 }
 
 .event_name p {
@@ -549,10 +550,10 @@ p.qr_text {
     margin-bottom: 0 !important;
 }
 .ev_img_col {
-    padding: 50px 16px 16px 16px !important; 
+    padding: 30px 16px 16px 16px !important; 
 }
 .event_main_box {
-    margin-top: 6px;
+    margin-top: 6px !important;
 }
 .titlt_col {
     padding: 25px 0px 25px 15px !important;

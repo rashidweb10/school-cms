@@ -70,7 +70,7 @@
                     <nav class="navbar navbar-expand-lg navbar-light p-0">
                         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                             <ul class="navbar-nav mb-2 mb-lg-0"></ul>
-                            <div class="d-flex">
+                            <div class="d-md-flex">
                                 <ul class="navbar-nav ms-md-auto mb-2 mb-lg-0 position_tops">
                                     <li class="nav-item">
                                         <a class="nav-link robot_slab" aria-current="page" href="{{route('home')}}">
