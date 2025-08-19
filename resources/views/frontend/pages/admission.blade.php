@@ -45,7 +45,7 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
     }
 
 
-    .features-one__single-icon .icon span {
+    .features-one__single-icon .icon i {
         position: relative;
         display: inline-block;
         color: #fff;
@@ -114,29 +114,46 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
         /* align-items: center; */
         justify-content: center;
         flex-direction: column;
-        padding-left: 40px;
+        padding-left: 50px;
     }
+
+    .features-one__single-content a {
+    background: #fdee9d;
+    color: #000;
+    text-decoration: none;
+    padding: 7px 20px;
+    font-size: 14px;
+    border-radius: 0px;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.features-one__single-content h4 {
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: 600;
+}
 </style>
 
 <section class="admition_section" id="admition_section">
     <div class="container">
         <div class="row admition_f_r">
-            <div class="col-md-4 admition_f_r_img">
+            <!-- <div class="col-md-4 admition_f_r_img">
                 <img src="./img/admition-cover.jpg " class="img-fluid" alt="">
-            </div>
-            <div class="col-md-8 admition_f_r_c">
+            </div> -->
+            <div class="col-md-12 admition_f_r_c">
                 {!! $pageData->content !!}
             </div>
         </div>
 
-        <div class="row features-one">
+        <div class="row pt-5 pb-5 ps-5">
         @if(isset($admission['itration']) && is_array($admission['itration']))
         @foreach($admission['itration'] as $index => $itration)   
         @foreach(explode(',', $admission['attachments'][$index]) as $id)                
-            <div class="col-xl-4 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms;">
+            <div class="col-xl-4 wow fadeInRight ps-0" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms;">
                 <div class="features-one__single">
                     <div class="features-one__single-icon text-center">
-                        <div class="icon"><span class="icon-quote"></span></div>
+                        <div class="icon"><i class="fa-solid fa-file-pdf"></i></div>
                     </div>
                     <div class="features-one__single-content">
                         <h4>{{ uploaded_asset_name($id) }}</h4>
