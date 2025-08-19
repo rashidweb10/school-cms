@@ -90,9 +90,12 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
     .admition_f_r {
         overflow: hidden;
         background: #fefddf;
-        padding-top: 10px;
+        padding-top: 18px;
     }
-
+.admition_f_r_c p {
+    font-weight: 500;
+    font-size: 18px;
+}
     .admition_f_r {
         overflow: hidden;
     }
