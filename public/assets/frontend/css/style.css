@@ -48,6 +48,7 @@ header li a {
     width: 100%;
         background: linear-gradient(180deg, #00000000 0%, #00000045 40%, #000000 50%, #0000000a 100%);
 z-index: 9;
+
     }
 header .container-fluid {
     padding: 0;
@@ -2429,7 +2430,8 @@ thead.thead-dark th {
     border: 2px solid #e5cd4f;
     border-radius: 35px;
     padding: 30px;
-    margin-top: 110px;
+    /*margin-top: 110px;*/
+    margin-top: 0px;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -2440,7 +2442,8 @@ thead.thead-dark th {
 .about_tabs div#pills-tabContent .tab-pane:nth-child(4) .row
 {
     justify-content: center;
-    margin-top: -150px;
+    /*margin-top: -150px;*/
+    margin-top: 0px;
 }
 @media(max-width:767px)
 {
