@@ -493,12 +493,22 @@ display:none;
 }
 
 .pl30 {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
+div#content_1 {
+    padding: 30px 20px;
+    width: 94%;
+}
+
 .roadmap_section img
 {
     height: auto !important;
+}
+.leader_mamber_img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .tabss-nav {
    overflow: scroll;
