@@ -187,7 +187,7 @@
     </section>
     @endif
 
-    <section class="pt-4 pt-md-5 pb-md-5">
+    <section class="pt-5 pt-md-5 pb-md-5">
       <div class="container paddlft50 pt-md-5">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-4">
@@ -241,7 +241,7 @@
     </section>
     @endif
 
-  <section class="vission_mission pt-5 pb-4 position-relative">
+  <section class="vission_mission pt-5 pb-md-4 pb-0 position-relative">
     <div class="container">
       <div class="row justify-content-center">
 

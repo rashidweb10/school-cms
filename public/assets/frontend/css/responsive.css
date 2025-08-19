@@ -127,15 +127,25 @@ html {
 }
 .classroom_box {
     padding: 0px 0px;
-            margin-bottom: 50px;
+            margin-bottom: 0px;
 }
 .border_2:before {
     width: 100%;
     bottom: 23px;
 }
+
+.classroom_box p {
+    margin-bottom: 40px;
+}
 .counter-value {
     font-size: 34px;
     color: #333;
+}
+.margintop-23 {
+    margin-top: 0px !important;
+}
+.margintop-18 {
+    margin-top: 0px !important;
 }
 .stastic p {
     text-decoration: underline;
@@ -203,13 +213,20 @@ body .admiistion_test {
     display: block;
 }
 .header_section_top p {
-    color: #000000;
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 0px;
     padding-top: 0px;
     text-align: center;
     padding-left:30px;
+}
+
+.classroom_box iframe {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    position: relative;
 }
 .banner_slider img {
     height: 35vh;

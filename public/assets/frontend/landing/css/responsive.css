@@ -131,6 +131,12 @@ html {
     color: #333;
     margin-bottom: 20px;
 }
+.margintop-23 {
+    margin-top: 0px !important;
+}
+.margintop-18 {
+    margin-top: 0px !important;
+}
 .skew-box p {
     margin: 0;
     font-size: 18px;
@@ -190,8 +196,15 @@ body .admiistion_test {
     margin-right: auto;
     display: block;
 }
+
+.classroom_box iframe {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    position: relative;
+}
 .header_section_top p {
-    color: #000000;
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 7px;
