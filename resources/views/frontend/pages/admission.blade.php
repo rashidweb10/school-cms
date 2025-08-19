@@ -24,11 +24,11 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
     .features-one__single {
         position: relative;
         display: flex;
-        align-items: center;
         border: 1px solid #fd5523;
         border-top-left-radius: 20px;
         border-bottom-right-radius: 20px;
         overflow: hidden;
+        height:100%;
         padding: 20px 10px;
     }
 
