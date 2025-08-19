@@ -104,7 +104,7 @@ div#content_3 {
 </section>
 
 
-<section class="about_tabs pb-md-5 pb-4 dark_org_color mt-4 position-relative">
+<section class="about_tabs pb-md-5 pb-4 pt-4 dark_org_color mt-4 position-relative">
     <div class="container">
         <div class="row">
             <div class="scrollable-tabs">
