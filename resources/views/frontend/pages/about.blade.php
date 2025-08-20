@@ -614,11 +614,11 @@ div#content_3 {
       $("#pills-tab .nav-link:eq(0)").trigger("click"); 
   }, 500); // 1 second delay
 
-  $(document).ready(function () {
-    setTimeout(function () {
-        //$("#pills-tab .nav-link:first").trigger("click");
-        $("#pills-tab .nav-link:eq(0)").trigger("click"); 
-    }, 1000); // 5000ms = 5 seconds
-  });
+  // $(document).ready(function () {
+  //   setTimeout(function () {
+  //       //$("#pills-tab .nav-link:first").trigger("click");
+  //       $("#pills-tab .nav-link:eq(0)").trigger("click"); 
+  //   }, 1000); // 5000ms = 5 seconds
+  // });
 </script>
 @endsection
