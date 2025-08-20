@@ -610,6 +610,8 @@ div#content_3 {
       if ($management.length && $principal.length) {
           $management.insertBefore($principal);
       }
+
+      $("#pills-tab .nav-link:eq(0)").trigger("click"); 
   }, 500); // 1 second delay
 
   $(document).ready(function () {
