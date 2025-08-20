@@ -610,13 +610,13 @@ div#content_3 {
       if ($management.length && $principal.length) {
           $management.insertBefore($principal);
       }
-  }, 1000); // 1 second delay
+  }, 500); // 1 second delay
 
   $(document).ready(function () {
     setTimeout(function () {
         //$("#pills-tab .nav-link:first").trigger("click");
         $("#pills-tab .nav-link:eq(0)").trigger("click"); 
-    }, 500); // 5000ms = 5 seconds
+    }, 1000); // 5000ms = 5 seconds
   });
 </script>
 @endsection
