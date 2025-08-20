@@ -597,10 +597,6 @@ div#content_3 {
     e.stopPropagation();
 
   })
-
-  $(document).ready(function () {
-      $("#pills-tab .nav-link:first").trigger("click");
-  });  
 </script>
 <script>
   setTimeout(function () {
