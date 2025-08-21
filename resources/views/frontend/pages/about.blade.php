@@ -139,10 +139,10 @@ div#content_3 {
             <!-- Tab Content -->
             <div class="tab-content" id="pills-tabContent">
                 @foreach($categories as $index => $category)
-                    <!-- <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}" 
+                    {{--<!-- <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}" 
                         id="content_{{ $category->id }}" 
                         role="tabpanel" 
-                        aria-labelledby="tab_{{ $category->id }}"> -->
+                        aria-labelledby="tab_{{ $category->id }}"> -->--}}
                     <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }} @if(Str::contains(strtolower($category->name), 'desk')) template-1 @elseif(Str::contains(strtolower($category->name), 'team')) template-2 @else template-3 @endif"
                         id="content_{{ $category->id }}" 
                         role="tabpanel" 
