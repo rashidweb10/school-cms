@@ -33,8 +33,8 @@
     .nav-pills .nav-link {
         background: 0 0;
         border: 0;
-        border-radius: 5px 0px 0px 5px;
-        margin-bottom: 4px;
+        border-radius: 0px 0px 0px 0px;
+        margin-bottom: 0px;
         color: #000;
         border-bottom:1px solid #fff;
     }
