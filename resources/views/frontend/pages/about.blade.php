@@ -139,10 +139,21 @@ div#content_3 {
             <!-- Tab Content -->
             <div class="tab-content" id="pills-tabContent">
                 @foreach($categories as $index => $category)
-                    <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}" 
+                    <!-- <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}" 
                         id="content_{{ $category->id }}" 
                         role="tabpanel" 
-                        aria-labelledby="tab_{{ $category->id }}">
+                        aria-labelledby="tab_{{ $category->id }}"> -->
+                    <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }} 
+                        @if(Str::contains(strtolower($category->name), 'desk')) 
+                            template-1 
+                        @elseif(Str::contains(strtolower($category->name), 'team')) 
+                            template-2 
+                        @else 
+                            template-3 
+                        @endif"
+                        id="content_{{ $category->id }}" 
+                        role="tabpanel" 
+                        aria-labelledby="tab_{{ $category->id }}">                        
 
                         @if(Str::contains(strtolower($category->name), 'desk'))
                             {{-- Template 1: Category name contains "Desk" --}}
@@ -225,7 +236,7 @@ div#content_3 {
                     </div>
                 @endforeach
                 <!-- Static "School Information" Tab Content -->
-                <div class="tab-pane fade d-none" id="content_school_info" role="tabpanel" aria-labelledby="tab_school_info">
+                <div class="tab-pane fade d-none template-4" id="content_school_info" role="tabpanel" aria-labelledby="tab_school_info">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
