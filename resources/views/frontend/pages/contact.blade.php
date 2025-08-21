@@ -7,15 +7,11 @@
 
 @include('frontend.partials.breadcrumb', ['title' => "Contact Us"])
 
-<section class="embedcode pb-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-     <div class="container">
-     <iframe src="{{get_setting('google_map')}}" height="20" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-     </div>
- </section>
+
     
     
     
-     <section class=" pb-md-5 pb-4 mt-4 position-relative">
+     <section class=" pb-md-5 pb-4 mt-0 position-relative">
    <div class="container">
      <div class="row">
      <div class="col-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
@@ -114,6 +110,12 @@
       
      </div>
    </div>
+ </section>
+
+ <section class="embedcode pb-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+     <div class="container">
+     <iframe src="{{get_setting('google_map')}}" height="20" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
  </section>
 
 @endsection
