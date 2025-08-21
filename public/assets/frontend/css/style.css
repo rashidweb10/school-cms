@@ -2423,9 +2423,7 @@ thead.thead-dark th {
 }
 
 
-.about_tabs div#pills-tabContent .tab-pane:nth-child(2), 
-.about_tabs div#pills-tabContent .tab-pane:nth-child(3),
-.about_tabs div#pills-tabContent .tab-pane:nth-child(4)
+.template-1
  {
     border: 2px solid #e5cd4f;
     border-radius: 35px;
@@ -2437,12 +2435,10 @@ thead.thead-dark th {
     margin-right: auto;
 }
 
-.about_tabs div#pills-tabContent .tab-pane:nth-child(2) .row, 
-.about_tabs div#pills-tabContent .tab-pane:nth-child(3) .row,
-.about_tabs div#pills-tabContent .tab-pane:nth-child(4) .row
+.template-1 .row
 {
     justify-content: center;
-    /*margin-top: -150px;*/
+    margin-top: -150px;
     margin-top: 0px;
 }
 
