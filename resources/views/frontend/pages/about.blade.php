@@ -8,6 +8,7 @@
 
     $about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
     $about_image = $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '';
+    $about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
     $about_school_description = $pageData->meta->where('meta_key', 'about_school_description')->first()->meta_value ?? '';
     $mission_title = $pageData->meta->where('meta_key', 'mission_title')->first()->meta_value ?? '';
     $mission_description = $pageData->meta->where('meta_key', 'mission_description')->first()->meta_value ?? '';
@@ -97,6 +98,7 @@ div#content_3 {
         </div>
       </div>
       <div class="col-lg-12 pt-md-0 pt-md-5 pt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+      <h3>{{$about_title}}</h3>
       <p>{!! $about_description !!}</p>
       </div>
     </div>
