@@ -169,7 +169,8 @@ Route::prefix('backend')->group(function () {
 
 //Page Routes
 Route::get('{slug}', function ($slug) {
-    $page = DB::table('pages')->where('slug', $slug)->first();
+    //$page = DB::table('pages')->where('slug', $slug)->first();
+    $page = DB::table('pages')->where('slug', $slug)->where('company_id', config('custom.school_id'))->first();
 
     if (!$page) {
         abort(404);
