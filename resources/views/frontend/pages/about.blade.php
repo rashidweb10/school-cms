@@ -97,7 +97,7 @@ div#content_3 {
 
         </div>
       </div>
-      <div class="col-lg-12 pt-md-0 pt-md-5 pt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+      <div class="col-lg-12 px-md-4 px-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <h3>{{$about_title}}</h3>
       <p>{!! $about_description !!}</p>
       </div>
