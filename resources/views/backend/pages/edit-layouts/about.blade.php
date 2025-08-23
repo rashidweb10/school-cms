@@ -2,6 +2,7 @@
 
     $about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
     $about_image = $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '';
+    $about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
 
     $about_school_description = $pageData->meta->where('meta_key', 'about_school_description')->first()->meta_value ?? '';
 
@@ -21,6 +22,10 @@
         <hr>
         <h4 class="text-primary">About Section</h4>
     </div> 
+    <div class="col-md-12 form-group mb-2">
+        <label for="name" class="form-label">Title<span class="text-danger">*</span></label>
+        <input class="form-control" value="{{$about_title}}" name="meta[about_title]" type="text" required>
+    </div>       
     <div class="col-md-12">
         <label for="name" class="form-label">Image<span class="text-danger">*</span></label>
         <div class="form-group mb-2">

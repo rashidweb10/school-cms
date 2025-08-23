@@ -94,7 +94,7 @@
                                                     $achivements = DB::table('pages')->where('is_active', 1)
                                                         ->where('layout', 'achivements')
                                                         ->where('company_id', config('custom.school_id'))
-                                                        ->orderBy('id', 'desc')
+                                                        ->orderBy('title', 'desc')
                                                         ->get();                                    
                                                     @endphp                                                    
                                                     
@@ -126,7 +126,7 @@
                                     $circulars = DB::table('pages')->where('is_active', 1)
                                         ->where('layout', 'circulars')
                                         ->where('company_id', config('custom.school_id'))
-                                        ->orderBy('id', 'asc')
+                                        ->orderBy('title', 'desc')
                                         ->get();                                    
                                     @endphp
                                     <ul class="menu nav-item">
