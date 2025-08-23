@@ -22,17 +22,17 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-1 col-6 order-md-1 order-2">
+                <div class="col-md-1 col-3 order-md-1 order-2">
                     <div class="logo_width">
                         <a class="navbar-brand" href="{{ route('home') }}">
                             <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" />
                         </a>
                     </div>
                 </div>
-                <div class="col-md-5 col-12 order-md-2 order-1">
+                <div class="col-md-5 col-8 order-md-2 order-3">
                     <h4 class="header_text roboto mt-md-0 mt-2">{{get_setting('name')}}</h4>
                 </div>
-                <div class="col-md-4 col-6 order-md-2 order-3 d-lg-none d-block">
+                <div class="col-md-4 col-1 order-md-2 order-3 d-lg-none d-block">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

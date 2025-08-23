@@ -188,8 +188,8 @@ body .admission_img {
     padding-left: 0;
     padding-top: 10px;
     text-align: center;
-    padding-top: 0px;
-            margin-top: -10px;
+    padding-top: 9px;
+   margin-top: -10px;
 }
 body .admiistion_test {
     color: #333;
@@ -201,12 +201,14 @@ body .admiistion_test {
     line-height: 20px;
 }
     .w-150 {
-        width: 90px;
+               width: 74px;
         position: relative;
         top: 0;
         margin-left: inherit;
-        margin-right: inherit;
+        margin-right: 0 !important;
         display: block;
+        padding-right: 0;
+        --bs-gutter-x: 0.5rem !important;
     }
     
    .logo_width a.navbar-brand {
@@ -380,7 +382,7 @@ header {
     button.navbar-toggler {
         float: right;
         padding: 0;
-        padding-top: 25px;
+               padding-top: 30px;
     }
     .navbar-toggler:focus {
     text-decoration: none;
