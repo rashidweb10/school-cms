@@ -85,6 +85,10 @@ div#content_3 {
     {
         text-align:center;
     }
+
+    .template-1 p {
+    text-align: center;
+}
 </style>
 <section class="aboutpg_section pb-md-5">
   <div class="container">
