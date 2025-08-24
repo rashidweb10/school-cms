@@ -60,7 +60,11 @@ class UploadController extends Controller
         if (auth()->user()->role_id != 1) {
             //$all_uploads->where('user_id', auth()->user()->id);
             $all_uploads->whereIn('user_id', [auth()->id(), 1]);
-        }        
+        }   
+        
+        if ($request->company) {
+            $all_uploads->where('user_id', User::where('company_id', $request->company)->value('id'));
+        }         
 
         $all_uploads = $all_uploads->paginate(20)->appends(request()->query());
         $extensions = Upload::select('extension')->distinct()->pluck('extension');
