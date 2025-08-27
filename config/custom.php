@@ -8,4 +8,5 @@ return [
     'recaptcha_secret_key' => env('RECAPTCHA_SECRET_KEY'),
     'author' => env('AUTHOR'),
     'app_name' => env('APP_NAME'),
+    'cache_minutes' => env('CACHE_MINUTES', 120),
 ];

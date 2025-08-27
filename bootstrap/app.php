@@ -10,6 +10,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\AllowBackendAccess;
 use App\Http\Middleware\ProtectForms;
 use App\Http\Middleware\VerifyRecaptcha;
+use App\Http\Middleware\TrackVisitors;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -34,7 +35,12 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);   
         $middleware->appendToGroup('recaptcha', [
             VerifyRecaptcha::class
-        ]);                     
+        ]);   
+        
+        //Global
+        $middleware->append([
+            \App\Http\Middleware\TrackVisitors::class,
+        ]);        
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
