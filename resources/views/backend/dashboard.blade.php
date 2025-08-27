@@ -43,9 +43,9 @@
     })->count();  
     
     $visitors = \App\Models\Visitor::when(auth()->user()?->company_id, function ($query, $companyId) {
-        return $query->where('user_id', auth()->user()->id);
+        return $query->where('company_id', auth()->user()->company_id);
     }, function ($query) {
-        //return $query->where('user_id', auth()->user()->id);
+        //return $query->where('company_id', auth()->user()->company_id);
     })->count();    
      
 @endphp
