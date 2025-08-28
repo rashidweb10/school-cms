@@ -154,7 +154,7 @@ div#content_3 {
                         role="tabpanel" 
                         aria-labelledby="tab_{{ $category->id }}">                        
 
-                        @if(Str::contains(strtolower($category->name), 'desk'))
+                        @if(Str::contains(strtolower($category->name), 'desk') || $category->name == 'Director' || $category->name == 'director')
                             {{-- Template 1: Category name contains "Desk" --}}
                             <div class="row tabs1_content">
                                 {{-- Images Section --}}
