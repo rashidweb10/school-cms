@@ -98,7 +98,7 @@
                                                     )->title ?? '';
                                                 @endphp
                                                 @if($curriculum_title)
-                                                <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}"> Curriculum @NHGS</a></li>
+                                                <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}">{{$curriculum_title}}</a></li>
                                                 @endif
                                                 <li>
                                                     <a href="#"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Achievements</a>
