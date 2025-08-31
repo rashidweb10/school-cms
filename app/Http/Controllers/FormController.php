@@ -12,6 +12,7 @@ class FormController extends Controller
 {
     public function submit(Request $request)
     {
+        //return $request->all();
         $formName = $request->input('form_name');
 
         $validationRules = $this->getValidationRules($formName);
@@ -55,8 +56,33 @@ class FormController extends Controller
         } catch (\Exception $e) {
             logger('Mail send failed: ' . $e->getMessage());
             dd($e->getMessage()); // or return response()->json(['error' => $e->getMessage()]);
-        }      
-            
+        }    
+        
+        //eduprint API
+        $student = [
+            "ShortName"        => $request->input('school_short_name'),
+            "Description"      => now()->month >= 4 ? now()->year . '-' . (now()->year + 1) : (now()->year - 1) . '-' . now()->year,
+            "ChildFirstName"   => str()->random(16),
+            "ChildMiddleName"  => str()->random(16),
+            "ChildLastName"    => str()->random(16),
+            "ContactEmailID"   => $request->input('email'),
+            "ContactMobileNo"  => $request->input('phone'),
+            "DOB"              => "1970-01-01 00:00:00",
+            "ClassMasterID"    => $request->input('class_id'),
+            "EnquiryChannelID" => $request->input('enquiry_channel_id'),
+            "GenderID"         => 3,
+            "UtmSource"        => "",
+            "UtmMedium"        => "",
+            "UtmCampaign"      => "",
+            "UtmTerm"          => "",
+            "UtmContent"       =>""
+        ];  
+        
+        $eduResponse = create_student_enquiry($student);
+
+        $form->update([
+            'edu_response' => $eduResponse,
+        ]);        
 
         return redirect()->back()->with('success', 'Enquiry submitted successfully');
     }

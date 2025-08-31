@@ -4,6 +4,8 @@ use App\Models\Company;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Drivers\Gd\Driver;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Cache;
 
 if (!function_exists('truncate_text')) {
     /**
@@ -414,3 +416,85 @@ if (!function_exists('makeImageThumbnail')) {
         }
     }
 }
+
+/*START - EDU PRINTS HELPER FUNCTIONS*/
+if (!function_exists('get_edusprint_token')) {
+    function get_edusprint_token() {
+        try {
+            $client = new Client();
+
+            $response = $client->post('https://1nh.edusprint.in/api/EduSprint/GetTokenByCredential', [
+                'headers' => [
+                    'Content-Type' => 'application/x-www-form-urlencoded',
+                ],
+                'form_params' => [
+                    'UserName' => '1nhwebsiteapi',
+                    'Password' => 'W@bsiteAPIP@sSW0rd_1NH',
+                ],
+            ]);
+
+            $result = json_decode($response->getBody(), true);
+
+            return trim($result['ResponseData']) ?? false;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+}
+
+if (!function_exists('get_school_export_data')) {
+    function get_school_export_data()
+    {
+        try {
+            // Try to get from cache first
+            return Cache::remember('school_export_data', now()->addDays(7), function () {
+                $client = new Client();
+
+                $response = $client->post('https://1nh.edusprint.in/api/EduSprint/GetSchoolExportAPIDataJSON', [
+                    'headers' => [
+                        'AuthToken'    => get_edusprint_token(), // 🔑 reuse the token helper we made earlier
+                        'Content-Type' => 'application/x-www-form-urlencoded',
+                    ],
+                    'form_params' => [
+                        'RequestCriteria' => 'basic',
+                    ],
+                ]);
+
+                $result = json_decode($response->getBody(), true);
+
+                return $result['ResponseData'] ?? false;
+            });
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+}
+
+if (!function_exists('create_student_enquiry')) {
+    function create_student_enquiry(array $studentData) {
+        try {
+            $client = new Client();
+
+            $response = $client->post('https://1nh.edusprint.in/api/EduSprint/CreateStudentEnquiry', [
+                'headers' => [
+                    'AuthToken'    => get_edusprint_token(), // 🔑 fetch token dynamically
+                    'Content-Type' => 'application/x-www-form-urlencoded',
+                ],
+                'form_params' => [
+                    'RequestCriteria' => 'insert',
+                    'RequestJsonData' => json_encode([$studentData]),
+                ],
+            ]);
+
+            $result = json_decode(json_decode($response->getBody(), true),true);
+            if($result['Success'] == false){
+                return $result['ResponseData'];
+            }else{
+                return $result['ResponseData'][0];
+            }
+        } catch (\Exception $e) {
+            return false; // or $e->getMessage() for debugging
+        }
+    }
+}
+/*END - EDU PRINTS HELPER FUNCTIONS*/
