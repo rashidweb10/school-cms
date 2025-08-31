@@ -83,7 +83,12 @@
                                 <th>Phone</th>
                                 @foreach($extraColumns as $col)
                                     <th>{{ ucfirst(str_replace('_', ' ', $col)) }}</th>
-                                @endforeach                               
+                                @endforeach   
+                                
+                                @if(request()->segment(3) === 'landing') 
+                                    <th>1NH API Response</th>
+                                @endif                                
+
                                 <th>Date</th>
                                 <!-- <th>Actions</th> -->
                             </tr>
@@ -100,11 +105,16 @@
                                 <td>{{ $row->phone }}</td>
                                 @foreach ($extraColumns as $col)
                                     <td>{{ $formData[$col] ?? '-' }}</td>
-                                @endforeach                               
-                                <td>{{ formatDatetime($row->updated_at) }}</td>
-                                <!-- <td>
+                                @endforeach    
+                                
+                                {{-- Only for admission --}}
+                                @if(request()->segment(3) === 'landing')
+                                    <td>
+                                        {{$row->edu_response}}
+                                    </td>
+                                @endif                                
 
-                                </td> -->
+                                <td>{{ formatDatetime($row->updated_at) }}</td>
                             </tr>
                             @endforeach
                         </tbody>
