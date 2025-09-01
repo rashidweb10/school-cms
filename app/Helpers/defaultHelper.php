@@ -43,12 +43,26 @@ if (!function_exists('convertToSlug')) {
 }
 
 
+// if (!function_exists('getCompanyList')) {
+//     function getCompanyList()
+//     {
+//         return auth()->user()->company_id
+//             ? Company::where('id', auth()->user()->company_id)->get()
+//             : Company::all();
+//     }
+// }
 if (!function_exists('getCompanyList')) {
     function getCompanyList()
     {
-        return auth()->user()->company_id
+        $companies = auth()->user()?->company_id
             ? Company::where('id', auth()->user()->company_id)->get()
             : Company::all();
+
+        // Add a custom display_name field (only for this helper)
+        return $companies->map(function ($company) {
+            $company->name = $company->name . ($company->website ? ' - ' . $company->website . '' : '');
+            return $company;
+        });
     }
 }
 
