@@ -76,7 +76,7 @@
                                         <a class="nav-link robot_slab" aria-current="page" href="{{route('home')}}">
                                             <img src="{{ asset('assets/frontend/img/icon-home-w.png') }}"> HOME
                                         </a>
-                                    </li>
+                                    </li>     
 
                                     <ul class="menu nav-item">
                                         <li>

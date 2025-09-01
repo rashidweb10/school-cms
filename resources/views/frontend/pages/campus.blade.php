@@ -33,7 +33,7 @@
     .nav-pills .nav-link {
         background: 0 0;
         border: 0;
-        border-radius: 0px 0px 0px 0px;
+        border-radius: 4px;
         margin-bottom: 0px;
         color: #000;
         border-bottom:1px solid #fff;
@@ -109,7 +109,7 @@
 @include('frontend.partials.breadcrumb', ['title' => "Campus"])
 
 
-{{--<section class=" camp_section position-relative">
+{{--<section class=" camp_section position-relative pb-0">
     <div class="container  curriculum_container">
         <div class="row">
             <div class="col-md-2 titlt_col">
@@ -147,7 +147,7 @@
 </section>--}}
 
 
-<section class="camp_section position-relative">
+<section class="camp_section position-relative pb-0">
   <div class="container curriculum_container">
     <div class="row">
       <!-- Left Side Tabs -->

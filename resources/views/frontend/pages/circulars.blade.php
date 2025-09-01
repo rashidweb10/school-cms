@@ -22,7 +22,7 @@
     .circulars .nav-link {
         color: red;
         border: 1px solid #999;
-        padding: 15px 30px;
+        padding: 15px 10px;
         transition: 0.3s;
         border-radius: 0;
         display: flex;

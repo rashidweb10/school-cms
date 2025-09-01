@@ -13,7 +13,14 @@ body
 {
 	color:#E31E24;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    
+    font-weight: 400 !important;
+}
 
+li.nav-item.col-md-2.col-sm-12.col-lg-2.col-6.mb-md-0.mb-3 {
+    width: auto !important;
+}
 .bgcolor
 {
 	        background: linear-gradient(0deg, #fffdb7 0%, #fefddf00 100%);
