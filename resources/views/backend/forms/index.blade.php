@@ -57,7 +57,7 @@
             </div>
             <div class="card-body">
                 @php
-                    $preferredOrder = ['school', 'standard', 'city', 'subject', 'message'];
+                    $preferredOrder = ['child_first_name', 'child_middle_name', 'child_last_name','school', 'standard', 'city', 'subject', 'message'];
                     $extraColumns = collect($pageData->items())
                         ->pluck('form_data')
                         ->map(function($data) {
@@ -73,23 +73,23 @@
                         ->values()
                         ->toArray();
                 @endphp              
-                <div class="table-responsive-sm">
-                    <table class="table table-striped">
+                <div class="table-responsive-sm table-responsive">
+                    <table class="table table-striped text-truncate">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
+                                <th class="w-10">#</th>
+                                <th class="w-10">Name</th>
+                                <th class="w-10">Email</th>
+                                <th class="w-10">Phone</th>
                                 @foreach($extraColumns as $col)
-                                    <th>{{ ucfirst(str_replace('_', ' ', $col)) }}</th>
+                                    <th class="w-10">{{ ucfirst(str_replace('_', ' ', $col)) }}</th>
                                 @endforeach   
                                 
                                 @if(request()->segment(3) === 'landing') 
-                                    <th>1NH API Response</th>
+                                    <th class="w-10">1NH API Response</th>
                                 @endif                                
 
-                                <th>Date</th>
+                                <th class="w-10">Date</th>
                                 <!-- <th>Actions</th> -->
                             </tr>
                         </thead>

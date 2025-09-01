@@ -62,9 +62,9 @@ class FormController extends Controller
         $student = [
             "ShortName"        => $request->input('school_short_name'),
             "Description"      => now()->month >= 4 ? now()->year . '-' . (now()->year + 1) : (now()->year - 1) . '-' . now()->year,
-            "ChildFirstName"   => str()->random(16),
-            "ChildMiddleName"  => str()->random(16),
-            "ChildLastName"    => str()->random(16),
+            "ChildFirstName"   => $request->input('child_first_name'),
+            "ChildMiddleName"  => $request->input('child_middle_name'),
+            "ChildLastName"    => $request->input('child_last_name'),
             "ContactEmailID"   => $request->input('email'),
             "ContactMobileNo"  => $request->input('phone'),
             "DOB"              => "1970-01-01 00:00:00",
@@ -99,7 +99,10 @@ class FormController extends Controller
                     'standard' => 'nullable|string|max:50',                    
                     'city' => 'nullable|string|max:50',                    
                     'school' => 'nullable|string|max:100',                    
-                    'enquiry_type' => 'nullable|string|max:20',                    
+                    'enquiry_type' => 'nullable|string|max:20',   
+                    'child_first_name' => 'required|string|max:50',
+                    'child_middle_name' => 'required|string|max:50',
+                    'child_last_name' => 'required|string|max:50',                 
                 ];
             case 'contact':
                 return [
