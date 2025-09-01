@@ -208,7 +208,7 @@
                 @foreach($intra['itration'] as $index => $iteration)
                     <li class="nav-item col-md-2 col-sm-12 col-lg-2 col-6 mb-md-0 mb-3">
                         <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#intra-tab-{{ $index }}">
-                            <i class="bi bi-box-seam"></i>
+                            <!-- <i class="bi bi-box-seam"></i> -->
                             <h4 class="d-lg-block">{{ $intra['title'][$index] ?? 'Result' }}</h4>
                         </a>
                     </li>
@@ -244,7 +244,7 @@
                 @foreach($inter['itration'] as $index => $iteration)
                     <li class="nav-item col-md-2 col-sm-12 col-lg-2">
                         <a class="nav-link {{ $loop->first ? 'active show' : '' }}" data-bs-toggle="tab" data-bs-target="#inter-tab-{{ $index }}">
-                            <i class="bi bi-box-seam"></i>
+                            <!-- <i class="bi bi-box-seam"></i> -->
                             <h4 class="d-none d-lg-block">{{ $inter['title'][$index] ?? 'Result' }}</h4>
                         </a>
                     </li>
