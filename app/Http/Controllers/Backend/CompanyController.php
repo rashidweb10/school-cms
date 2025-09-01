@@ -43,7 +43,7 @@ class CompanyController extends Controller
         $pageData = $query->get();
 
         // Get dropdown data
-        $companyList = Company::all();
+        $companyList = getCompanyList();
         return view('backend.companies.index', compact('pageData', 'companyList'));
     }
 
