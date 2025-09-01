@@ -12,7 +12,7 @@
               <li><a href="{{route('events')}}"> Events</a></li>
               <li><a href="{{route('curriculum')}}"> Curriculum</a></li>
               <li><a href="{{route('alumini')}}"> Alumni</a></li>
-              <li><a href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}"> BROCHURE</a></li>
+              <li><a target="_blank" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}"> BROCHURE</a></li>
             </ul>
             <ul class="footer-menu">
               
@@ -21,7 +21,7 @@
               <li><a href="{{route('results')}}"> Results</a></li>
               <li><a href="{{route('awards')}}"> Awards</a></li>
               <li><a href="{{route('contact')}}"> Contact Us</a></li>
-              <li><a href="https://1nh.edusprint.in/1nh/Security"> 1NH LOGIN</a></li>
+              <li><a target="_blank" href="https://1nh.edusprint.in/1nh/Security"> 1NH LOGIN</a></li>
             </ul>
           </div>
         </div>

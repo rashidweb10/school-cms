@@ -90,7 +90,10 @@
                   @include('frontend.components.form-alert')
                   @csrf
                   <input type="hidden" name="form_name" value="landing">
-                  <input type="hidden" name="company_id" value="">
+                  <input type="hidden" name="company_id" value="{{config('custom.school_id')}}">
+                  <input type="hidden" name="school_short_name" value="">
+                  <input type="hidden" name="class_id" value="">
+                  <input type="hidden" name="enquiry_channel_id" value="">
 
                   <div class="row">
                     <div class="col-md-12 mb-3 d-flex d-none">
@@ -132,42 +135,16 @@
 
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
-                        <select name="school" class="form-control" required>
+                        <select name="school" id="schoolDropdown" class="form-control" required>
                           <option value="">--- Select School Name ---</option>
-                          @foreach($schools as $school)
-                            @php
-                              $location = optional($school->meta->where('meta_key', 'location')->first())->meta_value;
-                              $boardName = optional($school->meta->where('meta_key', 'board_name')->first())->meta_value;
-                            @endphp
-                            <option data-id="{{ $school->id }}" value="{{ $school->name }}{{ $location ? ', ' . $location : '' }}{{ $boardName ? ' (' . $boardName . ')' : '' }}">
-                              {{ $school->name }}
-                              {{ $location ? ', ' . $location : '' }}
-                              {{ $boardName ? ' (' . $boardName . ')' : '' }}
-                            </option>
-                          @endforeach
                         </select>
                       </div>
                     </div>                    
 
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
-                        <select name="standard" class="form-control" required>
+                        <select name="standard" id="classDropdown" class="form-control" required>
                           <option value="">--- Select Standard ---</option>
-                          <option value="Nursery">Nursery</option>
-                          <option value="Jr. KG">Jr. KG</option>
-                          <option value="Sr. KG">Sr. KG</option>
-                          <option value="I">I Standard</option>
-                          <option value="II">II Standard</option>
-                          <option value="III">III Standard</option>
-                          <option value="IV">IV Standard</option>
-                          <option value="V">V Standard</option>
-                          <option value="VI">VI Standard</option>
-                          <option value="VII">VII Standard</option>
-                          <option value="VIII">VIII Standard</option>
-                          <option value="IX">IX Standard</option>
-                          <option value="X">X Standard</option>
-                          <option value="XI">XI Standard</option>
-                          <option value="XII">XII Standard</option>
                         </select>                      
                       </div>
                     </div>
@@ -180,7 +157,14 @@
 
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
-                        <input type="text" class="form-control" name="phone" placeholder="Mobile Number*" required>
+                        <input type="text" 
+                          class="form-control" 
+                          name="phone" 
+                          placeholder="Mobile Number*" 
+                          required 
+                          pattern="\d{10}" 
+                          maxlength="10" 
+                          title="Please enter a valid 10-digit mobile number">
                       </div>
                     </div>
 
@@ -447,8 +431,33 @@ $(document).ready(function () {
     // Hide all school options except the first one on page load
     $allOptions.not(':first').hide();
 
+    // $('select[name="city"]').on('change', function () {
+    //     const city = $(this).val();
+
+    //     // Reset school dropdown
+    //     $schoolSelect.val('');
+    //     $allOptions.not(':first').hide(); // Hide all school options
+
+    //     // Show specific schools based on selected city
+    //     if (city === 'Thane') {
+    //         $allOptions.filter(function () {
+    //             return $(this).attr('data-id') === '2' || $(this).attr('data-id') === '3' || $(this).attr('data-id') === '4' || $(this).attr('data-id') === '5';
+    //         }).show();
+    //     } else if (city === 'Navi Mumbai') {
+    //         $allOptions.filter(function () {
+    //             return $(this).attr('data-id') === '6' || $(this).attr('data-id') === '7';
+    //         }).show();
+    //     } else if (city === 'Panvel') {
+    //         $allOptions.filter(function () {
+    //             return $(this).attr('data-id') === '8';
+    //         }).show();
+    //     }
+    // });
+
     $('select[name="city"]').on('change', function () {
         const city = $(this).val();
+
+        const $allOptions = $schoolSelect.find('option');
 
         // Reset school dropdown
         $schoolSelect.val('');
@@ -457,24 +466,87 @@ $(document).ready(function () {
         // Show specific schools based on selected city
         if (city === 'Thane') {
             $allOptions.filter(function () {
-                return $(this).attr('data-id') === '2' || $(this).attr('data-id') === '3' || $(this).attr('data-id') === '4' || $(this).attr('data-id') === '5';
+                //console.log($(this).attr('data-short-name'));
+                return $(this).attr('data-short-name') === 'nhssvl' || $(this).attr('data-short-name') === 'nhsst' || $(this).attr('data-short-name') === 'nhssr' || $(this).attr('data-short-name') === 'nhisr';
             }).show();
         } else if (city === 'Navi Mumbai') {
             $allOptions.filter(function () {
-                return $(this).attr('data-id') === '6' || $(this).attr('data-id') === '7';
+                //console.log($(this).attr('data-short-name'));
+                return $(this).attr('data-short-name') === 'nhssa' || $(this).attr('data-short-name') === 'nhpsa';
             }).show();
         } else if (city === 'Panvel') {
             $allOptions.filter(function () {
-                return $(this).attr('data-id') === '8';
+                //console.log($(this).attr('data-short-name'));
+                return $(this).attr('data-short-name') === 'nhpsp';
             }).show();
         }
     });
 
-    $schoolSelect.on('change', function () {
-      const selectedDataId = $(this).find('option:selected').data('id'); // get data-id
-      $('input[name="company_id"]').val(selectedDataId); // set it to the hidden input
-    });
+    // $schoolSelect.on('change', function () {
+    //   const selectedDataId = $(this).find('option:selected').data('id'); // get data-id
+    //   $('input[name="company_id"]').val(selectedDataId); // set it to the hidden input
+    // });
 
 });
+</script>
+
+<script>
+  $(document).ready(function () {
+    // Your JSON (can come from backend)
+    var jsonData = <?php echo json_encode(get_school_export_data()); ?>; // pass JSON from controller
+    //var jsonData = @json(get_school_export_data());
+
+    var $schoolDropdown = $("#schoolDropdown");
+    var $classDropdown = $("#classDropdown");
+
+    // Load schools into dropdown
+    var schools = jsonData.SchoolGroupList[0].SchoolList;
+    $.each(schools, function (i, school) {
+      $schoolDropdown.append(
+        $("<option>")
+          .val(school.SchoolName)
+          .text(school.SchoolName)
+          .attr("data-short-name", school.ShortName)
+          .attr("data-classes", JSON.stringify(school.ClassList))
+          .attr("data-enquiry-channels", JSON.stringify(school.EnquiryChannel))
+      );
+    });
+
+    // On school change, load classes
+    $schoolDropdown.on("change", function () {
+      $classDropdown.empty().append('<option value="">--- Select Standard ---</option>');
+
+      var selected = $(this).find(":selected");
+      var classList = JSON.parse(selected.attr("data-classes") || "[]");
+      var enquiryChannels = JSON.parse(selected.attr("data-enquiry-channels") || "[]");
+
+      var websiteChannel = enquiryChannels.find(channel => channel.EnquiryChannelName === "WebSite");
+      if (websiteChannel) {
+        $('input[name="enquiry_channel_id"]').val(websiteChannel.EnquiryChannelID);
+      }      
+
+      $.each(classList, function (i, cls) {
+        $classDropdown.append(
+          $("<option>")
+            .val(cls.ClassName)
+            .text(cls.ClassName)
+            .attr("data-masterid", cls.ClassMasterID)
+        );
+      });
+    });
+
+    // On school change → set hidden fields
+    $('select[name="school"]').on('change', function () {
+        const selected = $(this).find('option:selected');
+        $('input[name="school_short_name"]').val(selected.data('short-name')); // school short name
+    });
+
+    // On class change → set hidden class_id
+    $('select[name="standard"]').on('change', function () {
+        const selected = $(this).find('option:selected');
+        $('input[name="class_id"]').val(selected.data('masterid')); // class_id
+    });
+
+  });
 </script>
 @endsection

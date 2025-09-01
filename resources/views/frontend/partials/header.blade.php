@@ -87,7 +87,19 @@
                                                 <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why New Horizon</a></li>
                                                 <li><a href="{{route('roadmap')}}"><img src="{{ asset('assets/frontend/img/road-maps.png') }}"> Road Map</a></li>
                                                 <li><a href="{{route('awards')}}"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Awards</a></li>
-                                                <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}"> Curriculum @NHGS</a></li>
+                                                
+                                                @php
+                                                    $curriculum_title = optional(
+                                                        DB::table('pages')
+                                                            ->where('is_active', 1)
+                                                            ->where('slug', 'curriculum')
+                                                            ->where('company_id', config('custom.school_id'))
+                                                            ->first()
+                                                    )->title ?? '';
+                                                @endphp
+                                                @if($curriculum_title)
+                                                <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}">{{$curriculum_title}}</a></li>
+                                                @endif
                                                 <li>
                                                     <a href="#"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Achievements</a>
                                                     @php 

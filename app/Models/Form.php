@@ -14,6 +14,7 @@ class Form extends Model
         'form_data',
         'ip',
         'company_id',
+        'edu_response',
     ];
 
     protected $casts = [

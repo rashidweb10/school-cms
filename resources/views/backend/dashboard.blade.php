@@ -40,7 +40,13 @@
         return $query->where('company_id', $companyId);
     }, function ($query) {
         //return $query->where('company_id', config('custom.school_id'));
-    })->count();   
+    })->count();  
+    
+    $visitors = \App\Models\Visitor::when(auth()->user()?->company_id, function ($query, $companyId) {
+        return $query->where('company_id', auth()->user()->company_id);
+    }, function ($query) {
+        //return $query->where('company_id', auth()->user()->company_id);
+    })->count();    
      
 @endphp
 
@@ -92,5 +98,12 @@
         'count' => $formCount,
         'url' => route('forms.by', ['form_name' => (auth()->user()->company_id == 1) ? 'admission' : 'contact']),
     ])
+
+    @include('backend.includes.dashboard-card', [
+        'name' => 'Visitors',
+        'icon' => 'ti ti-world',
+        'count' => $visitors,
+        'url' => '',
+    ])   
 </div>
 @endsection
