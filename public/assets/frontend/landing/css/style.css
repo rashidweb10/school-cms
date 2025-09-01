@@ -1765,6 +1765,10 @@ ul.about_listing li img {
         transform: skew(-25deg);
 }
 
+
+li.nav-item.col-md-2.col-sm-12.col-lg-2.col-6.mb-md-0.mb-3 {
+    width: auto !important;
+}
 .skew-box p span{
   margin: 0;
     font-size: 26px;
