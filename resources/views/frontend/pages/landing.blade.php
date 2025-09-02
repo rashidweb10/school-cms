@@ -108,6 +108,26 @@
                       </div>
                     </div>
 
+
+                    <div class="col-md-12 col-12 mb-3">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" name="child_first_name" placeholder="Child's First Name*" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-6 mb-3">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" name="child_middle_name" placeholder="Child's Middle Name (Optional)">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-6 mb-3">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" name="child_last_name" placeholder="Child's Last Name*" required>
+                      </div>
+                    </div>   
+
+
                     <div class="col-md-12 mb-3">
                       <div class="form-outline">
                         <select name="city" class="form-control" required>
@@ -155,7 +175,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 col-6 mb-3">
                       <div class="form-outline">
                         <input type="text" 
                           class="form-control" 
@@ -168,29 +188,13 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 col-6 mb-3">
                       <div class="form-outline">
                         <input type="email" class="form-control" name="email" placeholder="Email ID*" required>
                       </div>
                     </div>
 
-                    <div class="col-md-6 mb-3">
-                      <div class="form-outline">
-                        <input type="text" class="form-control" name="child_first_name" placeholder="Child's First Name*" required>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                      <div class="form-outline">
-                        <input type="text" class="form-control" name="child_middle_name" placeholder="Child's Middle Name (Optional)">
-                      </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                      <div class="form-outline">
-                        <input type="text" class="form-control" name="child_last_name" placeholder="Child's Last Name*" required>
-                      </div>
-                    </div>                    
+                                     
 
                     <div class="col-md-12 text-center">
                       <button type="submit" class="btn btn-primary">Submit</button>
