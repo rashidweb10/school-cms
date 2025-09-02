@@ -40,23 +40,25 @@ class ProtectForms
             abort(403, 'Forbidden - Suspicious Request');
         }
 
-        // // ✅ 4. Filter for SQL Injection and XSS
-        // $suspiciousPatterns = [
-        //     '/<script\b[^>]*>(.*?)<\/script>/is',  // XSS
-        //     '/on\w+="[^"]+"/i',                   // Inline JS
-        //     '/(select|insert|update|delete|drop|union|--|\')/i',  // SQL injection
-        // ];
+        // // ✅ 4. Filter for Suspicious Patterns Inputs
+        $suspiciousPatterns = [
+            '/<script\b[^>]*>(.*?)<\/script>/is',  // Full <script> tags
+            '/javascript:/i',                      // "javascript:" in links
+            '/on\w+\s*=\s*["\'].*?["\']/i',        // Inline event handlers like onclick=""
+            '/<iframe\b[^>]*>(.*?)<\/iframe>/is',  // Malicious iframes
+            '/<img\b[^>]*onerror\s*=\s*["\'].*?["\']/i', // Image-based XSS
+        ];
 
-        // foreach ($request->all() as $key => $value) {
-        //     if (!is_string($value)) continue;
+        foreach ($request->all() as $key => $value) {
+            if (!is_string($value)) continue;
 
-        //     foreach ($suspiciousPatterns as $pattern) {
-        //         if (preg_match($pattern, $value)) {
-        //             Log::warning("Injection/XSS attempt on '$key' with value '$value' from $ip");
-        //             abort(403, 'Forbidden - Suspicious Input Detected');
-        //         }
-        //     }
-        // } 
+            foreach ($suspiciousPatterns as $pattern) {
+                if (preg_match($pattern, $value)) {
+                    Log::warning("Suspicious input blocked on '$key' with value '$value' from $ip");
+                    abort(403, 'Forbidden - Suspicious Input Detected');
+                }
+            }
+        } 
         
         // ✅ 5. File upload validation for forms like career, etc.
         //if ($request->hasFile()) {
@@ -91,6 +93,12 @@ class ProtectForms
 
         // ✅ Optional: If you're using reCAPTCHA v3, you can validate here
         // (Let me know if you want that too)
+
+        // 🕳️ 6. Honeypot check
+        if ($request->filled('website')) { // "website" is our honeypot field
+            Log::warning("Honeypot field triggered by spam bot from IP: $ip");
+            abort(403, 'Forbidden - Bot detected');
+        }        
 
         return $next($request);
     }

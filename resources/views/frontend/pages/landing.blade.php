@@ -94,6 +94,7 @@
                   <input type="hidden" name="school_short_name" value="">
                   <input type="hidden" name="class_id" value="">
                   <input type="hidden" name="enquiry_channel_id" value="">
+                  <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
 
                   <div class="row">
                     <div class="col-md-12 mb-3 d-flex d-none">
