@@ -1764,8 +1764,14 @@ ul.about_listing li img {
     line-height: 43px;
         transform: skew(-25deg);
 }
-
-
+.form-control::placeholder {
+    color: #212529 !important;
+    font-size: 13px;
+}
+.form-control {
+    padding: .4rem .75rem !important;
+    font-size: 13px !important;
+}
 li.nav-item.col-md-2.col-sm-12.col-lg-2.col-6.mb-md-0.mb-3 {
     width: auto !important;
 }
