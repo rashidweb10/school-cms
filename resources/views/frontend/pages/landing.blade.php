@@ -188,7 +188,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6 col-6 mb-3">
+                    <div class="col-md-12 col-12 mb-3">
                       <div class="form-outline">
                         <input type="email" class="form-control" name="email" placeholder="Email ID*" required>
                       </div>
