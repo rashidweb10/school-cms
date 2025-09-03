@@ -185,7 +185,7 @@ div#content_3 {
                             <div class="row d-flex">
                                 @foreach($category->teams as $team)
                                 <div class=" col-12 col-md-4 p-md-3" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                                  <div class="leader_mamber_img">
+                                  <div class="leader_mamber_img team_members">
                                   <!-- <div class="lightbox_img_wrap">
                                     <img class="lightbox-enabled" src="{{ central_asset(uploaded_asset($team->image)) }}"
                                       data-imgsrc="{{ central_asset(uploaded_asset($team->image)) }}">
