@@ -196,7 +196,7 @@ div#content_3 {
                                 </div>
                                 </div>
                                 @endforeach
-                            </div>
+                            </div>  
 
                         @else
                         {{-- Template 3: No teams in category --}}
