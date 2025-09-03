@@ -103,7 +103,9 @@ div#content_3 {
       </div>
       <div class="col-lg-12 px-md-4 px-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <h3 class="roboto text_color text-center fw-normal">{{$about_title}}</h3>
+      <div class="ps-md-5 pe-md-5">
       <p>{!! $about_description !!}</p>
+</div>
       </div>
     </div>
   </div>
