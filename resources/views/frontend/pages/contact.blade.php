@@ -66,6 +66,7 @@
                @include('frontend.components.form-alert')
                @csrf
               <input type="hidden" name="form_name" value="contact">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
 
               <div class="row">
                 <div class="col-md-6 mb-4">
