@@ -32,6 +32,11 @@ li.nav-item.col-md-2.col-sm-12.col-lg-2.col-6.mb-md-0.mb-3 {
     height: 250px;
     object-fit: cover;
 }
+
+li.nav-item.col-md-2.col-sm-12.col-lg-2 {
+    width: auto !important;
+    margin-bottom: 20px;
+}
 header
 {
    background-image: url(../img/header-back.jpg); 
