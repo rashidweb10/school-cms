@@ -129,7 +129,15 @@ class TeamController extends Controller
     {
         $pageData = Team::findOrFail($id);
         //$categories = TeamCategory::all();
-        $categories = TeamCategory::where('is_active', 1)->where('company_id', auth()->user()->company_id)->get();
+        //$categories = TeamCategory::where('is_active', 1)->where('company_id', auth()->user()->company_id)->get();
+
+        $categories = TeamCategory::where('is_active', 1)
+            ->where(function($query) use ($pageData) {
+                $query->where('company_id', auth()->user()->company_id)
+                    ->orWhere('company_id', $pageData->company_id);
+            })
+            ->get();
+
         return view('backend.teams.edit', compact('pageData','categories'));
     }
 
