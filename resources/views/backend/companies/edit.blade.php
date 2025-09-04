@@ -107,10 +107,10 @@
                         <input type="text" class="form-control" id="meta-phone2" name="meta[affiliation_no]" value="{{ old('meta.affiliation_no', $pageData->meta->where('meta_key', 'affiliation_no')->first()->meta_value ?? '') }}" placeholder="">
                     </div>   
                     
-                    <div class="mb-3 form-group">
+                    <!-- <div class="mb-3 form-group">
                         <label for="meta-board_type" class="form-label">Board Type</label>
                         <input type="text" class="form-control" id="meta-phone2" name="meta[board_type]" value="{{ old('meta.board_type', $pageData->meta->where('meta_key', 'board_type')->first()->meta_value ?? '') }}" placeholder="">
-                    </div>                    
+                    </div>                     -->
 
                     <div class="mb-3 form-group">
                         <label for="meta-company-brouchure" class="form-label">{{ __('Brochure') }}</label>

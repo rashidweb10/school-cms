@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
-                    <p class="mrg_35 robot_slab">{{get_setting('board_type')}} Affiliation No. {{get_setting('affiliation_no')}}</p>
+                    <p class="mrg_35 robot_slab">{{get_setting('board_name')}} Affiliation No. {{get_setting('affiliation_no')}}</p>
                 </div>
                 <div class="col-md-3">
                     <p class="mrg_35 robot_slab text-center mobile_nones">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p>
