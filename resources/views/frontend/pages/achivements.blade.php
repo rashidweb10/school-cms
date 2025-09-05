@@ -200,6 +200,7 @@
 @endphp
 
 <!-- Intra Section -->
+@if(!empty($intra) && isset($intra['itration']) && is_array($intra['itration']) && count($intra['itration']) > 0)
 <section id="circulars" class="circulars section">
     <div class="container">
         <h3>Intra School Activities</h3>
@@ -234,8 +235,10 @@
         </div>
     </div>
 </section>
+@endif
 
 <!-- Inter Section -->
+@if(!empty($inter) && isset($inter['itration']) && is_array($inter['itration']) && count($inter['itration']) > 0)
 <section id="circulars" class="circulars section">
     <div class="container">
         <h3>Inter School Activities</h3>
@@ -270,6 +273,7 @@
         </div>
     </div>
 </section>
+@endif
 
 
 @endsection
