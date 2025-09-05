@@ -101,7 +101,7 @@ class FormController extends Controller
                     'school' => 'nullable|string|max:100',                    
                     'enquiry_type' => 'nullable|string|max:20',   
                     'child_first_name' => 'required|string|max:50',
-                    'child_middle_name' => 'string|max:50',
+                    'child_middle_name' => 'max:50',
                     'child_last_name' => 'required|string|max:50',                 
                 ];
             case 'contact':
