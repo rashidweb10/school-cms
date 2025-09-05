@@ -610,7 +610,7 @@ div#content_3 {
 
   })
 </script>
-<script>
+<!-- <script>
   setTimeout(function () {
       // Find the Management tab
       var $management = $('button:contains("Management")').closest('li');
@@ -625,12 +625,32 @@ div#content_3 {
 
       $("#pills-tab .nav-link:eq(0)").trigger("click"); 
   }, 500); // 1 second delay
+</script> -->
 
-  // $(document).ready(function () {
-  //   setTimeout(function () {
-  //       //$("#pills-tab .nav-link:first").trigger("click");
-  //       $("#pills-tab .nav-link:eq(0)").trigger("click"); 
-  //   }, 1000); // 5000ms = 5 seconds
-  // });
+<script>
+setTimeout(function () {
+    // Find the Management tab
+    var $management = $('button:contains("Management")').closest('li');
+
+    // Find the Principal's Desk tab
+    var $principal = $('button:contains("Principal\'s Desk")').closest('li');
+
+    // Find the Our Team tab
+    var $director = $('button:contains("Director")').closest('li');
+
+    // Move Management before Principal
+    if ($management.length && $principal.length) {
+        $management.insertBefore($principal);
+    }
+
+    // Move Our Team before Principal
+    if ($director.length && $principal.length) {
+        $director.insertBefore($principal);
+    }
+
+    // Trigger first tab
+    $("#pills-tab .nav-link:eq(0)").trigger("click"); 
+}, 500); // 0.5 second delay
+
 </script>
 @endsection
