@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\File;
 use Intervention\Image\Drivers\Gd\Driver;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
+use App\Models\TinyMCEKey;
+use Carbon\Carbon;
 
 if (!function_exists('truncate_text')) {
     /**
@@ -512,3 +514,33 @@ if (!function_exists('create_student_enquiry')) {
     }
 }
 /*END - EDU PRINTS HELPER FUNCTIONS*/
+
+/*Start - tiny MCE Helper*/
+if (!function_exists('getTinyMCEApiKey')) {
+    function getTinyMCEApiKey(): string
+    {
+        $now = Carbon::now();
+
+        // Reset keys at start of new month
+        TinyMCEKey::where('month', '!=', $now->month)
+            ->orWhere('year', '!=', $now->year)
+            ->update([
+                'count' => 0,
+                'month' => $now->month,
+                'year'  => $now->year
+            ]);
+
+        // Get first available key under 1000 requests
+        $key = TinyMCEKey::where('count', '<', 1000)->orderBy('id')->first();
+
+        if (!$key) {
+            return 'NO_KEY_AVAILABLE';
+        }
+
+        // Increment usage
+        $key->increment('count');
+
+        return $key->api_key;
+    }
+}
+/*End - tiny MCE Helper*/

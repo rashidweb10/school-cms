@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             //CampusSeeder::class,
             //GallerySeeder::class,
             PageSeeder::class,
+            TinyMCEKeysSeeder::class,
         ]);        
     }
 }

@@ -72,7 +72,7 @@
 <script src="https://cdn.datatables.net/rowgroup/1.4.0/js/dataTables.rowGroup.min.js"></script>
 
 <!-- tinymce JS -->
-<script src="https://cdn.tiny.cloud/1/{{env('TINYMCE_API_KEY')}}/tinymce/7.2.1-75/tinymce.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/{{ getTinyMCEApiKey() }}/tinymce/7.2.1-75/tinymce.min.js"></script>
 
 <!-- Backend JS -->
 <script src="{{ asset('assets/backend/js/backend.js') }}"></script>
