@@ -55,6 +55,12 @@
                                     <img src="{{ asset('assets/frontend/img/icon-nhlogin-w.png') }}"> 1NH
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link robot_slab"
+                                    href="{{route('admission')}}">
+                                    <img src="{{ asset('assets/frontend/img/student.png') }}"> Admission
+                                </a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
