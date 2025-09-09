@@ -46,6 +46,8 @@ header
 a.nav-link.robot_slab.addmissionactive.active {
     background: #fccf00;
     color: #000 !important;
+        border-bottom: 0 !important;
+    padding-top: 10px !important;
 }
 
 a.nav-link.robot_slab.addmissionactive.active img{
