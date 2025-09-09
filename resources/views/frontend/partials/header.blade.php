@@ -42,6 +42,12 @@
                 <div class="col-md-6 col-3 order-md-3 d-lg-block d-none">
                     <div class="d-flex browser_link">
                         <ul class="d-flex ms-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link robot_slab"
+                                    href="{{route('admission')}}" style="    background: #e31e24;">
+                                    <img src="{{ asset('assets/frontend/img/student.png') }}"> ADMISSION
+                                </a>
+                            </li>  
                             <li class="nav-item">
                                 @if(get_setting('brochure_attachment'))
                                 <a target="_blank" class="nav-link robot_slab" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
@@ -55,12 +61,7 @@
                                     <img src="{{ asset('assets/frontend/img/icon-nhlogin-w.png') }}"> 1NH
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link robot_slab"
-                                    href="{{route('admission')}}">
-                                    <img src="{{ asset('assets/frontend/img/student.png') }}"> Admission
-                                </a>
-                            </li>                            
+                                                     
                         </ul>
                     </div>
                 </div>
