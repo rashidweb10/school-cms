@@ -43,8 +43,15 @@ header
    
 }
 
+a.nav-link.robot_slab.addmissionactive.active {
+    background: #fccf00;
+    color: #000 !important;
+}
 
-
+a.nav-link.robot_slab.addmissionactive.active img{
+  filter: grayscale(100%) contrast(0%) brightness(0);
+}
+    
 
 p, a, li, span 
 {
