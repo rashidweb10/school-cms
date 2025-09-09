@@ -44,8 +44,8 @@
                         <ul class="d-flex ms-auto mb-2 mb-lg-0">
                              <li class="nav-item">
                                 <a class="nav-link robot_slab"
-                                    href="{{route('admission')}}" style="    background: #e31e24;">
-                                    <img src="{{ asset('assets/frontend/img/student.png') }}"> ADMISSION
+                                    href="{{route('admission')}}" style="    background: #fccf00; color:#000 !important;">
+                                    <img src="{{ asset('assets/frontend/img/student.png') }}" style="filter: grayscale(100%) contrast(0%) brightness(0);"> ADMISSION
                                 </a>
                             </li>  
                             <li class="nav-item">
