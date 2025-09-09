@@ -69,7 +69,8 @@
               </a>  
                 
                 <h4 class="robot_slab text_color pt-70">Admission Enquiry Form</h4>
-                <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p>
+                <!-- <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p> -->
+                <p><b>{{get_setting('admission_year')}}</b></p>
                 
 
               <!-- <div class="radio_buttons">
