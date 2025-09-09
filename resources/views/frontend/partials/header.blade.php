@@ -47,9 +47,9 @@
                             <li class="nav-item">
                                 <a class="nav-link robot_slab addmissionactive {{ request()->routeIs('admission') ? 'active' : '' }}"
                                 href="{{ route('admission') }}"
-                                style="background: #fccf00; color:#000 !important;">
+                                >
                                     <img src="{{ asset('assets/frontend/img/student.png') }}" 
-                                        style="filter: grayscale(100%) contrast(0%) brightness(0);">
+                                        >
                                     ADMISSION
                                 </a>
                             </li>
