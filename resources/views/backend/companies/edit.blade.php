@@ -152,7 +152,7 @@
                         <label for="meta-affiliation" class="form-label">Admission Banner URL</label>
                         <input type="text" class="form-control" id="meta-admission_banner_url" name="meta[admission_banner_url]" value="{{ old('meta.admission_banner_url', $pageData->meta->where('meta_key', 'admission_banner_url')->first()->meta_value ?? '') }}" placeholder="">
                     </div> 
-                    @if($pageData->company_id == 1) 
+                    @if($pageData->id == 1) 
                     <div class="mb-3 form-group">
                         <label for="meta-affiliation" class="form-label">Admission Year</label>
                         <input type="text" class="form-control" id="meta-admission_year" name="meta[admission_year]" value="{{ old('meta.admission_year', $pageData->meta->where('meta_key', 'admission_year')->first()->meta_value ?? '') }}" placeholder="">
