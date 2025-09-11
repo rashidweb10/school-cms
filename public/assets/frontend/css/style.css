@@ -1787,6 +1787,7 @@ ul.about_listing li img {
       top: -92px;
   background-color: #f6d876; /* Yellow background */
   color: #000;
+  border-radius: 15px 0px 0px 15px;
       padding: 10px 40px 15px;
   font-size: 16px;
   font-family: Arial, sans-serif;
