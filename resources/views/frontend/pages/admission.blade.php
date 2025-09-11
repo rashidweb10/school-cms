@@ -97,7 +97,11 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
     font-size: 18px;
 }
     .admition_f_r {
-        overflow: hidden;
+            overflow: hidden;
+    background: #fefddf;
+    padding-top: 18px;
+    border: 2px #f6d876 solid;
+    border-radius: 10px;
     }
 
     .admition_f_r .admition_f_r_img {

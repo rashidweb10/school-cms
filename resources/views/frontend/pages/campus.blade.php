@@ -27,13 +27,14 @@
     .titlt_col {
         padding: 40px 0px 40px 25px;
         background-color: #fdee9d;
+        border-radius: 20px 20px 0px 0px;
     }
 
 
     .nav-pills .nav-link {
         background: 0 0;
         border: 0;
-        border-radius: 4px;
+            border-radius: 15px 0px 0px 15px;
         margin-bottom: 0px;
         color: #000;
         border-bottom:1px solid #fff;
