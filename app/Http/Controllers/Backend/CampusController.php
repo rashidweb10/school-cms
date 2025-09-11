@@ -92,6 +92,7 @@ class CampusController extends Controller
                 'gallery' => $request->gallery,
                 'is_active' => $request->is_active,
                 'company_id' => $request->company_id,
+                'series' => $request->series,
             ]);
     
             // Return success response
@@ -145,6 +146,7 @@ class CampusController extends Controller
                 'gallery' => $request->gallery,
                 'is_active' => $request->is_active,
                 'company_id' => $request->company_id,
+                'series' => $request->series,
             ]);
     
             // Return success response

@@ -55,6 +55,7 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Status</th>
+                                <th>Series</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Actions</th>
@@ -70,6 +71,7 @@
                                     {{ $row->is_active ? 'Active' : 'Inactive' }}
                                 </span>                                    
                                 </td>
+                                <td>{{ $row->series }}</td>
                                 <td>{{ formatDatetime($row->created_at) }}</td>
                                 <td>{{ formatDatetime($row->updated_at) }}</td>
                                 <td>

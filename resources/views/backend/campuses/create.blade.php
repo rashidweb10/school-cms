@@ -30,7 +30,15 @@
                 </div>
                 <div class="file-preview box sm"></div>
             </div>
-        </div>                
+        </div>  
+        
+        <!-- series -->
+        <div class="col-sm-12">
+            <div class="form-group mb-2">
+                <label for="series" class="form-label">Series <span class="text-danger">*</span></label>
+                <input value="" name="series" type="text" class="form-control" required>
+            </div>
+        </div>         
 
         <!-- Company (dropdown) -->
         <div class="col-sm-6">

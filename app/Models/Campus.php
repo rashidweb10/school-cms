@@ -12,5 +12,6 @@ class Campus extends Model
         'gallery',
         'is_active',
         'company_id',
+        'series',
     ];
 }
