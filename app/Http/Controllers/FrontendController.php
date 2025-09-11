@@ -222,6 +222,7 @@ class FrontendController extends Controller
         //page
         $pageData = Campus::where('is_active', 1)
         ->where('company_id', config('custom.school_id'))
+        ->orderBy('series', 'asc')
         ->get();
     
         return view('frontend.pages.campus', compact('pageData'));

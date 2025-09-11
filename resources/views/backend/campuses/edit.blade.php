@@ -33,6 +33,14 @@
             </div>
         </div>
 
+        <!-- series -->
+        <div class="col-sm-12">
+            <div class="form-group mb-2">
+                <label for="series" class="form-label">Series <span class="text-danger">*</span></label>
+                <input value="{{ old('series', $pageData->series) }}" name="series" type="text" class="form-control" required>
+            </div>
+        </div>        
+
         <!-- Company (dropdown) -->
         <div class="col-sm-6">
             <div class="form-group mb-2">
