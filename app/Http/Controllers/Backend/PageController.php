@@ -33,6 +33,13 @@ class PageController extends Controller
         // Get the search parameter from the request
         $companyId = request()->input('company');
         $search = request()->input('search');
+
+        // Allowed columns for sorting (only these will be used)
+        $allowedSorts = ['id','title','slug','created_at','updated_at','is_active','layout'];   
+        
+        // Read and sanitize sort inputs
+        $sort = request()->input('sort', 'title');
+        $direction = strtolower(request()->input('direction', 'asc')) === 'asc' ? 'asc' : 'desc';        
     
         // Start building the query
         $query = Page::with('meta');
@@ -56,7 +63,9 @@ class PageController extends Controller
             });
         }      
 
-        $query->orderBy('id', 'desc');
+        //$query->orderBy('id', 'desc');
+        // Apply ordering from request
+        $query->orderBy($sort, $direction);
     
         $pageData = $query->paginate(25);
     

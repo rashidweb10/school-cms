@@ -7,6 +7,10 @@
     </div>
 </div>
 @include('backend.includes.alert-message')
+@php
+    $currentSort = request()->get('sort', 'id');
+    $currentDirection = request()->get('direction', 'desc');
+@endphp
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -53,7 +57,27 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
+                                <!-- <th>Title</th> -->
+                                <th>
+                                @php
+                                    // If currently sorting by title ascending, next click should set desc and vice versa
+                                    $titleDirection = ($currentSort === 'title' && $currentDirection === 'asc') ? 'desc' : 'asc';
+                                    // Build URL keeping existing query params but reset to page=1
+                                    $titleUrl = request()->fullUrlWithQuery(['sort' => 'title', 'direction' => $titleDirection, 'page' => 1]);
+                                @endphp
+
+                                <a href="{{ $titleUrl }}" class="text-decoration-none">
+                                    Title
+                                    @if($currentSort === 'title')
+                                    {{-- show active arrow --}}
+                                    <span class="ms-1">{{ $currentDirection === 'asc' ? '▲' : '▼' }}</span>
+                                    @else
+                                    {{-- subtle indicator when not active (optional) --}}
+                                    <span class="ms-1 text-muted">⇅</span>
+                                    @endif
+                                </a>
+                                </th>
+
                                 <th>Slug</th>
                                 <th>Status</th>
                                 <th>Created At</th>
