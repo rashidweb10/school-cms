@@ -6,6 +6,9 @@
 @section('content')
 
 @php
+
+    use Illuminate\Support\Facades\Cache;
+
     $pageCount = \App\Models\Page::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
@@ -30,23 +33,43 @@
         //return $query->where('company_id', config('custom.school_id'));
     })->count();     
 
-    $mediaCount = \App\Models\Upload::when(auth()->user()?->company_id, function ($query, $companyId) {
+    /*$mediaCount = \App\Models\Upload::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('user_id', auth()->user()->id);
     }, function ($query) {
         //return $query->where('user_id', auth()->user()->id);
-    })->count();     
+    })->count();*/  
+    
+    // Media count (24 hours cache, unique per user)
+    $mediaCount = Cache::remember('media_count_' . (auth()->id() ?? 'guest'), 86400, function () {
+        return \App\Models\Upload::when(auth()->user()?->company_id, function ($query, $companyId) {
+            return $query->where('user_id', auth()->id());
+        })->count();
+    });    
 
-    $formCount = \App\Models\Form::when(auth()->user()?->company_id, function ($query, $companyId) {
+    /*$formCount = \App\Models\Form::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', $companyId);
     }, function ($query) {
         //return $query->where('company_id', config('custom.school_id'));
-    })->count();  
+    })->count();*/ 
     
-    $visitors = \App\Models\Visitor::when(auth()->user()?->company_id, function ($query, $companyId) {
+    // Forms count (24 hours cache)
+    $formCount = Cache::remember('forms_count_' . (auth()->user()?->company_id ?? 'all'), 86400, function () {
+        return \App\Models\Form::when(auth()->user()?->company_id, function ($query, $companyId) {
+            return $query->where('company_id', $companyId);
+        })->count();
+    });    
+    
+    /*$visitors = \App\Models\Visitor::when(auth()->user()?->company_id, function ($query, $companyId) {
         return $query->where('company_id', auth()->user()->company_id);
     }, function ($query) {
         //return $query->where('company_id', auth()->user()->company_id);
-    })->count();    
+    })->count();*/  
+    
+    $visitors = Cache::remember('visitors_count_' . (auth()->user()?->company_id ?? 'all'), 86400, function () {
+        return \App\Models\Visitor::when(auth()->user()?->company_id, function ($query, $companyId) {
+            return $query->where('company_id', auth()->user()->company_id);
+        })->count();
+    });    
      
 @endphp
 

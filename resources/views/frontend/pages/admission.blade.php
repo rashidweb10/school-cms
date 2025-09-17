@@ -156,7 +156,8 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
         <div class="row pt-5 pb-5 ps-5">
         @if(isset($admission['itration']) && is_array($admission['itration']))
         @foreach($admission['itration'] as $index => $itration)   
-        @foreach(explode(',', $admission['attachments'][$index]) as $id)                
+        @foreach(explode(',', $admission['attachments'][$index]) as $id) 
+            @if(uploaded_asset_name($id) != 'Unknown')               
             <div class="col-xl-4 wow fadeInRight ps-0" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms;">
                 <div class="features-one__single">
                     <div class="features-one__single-icon text-center">
@@ -168,6 +169,7 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
                     </div>
                 </div>
             </div>
+            @endif
         @endforeach
         @endforeach
         @endif
