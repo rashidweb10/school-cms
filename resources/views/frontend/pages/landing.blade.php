@@ -304,7 +304,7 @@
     </section>
 
 
-<section class="vission_mission pt-5 pb-4 position-relative">
+<section class="vission_mission pt-5 pb-5 position-relative">
   <div class="container">
     <div class="row justify-content-center">
        <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
