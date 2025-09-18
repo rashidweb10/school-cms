@@ -176,6 +176,20 @@
                       </div>
                     </div>
 
+                     <div class="col-md-12 col-12 mb-3">
+                      <div class="form-outline">
+                        <select name="academic_year" id="academic_year" class="form-control" required>
+                            <option value="">--- Select Academic Year ---</option>
+                            <option value="{{ $currentYear }}-{{ $nextYear }}">
+                                {{ $currentYear }}-{{ $nextYear }}
+                            </option>
+                            <option value="{{ $nextYear }}-{{ $secondNextYear }}">
+                                {{ $nextYear }}-{{ $secondNextYear }}
+                            </option>
+                        </select>
+                      </div>
+                    </div>
+
                     <div class="col-md-6 mb-3">
                       <div class="form-outline">
                         <input type="text" class="form-control" name="name" placeholder="Parent's Name*" required>
@@ -200,19 +214,7 @@
                         <input type="email" class="form-control" name="email" placeholder="Email ID*" required>
                       </div>
                     </div>
-                    <div class="col-md-12 col-12 mb-3">
-                      <div class="form-outline">
-                        <select name="academic_year" id="academic_year" class="form-control" required>
-                            <option value="">--- Select Academic Year ---</option>
-                            <option value="{{ $currentYear }}-{{ $nextYear }}">
-                                {{ $currentYear }}-{{ $nextYear }}
-                            </option>
-                            <option value="{{ $nextYear }}-{{ $secondNextYear }}">
-                                {{ $nextYear }}-{{ $secondNextYear }}
-                            </option>
-                        </select>
-                      </div>
-                    </div>
+                   
 
                                      
 
