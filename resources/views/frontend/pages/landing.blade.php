@@ -190,7 +190,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 col-6 mb-3">
                       <div class="form-outline">
                         <input type="text" class="form-control" name="name" placeholder="Parent's Name*" required>
                       </div>
