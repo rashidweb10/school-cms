@@ -287,7 +287,7 @@
 <section class="vission_mission pt-5 pb-4 position-relative">
   <div class="container">
     <div class="row justify-content-center">
-       <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+       <div class="col-lg-6 position-relative mb-md-0 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$vision_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
@@ -296,7 +296,7 @@
         </div>
       </div>
       
-      <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+      <div class="col-lg-6 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$mission_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
