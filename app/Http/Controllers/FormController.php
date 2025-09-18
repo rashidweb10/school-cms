@@ -61,7 +61,7 @@ class FormController extends Controller
         //eduprint API
         $student = [
             "ShortName"        => $request->input('school_short_name'),
-            "Description"      => now()->month >= 4 ? now()->year . '-' . (now()->year + 1) : (now()->year - 1) . '-' . now()->year,
+            "Description"      => $request->input('academic_year'), //now()->month >= 4 ? now()->year . '-' . (now()->year + 1) : (now()->year - 1) . '-' . now()->year,
             "ChildFirstName"   => $request->input('child_first_name'),
             "ChildMiddleName"  => $request->input('child_middle_name'),
             "ChildLastName"    => $request->input('child_last_name'),
@@ -103,6 +103,7 @@ class FormController extends Controller
                     'child_first_name' => 'required|string|max:50',
                     'child_middle_name' => 'max:50',
                     'child_last_name' => 'required|string|max:50',                 
+                    'academic_year' => 'required|string|max:20',                 
                 ];
             case 'contact':
                 return [
