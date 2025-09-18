@@ -85,6 +85,11 @@
                 </div>
               </div> -->
 
+                @php
+                    $currentYear = date('Y'); // e.g. 2025
+                    $nextYear = $currentYear + 1;
+                    $secondNextYear = $currentYear + 2;
+                @endphp
 
                 <!-- ✅ School Admission Form -->
                 <form method="post" action="{{ route('form.submit') }}" id="admissionForm" onsubmit="protect_with_recaptcha_v3(this, 'admission')">
@@ -193,6 +198,19 @@
                     <div class="col-md-12 col-12 mb-3">
                       <div class="form-outline">
                         <input type="email" class="form-control" name="email" placeholder="Email ID*" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-12 mb-3">
+                      <div class="form-outline">
+                        <select name="academic_year" id="academic_year" class="form-control" required>
+                            <option value="">--- Select Academic Year ---</option>
+                            <option value="{{ $currentYear }}-{{ $nextYear }}">
+                                {{ $currentYear }}-{{ $nextYear }}
+                            </option>
+                            <option value="{{ $nextYear }}-{{ $secondNextYear }}">
+                                {{ $nextYear }}-{{ $secondNextYear }}
+                            </option>
+                        </select>
                       </div>
                     </div>
 
