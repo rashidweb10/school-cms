@@ -176,6 +176,20 @@
                       </div>
                     </div>
 
+                     <div class="col-md-12 col-12 mb-3">
+                      <div class="form-outline">
+                        <select name="academic_year" id="academic_year" class="form-control" required>
+                            <option value="">--- Select Academic Year ---</option>
+                            <option value="{{ $currentYear }}-{{ $nextYear }}">
+                                {{ $currentYear }}-{{ $nextYear }}
+                            </option>
+                            <option value="{{ $nextYear }}-{{ $secondNextYear }}">
+                                {{ $nextYear }}-{{ $secondNextYear }}
+                            </option>
+                        </select>
+                      </div>
+                    </div>
+
                     <div class="col-md-6 mb-3">
                       <div class="form-outline">
                         <input type="text" class="form-control" name="name" placeholder="Parent's Name*" required>
@@ -200,19 +214,7 @@
                         <input type="email" class="form-control" name="email" placeholder="Email ID*" required>
                       </div>
                     </div>
-                    <div class="col-md-12 col-12 mb-3">
-                      <div class="form-outline">
-                        <select name="academic_year" id="academic_year" class="form-control" required>
-                            <option value="">--- Select Academic Year ---</option>
-                            <option value="{{ $currentYear }}-{{ $nextYear }}">
-                                {{ $currentYear }}-{{ $nextYear }}
-                            </option>
-                            <option value="{{ $nextYear }}-{{ $secondNextYear }}">
-                                {{ $nextYear }}-{{ $secondNextYear }}
-                            </option>
-                        </select>
-                      </div>
-                    </div>
+                   
 
                                      
 
@@ -305,7 +307,7 @@
 <section class="vission_mission pt-5 pb-4 position-relative">
   <div class="container">
     <div class="row justify-content-center">
-       <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+       <div class="col-lg-6 position-relative mb-md-0 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$vision_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
@@ -314,7 +316,7 @@
         </div>
       </div>
       
-      <div class="col-lg-4 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+      <div class="col-lg-6 position-relative mb-md-0 mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
         <div class="vission_box position-relative">
           <h4 class="roboto text_color text-center">{{$mission_title}}</h4>
           <i class="fa-solid fa-quote-left left_icons"></i>
