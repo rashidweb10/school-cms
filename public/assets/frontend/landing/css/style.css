@@ -1621,7 +1621,7 @@ ul.about_listing li img {
 
 .padding100
 {
-    padding-top:170px;
+    padding-top:130px;
 }
 .admission_form {
     border: 2px solid #f6d876;
@@ -1630,7 +1630,7 @@ ul.about_listing li img {
     border-radius: 20px;
     position: absolute !important;
     background: #fff;
-    margin-top: -39%;
+    margin-top: -41%;
     margin-right: 0;
     width: 400px;
     right: 75px;
