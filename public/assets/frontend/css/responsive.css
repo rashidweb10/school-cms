@@ -56,6 +56,11 @@ header {
 .padding100 {
     padding-top: 0;
 }
+.addmision_text {
+    padding-top: 44px;
+    text-align: left !important;
+    padding-left: 15px;
+}
 .paddlft60 {
     padding-left: 15px !important;
 }

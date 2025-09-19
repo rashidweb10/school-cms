@@ -78,7 +78,7 @@
               </a>  
 
               @if(get_setting('admission_year'))
-                <p class="text-center"><b>{{get_setting('admission_year')}}</b></p>
+                <p class="addmision_text"><b>{{get_setting('admission_year')}}</b></p>
               @endif              
             
             </div>
