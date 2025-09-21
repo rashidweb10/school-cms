@@ -60,6 +60,9 @@ header {
     padding-top: 44px;
     text-align: left !important;
     padding-left: 15px;
+    width: 100%;
+    margin-left: 15px;
+    font-weight: 500;
 }
 .paddlft60 {
     padding-left: 15px !important;

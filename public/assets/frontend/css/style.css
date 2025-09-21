@@ -27,8 +27,11 @@ li.nav-item.col-md-2.col-sm-12.col-lg-2.col-6.mb-md-0.mb-3 {
 }
 
 .addmision_text {
-    padding-top: 70px;
-    text-align: end;
+   padding-top: 70px;
+    text-align: center;
+    width: 166px;
+    margin-left: 207px;
+    font-weight: 500;
 }
 .team_members img {
     position: relative;
