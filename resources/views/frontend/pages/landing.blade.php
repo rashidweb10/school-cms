@@ -518,7 +518,7 @@ $(document).ready(function () {
         } else if (city === 'Navi Mumbai') {
             $allOptions.filter(function () {
                 //console.log($(this).attr('data-short-name'));
-                return $(this).attr('data-short-name') === 'nhssa' || $(this).attr('data-short-name') === 'nhpsa' || $(this).attr('data-short-name') === 'nhpsa3';
+                return $(this).attr('data-short-name') === 'nhssa' || $(this).attr('data-short-name') === 'nhpsa' || $(this).attr('data-short-name') === 'nhpsas3';
             }).show();
         } else if (city === 'Panvel') {
             $allOptions.filter(function () {
