@@ -189,9 +189,18 @@ html {
 body .admission_img {
  width: 110px !important;
         position: relative;
-        left: 22px;
+        left: 5px;
         margin-top: 0;
         top: 34px;
+}
+
+body .inner_adminssion_text {
+    padding-top: 20px;
+    width: 100%;
+    margin-left: 0;
+    font-weight: 500;
+    text-align: left !important;
+    padding-left: 15px;
 }
 .header_text {
     color: #333;
@@ -414,11 +423,10 @@ header {
     margin-bottom: -10px;
 }
 .inner_adminssion .admission_img {
-    position: absolute;
+    position: relative;
     width: 135px !important;
     right: 0;
     top: 0;
-    display: none;
 }
 .inner-skew {
     width: 100%;
