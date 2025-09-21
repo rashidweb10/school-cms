@@ -33,6 +33,13 @@ li.nav-item.col-md-2.col-sm-12.col-lg-2.col-6.mb-md-0.mb-3 {
     margin-left: 207px;
     font-weight: 500;
 }
+.inner_adminssion_text
+{
+       padding-top: 30px;
+    width: 155px;
+    margin-left: 261px;
+    font-weight: 500;
+}
 .team_members img {
     position: relative;
     z-index: 100;

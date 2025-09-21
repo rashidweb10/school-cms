@@ -56,6 +56,10 @@ header {
 .padding100 {
     padding-top: 0;
 }
+.inner_adminssion_text
+{
+   display: none;
+}
 .addmision_text {
     padding-top: 44px;
     text-align: left !important;

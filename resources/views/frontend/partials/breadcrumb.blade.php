@@ -19,7 +19,7 @@
           <img class="hvr-bounce-in w-100 admission_img bounce_continue" src="{{ central_asset(uploaded_asset(get_setting('admission_banner'))) }}" alt="img">
         </a>
         @if(get_setting('admission_year'))
-          <p class="text-center"><b>{{get_setting('admission_year')}}</b></p>
+          <p class="text-center inner_adminssion_text"><b>{{get_setting('admission_year')}}</b></p>
         @endif
       </div>
     </div>
