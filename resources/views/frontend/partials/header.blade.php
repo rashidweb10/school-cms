@@ -99,7 +99,7 @@
                                                 <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why New Horizon</a></li>
                                                 <li><a href="{{route('roadmap')}}"><img src="{{ asset('assets/frontend/img/road-maps.png') }}"> Road Map</a></li>
 
-                                                @if(config('custom.school_id') == 9)
+                                                @if(config('custom.school_id') != 9)
                                                 <li><a href="{{route('awards')}}"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Awards</a></li>
                                                 @endif
 
@@ -116,7 +116,7 @@
                                                 <li><a href="{{route('curriculum')}}"><img src="{{ asset('assets/frontend/img/g_lines.png') }}">{{$curriculum_title}}</a></li>
                                                 @endif
 
-                                                @if(config('custom.school_id') == 9)
+                                                @if(config('custom.school_id') != 9)
                                                 <li>
                                                     <a href="#"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Achievements</a>
                                                     @php 
@@ -141,7 +141,7 @@
                                         </li>
                                     </ul>
 
-                                    @if(config('custom.school_id') == 9)
+                                    @if(config('custom.school_id') != 9)
                                     <ul class="menu nav-item">
                                         <li>
                                             <a href="#" class="nav-link robot_slab">
@@ -155,7 +155,7 @@
                                     </ul>
                                     @endif
 
-                                    @if(config('custom.school_id') == 9)
+                                    @if(config('custom.school_id') != 9)
                                     @php 
                                     $circulars = DB::table('pages')->where('is_active', 1)
                                         ->where('layout', 'circulars')
@@ -184,7 +184,7 @@
                                     </ul>
                                     @endif
                                     
-                                    @if(config('custom.school_id') == 9)
+                                    @if(config('custom.school_id') != 9)
                                     <li class="nav-item">
                                         <a class="nav-link robot_slab" aria-current="page" href="{{route('results')}}">
                                             <img src="{{ asset('assets/frontend/img/icon-events-w.png') }}"> RESULTS
@@ -192,7 +192,7 @@
                                     </li>
                                     @endif
 
-                                    @if(config('custom.school_id') == 9)
+                                    @if(config('custom.school_id') != 9)
                                     <li class="nav-item">
                                         <a class="nav-link robot_slab" aria-current="page" href="{{route('alumini')}}">
                                             <img src="{{ asset('assets/frontend/img/student.png') }}"> ALUMNI
