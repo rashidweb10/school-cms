@@ -57,7 +57,7 @@
       </div>
 
       <!-- Admission Counselling -->
-      <div class="col-md-3 ps-md-4 pt-3 pt-md-0">
+      <div class="col-md-3 ps-md-3 pt-3 pt-md-0 pe-0">
         <div class="col-lg-12">
           <h4 class="roboto">Admission Counselling</h4>
           <p class="pb-0 mb-0">Phone No: {{get_setting('phone')}}</p>
