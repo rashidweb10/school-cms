@@ -289,10 +289,11 @@ if (!function_exists('generateHtmlTableFromCsv')) {
                         //$cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
                         if (preg_match('/^(\/?storage\/uploads\/)/', $cell)) {
                             // Already a full storage/uploads path → use directly
-                            $href = htmlspecialchars($cell);
+                            
+                             $href = config('custom.assets_url').'/'. htmlspecialchars($cell);
                         } else {
                             // Prepend assets_url
-                            $href = config('custom.assets_url').'/'. htmlspecialchars($cell);
+                           $href = htmlspecialchars($cell);
                         }
 
                         $cell = "<a href='" . $href . "' target='_blank' class='result_vm_btn'>View</a>"; 
