@@ -286,7 +286,17 @@ if (!function_exists('generateHtmlTableFromCsv')) {
                     if (in_array($ext, $imageExtensions)) {
                         $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank'><img class='img-thumbnail' src='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' alt='Image' style='max-width: 100px; height: auto;' /></a>";
                     } else {
-                        $cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+                        //$cell = "<a href='" . config('custom.assets_url').'/'. htmlspecialchars($cell) . "' target='_blank' class='result_vm_btn'>View</a>";
+                    
+                        if (preg_match('/^(\/?storage\/uploads\/)/', $cell)) {
+                            // Already a full storage/uploads path → use directly
+                            $href = htmlspecialchars($cell);
+                        } else {
+                            // Prepend assets_url
+                            $href = rtrim(config('custom.assets_url'), '/') . '/' . ltrim($cell, '/');
+                        }
+
+                        $cell = "<a href='" . $href . "' target='_blank' class='result_vm_btn'>View</a>";                    
                     }
                 } else {
                     $cell = htmlspecialchars($cell);
