@@ -85,7 +85,7 @@
           </div>
           <div class="col-lg-8 paddngrgt80" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
             <div class="text-start mb-md-4 mb-2 pt-4">
-                <p class="pb-0 mb-0 pt-3" style="font-weight: 500;"><b>Salient Features</b></p>
+                <p class="pb-0 mb-0 pt-0" style="font-weight: 500;"><b>Salient Features</b></p>
               <h3 class="roboto text_color roboto fw-normal">{!! $about_title !!}</h3>
             </div>
             {!! $about_description !!}

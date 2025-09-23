@@ -60,10 +60,11 @@ header {
 .addmision_text {
     padding-top: 44px;
     text-align: left !important;
-    padding-left: 15px;
+    padding-left: 0px;
     width: 100%;
     margin-left: 15px;
     font-weight: 500;
+    margin-bottom: 0;
 }
 .paddlft60 {
     padding-left: 15px !important;
@@ -186,7 +187,7 @@ html {
 body .admission_img {
  width: 110px !important;
         position: relative;
-        left: 5px;
+        left: 20px;
         margin-top: 0;
         top: 34px;
 }
@@ -249,10 +250,10 @@ body .admiistion_test {
     position: relative;
 }
 .banner_slider img {
-    height: 35vh;
+    height: auto;
 }
 .banner_slider {
-    height: 35vh;
+    height: auto;
     object-fit: cover;
 }
 header {

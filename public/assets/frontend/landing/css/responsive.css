@@ -214,10 +214,10 @@ body .admiistion_test {
     padding-left: 0;
 }
 .banner_slider img {
-    height: 35vh;
+    height: auto;
 }
 .banner_slider {
-    height: 35vh;
+    height: auto;
     object-fit: cover;
 }
 header {
