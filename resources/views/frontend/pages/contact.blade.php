@@ -113,7 +113,7 @@
    </div>
  </section>
 
- <section class="embedcode pb-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+ <section class="embedcode pb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
      <div class="container">
      <iframe src="{{get_setting('google_map')}}" height="20" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      </div>

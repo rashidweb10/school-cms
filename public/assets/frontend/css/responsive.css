@@ -56,7 +56,16 @@ header {
 .padding100 {
     padding-top: 0;
 }
-
+section#results th, section#results td {
+    font-size: 14px;
+}
+#results td {
+    font-size: 12px !important;
+}
+.row.admition_f_r {
+    margin-left: 5px;
+    margin-right: 5px;
+}
 .addmision_text {
     padding-top: 44px;
     text-align: left !important;
@@ -425,6 +434,7 @@ header {
     width: 100px !important;
     right: 0;
     top: 0;
+    left: 5px !important;
 }
 .inner-skew {
     width: 100%;

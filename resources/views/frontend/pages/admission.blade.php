@@ -153,12 +153,12 @@ $admission = json_decode($pageData->meta->where('meta_key', 'admission')->first(
             </div>
         </div>
 
-        <div class="row pt-5 pb-5 ps-5">
+        <div class="row pt-md-5 pt-4 pb-5 ps-md-5 ps-3">
         @if(isset($admission['itration']) && is_array($admission['itration']))
         @foreach($admission['itration'] as $index => $itration)   
         @foreach(explode(',', $admission['attachments'][$index]) as $id) 
             @if(uploaded_asset_name($id) != 'Unknown')               
-            <div class="col-xl-4 wow fadeInRight ps-0" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms;">
+            <div class="col-xl-4 wow fadeInRight ps-0 mb-3" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms;">
                 <div class="features-one__single">
                     <div class="features-one__single-icon text-center">
                         <div class="icon"><i class="fa-solid fa-file-pdf"></i></div>
