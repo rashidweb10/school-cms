@@ -23,8 +23,8 @@
               @if(config('custom.school_id') != 9)
               <li><a href="{{route('campus')}}"> Campus</a></li>
               <li><a href="{{route('results')}}"> Results</a></li>
-              <li><a href="{{route('awards')}}"> Awards</a></li>
               @endif
+              <li><a href="{{route('awards')}}"> Awards</a></li>
 
               <li><a href="{{route('contact')}}"> Contact Us</a></li>
               <li><a target="_blank" href="https://1nh.edusprint.in/1nh/Security"> 1NH LOGIN</a></li>

@@ -99,9 +99,9 @@
                                                 <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why New Horizon</a></li>
                                                 <li><a href="{{route('roadmap')}}"><img src="{{ asset('assets/frontend/img/road-maps.png') }}"> Road Map</a></li>
 
-                                                @if(config('custom.school_id') != 9)
+                                                
                                                 <li><a href="{{route('awards')}}"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Awards</a></li>
-                                                @endif
+                                                
 
                                                 @php
                                                     $curriculum_title = optional(
