@@ -124,6 +124,13 @@
                         <div class="file-preview box sm"></div>
                     </div> 
                     <div style="clear:both"></div>
+
+                    <div class="mb-3 form-group">
+                        <label for="meta-Brochure_url" class="form-label">Brochure URL</label>
+                        <input type="text" class="form-control" id="meta-Brochure_url" name="meta[Brochure_url]" value="{{ old('meta.Brochure_url', $pageData->meta->where('meta_key', 'Brochure_url')->first()->meta_value ?? '') }}" placeholder="">
+                    </div>
+
+
                     <div class="mb-3 form-group">
                         <label for="meta-company-breadcrumb" class="form-label">{{ __('Page Breadcrumb') }}</label>
                         <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
