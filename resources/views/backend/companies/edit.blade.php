@@ -126,8 +126,8 @@
                     <div style="clear:both"></div>
 
                     <div class="mb-3 form-group">
-                        <label for="meta-Brochure_url" class="form-label">Brochure URL</label>
-                        <input type="text" class="form-control" id="meta-Brochure_url" name="meta[Brochure_url]" value="{{ old('meta.Brochure_url', $pageData->meta->where('meta_key', 'Brochure_url')->first()->meta_value ?? '') }}" placeholder="">
+                        <label for="meta-brochure_url" class="form-label">Brochure URL</label>
+                        <input type="text" class="form-control" id="meta-brochure_url" name="meta[brochure_url]" value="{{ old('meta.brochure_url', $pageData->meta->where('meta_key', 'brochure_url')->first()->meta_value ?? '') }}" placeholder="">
                     </div>
 
 
