@@ -126,12 +126,9 @@
                     <div style="clear:both"></div>
 
                     <div class="mb-3 form-group">
-                        <label for="meta-brochure_url" class="form-label">Brochure URL</label>
-                        <input type="text" class="form-control" id="meta-brochure_url" 
-                            name="meta[brochure_url]" 
-                            value="{{ old('meta.brochure_url', optional($pageData->meta->where('meta_key', 'brochure_url')->first())->meta_value) }}" 
-                            placeholder="">
-                    </div>
+                        <label for="meta-brochure_url" class="form-label">Admission Year</label>
+                        <input type="text" class="form-control" id="meta-brochure_url" name="meta[brochure_url]" value="{{ old('meta.brochure_url', $pageData->meta->where('meta_key', 'brochure_url')->first()->meta_value ?? '') }}" placeholder="">
+                    </div> 
 
                     <div class="mb-3 form-group">
                         <label for="meta-company-breadcrumb" class="form-label">{{ __('Page Breadcrumb') }}</label>
