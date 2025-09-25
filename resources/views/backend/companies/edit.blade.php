@@ -126,7 +126,7 @@
                     <div style="clear:both"></div>
 
                     <div class="mb-3 form-group">
-                        <label for="meta-brochure_url" class="form-label">Admission Year</label>
+                        <label for="meta-brochure_url" class="form-label">Brochure URL</label>
                         <input type="text" class="form-control" id="meta-brochure_url" name="meta[brochure_url]" value="{{ old('meta.brochure_url', $pageData->meta->where('meta_key', 'brochure_url')->first()->meta_value ?? '') }}" placeholder="">
                     </div> 
 
