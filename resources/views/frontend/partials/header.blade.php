@@ -54,14 +54,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                @if(!empty(get_setting('brochure_attachment')))
-                                <a target="_blank" class="nav-link robot_slab" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
-                                    <img src="{{ asset('assets/frontend/img/icon-brochure-w.png') }}"> BROCHURE
-                                </a>
-                                @elseif(!empty(get_setting('brochure_url')))
+
+                                @if(!empty(get_setting('brochure_url')))
                                     <a target="_blank" class="nav-link robot_slab" href="{{ get_setting('brochure_url') }}">
                                         <img src="{{ asset('assets/frontend/img/icon-brochure-w.png') }}"> BROCHURE
-                                    </a>                                
+                                    </a>   
+                                @elseif(!empty(get_setting('brochure_attachment')))
+                                <a target="_blank" class="nav-link robot_slab" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
+                                    <img src="{{ asset('assets/frontend/img/icon-brochure-w.png') }}"> BROCHURE
+                                </a>                                                                 
                                 @endif
                             </li>
                             <li class="nav-item">
