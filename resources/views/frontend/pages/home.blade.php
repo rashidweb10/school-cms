@@ -157,6 +157,9 @@
           <div class="col-lg-10 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div class="text-start mb-md-4 mb-2 pt-md-0 pt-lg-5">
               <h3 class="roboto text_color text-center fw-normal">{{$about_school_title}}</h3>
+              @if(config('custom.school_id') == 9)
+              <p class="roboto text_color text-center fw-normal"><b>Strenthening young minds with the power of commitment</b></p>
+              @endif              
             </div>
             <p class="text-center padd190">{!! $about_school_description !!}</p>
             <div class="read-more text-center mb-5">

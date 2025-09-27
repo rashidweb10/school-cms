@@ -542,7 +542,7 @@ if (!function_exists('getTinyMCEApiKey')) {
             ]);
 
         // Get first available key under 1000 requests
-        $key = TinyMCEKey::where('count', '<', 1000)->orderBy('id')->first();
+        $key = TinyMCEKey::where('count', '<', 1300)->orderBy('id')->first();
 
         if (!$key) {
             return 'NO_KEY_AVAILABLE';

@@ -259,6 +259,7 @@ function initDatatable(selector){
 
 function initTextEditor() {
     tinymce.init({
+        license_key: "gpl", // ✅ Tell TinyMCE you are using GPL/self-hosted
         selector: '.text-editor',
         relative_urls: false,             // ✅ Prevents relative paths like ../../
         remove_script_host: false,        // ✅ Keeps full domain
