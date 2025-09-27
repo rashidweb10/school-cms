@@ -144,14 +144,14 @@ html {
     margin-left: 0px;
 }
 .counter-value {
-    font-size: 34px;
+    font-size: 24px;
     color: #333;
 }
 .stastic p {
-    text-decoration: underline;
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 0px;
+text-decoration: auto;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 0px;
 }
 .margintop-23 {
     margin-top: 0px !important;
