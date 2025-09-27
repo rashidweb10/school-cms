@@ -53,7 +53,21 @@
                                     ADMISSION
                                 </a>
                             </li>
+                            
+                            
+                            <!-- Old Code-->
+                            <!--
                             <li class="nav-item">
+                                @if(get_setting('brochure_attachment'))
+                                <a target="_blank" class="nav-link robot_slab" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
+                                    <img src="{{ asset('assets/frontend/img/icon-brochure-w.png') }}"> BROCHURE
+                                </a>
+                                @endif
+                            </li>
+                            -->
+                            
+                            
+                             <li class="nav-item">
 
                                 @if(!empty(get_setting('brochure_url')))
                                     <a target="_blank" class="nav-link robot_slab" href="{{ get_setting('brochure_url') }}">
@@ -65,6 +79,8 @@
                                 </a>                                                                 
                                 @endif
                             </li>
+
+               
                             <li class="nav-item">
                                 <a target="_blank" class="nav-link robot_slab"
                                     href="https://1nh.edusprint.in/1nh/Security">
@@ -104,9 +120,9 @@
                                                 <li><a href="{{route('why-we')}}"><img src="{{ asset('assets/frontend/img/qu.png') }}"> Why New Horizon</a></li>
                                                 <li><a href="{{route('roadmap')}}"><img src="{{ asset('assets/frontend/img/road-maps.png') }}"> Road Map</a></li>
 
-                                                
+                                                @if(config('custom.school_id') != 9)
                                                 <li><a href="{{route('awards')}}"><img src="{{ asset('assets/frontend/img/achivmentss.png') }}"> Awards</a></li>
-                                                
+                                                @endif
 
                                                 @php
                                                     $curriculum_title = optional(
