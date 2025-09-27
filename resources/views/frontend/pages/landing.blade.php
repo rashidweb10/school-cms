@@ -358,7 +358,7 @@
   @endif
 
 <section class="gallery_section">
-      <div class="pb-0 pt-5 pb-md-5 pt-md-5">
+      <div class="pb-4 pt-5 pb-md-5 pt-md-5">
         <div class="container">
           <div class="row">
             <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
@@ -422,7 +422,7 @@
                     <div class="news_img"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($landing_updates['image'][$index])) }}" alt="Image 1"></div>
                     <div class=" text-center pt-3">
                         <h5>{{$landing_updates['title'][$index]}}</h5>
-                    <p class="centered-text roboto">{{$landing_updates['description'][$index]}}</p>
+                    <p class="centered-text roboto mb-0">{{$landing_updates['description'][$index]}}</p>
                     </div>
                   </a>
                 </div>
@@ -454,7 +454,7 @@
                   <div class="quickimg"><img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($landing_quicklinks['icon'][$index])) }}" alt="Image 1"></div>
               </div>
                <div class=" text-center pt-3">
-                  <p class="centered-text roboto">{{$landing_quicklinks['title'][$index]}}</p>
+                  <p class="centered-text roboto mb-0">{{$landing_quicklinks['title'][$index]}}</p>
                 </div>
               </a>
             </div>

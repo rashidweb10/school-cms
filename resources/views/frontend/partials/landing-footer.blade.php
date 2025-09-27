@@ -1,4 +1,4 @@
-<footer class="footer pt-5 pb-md-4">
+<footer class="footer pt-md-5 pt-2 pb-md-4">
       <div class="container">
         <div class="row">
           
@@ -53,12 +53,12 @@
                   <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/edusprint-pro-logo.png') }}" />
               </div>
               <p class="qr_text">Scan this QR Code to Login/Access your Portal</p>
-              <div class="d-flex justify-content-md-end qrcode_img">
+              <div class="d-flex justify-content-md-end justify-content-center qrcode_img">
                 <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/as-qr.jpg') }}">
                 <img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/gps-qr.jpg') }}">
             </div>
             
-            <div class="d-flex gap-3 justify-content-md-end">
+            <div class="d-flex gap-3 justify-content-md-end justify-content-center">
               <a target="_blank" href="https://apps.apple.com/us/app/1newhorizon-app/id1312624582?platform=iphone"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-apple-store.png') }}" alt="Apple Store" /></a>
               <a target="_blank" href="https://play.google.com/store/apps/details?id=in.newhorizon.cspl&pli=1"><img class="w80 hvr-bounce-in" src="{{ asset('assets/frontend/img/icon-play-store.png') }}" alt="Play Store" /></a>
             </div>
@@ -67,7 +67,7 @@
             <hr>
           </div>
           <div class="col-md-12 order-md-1 order-2">
-            <p class="footer-privacy text-center pb-0 mb-0 pt-md-0 pt-3"> Copyright © {{date('Y')}} {{get_setting('name')}} </p>
+            <p class="footer-privacy text-center pb-2 mb-0 pt-md-0 pt-0"> Copyright © {{date('Y')}} {{get_setting('name')}} </p>
           </div>
           <!-- <div class="col-md-6 order-md-2 order-1">
             <div class="footer-privacy text-end">
