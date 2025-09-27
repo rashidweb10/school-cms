@@ -3,7 +3,7 @@
 
 <!-- Local Stylesheets -->
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v=1.1.4">
-<link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}?v=1.1.8">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}?v=1.1.9">
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.theme.default.min.css') }}">
