@@ -9,8 +9,8 @@ p.qr_text {
 }
 
 .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 .footer p, .footer a {
@@ -208,7 +208,11 @@ body .admission_img {
         padding-top: 10px;
         text-align: left;
         padding-top: 0px;
-        margin-top: 18px;
+        margin-top: 24px;
+}
+
+.loationtext_hover:hover {
+    transform: scale(1) skew(0deg) !important;
 }
 body .admiistion_test {
     color: #333;
