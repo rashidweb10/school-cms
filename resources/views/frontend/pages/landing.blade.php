@@ -245,7 +245,7 @@
                     $location = optional($school->meta->where('meta_key', 'location')->first())->meta_value;
                     $boardName = optional($school->meta->where('meta_key', 'board_name')->first())->meta_value;
                   @endphp
-                  <li class="hvr-bounce-in loationtext_hover">
+                  <li class="loationtext_hover">
                     <p>
                       <a target="_blank" href="{{ $school->website }}">
                         <i class="fa-solid fa-caret-right"></i>
