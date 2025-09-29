@@ -8,11 +8,11 @@
           </div>
           
           <div class="col-md-4">
-              <p Class="pt-md-5 mrg_35 robot_slab">@if( get_setting('affiliation_no') ) CBSE Affiliation No. {{get_setting('affiliation_no')}} @endif</p>
+              <p Class="pt-md-2 mrg_35 robot_slab">@if( get_setting('affiliation_no') ) CBSE Affiliation No. {{get_setting('affiliation_no')}} @endif</p>
           </div>
           
-          <div class="col-md-6">
-              
+<div class="col-md-6 text-end">
+               <p class="pt-md-3 mb-0 robot_slab text-right">30 years of excellence in education</p>
           </div>
           
         </div>
