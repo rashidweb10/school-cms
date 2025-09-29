@@ -261,6 +261,16 @@ class FrontendController extends Controller
         ->pluck('year');
     
         return view('frontend.pages.events', compact('pageData'));
-    }    
+    }  
+
+    public function thankyou(Request $request)
+    {
+        if (config('custom.school_id') != 1) {
+            abort(404);
+        }
+
+        return view('frontend.pages.thankyou');
+    }
+    
 }
 

@@ -82,7 +82,13 @@ class FormController extends Controller
 
         $form->update([
             'edu_response' => $eduResponse,
-        ]);        
+        ]);  
+        
+        if ($request->input('form_name') === 'landing') {
+            return redirect()->route('thankyou', [
+                'name' => $request->input('name') // pass name to thank-you page
+            ]);
+        }        
 
         return redirect()->back()->with('success', 'Enquiry submitted successfully');
     }

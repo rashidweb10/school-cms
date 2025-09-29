@@ -100,6 +100,8 @@ Route::get('/awards', [FrontendController::class, 'awards'])->name('awards');
 
 Route::post('/submit-form', [FormController::class, 'submit'])->middleware(['protect.forms','recaptcha','throttle:3,1'])->name('form.submit');
 
+Route::get('/thank-you', [FrontendController::class, 'thankyou'])->name('thankyou');
+
 // Group routes under the 'backend' prefix
 Route::prefix('backend')->group(function () {
 
