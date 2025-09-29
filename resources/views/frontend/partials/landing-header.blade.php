@@ -12,7 +12,7 @@
           </div>
           
 <div class="col-md-6 text-end">
-               <p class="pt-md-2 mb-2 robot_slab text-right">30 years of excellence in education</p>
+               <p class="pt-md-3 pt-2 mb-md-3 mb-2 robot_slab text-right celebration_fonts">30 years of excellence in education</p>
           </div>
           
         </div>
