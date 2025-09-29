@@ -1,4 +1,12 @@
-    <!--header section start-->
+<style>
+  
+.celebration_fonts
+{
+color: #f6d876;
+    font-size: 28px;
+}
+
+</style>    <!--header section start-->
     <div class="top_position">
     <div class="header_section_top">
       <div Class="container">
