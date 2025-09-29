@@ -1847,17 +1847,18 @@ body .position_tops a {
 }
 
 .locatio_box ul li {
-    list-style: none;
+  list-style: none;
     background: #fefddf;
     margin-bottom: 17px;
     border: 0px solid #f6d876;
     background-color: #f6d876;
     color: #000;
-    padding: 10px 20px 10px;
     font-size: 16px;
-    transform: skew(25deg);
-    display: inline-block;
     width: 550px;
+    border-radius: 15px 0px 0px 15px;
+    padding: 10px 15px 15px;
+    transform: skew(-10deg);
+    display: inline-block;
 }
 #counter .col-md-3.col-6.text-center {
     width: 20% !important;
@@ -1944,7 +1945,6 @@ footer.footer {
 }
 .locatio_box li p {
     margin-bottom: 0;
-    transform: skew(-25deg);
 }
 .news_box {
     padding: 20px;
@@ -1954,13 +1954,13 @@ footer.footer {
     background: #fff;
 }
 .locatio_box ul li:after {
-    content: '';
+        content: '';
     position: absolute;
     top: 0;
-    left: -11px;
+    right: -11px;
     bottom: 0;
     width: 20px;
-    transform: skew(0deg);
+    transform: skew(-10deg);
     background: linear-gradient(to left, #e12025 50%, #ed7c1c 50%);
 }
 .header_section_top {
@@ -1994,7 +1994,7 @@ footer.footer {
 } 
 .loationtext_hover:hover
 {
-    transform: scale(1.06) skew(25deg) !important;
+    transform: scale(1) skew(0deg) !important;
 }
 section.gallery_section {
     padding-top: 50px;
