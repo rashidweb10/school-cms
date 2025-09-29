@@ -1857,7 +1857,9 @@ body .position_tops a {
     width: 550px;
     border-radius: 15px 0px 0px 15px;
     padding: 10px 15px 15px;
+    transition: 0.5s all;
     transform: skew(-10deg);
+
     display: inline-block;
 }
 #counter .col-md-3.col-6.text-center {
@@ -1994,7 +1996,9 @@ footer.footer {
 } 
 .loationtext_hover:hover
 {
-    transform: scale(1) skew(0deg) !important;
+       transform: scale(1.05) skew(0deg) !important;
+    margin-right: 10px;
+    transition: 0.5s all;
 }
 section.gallery_section {
     padding-top: 50px;
