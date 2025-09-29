@@ -2,8 +2,8 @@
   
 .celebration_fonts
 {
-color: #f6d876;
-    font-size: 28px;
+color: #f6d876 !important;
+    font-size: 28px !important;
 }
 
 </style>    <!--header section start-->
