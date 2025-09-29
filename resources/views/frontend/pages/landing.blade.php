@@ -262,7 +262,7 @@
 
           
           <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
-            <div class="text-start mb-md-4 mb-2 pt-4">
+            <div class="text-start mb-md-4 mb-2 pt-4 ps-md-5">
               
               <h3 class="roboto text_color roboto padding100">{{$about_title}}</h3>
             </div>
