@@ -4,6 +4,7 @@
 {
 color: #f6d876 !important;
     font-size: 28px !important;
+        font-style: italic;
 }
 
 </style>    <!--header section start-->
