@@ -1863,7 +1863,7 @@ body .position_tops a {
 #counter .col-md-3.col-6.text-center {
     width: 20% !important;
 }
-.locatio_box {position: relative;width: 500px;margin-left: auto;margin-right: auto;     padding-top: 50px;}
+.locatio_box {position: relative;width: 100%;margin-left: auto;margin-right: auto;     padding-top: 50px;}
 
 .locatio_box ul li i {
     background: #f00;
