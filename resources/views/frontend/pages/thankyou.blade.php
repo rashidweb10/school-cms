@@ -1,4 +1,6 @@
-@extends('frontend.layouts.app')
+
+@extends('frontend.layouts.landing-app')
+
 
 @section('meta.title', "Thank You")
 @section('meta.description', "Thank You")
