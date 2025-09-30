@@ -63,11 +63,11 @@ body
     // }
 </script>
 <script>
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     document.querySelectorAll('.top_position').forEach(function (el) {
-    //         el.classList.remove('top_position');
-    //     });
-    // });
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.top_position').forEach(function (el) {
+            el.classList.remove('top_position');
+        });
+    });
 </script>
 
 <style>
