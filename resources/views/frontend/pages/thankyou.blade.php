@@ -6,7 +6,6 @@
 @section('meta.description', "Thank You")
 
 @section('content')
-hrome
 <style>
 body
 {
