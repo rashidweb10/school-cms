@@ -6,7 +6,7 @@
 @section('meta.description', "Thank You")
 
 @section('content')
-
+hrome
 <style>
 body
 {
@@ -48,13 +48,13 @@ body
                         </div>
 
                         <h2 class="h5 mb-1">Hi, {{ request()->get('name', 'User') }}</h2>
-                        <p class="text-muted mb-4 pt-2" style="    font-weight: 400;">Enquiry has been submitted successfully</p>
+                        <p class="text-muted mb-4 pt-2" style="    font-weight: 400;">Thank You for an enquiry, one of our school executive will contact you soon.</p>
 
                         <div class="d-flex gap-2 justify-content-center flex-wrap">
                             <a href="{{ url('/') }}" class="btn btn-danger px-3">Go to Home</a>
                         </div>
-
-                        <small class="d-block text-muted mt-4 pt-3">We will get back to you within 24–48 hours.</small>
+<!-- 
+                        <small class="d-block text-muted mt-4 pt-3">We will get back to you within 24–48 hours.</small> -->
                     </div>
                 </div>
 
