@@ -52,7 +52,7 @@ body
                             <a href="{{ url('/') }}" class="btn btn-danger px-3">Go to Home</a>
                         </div>
 
-                        <small class="d-block text-muted mt-3">We will get back to you within 24–48 hours.</small>
+                        <small class="d-block text-muted mt-4 pt-3">We will get back to you within 24–48 hours.</small>
                     </div>
                 </div>
 
