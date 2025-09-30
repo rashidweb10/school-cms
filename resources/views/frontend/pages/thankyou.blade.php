@@ -5,23 +5,48 @@
 
 @section('content')
 
+<style>
+body
+{
+    background: #fafafa !important;
+}
+.thankyou_card {
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+}
 
+.thankyou_card h2 {
+    font-weight: 600 !important;
+}
+
+.iconn_bg i {
+    background: #01ba811c;
+    color: #01ba81;
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+    font-size: 48px;
+    line-height: 85px;
+}
+</style>
 
 <section class="pb-md-5 pb-4">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10">
+            <div class="col-lg-5 col-md-10">
 
-                <div class="card shadow-sm p-4 p-md-5 text-center">
-                    <div class="card-body">
+                <div class="thankyou_card">
+                    <div class="">
                         <div class="mb-3 d-flex justify-content-center">
-                            <div class="d-flex align-items-center justify-content-center rounded-circle bg-opacity-10 text-success" style="width:72px;height:72px;font-size:4rem;">
-                                ✔️ 
+                            <div class="iconn_bg">
+                               <i class="fa-solid fa-check"></i> 
                             </div>
                         </div>
 
                         <h2 class="h5 mb-1">Hi, {{ request()->get('name', 'User') }}</h2>
-                        <p class="text-muted mb-4">Enquiry has been submitted successfully</p>
+                        <p class="text-muted mb-4 pt-2" style="    font-weight: 400;">Enquiry has been submitted successfully</p>
 
                         <div class="d-flex gap-2 justify-content-center flex-wrap">
                             <a href="{{ url('/') }}" class="btn btn-danger px-3">Go to Home</a>
