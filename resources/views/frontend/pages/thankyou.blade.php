@@ -50,7 +50,7 @@ body
                         <p class="text-muted mb-4 pt-2" style="    font-weight: 400;">Thank You for an enquiry, one of our school executive will contact you soon.</p>
 
                         <div class="d-flex gap-2 justify-content-center flex-wrap">
-                            <a href="{{ url('/') }}" class="btn btn-danger px-3">Go to Home</a>
+                            <a href="{{ url('/') }}" class="btn btn-danger px-3">Back</a>
                         </div>
 <!-- 
                         <small class="d-block text-muted mt-4 pt-3">We will get back to you within 24–48 hours.</small> -->
