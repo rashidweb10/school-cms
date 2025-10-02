@@ -2496,3 +2496,100 @@ thead.thead-dark th {
 }
 
 }
+
+
+/* Toggle button */
+    .nh-menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 1002;
+    }
+    .nh-menu-toggle i {
+      transition: opacity 0.3s ease;
+      color:#000;
+    }
+    .nh-menu-toggle .fa-xmark { display: none; color:#fff; }
+    .nh-menu-toggle.nh-open .fa-bars-staggered { display: none; }
+    .nh-menu-toggle.nh-open .fa-xmark { display: inline; }
+
+    /* Overlay */
+    .nh-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(17,17,17,0);
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      z-index: 1001;
+      padding: 0 50px !important;
+    }
+    .nh-overlay.nh-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      animation: nh-overlayFade 0.6s forwards;
+    }
+
+    @keyframes nh-overlayFade {
+      from { background: #1d1d1d; }
+      to { background: #1d1d1d; }
+    }
+
+    /* Menu items */
+    .nh-overlay ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px 50px;
+      list-style: none;
+    }
+    .nh-overlay ul li {
+      text-align: left;
+      position: relative;
+    }
+    .nh-overlay ul li a span { font-size: 16px; }
+    .nh-overlay ul li a {
+      display: flex;
+      gap: 20px;
+      font-size: 30px;
+      font-weight: 400;
+      text-decoration: none;
+      color: #fff;
+      line-height: 42px;
+      position: relative;
+      z-index: 11;
+      opacity: 0; /* hidden until animated */
+    }
+
+    /* Hover image slide-up effect */
+    .nh-hover-image {
+      width: 200px;
+      height: 150px;
+      margin-top: 15px;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      left: 90px;
+      top: -67px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+      pointer-events: none;
+    }
+    .nh-overlay ul li:hover .nh-hover-image {
+      opacity: 1;
+      transform: translateY(0);
+    }
+	
+	@media(max-width:767px)
+	{
+	  div#nhMenuToggle {
+    display: none;
+}
+	}

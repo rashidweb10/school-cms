@@ -234,3 +234,40 @@ $(document).ready(function () {
     );
 }); 
 </script>
+
+
+<script>
+    function nhToggleMenu() {
+      const overlay = document.getElementById('nhOverlay');
+      const toggleBtn = document.getElementById('nhMenuToggle');
+      overlay.classList.toggle('nh-open');
+      toggleBtn.classList.toggle('nh-open');
+
+      const items = document.querySelectorAll('#nhOverlay ul li a');
+
+      if (overlay.classList.contains('nh-open')) {
+        items.forEach((item, index) => {
+          // reset old animations
+          item.classList.remove('animate__animated', 'animate__fadeInUp');
+          item.style.opacity = "0"; 
+          void item.offsetWidth; // reflow trick to restart animation
+
+          // all items from bottom
+          item.classList.add('animate__animated', 'animate__fadeInUp');
+          item.style.animationDelay = `${0.3 * index}s`;
+          item.style.opacity = "1";
+        });
+      } else {
+        // hide when closing
+        items.forEach(item => {
+          item.style.opacity = "0";
+        });
+      }
+    }
+
+    // Initialize AOS (optional for scroll animations)
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
