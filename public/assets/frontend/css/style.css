@@ -2500,17 +2500,21 @@ thead.thead-dark th {
 
 /* Toggle button */
     .nh-menu-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      z-index: 1002;
+         position: absolute;
+    top: 13px;
+    right: 15px;
+    font-size: 23px;
+    cursor: pointer;
+    z-index: 1002;
     }
     .nh-menu-toggle i {
       transition: opacity 0.3s ease;
-      color:#000;
+      color: #fff;
     }
+
+    div#nhOverlay {
+    background: #000000e3 !important;
+}
     .nh-menu-toggle .fa-xmark { display: none; color:#fff; }
     .nh-menu-toggle.nh-open .fa-bars-staggered { display: none; }
     .nh-menu-toggle.nh-open .fa-xmark { display: inline; }
