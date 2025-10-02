@@ -30,31 +30,31 @@
     <nav>
       <ul>
         <li>
-          <a href="#"><span>01</span> New Horizon International School, Rodas</a>
+          <a href="https://www.nhisrodas.com/"><span>01</span> New Horizon International School, Rodas</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s7/2025/09/OArbKTf1ktYlkL0KAgbRPgdwZp7xChq9c0tYdOA7.jpg');"></div>
         </li>
         <li>
-          <a href="#"><span>02</span> New Horizon Public School, Airoli</a>
+          <a href="https://nhpsairoli.com/"><span>02</span> New Horizon Public School, Airoli</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s6/2025/08/1oWjpQlkbk9CxAQiLldgcB4SpEFtwFyhWedFWsZH.jpg');"></div>
         </li>
         <li>
-          <a href="#"><span>03</span> New Horizon Public School, New Panvel</a>
+          <a href="https://www.nhpspanvel.com/"><span>03</span> New Horizon Public School, New Panvel</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s8/2025/09/1fdAoxH9vvC1nukwEYqYGn7PwlENuAqxIP0TZNWx.jpg');"></div>
         </li>
         <li>
-          <a href="#"><span>04</span> New Horizon Scholars School, Airoli</a>
+          <a href="https://nhssairoli.com/"><span>04</span> New Horizon Scholars School, Airoli</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s5/2025/08/ye5N9uMhWsKryFa9OsmV18CkLqzDy90xgxq7XUUi.jpg');"></div>
         </li>
         <li>
-          <a href="#"><span>05</span> New Horizon Scholar School, Kolshet</a>
+          <a href="https://www.nhssrodas.com/"><span>05</span> New Horizon Scholar School, Kolshet</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s4/2025/09/8Sx76yToVV54h4OISu7DBSS0jdYu2xA11hyZnK9D.jpg');"></div>
         </li>
         <li>
-          <a href="#"><span>06</span> New Horizon Scholars School, Kavesar</a>
+          <a href="https://nhssthane.com/"><span>06</span> New Horizon Scholars School, Kavesar</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/07/erwiiqf2HoXtZoS39uageNKNsChEr0SWodaTrARK.jpg');"></div>
         </li>
         <li>
-          <a href="#"><span>07</span> New Horizon Scholars School, Vasant Lawns</a>
+          <a href="https://www.nhssvasantlawns.com/"><span>07</span> New Horizon Scholars School, Vasant Lawns</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s3/2025/09/vRxyME6FWIOazGm5qEMZ8kCpg0w8bIRs8L4ZXeBa.jpg');"></div>
         </li>
       </ul>
