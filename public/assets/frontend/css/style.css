@@ -2507,10 +2507,7 @@ thead.thead-dark th {
     cursor: pointer;
     z-index: 1002;
     }
-    .nh-menu-toggle i {
-      transition: opacity 0.3s ease;
-      color:#fff;
-    }
+    .nh-menu-toggle i { color:#000; transition: opacity 0.3s ease; }
     .nh-menu-toggle .fa-xmark { display: none; color:#fff; }
     .nh-menu-toggle.nh-open .fa-bars-staggered { display: none; }
     .nh-menu-toggle.nh-open .fa-xmark { display: inline; }
@@ -2520,27 +2517,20 @@ thead.thead-dark th {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: #1d1d1d;
+background: rgb(29 29 29 / 75%);
       display: flex;
       align-items: center;
       opacity: 0;
-      visibility: hidden;
       transform: translateY(-100%);
       transition: transform 0.8s ease, opacity 0.8s ease;
       z-index: 1001;
       padding: 0 50px !important;
+      pointer-events: none; /* disabled until open */
     }
-
     .nh-overlay.nh-open {
       opacity: 1;
-      visibility: visible;
       transform: translateY(0);
-    }
-
-    /* Closing animation */
-    .nh-overlay.nh-closing {
-      opacity: 0;
-      transform: translateY(-100%);
+      pointer-events: auto; /* clickable when open */
     }
 
     /* Menu items */
@@ -2550,10 +2540,7 @@ thead.thead-dark th {
       gap: 80px 50px;
       list-style: none;
     }
-    .nh-overlay ul li {
-      text-align: left;
-      position: relative;
-    }
+    .nh-overlay ul li { position: relative; text-align: left; }
     .nh-overlay ul li a span { font-size: 16px; }
     .nh-overlay ul li a {
       display: flex;
@@ -2565,7 +2552,7 @@ thead.thead-dark th {
       line-height: 42px;
       position: relative;
       z-index: 11;
-      opacity: 0; /* hidden until animated */
+      opacity: 0;
     }
 
     /* Hover image slide-up effect */
