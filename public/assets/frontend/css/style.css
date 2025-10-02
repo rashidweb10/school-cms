@@ -2512,8 +2512,8 @@ thead.thead-dark th {
       color: #fff;
     }
 
-    div#nhOverlay {
-    background: #000000e3 !important;
+   div#nhOverlay {
+    background: rgb(0 0 0 / 70%) !important;
 }
     .nh-menu-toggle .fa-xmark { display: none; color:#fff; }
     .nh-menu-toggle.nh-open .fa-bars-staggered { display: none; }
