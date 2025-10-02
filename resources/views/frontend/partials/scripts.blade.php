@@ -236,41 +236,51 @@ $(document).ready(function () {
 </script>
 
 
-<script>
-  function nhToggleMenu() {
-  const overlay = document.getElementById('nhOverlay');
-  const toggleBtn = document.getElementById('nhMenuToggle');
-  const items = document.querySelectorAll('#nhOverlay ul li a');
+ <script>
+    function nhToggleMenu() {
+      const overlay = document.getElementById('nhOverlay');
+      const toggleBtn = document.getElementById('nhMenuToggle');
+      const items = document.querySelectorAll('#nhOverlay ul li a');
 
-  if (!overlay.classList.contains('nh-open')) {
-    // OPEN
-    overlay.classList.remove('nh-closing');
-    overlay.classList.add('nh-open');
-    toggleBtn.classList.add('nh-open');
+      if (!overlay.classList.contains('nh-open')) {
+        // OPEN
+        overlay.classList.remove('nh-closing');
+        overlay.classList.add('nh-open');
+        overlay.style.visibility = "visible";
+        toggleBtn.classList.add('nh-open');
 
-    items.forEach((item, index) => {
-      item.classList.remove('animate__animated', 'animate__fadeInUp');
-      item.style.opacity = "0"; 
-      void item.offsetWidth; // restart animation
-      item.classList.add('animate__animated', 'animate__fadeInUp');
-      item.style.animationDelay = `${0.3 * index}s`;
-      item.style.opacity = "1";
+        items.forEach((item, index) => {
+          item.classList.remove('animate__animated', 'animate__fadeInUp');
+          item.style.opacity = "0"; 
+          void item.offsetWidth; // restart animation
+          item.classList.add('animate__animated', 'animate__fadeInUp');
+          item.style.animationDelay = `${0.3 * index}s`;
+          item.style.opacity = "1";
+        });
+
+      } else {
+        // CLOSE with animation
+        overlay.classList.remove('nh-open');
+        overlay.classList.add('nh-closing');
+        toggleBtn.classList.remove('nh-open');
+
+        // fade out items
+        items.forEach((item, index) => {
+          item.style.transition = "opacity 0.3s ease";
+          item.style.opacity = "0";
+        });
+
+        // after animation ends, hide completely
+        setTimeout(() => {
+          overlay.classList.remove('nh-closing');
+          overlay.style.visibility = "hidden";
+        }, 800); // same as CSS transition
+      }
+    }
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
     });
-
-  } else {
-    // CLOSE with animation
-    overlay.classList.remove('nh-open');
-    overlay.classList.add('nh-closing');
-    toggleBtn.classList.remove('nh-open');
-
-    // hide links gradually
-    items.forEach(item => { item.style.opacity = "0"; });
-
-    // after transition ends, fully hide
-    setTimeout(() => {
-      overlay.classList.remove('nh-closing');
-      overlay.style.visibility = "hidden";
-    }, 800); // match transition duration
-  }
-}
   </script>

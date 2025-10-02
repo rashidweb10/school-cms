@@ -19,7 +19,7 @@
 
 <div class="col-md-1">
                 <!-- Toggle Button -->
-  <div class="nh-menu-toggle" id="nhMenuToggle" onclick="nhToggleMenu()">
+ <div class="nh-menu-toggle" id="nhMenuToggle" onclick="nhToggleMenu()">
     <i class="fa-solid fa-bars-staggered"></i>
     <i class="fa-solid fa-xmark"></i>
   </div>
