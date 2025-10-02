@@ -37,7 +37,6 @@ body
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-10">
-
                 <div class="thankyou_card">
                     <div class="">
                         <div class="mb-3 d-flex justify-content-center">
@@ -45,28 +44,23 @@ body
                                <i class="fa-solid fa-check"></i> 
                             </div>
                         </div>
-
                         <h2 class="h5 mb-1">Hi, {{ request()->get('name', 'User') }}</h2>
                         <p class="text-muted mb-4 pt-2" style="    font-weight: 400;">Thank You for an enquiry, one of our school executive will contact you soon.</p>
-
                         <div class="d-flex gap-2 justify-content-center flex-wrap">
-                            <a href="{{ url('/') }}" class="btn btn-danger px-3">Back</a>
+                            <a href="{{ url('/') }}" class="btn btn-danger px-3">Go Back</a>
                         </div>
-<!-- 
-                        <small class="d-block text-muted mt-4 pt-3">We will get back to you within 24–48 hours.</small> -->
+                        <!--<small class="d-block text-muted mt-4 pt-3">We will get back to you within 24–48 hours.</small> -->
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
-
 <script>
-    function goBack() {
-        if (history.length > 1) history.back();
-        else window.location.href = "{{ url('/') }}";
-    }
+    // function goBack() {
+    //     if (history.length > 1) history.back();
+    //     else window.location.href = "{{ url('/') }}";
+    // }
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
