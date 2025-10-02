@@ -2507,7 +2507,7 @@ thead.thead-dark th {
     cursor: pointer;
     z-index: 1002;
     }
-    .nh-menu-toggle i { color:#000; transition: opacity 0.3s ease; }
+    .nh-menu-toggle i { color:#fff; transition: opacity 0.3s ease; }
     .nh-menu-toggle .fa-xmark { display: none; color:#fff; }
     .nh-menu-toggle.nh-open .fa-bars-staggered { display: none; }
     .nh-menu-toggle.nh-open .fa-xmark { display: inline; }
