@@ -30,36 +30,36 @@
     <nav>
       <ul>
         <li>
-          <a href="https://www.nhssthane.com/"> New Horizon Scholars School, Kavesar , Thane (CBSE)</a>
+          <a href="https://www.nhssthane.com/"> New Horizon Scholars School, Kavesar</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/07/erwiiqf2HoXtZoS39uageNKNsChEr0SWodaTrARK.jpg');"></div>
         </li>
         <li>
-          <a href="https://www.nhssvasantlawns.com/"> New Horizon Scholars School, Vasant Lawns , Thane (CBSE)</a>
+          <a href="https://www.nhssvasantlawns.com/"> New Horizon Scholars School, Vasant Lawns</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s3/2025/09/vRxyME6FWIOazGm5qEMZ8kCpg0w8bIRs8L4ZXeBa.jpg');"></div>
         </li>
         <li>
-          <a href="https://www.nhssrodas.com/"> New Horizon Scholar School, Kolshet , Thane (CBSE)</a>
+          <a href="https://www.nhssrodas.com/"> New Horizon Scholar School, Kolshet</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s4/2025/09/8Sx76yToVV54h4OISu7DBSS0jdYu2xA11hyZnK9D.jpg');"></div>
         </li>
         <li>
-          <a href="https://nhssairoli.com/"> New Horizon Scholars School, Airoli , Navi Mumbai (CBSE)</a>
+          <a href="https://nhssairoli.com/"> New Horizon Scholars School, Airoli</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s5/2025/08/93LbTpUpuyXusYH1jQpYwMY7KctU77vqykSehYig.jpg');"></div>
         </li>
         <li>
-          <a href="https://nhpsairoli.com/"> New Horizon Public School, Airoli Sector 19 , Navi Mumbai (CBSE)</a>
+          <a href="https://nhpsairoli.com/"> New Horizon Public School, Airoli Sector 19</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s4/2025/09/8Sx76yToVV54h4OISu7DBSS0jdYu2xA11hyZnK9D.jpg');"></div>
         </li>
         <li>
-          <a href="https://www.nhisrodas.com/"> New Horizon International School, Rodas , Kolshet, Thane (ICSE)</a>
+          <a href="https://www.nhisrodas.com/"> New Horizon International School, Rodas</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s7/2025/09/OArbKTf1ktYlkL0KAgbRPgdwZp7xChq9c0tYdOA7.jpg');"></div>
         </li>
         <li>
-          <a href="https://www.nhpspanvel.com/"> New Horizon Public School, New Panvel , New Panvel (CBSE)</a>
+          <a href="https://www.nhpspanvel.com/"> New Horizon Public School, New Panvel</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s8/2025/09/H5Lde8ixPZUyUrUVSmzlja10uvkPWFvtHix3bEGJ.jpg');"></div>
         </li>
 
         <li>
-          <a href="https://nhpsairolisector3.com/"> New Horizon Public School, Airoli Sector 3 , Airoli (Proposed CBSE School)</a>
+          <a href="https://nhpsairolisector3.com/"> New Horizon Public School, Airoli Sector 3</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/a/2025/09/6aUGAmguhHEMwok8FcXotnt9EbdzjOK87yr8dWRE.jpg');"></div>
         </li>
 
