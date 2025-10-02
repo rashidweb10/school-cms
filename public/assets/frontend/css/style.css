@@ -2537,7 +2537,7 @@ background: rgb(29 29 29 / 90%);
     .nh-overlay ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px 120px;
+      gap: 65px 120px;
       list-style: none;
     }
     .nh-overlay ul li {
