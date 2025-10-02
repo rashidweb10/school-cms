@@ -1,7 +1,7 @@
 <!-- Header Section Start -->
 <div class="top_position">
     <div class="header_section_top">
-        <div class="container">
+        <div class="container position-relative">
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
