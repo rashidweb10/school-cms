@@ -27,7 +27,7 @@
   <div id="nhOverlay" class="nh-overlay">
     <nav>
       <ul>
-        <li style="grid-column: 1 / -1;">
+        <li style="grid-column: 1 / -1; justify-content: center;">
            <a href="https://newhorizonschools.org/"><i class="fa-solid fa-caret-right"></i> New Horizon Group of Schools</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/04/Wydv1rGSQipYjXabHBdwhMxDpuPFYjpnzhv3A03i.jpg');"></div>
         </li>
