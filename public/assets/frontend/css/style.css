@@ -2583,7 +2583,7 @@ background: rgb(29 29 29 / 90%);
       background-size: cover;
       background-position: center;
       position: absolute;
-      left: 90px;
+      margin-left: 70px;
       top: -67px;
       opacity: 0;
       transform: translateY(40px);
