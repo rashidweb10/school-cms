@@ -10,22 +10,20 @@
                 <div class="col-md-3">
                     <p class="mrg_35 robot_slab text-center mobile_nones">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <p class="text-md-end robot_slab mobile_nones">
                         <a href="{{route('disclosure')}}" class="pe-3 discloser_link">MANDATORY PUBLIC DISCLOSURE</a>
                     </p>
                 </div>
 
-
+<!-- 
 <div class="col-md-1">
-                <!-- Toggle Button -->
  <div class="nh-menu-toggle" id="nhMenuToggle" onclick="nhToggleMenu()">
     <i class="fa-solid fa-bars-staggered"></i>
     <i class="fa-solid fa-xmark"></i>
   </div>
   </div>
 
-  <!-- Overlay Menu -->
   <div id="nhOverlay" class="nh-overlay">
     <nav>
       <ul>
@@ -71,7 +69,7 @@
 
       </ul>
     </nav>
-  </div>
+  </div> -->
 
 
             </div>
