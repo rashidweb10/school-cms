@@ -27,12 +27,11 @@
   <div id="nhOverlay" class="nh-overlay">
     <nav>
       <ul>
-        <li>
+        <li style="grid-column: 1 / -1;">
            <a href="https://newhorizonschools.org/"><i class="fa-solid fa-caret-right"></i> New Horizon Group of Schools</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/04/Wydv1rGSQipYjXabHBdwhMxDpuPFYjpnzhv3A03i.jpg');"></div>
         </li>
 
-        <li></li>
         <li>
            <a href="https://www.nhssthane.com/"><i class="fa-solid fa-caret-right"></i> New Horizon Scholars School, Kavesar</a>
           <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/07/erwiiqf2HoXtZoS39uageNKNsChEr0SWodaTrARK.jpg');"></div>

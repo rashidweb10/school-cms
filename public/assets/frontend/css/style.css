@@ -2526,6 +2526,7 @@ background: rgb(29 29 29 / 90%);
       z-index: 1001;
       padding: 0 50px !important;
       pointer-events: none; /* disabled until open */
+      justify-content: center;
     }
     .nh-overlay.nh-open {
       opacity: 1;
@@ -2552,9 +2553,9 @@ background: rgb(29 29 29 / 90%);
 .nh-overlay ul li i {
     background: #f00;
     color: #fff;
-    width: 12px;
-    height: 12px;
-    line-height: 12px;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
     font-size: 10px;
     text-align: center;
     border-radius: 50px;
