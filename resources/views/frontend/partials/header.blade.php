@@ -81,7 +81,7 @@
                 <div class="col-md-1 col-3 order-md-1 order-2">
                     <div class="logo_width">
                         <a class="navbar-brand" href="{{ route('home') }}">
-                            <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" />
+                            <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" alt="{{get_setting('name')}}"/>
                         </a>
                     </div>
                 </div>
