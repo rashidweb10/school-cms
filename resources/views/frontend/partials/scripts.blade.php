@@ -234,3 +234,38 @@ $(document).ready(function () {
     );
 }); 
 </script>
+
+
+ <script>
+    function nhToggleMenu() {
+      const overlay = document.getElementById('nhOverlay');
+      const toggleBtn = document.getElementById('nhMenuToggle');
+      const items = document.querySelectorAll('#nhOverlay ul li a');
+
+      // OPEN
+      if (!overlay.classList.contains('nh-open')) {
+        overlay.classList.add('nh-open');
+        toggleBtn.classList.add('nh-open');
+
+        items.forEach((item, index) => {
+          item.classList.remove('animate__animated', 'animate__fadeInUp');
+          item.style.opacity = "0"; 
+          void item.offsetWidth; // restart animation
+          item.classList.add('animate__animated', 'animate__fadeInUp');
+          item.style.animationDelay = `${0.2 * index}s`;
+          item.style.opacity = "1";
+        });
+
+      } else {
+        // CLOSE
+        overlay.classList.remove('nh-open');
+        toggleBtn.classList.remove('nh-open');
+
+        items.forEach(item => { item.style.opacity = "0"; });
+      }
+    }
+  </script>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>

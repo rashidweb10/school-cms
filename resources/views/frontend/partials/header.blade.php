@@ -1,7 +1,7 @@
 <!-- Header Section Start -->
 <div class="top_position">
     <div class="header_section_top">
-        <div class="container">
+        <div class="container position-relative">
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-3">
@@ -10,11 +10,67 @@
                 <div class="col-md-3">
                     <p class="mrg_35 robot_slab text-center mobile_nones">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <p class="text-md-end robot_slab mobile_nones">
                         <a href="{{route('disclosure')}}" class="pe-3 discloser_link">MANDATORY PUBLIC DISCLOSURE</a>
                     </p>
                 </div>
+
+
+<div class="col-md-1">
+ <div class="nh-menu-toggle" id="nhMenuToggle" onclick="nhToggleMenu()">
+    <i class="fa-solid fa-bars-staggered"></i>
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  </div>
+
+  <div id="nhOverlay" class="nh-overlay">
+    <nav>
+      <ul>
+        <li style="grid-column: 1 / -1; justify-content: center;">
+           <a href="https://newhorizonschools.org/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Group of Schools</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/04/Wydv1rGSQipYjXabHBdwhMxDpuPFYjpnzhv3A03i.jpg');"></div>
+        </li>
+
+        <li>
+           <a href="https://www.nhssthane.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Scholars School, Kavesar</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/2025/07/erwiiqf2HoXtZoS39uageNKNsChEr0SWodaTrARK.jpg');"></div>
+        </li>
+        <li>
+           <a href="https://www.nhssvasantlawns.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Scholars School, Vasant Lawns</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s3/2025/09/vRxyME6FWIOazGm5qEMZ8kCpg0w8bIRs8L4ZXeBa.jpg');"></div>
+        </li>
+        <li>
+         <a href="https://www.nhssrodas.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Scholar School, Kolshet</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s4/2025/09/8Sx76yToVV54h4OISu7DBSS0jdYu2xA11hyZnK9D.jpg');"></div>
+        </li>
+        <li>
+          <a href="https://nhssairoli.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Scholars School, Airoli</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s5/2025/08/93LbTpUpuyXusYH1jQpYwMY7KctU77vqykSehYig.jpg');"></div>
+        </li>
+        <li>
+        <a href="https://nhpsairoli.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Public School, Airoli Sector 19</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s4/2025/09/8Sx76yToVV54h4OISu7DBSS0jdYu2xA11hyZnK9D.jpg');"></div>
+        </li>
+        <li>
+          <a href="https://www.nhisrodas.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon International School, Rodas</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s7/2025/09/OArbKTf1ktYlkL0KAgbRPgdwZp7xChq9c0tYdOA7.jpg');"></div>
+        </li>
+        <li>
+          <a href="https://www.nhpspanvel.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Public School, New Panvel</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s8/2025/09/H5Lde8ixPZUyUrUVSmzlja10uvkPWFvtHix3bEGJ.jpg');"></div>
+        </li>
+
+        <li>
+       <a href="https://nhpsairolisector3.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Public School, Airoli Sector 3</a>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/a/2025/09/6aUGAmguhHEMwok8FcXotnt9EbdzjOK87yr8dWRE.jpg');"></div>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+
             </div>
         </div>
     </div>
@@ -25,7 +81,7 @@
                 <div class="col-md-1 col-3 order-md-1 order-2">
                     <div class="logo_width">
                         <a class="navbar-brand" href="{{ route('home') }}">
-                            <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" />
+                            <img class="w-150" src="{{ central_asset(uploaded_asset(get_setting('logo'))) }}" title="{{get_setting('name')}}" alt="{{get_setting('name')}}"/>
                         </a>
                     </div>
                 </div>

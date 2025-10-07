@@ -26,7 +26,7 @@
 
     .titlt_col {
         padding: 40px 0px 40px 25px;
-        background-color: #fdee9d;
+        background-color: #fbf1a9;
         border-radius: 20px 20px 0px 0px;
     }
 
