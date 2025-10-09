@@ -5,3 +5,5 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ asset('assets/frontend/img/favicon.png') }}"> 
+
+{!! get_setting('head_scripts') !!}

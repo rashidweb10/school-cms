@@ -203,6 +203,10 @@
                         <label for="meta-description" class="form-label">Meta Description</label>
                         <textarea class="form-control" id="meta-description" name="meta_description" rows="3" placeholder="Enter meta description">{{ old('meta_description', $pageData->meta_description) }}</textarea>
                     </div>
+                    <div class="mb-3 form-group">
+                        <label for="meta-head_scripts" class="form-label">Head Scripts</label>
+                        <textarea class="form-control" id="meta-head_scripts" name="meta[head_scripts]" rows="4" placeholder="Enter head scripts">{{ old('meta.head_scripts', $pageData->meta->where('meta_key', 'head_scripts')->first()->meta_value ?? '') }}</textarea>
+                    </div>                    
                 </div>
             </div>
             
