@@ -50,7 +50,7 @@
         </li>
         <li>
         <a href="https://nhpsairoli.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon Public School, Airoli Sector 19</a>
-          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s4/2025/09/8Sx76yToVV54h4OISu7DBSS0jdYu2xA11hyZnK9D.jpg');"></div>
+          <div class="nh-hover-image" style="background-image: url('https://www.newhorizonschools.org/storage/uploads/s6/2025/09/dvJejoYPIYdmTd8DJkFfvyp5XkfgERTt6r7AhV3Y.jpg');"></div>
         </li>
         <li>
           <a href="https://www.nhisrodas.com/" target="_blank"><i class="fa-solid fa-caret-right"></i> New Horizon International School, Rodas</a>
