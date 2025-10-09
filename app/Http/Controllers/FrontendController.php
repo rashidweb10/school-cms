@@ -272,11 +272,11 @@ class FrontendController extends Controller
         return view('frontend.pages.thankyou');
     }
 
-     public function diwali()
-    {
-        return view('frontend.pages.diwali');
-    }
+    public function diwali()
+{
 
+    return view('frontend.pages.diwali');
+}
     
 }
 

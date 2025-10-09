@@ -57,6 +57,7 @@ Route::get('/results', [FrontendController::class, 'results'])->name('results');
 Route::get('/contact-us', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/diwali', [FrontendController::class, 'diwali'])->name('diwali');
 
+
 Route::get('/disclosure', [FrontendController::class, 'disclosure'])->name('disclosure');
 
 Route::get('/terms-and-conditions', [FrontendController::class, 'terms'])->name('terms');
