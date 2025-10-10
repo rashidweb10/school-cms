@@ -207,6 +207,10 @@
                         <label for="meta-head_scripts" class="form-label">Head Scripts</label>
                         <textarea class="form-control" id="meta-head_scripts" name="meta[head_scripts]" rows="4" placeholder="Enter head scripts">{{ old('meta.head_scripts', $pageData->meta->where('meta_key', 'head_scripts')->first()->meta_value ?? '') }}</textarea>
                     </div>                    
+                    <div class="mb-3 form-group">
+                        <label for="meta-body_scripts" class="form-label">Body Scripts</label>
+                        <textarea class="form-control" id="meta-body_scripts" name="meta[body_scripts]" rows="4" placeholder="Enter head scripts">{{ old('meta.body_scripts', $pageData->meta->where('meta_key', 'body_scripts')->first()->meta_value ?? '') }}</textarea>
+                    </div>                    
                 </div>
             </div>
             

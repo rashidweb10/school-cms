@@ -5,7 +5,7 @@
     @include('frontend.partials.styles')
 </head>
 <body>
-
+    {!! get_setting('body_scripts') !!}
     @include('frontend.partials.header')
 
     <main>

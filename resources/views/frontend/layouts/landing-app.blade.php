@@ -133,7 +133,7 @@
     </style>
 </head>
 <body>
-
+    {!! get_setting('body_scripts') !!}
     @include('frontend.partials.landing-header')
 
     <main>
