@@ -41,7 +41,7 @@ color: #f6d876 !important;
             <h4 class="header_text roboto">{{get_setting('name')}}</h4>
           </div>
           <div class="col-md-7 col-12">
-            <!-- <p class="text-end robot_slab admiistion_test d-none d-lg-block">FOR ADMISSION’S CALL: {{get_setting('phone')}}</p> -->
+            <!-- <p class="text-end robot_slab admiistion_test d-none d-lg-block">FOR ADMISSIONS CALL: {{get_setting('phone')}}</p> -->
           </div>
         </div>
       </div>
