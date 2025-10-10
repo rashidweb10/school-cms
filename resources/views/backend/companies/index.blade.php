@@ -65,7 +65,7 @@
                                 <td>{{ $row->phone }}</td>
                                 <td>
                                     <a href="{{ route('companies.edit', $row->id) }}" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
-                                    <a target="_blank" href="{{ $row->website }}/command/optimize-clear?back=true" class="link-reset fs-20 p-1">
+                                    <a target="_blank" href="{{ $row->website }}command/optimize-clear?back=true" class="link-reset fs-20 p-1">
                                         <i class="ti ti-refresh"></i>
                                     </a>
                                 </td>
