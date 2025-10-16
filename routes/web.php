@@ -141,6 +141,8 @@ Route::prefix('backend')->group(function () {
     
     Route::middleware('auth.backend')->group(function () {
         Route::resource('companies', CompanyController::class);
+        Route::get('profile/update-password/{id}', [CompanyController::class, 'editPassword'])->name('profile.editPassword');
+        Route::put('profile/update-password', [CompanyController::class, 'updatePassword'])->name('profile.updatePassword');
     });  
     
     Route::middleware('auth.backend')->group(function () {

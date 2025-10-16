@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Company;
+use App\Models\User;
 
 class CompanyController extends Controller
 {
@@ -149,4 +150,32 @@ class CompanyController extends Controller
     {
         //
     }
+
+    /**
+     * Show update password form.
+     */
+    public function editPassword(string $id = "")
+    {
+        return view('backend.companies.update_password', compact('id'));
+    }   
+    
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        try {
+            $user = User::where('id', $request->user_id)->first();
+
+            if ($user) {
+                $user->password = \Hash::make($request->password);
+                $user->save();
+            }
+
+            return response()->json(['status' => true, 'notification' => 'Password updated successfully!']);
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'notification' => 'There was an error updating the password.']);
+        }
+    }    
 }

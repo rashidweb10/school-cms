@@ -14,7 +14,7 @@
             <div class="row w-100">
                 <div class="col-md-5">
                     <form class="row g-3 align-items-center">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                         <select name="company" class="form-select" id="status-select">
                             <option value="" selected>--Select School--</option>
                             @foreach ($companyList as $index => $row)
@@ -37,6 +37,11 @@
                             <button type="reset" class="btn btn-warning btn-icon w-100" onclick="window.location.href = '{{ route(Route::currentRouteName()) }}';">
                                 <i class="ti ti-refresh"></i>
                             </button>
+                        </div>                      
+                        <div class="col-md-2">
+                            @if (auth()->user()->company_id == null)
+                                <a href="javascript:void(0);" onclick="smallModal('{{url(route('profile.editPassword', 1))}}', 'Change Password')" class="link-reset text-danger fs-20 p-1"><i class="ti ti-lock"></i></a>
+                            @endif
                         </div>                      
                     </form>
                     </div>
@@ -64,6 +69,12 @@
                                 <td>{{ $row->email }}</td>
                                 <td>{{ $row->phone }}</td>
                                 <td>
+                                    @if (auth()->user()->company_id == null)
+                                    @php
+                                        $user_id = \App\Models\User::where('company_id', $row->id)->value('id');
+                                    @endphp 
+                                    <a href="javascript:void(0);" onclick="smallModal('{{url(route('profile.editPassword', $user_id))}}', 'Change Password')" class="link-reset fs-20 p-1"> <i class="ti ti-lock"></i></a>
+                                    @endif
                                     <a href="{{ route('companies.edit', $row->id) }}" class="link-reset fs-20 p-1"> <i class="ti ti-pencil"></i></a>
                                     <a target="_blank" href="{{ $row->website }}command/optimize-clear?back=true" class="link-reset fs-20 p-1">
                                         <i class="ti ti-refresh"></i>
