@@ -247,7 +247,14 @@
                   @endphp
                   <li class="loationtext_hover">
                     <p>
-                      <a target="_blank" href="{{ $school->website }}">
+                      <!-- <a target="_blank" href="{{ $school->website }}">
+                        <i class="fa-solid fa-caret-right"></i>
+                        {{ $school->name }}
+                        {{ $location ? ', ' . $location : '' }}
+                        {{ $boardName ? ' (' . $boardName . ')' : '' }}
+                      </a> -->
+
+                      <a>
                         <i class="fa-solid fa-caret-right"></i>
                         {{ $school->name }}
                         {{ $location ? ', ' . $location : '' }}
