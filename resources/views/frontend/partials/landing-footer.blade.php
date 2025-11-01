@@ -1,9 +1,9 @@
-<footer class="footer pt-md-5 pt-2 pb-md-4">
+<footer class="footer pt-md-4 pt-2 pb-md-2">
       <div class="container">
         <div class="row">
           
           
-          <div class="col-md-2 paddlft60 pt-md-0 pt-4">
+          <!-- <div class="col-md-2 paddlft60 pt-md-0 pt-4">
             <div class="col-lg-12">
               <h4 class="roboto">E-Magazine</h4>
               <ul class="footer-menu">
@@ -65,7 +65,7 @@
           </div>
           <div class="col-md-12">
             <hr>
-          </div>
+          </div> -->
           <div class="col-md-12 order-md-1 order-2">
             <p class="footer-privacy text-center pb-2 mb-0 pt-md-0 pt-0"> Copyright © {{date('Y')}} {{get_setting('name')}} </p>
           </div>
