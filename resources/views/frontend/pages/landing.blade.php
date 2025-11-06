@@ -71,7 +71,8 @@
                 <h4 class="robot_slab text_color pt-70">Admission Enquiry Form</h4>
                 <!-- <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p> -->
                 <!-- <p><b>{{get_setting('admission_year')}}</b></p> -->
-                 <p class="foranyclass"><b>For AY 2025-2026 directly fill the form from respective school website.</b></p>
+                <p><b>AY 2026-2027</b></p>
+                 <!-- <p class="foranyclass"><b>For AY 2025-2026 directly fill the form from respective school website.</b></p> -->
                 <style>
                  .foranyclass
                  {
