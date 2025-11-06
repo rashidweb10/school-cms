@@ -77,17 +77,17 @@
                 <style>
                  .foranyclass
                  {
-                     font-size: 28px;
+               font-size: 24px;
     line-height: 53px;
     position: absolute;
     font-weight: 500;
-    margin-top: -195px;
+    margin-top: -160px;
+    width: 842px;
                  } 
                  .foranyclass span {
-    display: block;
-    font-size: 28px;
+  font-size: 24px;
     line-height: 22px;
-        font-weight: bold;
+    font-weight: bold;
 }
                 </style>
 
