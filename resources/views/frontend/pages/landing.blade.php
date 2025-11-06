@@ -75,17 +75,19 @@
                 <p><b>AY 2026-2027</b></p>
                  <!-- <p class="foranyclass"><b>For AY 2025-2026 directly fill the form from respective school website.</b></p> -->
                 <style>
-                 .foranyclass
-                 {
-               font-size: 24px;
-    line-height: 53px;
+                 .foranyclass {
+    font-size: 16px;
+    line-height: 36px;
     position: absolute;
     font-weight: 500;
-    margin-top: -160px;
-    width: 842px;
-                 } 
+    margin-top: -161px;
+    width: 573px;
+    background: #fff;
+    padding: 4px 30px;
+}
                  .foranyclass span {
-  font-size: 24px;
+    /* display: block; */
+    font-size: 16px;
     line-height: 22px;
     font-weight: bold;
 }
