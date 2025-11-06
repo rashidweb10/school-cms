@@ -83,6 +83,7 @@
     margin-top: -128px;
     margin-left: 41px;
     border-radius: 5px;
+    transform: skew(-10deg);
     width: 540px;
     background: #fff;
     padding: 2px 20px;
