@@ -87,7 +87,7 @@
     display: block;
     font-size: 28px;
     line-height: 22px;
-    font-weight: 500;
+        font-weight: bold;
 }
                 </style>
 
