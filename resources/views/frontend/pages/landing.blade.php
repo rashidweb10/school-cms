@@ -55,6 +55,7 @@
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-7">
+            <p class="foranyclass"><b>For AY 2025-2026 directly fill the form <span>from respective school website.</span></b></p>
             <div class="text-start mb-md-4 mb-2 pt-4">
               <div class="skew-box ">
                   <p class="roboto text_color"> {!! $banner_title !!} </p>
@@ -76,10 +77,18 @@
                 <style>
                  .foranyclass
                  {
-                  font-size: 16px;
+                     font-size: 28px;
+    line-height: 53px;
+    position: absolute;
+    font-weight: 500;
+    margin-top: -195px;
+                 } 
+                 .foranyclass span {
+    display: block;
+    font-size: 28px;
     line-height: 22px;
     font-weight: 500;
-                 } 
+}
                 </style>
 
               <!-- <div class="radio_buttons">
