@@ -55,7 +55,7 @@
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-7">
-            <p class="foranyclass"><b>For AY 2025-2026 directly fill the form from respective school website.</b></p>
+            <p class="foranyclass"><b>For AY 2025-2026 Mid Term Admission please fill the form directly from respective school website.</b></p>
             <div class="text-start mb-md-4 mb-2 pt-4">
               <div class="skew-box ">
                   <p class="roboto text_color"> {!! $banner_title !!} </p>
@@ -76,17 +76,18 @@
                  <!-- <p class="foranyclass"><b>For AY 2025-2026 directly fill the form from respective school website.</b></p> -->
                 <style>
                 .foranyclass {
-    font-size: 15px;
+ font-size: 15px;
     line-height: 36px;
     position: absolute;
     font-weight: 400;
     margin-top: -128px;
-    margin-left: 47px;
+    margin-left: 15px;
     border-radius: 5px;
     transform: skew(-18deg);
-    width: 540px;
+    width: 700px;
     background: #fff;
-    padding: 2px 20px;
+    padding: 2px 10px;
+    text-align: center;
 }
                 </style>
 
