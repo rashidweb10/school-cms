@@ -591,7 +591,7 @@ $(document).ready(function () {
       var classList = JSON.parse(selected.attr("data-classes") || "[]");
       var enquiryChannels = JSON.parse(selected.attr("data-enquiry-channels") || "[]");
 
-      var websiteChannel = enquiryChannels.find(channel => channel.EnquiryChannelName === "WebSite");
+      var websiteChannel = enquiryChannels.find(channel => channel.EnquiryChannelName === "Online");
       if (websiteChannel) {
         $('input[name="enquiry_channel_id"]').val(websiteChannel.EnquiryChannelID);
       }      
