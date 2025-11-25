@@ -58,33 +58,36 @@ class FormController extends Controller
             dd($e->getMessage()); // or return response()->json(['error' => $e->getMessage()]);
         }    
         
-        //eduprint API
-        $student = [
-            "ShortName"        => $request->input('school_short_name'),
-            "Description"      => $request->input('academic_year'), //now()->month >= 4 ? now()->year . '-' . (now()->year + 1) : (now()->year - 1) . '-' . now()->year,
-            "ChildFirstName"   => $request->input('child_first_name'),
-            "ChildMiddleName"  => $request->input('child_middle_name'),
-            "ChildLastName"    => $request->input('child_last_name'),
-            "ContactEmailID"   => $request->input('email'),
-            "ContactMobileNo"  => $request->input('phone'),
-            "DOB"              => "1970-01-01 00:00:00",
-            "ClassMasterID"    => $request->input('class_id'),
-            "EnquiryChannelID" => $request->input('enquiry_channel_id'),
-            "GenderID"         => 3,
-            "UtmSource"        => "",
-            "UtmMedium"        => "",
-            "UtmCampaign"      => "",
-            "UtmTerm"          => "",
-            "UtmContent"       =>""
-        ];  
-        
-        $eduResponse = create_student_enquiry($student);
-
-        $form->update([
-            'edu_response' => $eduResponse,
-        ]);  
+ 
         
         if ($request->input('form_name') === 'landing') {
+
+            //eduprint API
+            $student = [
+                "ShortName"        => $request->input('school_short_name'),
+                "Description"      => $request->input('academic_year'), //now()->month >= 4 ? now()->year . '-' . (now()->year + 1) : (now()->year - 1) . '-' . now()->year,
+                "ChildFirstName"   => $request->input('child_first_name'),
+                "ChildMiddleName"  => $request->input('child_middle_name'),
+                "ChildLastName"    => $request->input('child_last_name'),
+                "ContactEmailID"   => $request->input('email'),
+                "ContactMobileNo"  => $request->input('phone'),
+                "DOB"              => "1970-01-01 00:00:00",
+                "ClassMasterID"    => $request->input('class_id'),
+                "EnquiryChannelID" => $request->input('enquiry_channel_id'),
+                "GenderID"         => 3,
+                "UtmSource"        => "",
+                "UtmMedium"        => "",
+                "UtmCampaign"      => "",
+                "UtmTerm"          => "",
+                "UtmContent"       =>""
+            ];  
+            
+            $eduResponse = create_student_enquiry($student);
+
+            $form->update([
+                'edu_response' => $eduResponse,
+            ]); 
+
             return redirect()->route('thankyou', [
                 'name' => $request->input('name') // pass name to thank-you page
             ]);
