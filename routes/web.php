@@ -72,6 +72,10 @@ Route::get('/events/{year}', [FrontendController::class, 'events'])->name('event
 
 Route::get('/awards', [FrontendController::class, 'awards'])->name('awards');
 
+Route::get('/christmas', function () {
+    return view('frontend.pages.christmas');
+});
+
 // $circularSlugs = DB::table('pages')
 //     ->where('layout', 'circulars')
 //     ->pluck('slug')
