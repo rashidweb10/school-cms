@@ -40,6 +40,8 @@ Route::prefix('command')->group(function () {
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 
+Route::get('/home_test', [FrontendController::class, 'home_test'])->name('home_test');
+
 Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 
 Route::get('/why-we', [FrontendController::class, 'why_we'])->name('why-we');

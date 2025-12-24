@@ -28,6 +28,16 @@ class FrontendController extends Controller
         return view('frontend.pages.home', compact('pageData'));
     }
 
+    public function home_test()
+    {
+        $pageData = Page::with('meta')->where('is_active', 1)
+        ->where('slug', 'home')
+        ->where('company_id', config('custom.school_id'))
+        ->firstOrFail();
+        
+        return view('frontend.pages.home_test', compact('pageData'));
+    }    
+
     public function about()
     {
         $pageData = Page::with('meta')->where('is_active', 1)
