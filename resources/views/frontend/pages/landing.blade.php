@@ -198,12 +198,12 @@
                       <div class="form-outline">
                         <select name="academic_year" id="academic_year" class="form-control" required>
                             <option value="">--- Select Academic Year ---</option>
-                            <!-- <option value="{{ $currentYear }}-{{ $nextYear }}">
+                            <option value="{{ $currentYear }}-{{ $nextYear }}">
                                 {{ $currentYear }}-{{ $nextYear }}
-                            </option> -->
-                            <option value="{{ $nextYear }}-{{ $secondNextYear }}">
-                                {{ $nextYear }}-{{ $secondNextYear }}
                             </option>
+                            <!-- <option value="{{ $nextYear }}-{{ $secondNextYear }}">
+                                {{ $nextYear }}-{{ $secondNextYear }}
+                            </option> -->
                         </select>
                       </div>
                     </div>
