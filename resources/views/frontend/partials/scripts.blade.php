@@ -11,6 +11,13 @@
 <script>
     function protect_with_recaptcha_v3(formElement, action) {
         event.preventDefault();
+        
+        // Disable submit button to prevent double click
+        const submitButtons = formElement.querySelectorAll('button[type="submit"]');
+        submitButtons.forEach(button => {
+            button.disabled = true;
+            button.innerHTML = 'Submitting...';
+        });
 
         grecaptcha.ready(function () {
             grecaptcha.execute('{{ config('custom.recaptcha_site_key') }}', { action: action }).then(function (token) {
@@ -23,8 +30,6 @@
                     formElement.appendChild(tokenInput);
                 }
                 tokenInput.value = token;
-
-                //alert(token);
 
                 // Create or update recaptcha_action input
                 let actionInput = formElement.querySelector('[name="recaptcha_action"]');
