@@ -12,7 +12,7 @@
     function protect_with_recaptcha_v3(formElement, action) {
         event.preventDefault();
         
-        // Disable submit button to prevent double click
+        // Disable submit button to prevent double click 2
         const submitButtons = formElement.querySelectorAll('button[type="submit"]');
         submitButtons.forEach(button => {
             button.disabled = true;

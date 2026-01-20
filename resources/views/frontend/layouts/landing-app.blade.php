@@ -155,6 +155,13 @@
     function protect_with_recaptcha_v3(formElement, action) {
         event.preventDefault();
 
+        // Disable submit button to prevent double click 1
+        const submitButtons = formElement.querySelectorAll('button[type="submit"]');
+        submitButtons.forEach(button => {
+            button.disabled = true;
+            button.innerHTML = 'Submitting...';
+        });        
+
         grecaptcha.ready(function () {
             grecaptcha.execute('{{ config('custom.recaptcha_site_key') }}', { action: action }).then(function (token) {
                 // Create or update recaptcha_token input
