@@ -157,6 +157,7 @@ Route::prefix('backend')->group(function () {
 
     Route::middleware('auth.backend')->group(function () {
         Route::resource('teams', TeamController::class);
+        Route::get('teams/categories/by-company', [TeamController::class, 'categoriesByCompany'])->name('teams.categories.byCompany');
     });   
 
     Route::middleware('auth.backend')->group(function () {

@@ -70,6 +70,26 @@ class TeamController extends Controller
         return view('backend.teams.create', compact('categories'));
     }
 
+    public function categoriesByCompany(Request $request)
+    {
+        $validated = $request->validate([
+            'company_id' => 'required|exists:companies,id',
+        ]);
+
+        $query = TeamCategory::where('is_active', 1)
+            ->where('company_id', $validated['company_id'])
+            ->orderBy('name');
+
+        if (auth()->user()->company_id) {
+            $query->where('company_id', auth()->user()->company_id);
+        }
+
+        return response()->json([
+            'status' => true,
+            'data' => $query->get(['id', 'name']),
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

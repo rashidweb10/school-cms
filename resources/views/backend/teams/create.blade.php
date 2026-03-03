@@ -44,7 +44,7 @@
         <div class="col-sm-6">
             <div class="form-group mb-2">
                 <label for="categories" class="form-label">Categories <span class="text-danger">*</span></label>
-                <select name="categories[]" class="form-select select2" multiple required>
+                <select name="categories[]" id="categories" class="form-select select2" multiple required>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
@@ -64,7 +64,7 @@
         <div class="col-sm-6">
             <div class="form-group mb-2">
                 <label for="company_id" class="form-label">Company <span class="text-danger">*</span></label>
-                <select name="company_id" class="form-select" required>
+                <select name="company_id" id="company_id" class="form-select" required>
                     <option value="" selected>--Select--</option>
                     @foreach (getCompanyList() as $index => $row)
                         <option value="{{ $row->id }}" 
@@ -102,6 +102,47 @@ $(document).ready(function() {
     initValidate('#create'); 
     initSelect2('.select2')
     initTextEditor();
+
+    const $companySelect = $('#company_id');
+    const $categoriesSelect = $('#categories');
+
+    function loadCategoriesByCompany(companyId) {
+        $categoriesSelect.html('');
+
+        if (!companyId) {
+            $categoriesSelect.trigger('change');
+            return;
+        }
+
+        $.ajax({
+            url: "{{ route('teams.categories.byCompany') }}",
+            method: 'GET',
+            data: { company_id: companyId },
+            success: function(response) {
+                if (!response || !response.status) {
+                    $categoriesSelect.trigger('change');
+                    return;
+                }
+
+                const options = response.data.map(function(category) {
+                    return '<option value="' + category.id + '">' + category.name + '</option>';
+                });
+
+                $categoriesSelect.html(options.join(''));
+                $categoriesSelect.trigger('change');
+            },
+            error: function() {
+                $categoriesSelect.html('');
+                $categoriesSelect.trigger('change');
+            }
+        });
+    }
+
+    $companySelect.on('change', function() {
+        loadCategoriesByCompany($(this).val());
+    });
+
+    loadCategoriesByCompany($companySelect.val());
 
     // Handle form submission
     $("#create").submit(function(e) {
