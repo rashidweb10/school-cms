@@ -111,7 +111,7 @@ class PageController extends Controller
         try {
             $team = Page::create([
                 'title' => $request->title,
-                'slug' => $request->title,
+                'slug' => $request->slug,
                 'content' => $request->content,
                 'layout' => $request->layout ?? 'default',
                 'seo_title' => $request->seo_title,
@@ -121,7 +121,7 @@ class PageController extends Controller
             ]);
     
             // Return success response
-            return redirect()->route($this->routeName . '.index')->with('success', 'Record created successfully!');
+            return redirect()->route($this->routeName.'.edit', $team->id)->with('success', 'Record created successfully!');
     
         } catch (\Exception $e) {
             // Return error response
