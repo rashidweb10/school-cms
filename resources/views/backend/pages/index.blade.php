@@ -100,7 +100,7 @@
                                 <td>{{ formatDatetime($row->updated_at) }}</td>
                                 <td>
                                     @php
-                                        $restrictedSlugs = ['disclosure', 'curriculum', 'awards', 'roadmap', 'why-we', 'about-us', 'home'];
+                                        $restrictedSlugs = [];
                                     @endphp
                                     
                                     @if (auth()->user()->company_id == null || !in_array($row->slug, $restrictedSlugs))
@@ -108,7 +108,7 @@
                                             <i class="ti ti-pencil"></i>
                                         </a>
                                     @endif
-                                    @if($row->layout == 'default')
+                                    @if(auth()->user()->id == 1)
                                     <a href="javascript:void(0);" onclick="confirmModal('{{ route($routeName . '.destroy', $row->id) }}', callback )" class="link-reset fs-20 p-1"> <i class="ti ti-trash"></i></a>
                                     @endif
                                 </td>

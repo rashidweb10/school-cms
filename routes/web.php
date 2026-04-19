@@ -113,7 +113,7 @@ Route::prefix('backend')->group(function () {
 
     // Public login/logout routes
     Route::get('/login', [AuthController::class, 'showLoginForm'])->middleware(['auth.guest', 'auth.backend.access'])->name('backend.login');
-    Route::post('/login', [AuthController::class, 'login'])->middleware(['recaptcha','throttle:10,60'])->name('backend.login.submit');
+    Route::post('/login', [AuthController::class, 'login'])->middleware(['recaptcha'])->name('backend.login.submit');
     Route::get('/logout', [AuthController::class, 'logout'])->name('backend.logout');
 
     // Authenticated admin routes
