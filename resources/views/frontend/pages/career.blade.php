@@ -6,8 +6,6 @@
 @section('content')
 
 @php
-    $contact_number = $pageData->meta->where('meta_key', 'contact_number')->first()?->meta_value ?? '';
-    $email_id = $pageData->meta->where('meta_key', 'email_id')->first()?->meta_value ?? '';
     $career_meta = $pageData->meta->where('meta_key', 'career')->first();
     $career = $career_meta ? json_decode($career_meta->meta_value, true) : null;
 @endphp
@@ -29,11 +27,15 @@
 
         <!-- Job Openings Listing -->
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-xl-9">
+            <div class="col-lg-9 col-xl-9">
                 @if(isset($career['itration']) && is_array($career['itration']) && count($career['itration']) > 0)
                     <h3 class="roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3"><i class="fa-solid fa-briefcase me-2"></i>Current Openings</h3>
                     
                     @foreach($career['itration'] as $index => $itration)
+                        @php
+                            $contact_number = $career['contact_number'][$index] ?? '';
+                            $email_id = $career['email_id'][$index] ?? '';
+                        @endphp
                         <div class="card shadow-sm border-0 mb-4 rounded-3" style="border-left: 4px solid #fd5523 !important; background: #fff;">
                             <div class="card-body p-4">
                                 <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-3">
@@ -89,20 +91,6 @@
                         <div class="mb-3 text-muted"><i class="fa-solid fa-briefcase fa-3x"></i></div>
                         <h4 class="text-muted">No Job Openings Available</h4>
                         <p class="text-secondary">Please check back later or get in touch with us directly.</p>
-                        @if($contact_number || $email_id)
-                            <div class="mt-4">
-                                @if($contact_number)
-                                    <a href="tel:{{ $contact_number }}" class="btn btn-primary btn-md me-2" style="background-color: #fd5523; border-color: #fd5523;">
-                                        <i class="fa-solid fa-phone me-1"></i> Call Us
-                                    </a>
-                                @endif
-                                @if($email_id)
-                                    <a href="mailto:{{ $email_id }}" class="btn btn-outline-dark btn-md">
-                                        <i class="fa-solid fa-envelope me-1"></i> Email Us
-                                    </a>
-                                @endif
-                            </div>
-                        @endif
                     </div>
                 @endif
             </div>
