@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-12">
         <hr>
-        <h4 class="text-primary">Contact Details</h4>
+        <h4 class="text-primary">Career Details</h4>
     </div>
     
     <div class="col-md-6 form-group mb-2">
@@ -50,14 +50,14 @@
                         <input value="{{ $career['industry'][$index] ?? '' }}" name="meta[career][industry][]" type="text" class="form-control" placeholder="Industry" required>
                     </div>
                 </div>
-                <div class="col-md-12 mb-2">
-                    <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required>{{ $career['eligibility'][$index] ?? '' }}</textarea>
-                </div>
                 <div class="col-md-auto text-end mb-2">
                     <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                         <i class="ti ti-x"></i>
                     </button>
                 </div>
+                <div class="col-md-12 mb-2">
+                    <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required>{{ $career['eligibility'][$index] ?? '' }}</textarea>
+                </div>                
             </div>
         @endforeach
     @endif
@@ -93,13 +93,13 @@
                     <input value="" name="meta[career][industry][]" type="text" class="form-control" placeholder="Industry" required>
                 </div>
             </div>
-            <div class="col-md-12 mb-2">
-                <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required></textarea>
-            </div>
             <div class="col-md-auto text-end mb-2">
                 <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                     <i class="ti ti-x"></i>
                 </button>
+            </div>            
+            <div class="col-md-12 mb-2">
+                <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required></textarea>
             </div>
         </div>
     '
