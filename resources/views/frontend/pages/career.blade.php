@@ -114,8 +114,8 @@
         <input type="hidden" name="industry" id="modalIndustryInput" value="">
         <input type="hidden" name="admission_counselor" id="modalAdmissionCounselorInput" value="">
         <input type="hidden" name="job_type" id="modalJobTypeInput" value="">
-        <input type="hidden" name="contact_number" id="modalContactNumberInput" value="">
-        <input type="hidden" name="email_id" id="modalEmailIdInput" value="">
+        <input type="hidden" name="counselor_contact_number" id="modalContactNumberInput" value="">
+        <input type="hidden" name="counselor_email_id" id="modalEmailIdInput" value="">
         <div class="modal-body">
           <div class="mb-3">
             <label for="applicantName" class="form-label">Name</label>

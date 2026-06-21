@@ -20,8 +20,8 @@ class FormController extends Controller
         // Handle file upload for resume if present
         if ($request->hasFile('resume')) {
             //$resumePath = $request->file('resume')->store('uploads/resumes', 'public');
-            $schoolId = isset(Auth::user()->company_id) ? 's' . Auth::user()->company_id : 'a';
-            $resumePath = $request->file('aiz_file')->store('uploads/resumes/'.$schoolId.'/'.date("Y").'/'.date("m"), 'public'); 
+            $schoolId = 's' . config('custom.school_id');
+            $resumePath = $request->file('resume')->store('uploads/resumes/'.$schoolId.'/'.date("Y").'/'.date("m"), 'public'); 
             // Store the public URL or relative path
             $validatedData['resume'] = $resumePath;
         }
@@ -118,8 +118,8 @@ class FormController extends Controller
                     'industry' => 'required|string|max:50',
                     'admission_counselor' => 'nullable|string|max:50',
                     'job_type' => 'required|string|max:50',
-                    'contact_number' => 'nullable|string|max:20',
-                    'email_id' => 'nullable|string|max:50',
+                    'counselor_contact_number' => 'nullable|string|max:20',
+                    'counselor_email_id' => 'nullable|string|max:50',
                     // optional extra fields can be added here
                 ];
             case 'landing':
