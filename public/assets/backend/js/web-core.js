@@ -2067,6 +2067,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     $(target).append(content);
                     AIZ.plugins.bootstrapSelect();
                     AIZ.extra.addMoreSortable(target, $this);
+                    initTextEditor();
                 });
             });
         },
