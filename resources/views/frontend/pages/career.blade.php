@@ -28,6 +28,7 @@
         <!-- Job Openings Listing -->
         <div class="row justify-content-center">
             <div class="col-lg-9 col-xl-9">
+                @include('frontend.components.form-alert')
                 @if(isset($career['itration']) && is_array($career['itration']) && count($career['itration']) > 0)
                     <h3 class="roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3"><i class="fa-solid fa-briefcase me-2"></i>Current Openings</h3>
                     
@@ -136,7 +137,7 @@
             <input type="email" class="form-control" id="applicantEmail" name="email" required>
           </div>
           <div class="mb-3">
-            <label for="applicantResume" class="form-label">Attach Resume</label>
+            <label for="applicantResume" class="form-label">Attach Resume (PDF/DOC/DOCX, max 2 MB)</label>
             <input type="file" class="form-control" id="applicantResume" name="resume" accept=".pdf,.doc,.docx" required>
           </div>
         </div>

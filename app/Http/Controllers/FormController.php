@@ -113,7 +113,7 @@ class FormController extends Controller
                     'form_name' => 'required|max:20',
                     'name' => 'required|string|max:50',
                     'email' => 'required|email|max:50',
-                    'resume' => 'required|file|mimes:pdf,doc,docx|max:5120', // max 5MB
+                    'resume' => 'required|file|mimes:pdf,doc,docx|max:2048', // max 2MB
                     'job_code' => 'required|string|max:50',
                     'industry' => 'required|string|max:50',
                     'admission_counselor' => 'nullable|string|max:50',
