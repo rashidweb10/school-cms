@@ -299,14 +299,21 @@ $(document).ready(function () {
         $('#modalContactNumberInput').val(contact);
         $('#modalEmailIdInput').val(email);
 
-        console.log({
-            jobCode,
-            industry,
-            admission,
-            jobType,
-            contact,
-            email
-        });
+        $('#displayJobCode').text(jobCode);
+        $('#displayIndustry').text(industry);
+        $('#displayAdmissionCounselor').text(admission);
+        $('#displayJobType').text(jobType);
+        $('#displayContactNumber').text(contact);
+        $('#displayEmailId').text(email);        
+
+        // console.log({
+        //     jobCode,
+        //     industry,
+        //     admission,
+        //     jobType,
+        //     contact,
+        //     email
+        // });
     });
 
 });

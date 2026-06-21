@@ -117,6 +117,16 @@
         <input type="hidden" name="counselor_contact_number" id="modalContactNumberInput" value="">
         <input type="hidden" name="counselor_email_id" id="modalEmailIdInput" value="">
         <div class="modal-body">
+
+        <div class="mb-3" id="modalDisplayValues">
+            <p style="margin-bottom: 0;">Job Code: <span id="displayJobCode"></span></p>
+            <p style="margin-bottom: 0;">Industry: <span id="displayIndustry"></span></p>
+            <p style="margin-bottom: 0;">Admission Counselor: <span id="displayAdmissionCounselor"></span></p>
+            <p style="margin-bottom: 0;">Job Type: <span id="displayJobType"></span></p>
+            <p style="margin-bottom: 0;">Contact Number: <span id="displayContactNumber"></span></p>
+            <p style="margin-bottom: 0;">Email ID: <span id="displayEmailId"></span></p>
+        </div>
+
           <div class="mb-3">
             <label for="applicantName" class="form-label">Name</label>
             <input type="text" class="form-control" id="applicantName" name="name" required>
