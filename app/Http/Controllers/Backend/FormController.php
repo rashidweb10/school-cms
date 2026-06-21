@@ -49,7 +49,8 @@ class FormController extends Controller
             $query->where('form_name', 'like', '%' . $request->search . '%')
                   ->orWhere('name', 'like', '%' . $request->search . '%')
                   ->orWhere('email', 'like', '%' . $request->search . '%')
-                  ->orWhere('ip', 'like', '%' . $request->search . '%');
+                  ->orWhere('ip', 'like', '%' . $request->search . '%')
+                  ->orWhere('form_data', 'like', '%' . $request->search . '%');
         }
 
         $pageData = $query->orderBy('created_at', 'desc')->paginate(7);
