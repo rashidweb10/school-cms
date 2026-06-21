@@ -104,7 +104,11 @@
                                 <td>{{ $row->email }}</td>    
                                 <td>{{ $row->phone }}</td>
                                 @foreach ($extraColumns as $col)
-                                    <td>{{ $formData[$col] ?? '-' }}</td>
+                                    @if($col == 'resume' && !empty($formData[$col]))
+                                        <td><a href="{{ asset('storage/' . $formData[$col]) }}" target="_blank" class="btn btn-sm btn-outline-primary">View</a></td>
+                                    @else
+                                        <td>{{ $formData[$col] ?? '-' }}</td>
+                                    @endif  
                                 @endforeach    
                                 
                                 {{-- Only for admission --}}
