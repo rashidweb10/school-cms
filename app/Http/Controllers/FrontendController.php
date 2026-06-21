@@ -100,7 +100,7 @@ class FrontendController extends Controller
         ->where('company_id', config('custom.school_id'))
         ->firstOrFail();
     
-        return view('frontend.pages.common', compact('pageData'));
+        return view('frontend.pages.career', compact('pageData'));
     }    
 
     public function alumini()
