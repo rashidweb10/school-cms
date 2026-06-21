@@ -53,7 +53,18 @@ class FormController extends Controller
                   ->orWhere('form_data', 'like', '%' . $request->search . '%');
         }
 
-        $pageData = $query->orderBy('created_at', 'desc')->paginate(7);
+        // Sorting logic – Laravel recommended way
+        $allowedSorts = ['updated_at'];
+        $sortBy = $request->input('sort_by');
+        $order = $request->input('order', 'asc');
+        if (in_array($sortBy, $allowedSorts) && in_array(strtolower($order), ['asc', 'desc'])) {
+            $query->orderBy($sortBy, $order);
+        } else {
+            // Default ordering
+            $query->orderBy('created_at', 'desc');
+        }
+
+        $pageData = $query->paginate(7);
 
         $formNames = Form::select('form_name')->distinct()->pluck('form_name');
 

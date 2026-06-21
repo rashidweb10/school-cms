@@ -88,8 +88,19 @@
                                 @if(request()->segment(3) === 'landing') 
                                     <th class="w-10">1NH API Response</th>
                                 @endif                                
-
-                                <th class="w-10">Date</th>
+                                
+                                <th class="w-10">
+                                    <a href="{{ request()->fullUrlWithQuery(['sort_by' => 'updated_at', 'order' => (request('sort_by') == 'updated_at' && request('order') == 'asc') ? 'desc' : 'asc']) }}">
+                                        Date
+                                        @if(request('sort_by') == 'updated_at')
+                                            @if(request('order') == 'asc')
+                                                ▲
+                                            @else
+                                                ▼
+                                            @endif
+                                        @endif
+                                    </a>
+                                </th>
                                 <!-- <th>Actions</th> -->
                             </tr>
                         </thead>
