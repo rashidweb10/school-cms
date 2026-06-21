@@ -18,21 +18,6 @@
                 </div>
                 <div class="col-md">
                     <div class="form-group mb-2">
-                        <input value="{{ $career['contact_number'][$index] ?? '' }}" name="meta[career][contact_number][]" type="number" class="form-control" placeholder="Contact Number" required>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="form-group mb-2">
-                        <input value="{{ $career['email_id'][$index] ?? '' }}" name="meta[career][email_id][]" type="email" class="form-control" placeholder="Email ID" required>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="form-group mb-2">
-                        <input value="{{ $career['admission_counselor'][$index] ?? '' }}" name="meta[career][admission_counselor][]" type="text" class="form-control" placeholder="Admission Counselor" required>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="form-group mb-2">
                         <input value="{{ $career['job_type'][$index] ?? '' }}" name="meta[career][job_type][]" type="text" class="form-control" placeholder="Job Type" required>
                     </div>
                 </div>
@@ -41,13 +26,29 @@
                         <input value="{{ $career['industry'][$index] ?? '' }}" name="meta[career][industry][]" type="text" class="form-control" placeholder="Industry" required>
                     </div>
                 </div>
-                <div class="col-md-12 mb-2">
-                    <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required>{{ $career['eligibility'][$index] ?? '' }}</textarea>
-                </div>
                 <div class="col-md-auto text-end mb-2">
                     <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                         <i class="ti ti-x"></i>
                     </button>
+                </div>   
+                <div class="col-md-12"></div>
+                <div class="col-md-4">
+                    <div class="form-group mb-2">
+                        <input value="{{ $career['admission_counselor'][$index] ?? '' }}" name="meta[career][admission_counselor][]" type="text" class="form-control" placeholder="Admission Counselor" required>
+                    </div>
+                </div>                            
+                <div class="col-md-4">
+                    <div class="form-group mb-2">
+                        <input value="{{ $career['contact_number'][$index] ?? '' }}" name="meta[career][contact_number][]" type="number" class="form-control" placeholder="Contact Number" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group mb-2">
+                        <input value="{{ $career['email_id'][$index] ?? '' }}" name="meta[career][email_id][]" type="email" class="form-control" placeholder="Email ID" required>
+                    </div>
+                </div>                
+                <div class="col-md-12 mb-2">
+                    <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required>{{ $career['eligibility'][$index] ?? '' }}</textarea>
                 </div>
             </div>
         @endforeach
@@ -71,21 +72,6 @@
             </div>
             <div class="col-md">
                 <div class="form-group mb-2">
-                    <input value="" name="meta[career][contact_number][]" type="number" class="form-control" placeholder="Contact Number" required>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="form-group mb-2">
-                    <input value="" name="meta[career][email_id][]" type="email" class="form-control" placeholder="Email ID" required>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="form-group mb-2">
-                    <input value="" name="meta[career][admission_counselor][]" type="text" class="form-control" placeholder="Admission Counselor" required>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="form-group mb-2">
                     <input value="" name="meta[career][job_type][]" type="text" class="form-control" placeholder="Job Type" required>
                 </div>
             </div>
@@ -93,14 +79,31 @@
                 <div class="form-group mb-2">
                     <input value="" name="meta[career][industry][]" type="text" class="form-control" placeholder="Industry" required>
                 </div>
-            </div>
-            <div class="col-md-12 mb-2">
-                <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required></textarea>
-            </div>
+            </div>            
             <div class="col-md-auto text-end mb-2">
                 <button type="button" class="btn btn-icon btn-circle btn-soft-danger" data-toggle="remove-parent" data-parent=".remove-parent">
                     <i class="ti ti-x"></i>
                 </button>
+            </div>            
+            <div class="col-md-12"></div>
+            <div class="col-md">
+                <div class="form-group mb-2">
+                    <input value="" name="meta[career][admission_counselor][]" type="text" class="form-control" placeholder="Admission Counselor" required>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group mb-2">
+                    <input value="" name="meta[career][contact_number][]" type="number" class="form-control" placeholder="Contact Number" required>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group mb-2">
+                    <input value="" name="meta[career][email_id][]" type="email" class="form-control" placeholder="Email ID" required>
+                </div>
+            </div>            
+
+            <div class="col-md-12 mb-2">
+                <textarea name="meta[career][eligibility][]" class="form-control text-editor" rows="2" placeholder="Eligibility" required></textarea>
             </div>
         </div>
     '
