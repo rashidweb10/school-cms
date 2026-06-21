@@ -77,11 +77,11 @@
                                             </a>
                                         @endif
                                         @if($email_id)
-                    <button type="button" class="btn btn-primary btn-sm apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                             <a href="mailto:{{ $email_id }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
                                                 <i class="fa-solid fa-envelope text-primary"></i> {{ $email_id }}
                                             </a>
                                         @endif
+                                        <button type="button" class="btn btn-primary btn-sm apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                     </div>
                                 </div>
                             </div>
@@ -119,12 +119,12 @@
         <div class="modal-body">
 
         <div class="mb-3" id="modalDisplayValues">
-            <p style="margin-bottom: 0;">Job Code: <span id="displayJobCode"></span></p>
-            <p style="margin-bottom: 0;">Industry: <span id="displayIndustry"></span></p>
-            <p style="margin-bottom: 0;">Admission Counselor: <span id="displayAdmissionCounselor"></span></p>
-            <p style="margin-bottom: 0;">Job Type: <span id="displayJobType"></span></p>
-            <p style="margin-bottom: 0;">Contact Number: <span id="displayContactNumber"></span></p>
-            <p style="margin-bottom: 0;">Email ID: <span id="displayEmailId"></span></p>
+            <p style="margin-bottom: 0;"><strong>Job Code:</strong> <span id="displayJobCode"></span></p>
+            <p style="margin-bottom: 0;"><strong>Industry:</strong> <span id="displayIndustry"></span></p>
+            <p style="margin-bottom: 0;"><strong>Admission Counselor:</strong> <span id="displayAdmissionCounselor"></span></p>
+            <p style="margin-bottom: 0;"><strong>Job Type:</strong> <span id="displayJobType"></span></p>
+            <p style="margin-bottom: 0;"><strong>Counselor Contact Number:</strong> <span id="displayContactNumber"></span></p>
+            <p style="margin-bottom: 0;"><strong>Counselor Email ID:</strong> <span id="displayEmailId"></span></p>
         </div>
 
           <div class="mb-3">
