@@ -274,3 +274,40 @@ $(document).ready(function () {
   <script>
     AOS.init({ duration: 800, once: true });
   </script>
+
+  <script defer>
+  $(document).ready(function () {
+
+    $(document).on('click', '.apply-btn', function () {
+
+        let jobCode    = $(this).data('job-code') || '';
+        let industry   = $(this).data('industry') || '';
+        let admission  = $(this).data('admission-counselor') || '';
+        let jobType    = $(this).data('job-type') || '';
+        let contact    = $(this).data('contact-number') || '';
+        let email      = $(this).data('email-id') || '';
+
+        // Modal Title
+        $('#modalJobCode').text(jobCode);
+        $('#modalIndustry').text(industry);
+
+        // Hidden Fields
+        $('#modalJobCodeInput').val(jobCode);
+        $('#modalIndustryInput').val(industry);
+        $('#modalAdmissionCounselorInput').val(admission);
+        $('#modalJobTypeInput').val(jobType);
+        $('#modalContactNumberInput').val(contact);
+        $('#modalEmailIdInput').val(email);
+
+        console.log({
+            jobCode,
+            industry,
+            admission,
+            jobType,
+            contact,
+            email
+        });
+    });
+
+});
+</script>

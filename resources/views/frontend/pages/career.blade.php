@@ -77,6 +77,7 @@
                                             </a>
                                         @endif
                                         @if($email_id)
+                    <button type="button" class="btn btn-primary btn-sm apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                             <a href="mailto:{{ $email_id }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
                                                 <i class="fa-solid fa-envelope text-primary"></i> {{ $email_id }}
                                             </a>
@@ -97,5 +98,45 @@
         </div>
     </div>
 </section>
+
+<!-- Apply Modal -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="applyModalLabel">Apply for <span id="modalJobCode"></span> - <span id="modalIndustry"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" action="{{ route('form.submit') }}" enctype="multipart/form-data" onsubmit="protect_with_recaptcha_v3(this, 'career')">
+        @csrf
+        <input type="hidden" name="form_name" value="career">
+        <input type="hidden" name="job_code" id="modalJobCodeInput" value="">
+        <input type="hidden" name="industry" id="modalIndustryInput" value="">
+        <input type="hidden" name="admission_counselor" id="modalAdmissionCounselorInput" value="">
+        <input type="hidden" name="job_type" id="modalJobTypeInput" value="">
+        <input type="hidden" name="contact_number" id="modalContactNumberInput" value="">
+        <input type="hidden" name="email_id" id="modalEmailIdInput" value="">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="applicantName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="applicantName" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="applicantEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="applicantEmail" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="applicantResume" class="form-label">Attach Resume</label>
+            <input type="file" class="form-control" id="applicantResume" name="resume" accept=".pdf,.doc,.docx" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 @endsection

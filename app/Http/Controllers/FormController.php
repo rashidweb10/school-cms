@@ -17,6 +17,15 @@ class FormController extends Controller
 
         $validationRules = $this->getValidationRules($formName);
         $validatedData = $request->validate($validationRules);
+        // Handle file upload for resume if present
+        if ($request->hasFile('resume')) {
+            //$resumePath = $request->file('resume')->store('uploads/resumes', 'public');
+            $schoolId = isset(Auth::user()->company_id) ? 's' . Auth::user()->company_id : 'a';
+            $resumePath = $request->file('aiz_file')->store('uploads/resumes/'.$schoolId.'/'.date("Y").'/'.date("m"), 'public'); 
+            // Store the public URL or relative path
+            $validatedData['resume'] = $resumePath;
+        }
+
         $formData = collect($validatedData)->except(['form_name', 'name', 'email', 'phone'])->toArray();
 
         $companyId = $request->input('company_id') ?? config('custom.school_id');
@@ -99,6 +108,20 @@ class FormController extends Controller
     private function getValidationRules($formName)
     {
         switch ($formName) {
+            case 'career':
+                return [
+                    'form_name' => 'required|max:20',
+                    'name' => 'required|string|max:50',
+                    'email' => 'required|email|max:50',
+                    'resume' => 'required|file|mimes:pdf,doc,docx|max:5120', // max 5MB
+                    'job_code' => 'required|string|max:50',
+                    'industry' => 'required|string|max:50',
+                    'admission_counselor' => 'nullable|string|max:50',
+                    'job_type' => 'required|string|max:50',
+                    'contact_number' => 'nullable|string|max:20',
+                    'email_id' => 'nullable|string|max:50',
+                    // optional extra fields can be added here
+                ];
             case 'landing':
                 return [
                     'form_name' => 'required|max:20',

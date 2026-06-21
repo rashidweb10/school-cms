@@ -78,7 +78,7 @@ class ProtectForms
                 ];
 
                 // Check MIME type
-                if (!in_array($file->getMimeType(), $allowedMimeTypes)) {
+                if (!in_array($file->getMimeType(), $allowedMimes)) {
                     Log::warning("Disallowed file type '{$file->getMimeType()}' in '$key' from IP: $ip");
                     abort(403, 'Disallowed file type');
                 }
