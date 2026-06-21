@@ -20,4 +20,12 @@ class Form extends Model
     protected $casts = [
         'form_data' => 'array',
     ];
+
+    /**
+     * Relation to the company this form belongs to.
+     */
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
