@@ -16,6 +16,7 @@
     .border_bottom {
     border-bottom: 1px dashed #ccc !important;
     margin-top: 30px !important;
+    margin-bottom: 30px !important;
 }
 
 </style>
