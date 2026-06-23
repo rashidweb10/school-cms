@@ -57,7 +57,7 @@
                                         </span>
                                     </div>
                                     <div class="text-muted fs-14 mt-2 mt-md-0">
-                                        <i class="fa-solid fa-industry me-1"></i> Industry: <strong>{{ $career['industry'][$index] ?? '' }}</strong>
+                                        <i class="fa-solid fa-industry me-1"></i> Department: <strong>{{ $career['industry'][$index] ?? '' }}</strong>
                                     </div>
                                 </div>
 
