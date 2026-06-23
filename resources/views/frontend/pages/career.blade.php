@@ -12,6 +12,12 @@
 
 @include('frontend.partials.breadcrumb', ['title' => $pageData->title])
 
+<style>
+    .border_bottom {
+    border-bottom: 1px dashed #ccc !important;
+    margin-top: 30px !important;
+}
+</style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
         <!-- Page Description -->
@@ -27,7 +33,7 @@
 
         <!-- Job Openings Listing -->
         <div class="row justify-content-center">
-            <div class="col-lg-9 col-xl-9">
+            <div class="col-lg-12 col-xl-12">
                 @include('frontend.components.form-alert')
                 @if(isset($career['itration']) && is_array($career['itration']) && count($career['itration']) > 0)
                     <h3 class="roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3"><i class="fa-solid fa-briefcase me-2"></i>Current Openings</h3>
@@ -37,7 +43,7 @@
                             $contact_number = $career['contact_number'][$index] ?? '';
                             $email_id = $career['email_id'][$index] ?? '';
                         @endphp
-                        <div class="card shadow-sm border-0 mb-4 rounded-3" style="border-left: 4px solid #fd5523 !important; background: #fff;">
+                        <div class="card shadow-sm border-0 mb-4 rounded-3 " style="border-left: 4px solid #fd5523 !important; background: #fff;">
                             <div class="card-body p-4">
                                 <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-3">
                                     <div>
@@ -87,6 +93,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="border_bottom"></div>
                     @endforeach
                 @else
                     <div class="text-center py-5">
