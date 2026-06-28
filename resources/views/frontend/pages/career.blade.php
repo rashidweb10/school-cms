@@ -56,7 +56,7 @@
                                 <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-3">
                                     <div>
                                         <span class="badge px-3 py-2 fs-13 me-2" style="background-color: #e0f2fe; color: #0369a1 !important;">
-                                            <i class="fa-solid fa-barcode me-1"></i> Code: {{ $career['job_code'][$index] ?? '' }}
+                                            <i class="fa-solid fa-barcode me-1"></i> Code:  {{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}
                                         </span>
                                         <span class="badge px-3 py-2 fs-13" style="background-color: #dcfce7; color: #15803d !important;">
                                             <i class="fa-solid fa-clock me-1"></i> {{ $career['job_type'][$index] ?? '' }}
@@ -96,7 +96,7 @@
                                                 <i class="fa-solid fa-envelope text-primary"></i> {{ $email_id }}
                                             </a>
                                         @endif
-                                        <button type="button" class="btn btn-primary btn-sm apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
+                                        <button type="button" class="btn btn-primary btn-sm apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                     </div>
                                 </div>
                             </div>

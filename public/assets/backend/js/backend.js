@@ -275,6 +275,10 @@ function initTextEditor() {
         plugins: 'anchor advlist autolink lists link image charmap preview hr pagebreak ' +
                 'searchreplace wordcount visualblocks code fullscreen insertdatetime media nonbreaking ' +
                 'save table directionality emoticons template paste help',
+        toolbar: 'undo redo | formatselect | bold | ' +
+                'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+                'forecolor backcolor removeformat | ' +
+                'preview code fullscreen | table | help',                
         // toolbar: 'undo redo | formatselect | bold italic underline strikethrough | ' +
         //         'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
         //         'link anchor image media | forecolor backcolor removeformat | ' +
