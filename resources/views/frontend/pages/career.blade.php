@@ -18,7 +18,13 @@
     margin-top: 30px !important;
     margin-bottom: 30px !important;
 }
+.ListContainerWrapper li {
+    list-style: disc;
+}
 
+.ListContainerWrapper ul {
+    margin-left: 20px;
+}
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
