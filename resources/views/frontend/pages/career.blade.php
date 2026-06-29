@@ -85,6 +85,17 @@ div#applyModal .modal-footer {
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
 }
+.heding_size {
+    font-size: 20px !important;
+    font-weight: 400;
+}
+.heding_size span#modalJobCode {
+    font-size: 20px !important;
+    font-weight: 400;
+}
+label.form-label {
+    font-size: 14px;
+}
 }
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
