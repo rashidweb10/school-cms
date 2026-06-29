@@ -64,6 +64,10 @@ div#applyModal .modal-footer {
     padding-top: 6px;
     font-size: 14px;
 }
+.heding_size
+{
+    font-size: 28px !important;
+}
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
@@ -163,7 +167,7 @@ div#applyModal .modal-footer {
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="applyModalLabel">Apply for <span id="modalJobCode"></span> - <span id="modalIndustry"></span></h5>
+        <h5 class="modal-title" id="applyModalLabel"><span class="roboto text_color heding_size">Apply for <span id="modalJobCode"></span></span> - <span id="modalIndustry"></span></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="POST" action="{{ route('form.submit') }}" enctype="multipart/form-data" onsubmit="protect_with_recaptcha_v3(this, 'career')">
