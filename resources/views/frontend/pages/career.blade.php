@@ -74,6 +74,18 @@ div#applyModal .modal-footer {
     font-size: 28px !important;
     font-weight: 400;
 }
+
+@media(max-width:767px)
+{
+    .custom_badge {
+    white-space: normal;
+    text-align: left;
+}
+.eligibility-content p {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+}
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
@@ -103,13 +115,13 @@ div#applyModal .modal-footer {
                         <div class="card border-0 mb-4 rounded-3 " style="border-left: 4px solid #fd5523 !important; background: #fff;     border-right: 3px solid #cccccc5c !important;
     border-top: 3px solid #cccccc5c !important;
     border-bottom: 3px solid #cccccc5c !important;">
-                            <div class="card-body p-4">
+                            <div class="card-body p-md-4 p-3">
                                 <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-3">
                                     <div>
-                                        <span class="badge px-3 py-2 fs-13 me-2" style="background-color: #e0f2fe; color: #0369a1 !important;">
+                                        <span class="badge px-3 py-2 fs-13 me-2 mb-md-0 mb-2" style="background-color: #e0f2fe; color: #0369a1 !important;">
                                             <i class="fa-solid fa-barcode me-1"></i> Code:  {{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}
                                         </span>
-                                        <span class="badge px-3 py-2 fs-13" style="background-color: #dcfce7; color: #15803d !important;">
+                                        <span class="badge px-3 py-2 fs-13 mb-md-0 mb-2" style="background-color: #dcfce7; color: #15803d !important;">
                                             <i class="fa-solid fa-clock me-1"></i> {{ $career['job_type'][$index] ?? '' }}
                                         </span>
                                     </div>
