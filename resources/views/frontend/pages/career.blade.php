@@ -89,7 +89,7 @@
 
                                 <div class="eligibility-content mb-4">
                                     <h5 class="fw-bold mb-2 text-dark" style="font-size: 16px;"> Job Details:</h5>
-                                    <div class=" ps-3 border-start py-1" style="color:#000; font-size: 15px; border-color: #e5e7eb !important;">
+                                    <div class=" ps-3 py-1" style="color:#000; font-size: 15px; border-color: #e5e7eb !important;">
                                         {!! $career['eligibility'][$index] ?? '' !!}
                                     </div>
                                 </div>
