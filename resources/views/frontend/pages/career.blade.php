@@ -103,7 +103,8 @@ div#applyModal .modal-footer {
                                             <i class="fa-solid fa-clock me-1"></i> {{ $career['job_type'][$index] ?? '' }}
                                         </span>
                                     </div>
-                                    <div class="text-muted fs-14 mt-2 mt-md-0">
+                                    <div class="badge px-3 py-2 fs-13 me-2" style="    background-color: #71717136;
+    color: #000000ab !important;">
                                         <i class="fa-solid fa-industry me-1"></i> Department: <strong>{{ $career['industry'][$index] ?? '' }}</strong>
                                     </div>
                                 </div>
