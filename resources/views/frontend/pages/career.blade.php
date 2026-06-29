@@ -74,7 +74,9 @@ div#applyModal .modal-footer {
     font-size: 28px !important;
     font-weight: 400;
 }
-
+.ListContainerWrapper li {
+    text-align: left;
+}
 @media(max-width:767px)
 {
     .custom_badge {
