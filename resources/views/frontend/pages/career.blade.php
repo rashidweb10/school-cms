@@ -20,6 +20,7 @@
 }
 .ListContainerWrapper li {
     list-style: disc;
+        text-align: left;
 }
 
 .ListContainerWrapper ul {
@@ -112,7 +113,7 @@ div#applyModal .modal-footer {
                                             <i class="fa-solid fa-clock me-1"></i> {{ $career['job_type'][$index] ?? '' }}
                                         </span>
                                     </div>
-                                    <div class="badge px-3 py-2 fs-13 me-2" style="    background-color: #7171711c;
+                                    <div class="badge px-3 py-2 fs-13 me-2 custom_badge" style="    background-color: #7171711c;
     color: #000000ab !important;">
                                         <i class="fa-solid fa-industry me-1"></i> Department: <strong>{{ $career['industry'][$index] ?? '' }}</strong>
                                     </div>
