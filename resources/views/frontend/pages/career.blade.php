@@ -67,6 +67,11 @@ div#applyModal .modal-footer {
 .heding_size
 {
     font-size: 28px !important;
+     font-weight: 400;
+}
+.heding_size span#modalJobCode {
+    font-size: 28px !important;
+    font-weight: 400;
 }
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
