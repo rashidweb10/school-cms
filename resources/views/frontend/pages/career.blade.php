@@ -44,7 +44,7 @@
             <div class="col-lg-12 col-xl-12">
                 @include('frontend.components.form-alert')
                 @if(isset($career['itration']) && is_array($career['itration']) && count($career['itration']) > 0)
-                    <h3 class="roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3"><i class="fa-solid fa-briefcase me-2"></i>Current Openings</h3>
+                    <h3 class="roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3">Current Openings</h3>
                     
                     @foreach($career['itration'] as $index => $itration)
                         @php
@@ -68,7 +68,7 @@
                                 </div>
 
                                 <div class="eligibility-content mb-4">
-                                    <h5 class="fw-bold mb-2 text-dark" style="font-size: 16px;"><i class="fa-solid fa-graduation-cap me-1"></i> Eligibility & Requirements:</h5>
+                                    <h5 class="fw-bold mb-2 text-dark" style="font-size: 16px;"> Job Details:</h5>
                                     <div class=" ps-3 border-start py-1" style="color:#000; font-size: 15px; border-color: #e5e7eb !important;">
                                         {!! $career['eligibility'][$index] ?? '' !!}
                                     </div>
