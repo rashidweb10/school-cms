@@ -25,6 +25,18 @@
 .ListContainerWrapper ul {
     margin-left: 20px;
 }
+.orange_btn:hover {
+    background: #ea531c;
+    border: 1px solid;
+    color: #fff;
+}
+.orange_btn:hover i, .orange_btn i:hover
+{
+    color: #fff !important;
+}
+.orange_btn1:hover {
+    background: #e63d20 !important;
+}
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
@@ -80,23 +92,23 @@
                                             <i class="fa-solid fa-user-tie text-primary" style="color: #fd5523 !important;"></i>
                                         </div>
                                         <div>
-                                            <small class="text-muted d-block" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Admission Counselor</small>
+                                            <small class="text-muted d-block" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Category </small>
                                             <strong class="text-dark">{{ $career['admission_counselor'][$index] ?? '' }}</strong>
                                         </div>
                                     </div>
                                     
                                     <div class="d-flex flex-wrap gap-2 gap-md-3 mt-2 mt-md-0">
                                         @if($contact_number)
-                                            <a href="tel:{{ $contact_number }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
+                                            <a href="tel:{{ $contact_number }}" class="btn btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
                                                 <i class="fa-solid fa-phone text-success"></i> {{ $contact_number }}
                                             </a>
                                         @endif
                                         @if($email_id)
-                                            <a href="mailto:{{ $email_id }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
+                                            <a href="mailto:{{ $email_id }}" class="btn btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
                                                 <i class="fa-solid fa-envelope text-primary"></i> {{ $email_id }}
                                             </a>
                                         @endif
-                                        <button type="button" class="btn btn-primary btn-sm apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
+                                        <button type="button" class="btn btn-sm btn-primary rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2 apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                     </div>
                                 </div>
                             </div>
