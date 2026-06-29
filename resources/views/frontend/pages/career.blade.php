@@ -36,6 +36,12 @@
 }
 .orange_btn1:hover {
     background: #e63d20 !important;
+    border-color: #e63d20;
+}
+
+.orange_btn1 {
+    background: #ea531c;
+    border: 1px solid;
 }
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
@@ -63,7 +69,9 @@
                             $contact_number = $career['contact_number'][$index] ?? '';
                             $email_id = $career['email_id'][$index] ?? '';
                         @endphp
-                        <div class="card shadow-sm border-0 mb-4 rounded-3 " style="border-left: 4px solid #fd5523 !important; background: #fff;">
+                        <div class="card border-0 mb-4 rounded-3 " style="border-left: 4px solid #fd5523 !important; background: #fff;     border-right: 1px solid #ccc !important;
+    border-top: 1px solid #ccc !important;
+    border-bottom: 1px solid #ccc !important;">
                             <div class="card-body p-4">
                                 <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-3">
                                     <div>
@@ -100,12 +108,12 @@
                                     <div class="d-flex flex-wrap gap-2 gap-md-3 mt-2 mt-md-0">
                                         @if($contact_number)
                                             <a href="tel:{{ $contact_number }}" class="btn btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
-                                                <i class="fa-solid fa-phone text-success"></i> {{ $contact_number }}
+                                                <i class="fa-solid fa-phone"></i> {{ $contact_number }}
                                             </a>
                                         @endif
                                         @if($email_id)
                                             <a href="mailto:{{ $email_id }}" class="btn btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
-                                                <i class="fa-solid fa-envelope text-primary"></i> {{ $email_id }}
+                                                <i class="fa-solid fa-envelope"></i> {{ $email_id }}
                                             </a>
                                         @endif
                                         <button type="button" class="btn btn-sm btn-primary rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2 apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
