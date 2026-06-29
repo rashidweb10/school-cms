@@ -98,6 +98,8 @@ div#applyModal .modal-footer {
 label.form-label {
     font-size: 14px;
 }
+.font_mobles {
+    font-size: 20px !important;
 }
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
@@ -118,7 +120,7 @@ label.form-label {
             <div class="col-lg-12 col-xl-12">
                 @include('frontend.components.form-alert')
                 @if(isset($career['itration']) && is_array($career['itration']) && count($career['itration']) > 0)
-                    <h3 class="roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3">Current Openings</h3>
+                    <h3 class=" font_mobles roboto fw-normal text_color pb-md-4 pb-3 pt-md-0 pt-3">Current Openings</h3>
                     
                     @foreach($career['itration'] as $index => $itration)
                         @php
