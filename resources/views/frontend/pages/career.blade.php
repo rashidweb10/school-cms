@@ -104,7 +104,7 @@ label.form-label {
     <div class="container">
         <!-- Page Description -->
         @if($pageData->content)
-            <div class="row mb-4">
+            <div class="row mb-md-4 mb-1">
                 <div class="col-12 text-center">
                     <div class="career-content-desc">
                         {!! $pageData->content !!}
