@@ -178,7 +178,7 @@ label.form-label {
                                                 <i class="fa-solid fa-envelope"></i> {{ $email_id }}
                                             </a>
                                         @endif
-                                        <button type="button" class="btn btn-sm btn-primary rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2 apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
+                                        <button type="button" class="btn btn-sm rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2 apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                     </div>
                                 </div>
                             </div>
