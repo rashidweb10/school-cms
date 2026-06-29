@@ -123,9 +123,12 @@ label.form-label {
                             $contact_number = $career['contact_number'][$index] ?? '';
                             $email_id = $career['email_id'][$index] ?? '';
                         @endphp
-                        <div class="card border-0 mb-4 rounded-3 " style="border-left: 4px solid #fd5523 !important; background: #fff;     border-right: 3px solid #cccccc5c !important;
-    border-top: 3px solid #cccccc5c !important;
-    border-bottom: 3px solid #cccccc5c !important;">
+                        <div class="card border-0 mb-4 rounded-3 " style="border-left: 4px solid #fd5523 !important;
+    background: #fff;
+    border-right: 3px solid #ccccccb8 !important;
+    border-top: 3px solid #ccccccb8 !important;
+    border-bottom: 3px solid #ccccccb8 !important;
+    border-radius: 10px !important;">
                             <div class="card-body p-md-4 p-3">
                                 <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-3">
                                     <div>
