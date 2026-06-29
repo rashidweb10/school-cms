@@ -40,8 +40,29 @@
 }
 
 .orange_btn1 {
-    background: #ea531c;
+       background: #ea531c;
     border: 1px solid;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+
+div#applyModal .modal-header {
+    padding: 25px 30px !important;
+}
+
+div#applyModal .modal-body {
+    padding: 25px 30px;
+}
+
+div#applyModal .modal-footer {
+    padding: 25px 30px !important;
+}
+
+.border_bottom_div p {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 7px;
+    padding-top: 6px;
+    font-size: 14px;
 }
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
@@ -155,7 +176,7 @@
         <input type="hidden" name="counselor_email_id" id="modalEmailIdInput" value="">
         <div class="modal-body">
 
-        <div class="mb-3" id="modalDisplayValues">
+        <div class="mb-3 border_bottom_div" id="modalDisplayValues">
             <p style="margin-bottom: 0;"><strong>Job Code:</strong> <span id="displayJobCode"></span></p>
             <p style="margin-bottom: 0;"><strong>Industry:</strong> <span id="displayIndustry"></span></p>
             <p style="margin-bottom: 0;"><strong>Admission Counselor:</strong> <span id="displayAdmissionCounselor"></span></p>
@@ -164,22 +185,26 @@
             <p style="margin-bottom: 0;"><strong>Counselor Email ID:</strong> <span id="displayEmailId"></span></p>
         </div>
 
-          <div class="mb-3">
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
             <label for="applicantName" class="form-label">Name</label>
             <input type="text" class="form-control" id="applicantName" name="name" required>
           </div>
-          <div class="mb-3">
+          <div class="col-md-6 mb-3">
             <label for="applicantEmail" class="form-label">Email</label>
             <input type="email" class="form-control" id="applicantEmail" name="email" required>
           </div>
-          <div class="mb-3">
+          <div class="col-md-12 mb-3">
             <label for="applicantResume" class="form-label">Attach Resume (PDF/DOC/DOCX, max 2 MB)</label>
             <input type="file" class="form-control" id="applicantResume" name="resume" accept=".pdf,.doc,.docx" required>
           </div>
         </div>
+          
+        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success">Submit Application</button>
+          <button type="button" class="btn btn-secondary btn btn-sm btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2 text-white" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-sm rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2">Submit Application</button>
         </div>
       </form>
     </div>
