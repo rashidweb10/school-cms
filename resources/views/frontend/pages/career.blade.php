@@ -101,6 +101,10 @@ label.form-label {
 .font_mobles {
     font-size: 20px !important;
 }
+
+p, a, li, span {
+    font-weight: inherit !important;
+}
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
