@@ -75,8 +75,11 @@ div#applyModal .modal-footer {
     font-weight: 400;
 }
 .ListContainerWrapper li {
-    text-align: left;
+    text-align: left; 
 }
+p, a, li, span {
+    font-weight: inherit !important;
+} 
 @media(max-width:767px)
 {
     .custom_badge {
@@ -99,12 +102,10 @@ label.form-label {
     font-size: 14px;
 }
 .font_mobles {
-    font-size: 20px !important;
+    font-size: 20px !important; 
+}
 }
 
-p, a, li, span {
-    font-weight: inherit !important;
-}
 </style>
 <section class="career-section pb-md-5 pb-4 mt-0">
     <div class="container">
