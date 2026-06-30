@@ -178,7 +178,7 @@ label.form-label {
                                                 <i class="fa-solid fa-envelope"></i> {{ $email_id }}
                                             </a>
                                         @endif
-                                        <button type="button" class="btn btn-sm rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2 apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
+                                        <button type="button" class="btn btn-sm btn-primary rounded-pill orange_btn1 px-3 py-2 d-flex align-items-center gap-2 apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-index="{{ $index }}" data-job-code="{{ config('custom.school_code') }}{{ $career['job_code'][$index] ?? '' }}" data-industry="{{ $career['industry'][$index] ?? '' }}" data-admission-counselor="{{ $career['admission_counselor'][$index] ?? '' }}" data-job-type="{{ $career['job_type'][$index] ?? '' }}" data-contact-number="{{ $career['contact_number'][$index] ?? '' }}" data-email-id="{{ $career['email_id'][$index] ?? '' }}">Apply Now</button>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@ label.form-label {
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="applyModalLabel"><span class="roboto text_color heding_size">Apply for <span id="modalJobCode"></span></span> - <span id="modalIndustry"></span></h5>
+        <h5 class="modal-title" id="applyModalLabel"><span class="roboto text_color heding_size">Apply for <span id="modalJobCode"></span></span> </br> <span id="modalIndustry"></span></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="POST" action="{{ route('form.submit') }}" enctype="multipart/form-data" onsubmit="protect_with_recaptcha_v3(this, 'career')">
@@ -220,10 +220,10 @@ label.form-label {
         <div class="mb-3 border_bottom_div" id="modalDisplayValues">
             <p style="margin-bottom: 0;"><strong>Job Code:</strong> <span id="displayJobCode"></span></p>
             <p style="margin-bottom: 0;"><strong>Industry:</strong> <span id="displayIndustry"></span></p>
-            <p style="margin-bottom: 0;"><strong>Admission Counselor:</strong> <span id="displayAdmissionCounselor"></span></p>
+            <p style="margin-bottom: 0;"><strong>Category:</strong> <span id="displayAdmissionCounselor"></span></p>
             <p style="margin-bottom: 0;"><strong>Job Type:</strong> <span id="displayJobType"></span></p>
-            <p style="margin-bottom: 0;"><strong>Counselor Contact Number:</strong> <span id="displayContactNumber"></span></p>
-            <p style="margin-bottom: 0;"><strong>Counselor Email ID:</strong> <span id="displayEmailId"></span></p>
+            <p style="margin-bottom: 0;"><strong>Contact Number:</strong> <span id="displayContactNumber"></span></p>
+            <p style="margin-bottom: 0;"><strong>Email ID:</strong> <span id="displayEmailId"></span></p>
         </div>
 
 
