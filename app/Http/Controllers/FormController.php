@@ -57,6 +57,11 @@ class FormController extends Controller
 
         $recipientEmail = [$recipientEmail, 'enquiry@newhorizonsms.org'];
         $recipientEmail = ['enquiry@newhorizonsms.org'];
+
+        if($formName == 'career') {
+            $recipientEmail = ['hr@newhorizonsms.org'];
+
+        }
             
         try {
             Mail::to($recipientEmail)
