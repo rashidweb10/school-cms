@@ -114,11 +114,11 @@ class FormController extends Controller
                     'name' => 'required|string|max:50',
                     'email' => 'required|email|max:50',
                     'resume' => 'required|file|mimes:pdf,doc,docx|max:2048', // max 2MB
-                    'job_code' => 'required|string|max:50',
-                    'industry' => 'required|string|max:50',
-                    'admission_counselor' => 'nullable|string|max:50',
+                    'job_code' => 'required|string|max:200',
+                    'industry' => 'required|string|max:500',
+                    'admission_counselor' => 'nullable|string|max:100',
                     'job_type' => 'required|string|max:50',
-                    'counselor_contact_number' => 'nullable|string|max:20',
+                    'counselor_contact_number' => 'nullable|string|max:50',
                     'counselor_email_id' => 'nullable|string|max:50',
                     // optional extra fields can be added here
                 ];
