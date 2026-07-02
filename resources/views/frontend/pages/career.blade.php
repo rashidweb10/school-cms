@@ -80,6 +80,10 @@ div#applyModal .modal-footer {
 p, a, li, span {
     font-weight: inherit !important;
 } 
+.orange_btn {
+    border: 1px solid #000;
+    text-decoration:none;
+}
 @media(max-width:767px)
 {
     .custom_badge {
@@ -174,12 +178,12 @@ label.form-label {
                                     
                                     <div class="d-flex flex-wrap gap-2 gap-md-3 mt-2 mt-md-0">
                                         @if($contact_number)
-                                            <a href="tel:{{ $contact_number }}" class="btn btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
+                                            <a class=" btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
                                                 <i class="fa-solid fa-phone"></i> {{ $contact_number }}
                                             </a>
                                         @endif
                                         @if($email_id)
-                                            <a href="mailto:{{ $email_id }}" class="btn btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
+                                            <a class=" btn-sm btn-outline-dark rounded-pill orange_btn px-3 py-2 d-flex align-items-center gap-2" style="font-size: 13px;">
                                                 <i class="fa-solid fa-envelope"></i> {{ $email_id }}
                                             </a>
                                         @endif
@@ -228,7 +232,7 @@ label.form-label {
             <p style="margin-bottom: 0;"><strong>Category:</strong> <span id="displayAdmissionCounselor"></span></p>
             <p style="margin-bottom: 0;"><strong>Job Type:</strong> <span id="displayJobType"></span></p>
             <p style="margin-bottom: 0;"><strong>Contact Number:</strong> <span id="displayContactNumber"></span></p>
-            <p style="margin-bottom: 0;"><strong>Email ID:</strong> <span id="displayEmailId"></span></p>
+            <!--<p style="margin-bottom: 0;"><strong>Email ID:</strong> <span id="displayEmailId"></span></p>-->
         </div>
 
 
