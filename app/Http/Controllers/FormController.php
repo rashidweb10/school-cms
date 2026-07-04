@@ -59,7 +59,7 @@ class FormController extends Controller
         $recipientEmail = ['enquiry@newhorizonsms.org'];
 
         if($formName == 'career') {
-            $recipientEmail = ['test.mail@newhorizonsms.org', 'rashidk.developer@gmail.com'];
+            $recipientEmail = ['hr@newhorizonsms.org', 'test.mail@newhorizonsms.org'];
 
         }
             
