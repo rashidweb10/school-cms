@@ -26,7 +26,18 @@ class FormSubmissionMail extends Mailable
 
     public function build()
     {
-        return $this->subject(config('custom.app_name'))
+
+    // Default subject
+    $subject = 'New Enquiry Submission | ' . config('custom.app_name');
+
+    // Custom subject for Career form
+    if ($this->formName === 'career') {
+        $name = $this->data['name'] ?? 'Candidate';
+        $jobCode = $this->data['job_code'] ?? 'N/A';
+
+        $subject = 'New Career Application Submission | ' . config('custom.app_name') . ' | ' . $name . ' (Job Code: ' . $jobCode . ')';
+    }    
+        return $this->subject($subject)
                     ->markdown('emails.form_submission');
     }
 }
