@@ -35,7 +35,7 @@ class FormSubmissionMail extends Mailable
         $name = $this->data['name'] ?? 'Candidate';
         $jobCode = $this->data['job_code'] ?? 'N/A';
 
-        $subject = 'New Career Application Submission | ' . config('custom.app_name') . ' | ' . $name . ' (Job Code: ' . $jobCode . ')';
+        $subject = $name . ' - ' . $jobCode;
     }    
         return $this->subject($subject)
                     ->markdown('emails.form_submission');
