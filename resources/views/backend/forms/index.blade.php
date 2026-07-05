@@ -116,7 +116,7 @@
                                 <td>{{ $row->phone }}</td>
                                 @foreach ($extraColumns as $col)
                                     @if($col == 'resume' && !empty($formData[$col]))
-                                        <td><a href="{{ $row->company?->website . '/storage/' . $formData[$col] }}" target="_blank" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        <td><a href="{{ $row->company?->website . '/storage/' . $formData[$col] }}" target="_blank" class="btn btn-sm btn-outline-primary">Download CV</a></td>
                                     @else
                                         <td>{{ $formData[$col] ?? '-' }}</td>
                                     @endif  
