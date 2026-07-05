@@ -44,22 +44,22 @@ class FormController extends Controller
             $q->whereIn('meta_key', ['general_enquiry', 'admission_enquiry']);
         }])->where('id', $companyId)->first();
 
-        $generalEnquiry = $company->meta->where('meta_key', 'general_enquiry')->first()->meta_value ?? config('mail.from.address');
-        $admissionEnquiry = $company->meta->where('meta_key', 'admission_enquiry')->first()->meta_value ?? config('mail.from.address');
+        //$generalEnquiry = $company->meta->where('meta_key', 'general_enquiry')->first()->meta_value ?? config('mail.from.address');
+        //$admissionEnquiry = $company->meta->where('meta_key', 'admission_enquiry')->first()->meta_value ?? config('mail.from.address');
 
         // Determine recipient email
-        $recipientEmail = ($request->filled('enquiry_type') && $request->input('enquiry_type') === 'Admission')
-            ? $admissionEnquiry
-            : $generalEnquiry;        
+        // $recipientEmail = ($request->filled('enquiry_type') && $request->input('enquiry_type') === 'Admission')
+        //     ? $admissionEnquiry
+        //     : $generalEnquiry;        
         
         // Mail::to(config('mail.from.address'))
         //     ->queue(new FormSubmissionMail($formName, $validatedData));
 
-        $recipientEmail = [$recipientEmail, 'enquiry@newhorizonsms.org'];
-        $recipientEmail = ['enquiry@newhorizonsms.org'];
+        //$recipientEmail = [$recipientEmail, 'enquiry@newhorizonsms.org'];
+        $recipientEmail = ['enquiry@newhorizonsms.org']; //enquiry@newhorizonsms.org test.mail@newhorizonsms.org
 
         if($formName == 'career') {
-            $recipientEmail = ['hr@newhorizonsms.org'];
+            $recipientEmail = ['test.mail@newhorizonsms.org']; //hr@newhorizonsms.org test.mail@newhorizonsms.org
 
         }
             
