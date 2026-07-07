@@ -220,9 +220,9 @@ label.form-label {
         <input type="hidden" name="form_name" value="career">
         <input type="hidden" name="job_code" id="modalJobCodeInput" value="">
         <input type="hidden" name="industry" id="modalIndustryInput" value="">
-        <input type="hidden" name="admission_counselor" id="modalAdmissionCounselorInput" value="">
+        <input type="hidden" name="category" id="modalAdmissionCounselorInput" value="">
         <input type="hidden" name="job_type" id="modalJobTypeInput" value="">
-        <input type="hidden" name="counselor_contact_number" id="modalContactNumberInput" value="">
+        <input type="hidden" name="contact_number" id="modalContactNumberInput" value="">
         <input type="hidden" name="counselor_email_id" id="modalEmailIdInput" value="">
         <div class="modal-body">
 
