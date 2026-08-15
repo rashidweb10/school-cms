@@ -13,7 +13,11 @@
               <li><a href="{{route('events')}}"> Events</a></li>
               <li><a href="{{route('curriculum')}}"> Curriculum</a></li>
               <li><a href="{{route('alumini')}}"> Alumni</a></li>
-              <li><a target="_blank" href="{{ central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}"> BROCHURE</a></li>
+              <li>
+                  <a target="_blank" href="{{ get_setting('brochure_url') ?: central_asset(uploaded_asset(get_setting('brochure_attachment', '#'))) }}">
+                      BROCHURE
+                  </a>
+              </li>              
               @endif
             </ul>
             <ul class="footer-menu">

@@ -109,7 +109,7 @@
                                     ADMISSION
                                 </a>
                             </li>
-                            
+                            brochure_attachment
                             
                             <!-- Old Code-->
                             <!--
