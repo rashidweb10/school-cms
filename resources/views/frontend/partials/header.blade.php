@@ -211,7 +211,7 @@
                                                     </ul>
                                                     @endif
                                                 </li>
-                                                @endif
+                                                {{-- @endif --}}
                                                 <!-- <li><a href="{{route('career')}}"><img src="{{ asset('assets/frontend/img/icon-nh-w.png') }}"> Careers</a></li> -->
                                             </ul>
                                         </li>
