@@ -193,6 +193,24 @@
         color: #fff;
         background-color: #E31E24;
     }
+
+    .results-attachment {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .results-attachment a {
+        color: #000;
+        background-color: #fdee9d;
+        border-radius: 6px;
+        font-weight: 700;
+        padding: 18px 25px;
+    }
+
+    .results-attachment a:hover {
+        color: #fff;
+        background-color: #E31E24;
+    }
 </style>
 
 
@@ -238,6 +256,14 @@
                 @endforeach
             @endif
         </div>
+
+        @if(!empty($results['attachment']))
+            <div class="results-attachment" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                <a href="{{ central_asset(uploaded_asset($results['attachment'])) }}" target="_blank" rel="noopener" class="btn">
+                    VIEW PDF FILE
+                </a>
+            </div>
+        @endif
     </div>
 </section>
 

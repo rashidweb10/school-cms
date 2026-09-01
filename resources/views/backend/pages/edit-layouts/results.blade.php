@@ -90,5 +90,24 @@
         data-target=".results-target">
         <i class="ti ti-plus"></i>
         <span class="ml-2">Add More</span>
-    </button>     
+    </button>
+
+    <div class="col-md-12 mt-3">
+        <div class="form-group mb-2">
+            <label for="results-attachment" class="form-label">Attachment</label>
+            <div class="input-group" data-toggle="aizuploader" data-type="document" data-multiple="false">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                </div>
+                <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                <input
+                    id="results-attachment"
+                    type="hidden"
+                    name="meta[results][attachment]"
+                    class="selected-files"
+                    value="{{ $results['attachment'] ?? '' }}">
+            </div>
+            <div class="file-preview box sm"></div>
+        </div>
+    </div>
 </div>
