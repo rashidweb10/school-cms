@@ -260,7 +260,7 @@ $(document).ready(function() {
         "ordering": true,
         "searching": true,
         order: [[3, 'desc']]
-    });
+    }); //
 
     // Step 1: Extract available years from non-blank year cells
     var years = new Set();
