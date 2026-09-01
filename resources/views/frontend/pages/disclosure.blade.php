@@ -26,6 +26,14 @@
             </div>
         @endforeach
     @endif
+
+    @if(!empty($disclosure['attachment']))
+        <div class="disclosure-attachment" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <a href="{{ central_asset(uploaded_asset($disclosure['attachment'])) }}" target="_blank" rel="noopener" class="btn">
+                VIEW PDF FILE
+            </a>
+        </div>
+    @endif
 </section>
 
 <style>
@@ -76,6 +84,24 @@
         text-decoration: none;
         color: #111;
         font-weight: 600;
+    }
+
+    .disclosure-attachment {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .disclosure-attachment a {
+        color: #000;
+        background-color: #fdee9d;
+        border-radius: 6px;
+        font-weight: 700;
+        padding: 18px 25px;
+    }
+
+    .disclosure-attachment a:hover {
+        color: #fff;
+        background-color: #E31E24;
     }
 </style>
 
