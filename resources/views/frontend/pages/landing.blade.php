@@ -70,44 +70,23 @@
               </a>  
                 
                 <h4 class="robot_slab text_color pt-70">Admission Enquiry Form</h4>
-                <!-- <p><b>AY - {{ now()->year }} - {{ now()->year + 1 }}</b></p> -->
-                <!-- <p><b>{{get_setting('admission_year')}}</b></p> -->
-                <p><b>AY 2026-2027</b></p>
-                 <!-- <p class="foranyclass"><b>For AY 2025-2026 directly fill the form from respective school website.</b></p> -->
+                <p><b>AY {{get_setting('admission_year')}}</b></p>
                 <style>
-                .foranyclass {
- font-size: 15px;
-    line-height: 36px;
-    position: absolute;
-    font-weight: 400;
-    margin-top: -128px;
-    margin-left: 15px;
-    border-radius: 5px;
-    transform: skew(-18deg);
-    width: 700px;
-    background: #fff;
-    padding: 2px 10px;
-    text-align: center;
-}
+                  .foranyclass {
+                    font-size: 15px;
+                    line-height: 36px;
+                    position: absolute;
+                    font-weight: 400;
+                    margin-top: -128px;
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    transform: skew(-18deg);
+                    width: 700px;
+                    background: #fff;
+                    padding: 2px 10px;
+                    text-align: center;
+                  }
                 </style>
-
-              <!-- <div class="radio_buttons">
-                <div class="">
-                    <input type="radio" id="General-Enquiry" name="fav_language" value="HTML">
-                    <label for="General-Enquiry">General Enquiry</label>
-                </div>
-
-                <div class="">
-                    <input type="radio" id="Admission-Counseling" name="fav_language" value="CSS">
-                    <label for="Admission-Counseling">Admission Counseling</label>
-                </div>
-              </div> -->
-
-                @php
-                    $currentYear = date('Y'); // e.g. 2025
-                    $nextYear = $currentYear + 1;
-                    $secondNextYear = $currentYear + 2;
-                @endphp
 
                 <!-- ✅ School Admission Form -->
                 <form method="post" action="{{ route('form.submit') }}" id="admissionForm" onsubmit="protect_with_recaptcha_v3(this, 'admission')">
@@ -198,12 +177,9 @@
                       <div class="form-outline">
                         <select name="academic_year" id="academic_year" class="form-control" required>
                             <option value="">--- Select Academic Year ---</option>
-                            <option value="{{ $currentYear }}-{{ $nextYear }}">
-                                {{ $currentYear }}-{{ $nextYear }}
+                            <option value="{{get_setting('admission_year')}}">
+                                {{get_setting('admission_year')}}
                             </option>
-                            <!-- <option value="{{ $nextYear }}-{{ $secondNextYear }}">
-                                {{ $nextYear }}-{{ $secondNextYear }}
-                            </option> --> <!--R-->
                         </select>
                       </div>
                     </div>
