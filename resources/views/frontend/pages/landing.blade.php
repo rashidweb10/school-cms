@@ -55,7 +55,12 @@
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-7">
-            <p class="foranyclass"><b>For AY {{get_setting('admission_year')}} Mid Term Admission please fill the form directly from respective school website.</b></p>
+            @php
+                $admissionYear = get_setting('admission_year');
+                [$startYear, $endYear] = explode('-', $admissionYear);
+                $previousYear = ($startYear - 1) . '-' . ($endYear - 1);
+            @endphp            
+            <p class="foranyclass"><b>For AY {{$previousYear}} Mid Term Admission please fill the form directly from respective school website.</b></p>
             <div class="text-start mb-md-4 mb-2 pt-4">
               <div class="skew-box ">
                   <p class="roboto text_color"> {!! $banner_title !!} </p>
