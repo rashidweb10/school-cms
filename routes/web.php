@@ -19,6 +19,46 @@ use App\Http\Controllers\Backend\FormController as BackendFormController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\FormController;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Endroid\QrCode\Builder\Builder;
+use Endroid\QrCode\Encoding\Encoding;
+use Endroid\QrCode\ErrorCorrectionLevel;
+use Endroid\QrCode\Writer\PngWriter;
+
+Route::get('/qr', function (Request $request) {
+
+    $data = $request->query('data');
+
+    if (!$data) {
+        abort(400, 'QR data is required.');
+    }
+
+    $logoPath = public_path('assets/frontend/img/logo.png');
+    $hasLogo = is_file($logoPath);
+
+    $result = (new Builder(
+        writer: new PngWriter(),
+        data: $data,
+        encoding: new Encoding('UTF-8'),
+        errorCorrectionLevel: ErrorCorrectionLevel::High,
+        size: 600,
+        margin: 20,
+        logoPath: $hasLogo ? $logoPath : '',
+        logoResizeToWidth: $hasLogo ? 108 : null,
+        logoPunchoutBackground: $hasLogo,
+    ))->build();
+
+    return response(
+        $result->getString(),
+        200,
+        [
+            'Content-Type' => 'image/png',
+            'Cache-Control' => 'public, max-age=86400',
+        ]
+    );
+});
+
 Route::prefix('command')->group(function () {
     Route::get('cache-clear', [CommandController::class, 'cacheClear']);
     Route::get('config-clear', [CommandController::class, 'configClear']);
