@@ -31,10 +31,10 @@
               <div>
                 <h5 class="mb-1 fs16">Phone Number:</h5>
                 <p class="mb-0">
-                      <u>Admission Office:</u> <a href="tel:7738292703" class=" text-decoration-none" style="color:#000;">{{get_setting('phone')}}  </a>
+                      <u>Admission Office:</u> <a href="tel:{{get_setting('phone')}}" class=" text-decoration-none" style="color:#000;">{{get_setting('phone')}}  </a>
                 </p>
                  <p class="mb-0">
-                      <u>Office:</u><a href="tel:022-25972729" class=" text-decoration-none" style="color:#000;"> {{get_setting('phone2')}}</a>
+                      <u>Office:</u><a href="tel:{{get_setting('phone2')}}" class=" text-decoration-none" style="color:#000;"> {{get_setting('phone2')}}</a>
                 </p>
               </div>
             </div>
