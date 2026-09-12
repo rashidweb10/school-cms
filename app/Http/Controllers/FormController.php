@@ -89,7 +89,7 @@ class FormController extends Controller
                 "ClassMasterID"    => $request->input('class_id'),
                 "EnquiryChannelID" => $request->input('enquiry_channel_id'),
                 "GenderID"         => 3,
-                "UtmSource"        => "",
+                "UtmSource"        => $request->filled('utm_source') ? $request->input('utm_source') : 'website',
                 "UtmMedium"        => "",
                 "UtmCampaign"      => "",
                 "UtmTerm"          => "",
@@ -141,6 +141,7 @@ class FormController extends Controller
                     'child_middle_name' => 'max:50',
                     'child_last_name' => 'required|string|max:50',                 
                     'academic_year' => 'required|string|max:20',                 
+                    'utm_source' => 'nullable|string|max:100',
                 ];
             case 'contact':
                 return [

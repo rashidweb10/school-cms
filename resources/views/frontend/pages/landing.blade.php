@@ -98,6 +98,7 @@
                   @include('frontend.components.form-alert')
                   @csrf
                   <input type="hidden" name="form_name" value="landing">
+                  <input type="hidden" name="utm_source" value="{{ request()->filled('utm_source') ? request('utm_source') : 'website' }}">
                   <input type="hidden" name="company_id" value="{{config('custom.school_id')}}">
                   <input type="hidden" name="school_short_name" value="">
                   <input type="hidden" name="class_id" value="">
