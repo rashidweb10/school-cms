@@ -27,15 +27,15 @@
 
                             <h4 class="text_color mb-4">Referring / Existing Student's Details</h4>
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-4 mb-3">
                                     <label class="form-label" for="name">Existing Student Contact Name</label>
                                     <input id="name" type="text" name="name" value="{{ old('name') }}" class="form-control" required>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-4 mb-3">
                                     <label class="form-label" for="email">Existing Student Contact Email</label>
                                     <input id="email" type="email" name="email" value="{{ old('email') }}" class="form-control" required>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-4 mb-3">
                                     <label class="form-label" for="phone">Existing Student Contact Phone</label>
                                     <input id="phone" type="tel" name="phone" value="{{ old('phone') }}" class="form-control" inputmode="numeric" required>
                                 </div>
