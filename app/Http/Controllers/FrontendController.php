@@ -79,8 +79,12 @@ class FrontendController extends Controller
         ->where('slug', 'referral')
         ->where('company_id', config('custom.school_id'))
         ->firstOrFail();
-    
-        return view('frontend.pages.common', compact('pageData'));
+
+        // Keep the school and standard data aligned with the admission form.
+        // This is the EduSprint export used by the landing-page form.
+        $schoolExportData = get_school_export_data();
+
+        return view('frontend.pages.referral', compact('pageData', 'schoolExportData'));
     } 
 
     public function roadmap()
@@ -293,4 +297,3 @@ class FrontendController extends Controller
     }
     
 }
-

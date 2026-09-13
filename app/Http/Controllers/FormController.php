@@ -153,6 +153,24 @@ class FormController extends Controller
                     'message' => 'required|string|max:150',
                     'enquiry_type' => 'nullable|string|max:20',
                 ];
+            case 'referral':
+                return [
+                    'form_name' => 'required|in:referral',
+                    // These three values are intentionally the common form
+                    // fields and are stored in the forms table columns.
+                    'name' => 'required|string|max:50',
+                    'email' => 'required|email|max:50',
+                    'phone' => 'required|digits_between:10,15|max:15',
+                    // All referral-specific details are stored in form_data.
+                    'existing_student_school' => 'required|string|max:150',
+                    'existing_student_grade' => 'required|string|max:50',
+                    'referred_child_name' => 'required|string|max:100',
+                    'referred_child_school' => 'required|string|max:150',
+                    'referred_child_grade' => 'required|string|max:50',
+                    'parent_name' => 'required|string|max:50',
+                    'parent_email' => 'required|email|max:50',
+                    'parent_phone' => 'required|digits_between:10,15|max:15',
+                ];
             default:
                 return [
                     'form_name' => 'required|max:20',
