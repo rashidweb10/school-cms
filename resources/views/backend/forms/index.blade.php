@@ -85,8 +85,8 @@
                                     <th class="w-10">{{ ucfirst(str_replace('_', ' ', $col)) }}</th>
                                 @endforeach   
                                 
-                                @if(request()->segment(3) === 'landing') 
-                                    <th class="w-10">1NH API Response</th>
+                                @if(in_array(request()->segment(3), ['landing', 'referral']))
+                                    <th class="w-10">CRM Response</th>
                                 @endif                                
                                 
                                 <th class="w-10">
@@ -122,8 +122,7 @@
                                     @endif  
                                 @endforeach    
                                 
-                                {{-- Only for admission --}}
-                                @if(request()->segment(3) === 'landing')
+                                @if(in_array(request()->segment(3), ['landing', 'referral']))
                                     <td>
                                         {{$row->edu_response}}
                                     </td>

@@ -105,9 +105,94 @@ class FormController extends Controller
             return redirect()->route('thankyou', [
                 'name' => $request->input('name') // pass name to thank-you page
             ]);
-        }        
+        }
+
+        if ($formName === 'referral') {
+            $student = $this->buildReferralCrmPayload($validatedData);
+            $eduResponse = $student ? create_student_enquiry($student) : false;
+
+            $form->update([
+                'edu_response' => $eduResponse,
+            ]);
+
+            logger('Referral CRM submission completed.', [
+                'form_id' => $form->id,
+                'crm_success' => $eduResponse !== false,
+            ]);
+        }
 
         return redirect()->back()->with('success', 'Enquiry submitted successfully');
+    }
+
+    /**
+     * Build the exact EduSprint enquiry shape used by the landing form.
+     *
+     * The CRM IDs are resolved on the server from the EduSprint school export;
+     * request-provided IDs are never accepted from the browser.
+     */
+    private function buildReferralCrmPayload(array $data): ?array
+    {
+        $schools = data_get(get_school_export_data(), 'SchoolGroupList.0.SchoolList', []);
+        $school = collect($schools)->first(
+            fn ($school) => ($school['SchoolName'] ?? null) === $data['referred_child_school']
+        );
+
+        if (!$school) {
+            logger()->warning('Referral CRM payload could not be created: school not found.', [
+                'school' => $data['referred_child_school'],
+            ]);
+
+            return null;
+        }
+
+        $schoolClass = collect($school['ClassList'] ?? [])->first(
+            fn ($class) => ($class['ClassName'] ?? null) === $data['referred_child_grade']
+        );
+        $onlineChannel = collect($school['EnquiryChannel'] ?? [])->first(
+            fn ($channel) => ($channel['EnquiryChannelName'] ?? null) === 'Online'
+        );
+
+        if (!$schoolClass || !$onlineChannel) {
+            logger()->warning('Referral CRM payload could not be created: standard or Online channel not found.', [
+                'school' => $data['referred_child_school'],
+                'standard' => $data['referred_child_grade'],
+            ]);
+
+            return null;
+        }
+
+        $nameParts = preg_split('/\s+/', trim($data['referred_child_name']), -1, PREG_SPLIT_NO_EMPTY);
+        $firstName = array_shift($nameParts);
+        $lastName = count($nameParts) ? array_pop($nameParts) : '';
+
+        return [
+            'ShortName' => $school['ShortName'],
+            'Description' => get_setting('admission_year'),
+            'ChildFirstName' => $firstName,
+            'ChildMiddleName' => implode(' ', $nameParts),
+            'ChildLastName' => $lastName,
+            'ContactEmailID' => $data['parent_email'],
+            'ContactMobileNo' => $data['parent_phone'],
+            'DOB' => '1970-01-01 00:00:00',
+            'ClassMasterID' => $schoolClass['ClassMasterID'],
+            'EnquiryChannelID' => $onlineChannel['EnquiryChannelID'],
+            'GenderID' => 3,
+            'UtmSource' => 'parent-referral',
+            'UtmMedium' => 'website',
+            'UtmCampaign' => 'parent-referral',
+            'UtmTerm' => '',
+            // EduSprint's enquiry API does not expose dedicated referral
+            // fields. Keep the remaining referral details with the CRM lead
+            // in its supported UTM content field.
+            'UtmContent' => implode(' | ', [
+                'Existing student: ' . $data['name'],
+                'Email: ' . $data['email'],
+                'Phone: ' . $data['phone'],
+                'School: ' . $data['existing_student_school'],
+                'Grade: ' . $data['existing_student_grade'],
+                'Referred parent: ' . $data['parent_name'],
+            ]),
+        ];
     }
 
     private function getValidationRules($formName)
