@@ -19,8 +19,8 @@ label.error {
 }
 
 .dashboard-stat-title {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     margin: 0 0 14px;
@@ -46,8 +46,8 @@ label.error {
 }
 
 .dashboard-stat-count {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 36px;
+    font-weight: 600;
     color: #1e293b;
     line-height: 1;
     letter-spacing: -0.02em;
