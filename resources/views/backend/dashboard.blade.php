@@ -69,57 +69,43 @@
         return \App\Models\Visitor::when(auth()->user()?->company_id, function ($query, $companyId) {
             return $query->where('company_id', auth()->user()->company_id);
         })->count();
-    });    
+    });
+
+    $teamCategoryCount = \App\Models\TeamCategory::when(auth()->user()?->company_id, function ($query, $companyId) {
+        return $query->where('company_id', $companyId);
+    })->count();
      
 @endphp
 
-<div class="page-title-head d-flex align-items-center gap-2">
+<div class="page-title-head d-flex align-items-center gap-2 mb-3">
     <div class="flex-grow-1">
-        <h4 class="fs-16 text-uppercase fw-bold mb-0">Dashboard</h4>
+        <h4 class="fs-13 text-uppercase fw-bold mb-0 text-dark">Dashboard</h4>
     </div>
 </div>
 
-<div class="row justify-content-center">
+<div class="row g-3 dashboard-stat-grid">
     @include('backend.includes.dashboard-card', [
         'name' => 'Pages',
-        'icon' => 'ti ti-pencil',
+        'icon' => 'ti ti-paperclip',
         'count' => $pageCount,
         'url' => route('pages.index'),
-    ])
-
-    @include('backend.includes.dashboard-card', [
-        'name' => 'Teams',
-        'icon' => 'ti ti-users',
-        'count' => $teamCount,
-        'url' => route('teams.index'),
-    ])
-
-    @include('backend.includes.dashboard-card', [
-        'name' => 'Campus',
-        'icon' => 'ti ti-building',
-        'count' => $campusCount,
-        'url' => route('campuses.index'),
-    ])
-
-    @include('backend.includes.dashboard-card', [
-        'name' => 'Event Galleries',
-        'icon' => 'ti ti-library-photo',
-        'count' => $eventCount,
-        'url' => route('galleries.index'),
+        'color' => '#3b82f6',
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Media Uploads',
-        'icon' => 'ti ti-file-upload',
+        'icon' => 'ti ti-file',
         'count' => $mediaCount,
         'url' => route('uploaded-files.index'),
+        'color' => '#10b981',
     ])
 
     @include('backend.includes.dashboard-card', [
         'name' => 'Form Submissions',
-        'icon' => 'ti ti-message-question',
+        'icon' => 'ti ti-clipboard',
         'count' => $formCount,
         'url' => route('forms.by', ['form_name' => (auth()->user()->company_id == 1) ? 'admission' : 'contact']),
+        'color' => '#f59e0b',
     ])
 
     @include('backend.includes.dashboard-card', [
@@ -127,6 +113,39 @@
         'icon' => 'ti ti-world',
         'count' => $visitors,
         'url' => '',
-    ])   
+        'color' => '#a855f7',
+    ])
+
+    @include('backend.includes.dashboard-card', [
+        'name' => 'Teams',
+        'icon' => 'ti ti-school',
+        'count' => $teamCount,
+        'url' => route('teams.index'),
+        'color' => '#ef4444',
+    ])
+
+    @include('backend.includes.dashboard-card', [
+        'name' => 'Team Categories',
+        'icon' => 'ti ti-apps',
+        'count' => $teamCategoryCount,
+        'url' => route('team-categories.index'),
+        'color' => '#06b6d4',
+    ])
+
+    @include('backend.includes.dashboard-card', [
+        'name' => 'Event Galleries',
+        'icon' => 'ti ti-photo',
+        'count' => $eventCount,
+        'url' => route('galleries.index'),
+        'color' => '#ec4899',
+    ])
+
+    @include('backend.includes.dashboard-card', [
+        'name' => 'Campus',
+        'icon' => 'ti ti-building',
+        'count' => $campusCount,
+        'url' => route('campuses.index'),
+        'color' => '#14b8a6',
+    ])
 </div>
 @endsection
