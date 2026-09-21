@@ -478,128 +478,87 @@
 @section('scripts')
 <script>
 $(document).ready(function () {
-    const $schoolSelect = $('select[name="school"]');
-    const $allOptions = $schoolSelect.find('option');
-
-    // Hide all school options except the first one on page load
-    $allOptions.not(':first').hide();
-
-    // $('select[name="city"]').on('change', function () {
-    //     const city = $(this).val();
-
-    //     // Reset school dropdown
-    //     $schoolSelect.val('');
-    //     $allOptions.not(':first').hide(); // Hide all school options
-
-    //     // Show specific schools based on selected city
-    //     if (city === 'Thane') {
-    //         $allOptions.filter(function () {
-    //             return $(this).attr('data-id') === '2' || $(this).attr('data-id') === '3' || $(this).attr('data-id') === '4' || $(this).attr('data-id') === '5';
-    //         }).show();
-    //     } else if (city === 'Navi Mumbai') {
-    //         $allOptions.filter(function () {
-    //             return $(this).attr('data-id') === '6' || $(this).attr('data-id') === '7';
-    //         }).show();
-    //     } else if (city === 'Panvel') {
-    //         $allOptions.filter(function () {
-    //             return $(this).attr('data-id') === '8';
-    //         }).show();
-    //     }
-    // });
-
-    $('select[name="city"]').on('change', function () {
-        const city = $(this).val();
-
-        const $allOptions = $schoolSelect.find('option');
-
-        // Reset school dropdown
-        $schoolSelect.val('');
-        $allOptions.not(':first').hide(); // Hide all school options
-
-        // Show specific schools based on selected city
-        if (city === 'Thane') {
-            $allOptions.filter(function () {
-                //console.log($(this).attr('data-short-name'));
-                return $(this).attr('data-short-name') === 'nhssvl' || $(this).attr('data-short-name') === 'nhsst' || $(this).attr('data-short-name') === 'nhssr' || $(this).attr('data-short-name') === 'nhisr';
-            }).show();
-        } else if (city === 'Navi Mumbai') {
-            $allOptions.filter(function () {
-                //console.log($(this).attr('data-short-name'));
-                return $(this).attr('data-short-name') === 'nhssa' || $(this).attr('data-short-name') === 'nhpsa' || $(this).attr('data-short-name') === 'nhpsapc' || $(this).attr('data-short-name') === 'nhpsas3';
-            }).show();
-        } else if (city === 'Panvel') {
-            $allOptions.filter(function () {
-                //console.log($(this).attr('data-short-name'));
-                return $(this).attr('data-short-name') === 'nhpsp';
-            }).show();
-        }
-    });
-
-    // $schoolSelect.on('change', function () {
-    //   const selectedDataId = $(this).find('option:selected').data('id'); // get data-id
-    //   $('input[name="company_id"]').val(selectedDataId); // set it to the hidden input
-    // });
-
-});
-</script>
-
-<script>
-  $(document).ready(function () {
-    // Your JSON (can come from backend)
-    var jsonData = <?php echo json_encode(get_school_export_data()); ?>; // pass JSON from controller
-    //var jsonData = @json(get_school_export_data());
-
-    var $schoolDropdown = $("#schoolDropdown");
+    var jsonData = <?php echo json_encode(get_school_export_data()); ?>;
+    var $schoolSelect = $('select[name="school"]');
     var $classDropdown = $("#classDropdown");
+    var allSchoolOptions = [];
 
-    // Load schools into dropdown
     var schools = jsonData.SchoolGroupList[0].SchoolList;
     $.each(schools, function (i, school) {
-      $schoolDropdown.append(
-        $("<option>")
-          .val(school.SchoolName)
-          .text(school.SchoolName)
-          .attr("data-short-name", school.ShortName)
-          .attr("data-classes", JSON.stringify(school.ClassList))
-          .attr("data-enquiry-channels", JSON.stringify(school.EnquiryChannel))
-      );
+        var $option = $("<option>")
+            .val(school.SchoolName)
+            .text(school.SchoolName)
+            .attr("data-short-name", school.ShortName)
+            .attr("data-classes", JSON.stringify(school.ClassList))
+            .attr("data-enquiry-channels", JSON.stringify(school.EnquiryChannel));
+        allSchoolOptions.push($option);
     });
 
-    // On school change, load classes
-    $schoolDropdown.on("change", function () {
-      $classDropdown.empty().append('<option value="">--- Select Standard ---</option>');
-
-      var selected = $(this).find(":selected");
-      var classList = JSON.parse(selected.attr("data-classes") || "[]");
-      var enquiryChannels = JSON.parse(selected.attr("data-enquiry-channels") || "[]");
-
-      var websiteChannel = enquiryChannels.find(channel => channel.EnquiryChannelName === "Online");
-      if (websiteChannel) {
-        $('input[name="enquiry_channel_id"]').val(websiteChannel.EnquiryChannelID);
-      }      
-
-      $.each(classList, function (i, cls) {
-        $classDropdown.append(
-          $("<option>")
-            .val(cls.ClassName)
-            .text(cls.ClassName)
-            .attr("data-masterid", cls.ClassMasterID)
-        );
-      });
+    $.each(allSchoolOptions, function (i, $option) {
+        $schoolSelect.append($option);
     });
 
-    // On school change → set hidden fields
+    allSchoolOptions.forEach(function ($option) {
+        $option.detach();
+    });
+
+    $schoolSelect.on("change", function () {
+        $classDropdown.empty().append('<option value="">--- Select Standard ---</option>');
+
+        var selected = $(this).find(":selected");
+        var classList = JSON.parse(selected.attr("data-classes") || "[]");
+        var enquiryChannels = JSON.parse(selected.attr("data-enquiry-channels") || "[]");
+
+        var websiteChannel = enquiryChannels.find(channel => channel.EnquiryChannelName === "Online");
+        if (websiteChannel) {
+            $('input[name="enquiry_channel_id"]').val(websiteChannel.EnquiryChannelID);
+        }
+
+        $.each(classList, function (i, cls) {
+            $classDropdown.append(
+                $("<option>")
+                    .val(cls.ClassName)
+                    .text(cls.ClassName)
+                    .attr("data-masterid", cls.ClassMasterID)
+            );
+        });
+    });
+
     $('select[name="school"]').on('change', function () {
-        const selected = $(this).find('option:selected');
-        $('input[name="school_short_name"]').val(selected.data('short-name')); // school short name
+        var selected = $(this).find('option:selected');
+        $('input[name="school_short_name"]').val(selected.data('short-name'));
     });
 
-    // On class change → set hidden class_id
     $('select[name="standard"]').on('change', function () {
-        const selected = $(this).find('option:selected');
-        $('input[name="class_id"]').val(selected.data('masterid')); // class_id
+        var selected = $(this).find('option:selected');
+        $('input[name="class_id"]').val(selected.data('masterid'));
     });
 
-  });
+    $('select[name="city"]').on('change', function () {
+        var city = $(this).val();
+        $schoolSelect.val('');
+
+        $schoolSelect.find('option').not(':first').detach();
+
+        if (city) {
+            var shortNames = [];
+            if (city === 'Thane') {
+                shortNames = ['nhssvl', 'nhsst', 'nhssr', 'nhisr'];
+            } else if (city === 'Navi Mumbai') {
+                shortNames = ['nhssa', 'nhpsa', 'nhpsapc', 'nhpsas3'];
+            } else if (city === 'Panvel') {
+                shortNames = ['nhpsp'];
+            }
+
+            if (shortNames.length > 0) {
+                $.each(allSchoolOptions, function (i, $option) {
+                    if ($.inArray($option.data('short-name'), shortNames) !== -1) {
+                        $schoolSelect.append($option);
+                    }
+                });
+            }
+        }
+    });
+});
 </script>
 @endsection
