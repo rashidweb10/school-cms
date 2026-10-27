@@ -5,7 +5,7 @@
 
 @section('content')
 
-@include('frontend.partials.breadcrumb', ['title' => $pageData->title])
+{{-- @include('frontend.partials.breadcrumb', ['title' => $pageData->title]) --}}
 
 <section class="pb-md-5 pb-4">
     <div class="container">
