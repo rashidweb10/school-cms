@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.landing-app')
 
 @section('meta.title', $pageData->seo_title)
 @section('meta.description', $pageData->seo_description)
