@@ -9,11 +9,11 @@
 
 <section class="pb-md-5 pb-4 pt-5">
     <div class="container">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-12">
                 {!! $pageData->content !!}
             </div>
-        </div>
+        </div> --}}
 
         <div class="row justify-content-center mt-4">
             <div class="col-lg-10 col-xl-9">
