@@ -178,12 +178,17 @@ class FormController extends Controller
             'EnquiryChannelID' => $onlineChannel['EnquiryChannelID'],
             'GenderID' => 3,
             'UtmSource' => 'parent-referral',
+            'CustomFields' => implode(', ', [
+                $data['name'],
+                $data['email'],
+                $data['phone'],
+                $data['existing_student_school'],
+                $data['existing_student_grade'],
+            ]),
             'UtmMedium' => 'website',
             'UtmCampaign' => 'parent-referral',
             'UtmTerm' => '',
-            // EduSprint's enquiry API does not expose dedicated referral
-            // fields. Keep the remaining referral details with the CRM lead
-            // in its supported UTM content field.
+            // Keep a readable copy of referral context with the CRM lead.
             'UtmContent' => implode(' | ', [
                 'Existing student: ' . $data['name'],
                 'Email: ' . $data['email'],
