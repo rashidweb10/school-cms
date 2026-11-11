@@ -13,12 +13,13 @@
   $about_title2 = $pageData->meta->where('meta_key', 'about_title2')->first()->meta_value ?? '';
   $about_description2 = $pageData->meta->where('meta_key', 'about_description2')->first()->meta_value ?? '';
   $about_image = explode(',', $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '');
-  $mission_title = $pageData->meta->where('meta_key', 'mission_title')->first()->meta_value ?? '';
-  $mission_description = $pageData->meta->where('meta_key', 'mission_description')->first()->meta_value ?? '';
-  $vision_title = $pageData->meta->where('meta_key', 'vision_title')->first()->meta_value ?? '';
-  $vision_description = $pageData->meta->where('meta_key', 'vision_description')->first()->meta_value ?? '';
-  $value_title = $pageData->meta->where('meta_key', 'value_title')->first()->meta_value ?? '';
-  $value_description = $pageData->meta->where('meta_key', 'value_description')->first()->meta_value ?? '';
+  // Temporarily disabled with the Mission, Vision & Values section.
+  // $mission_title = $pageData->meta->where('meta_key', 'mission_title')->first()->meta_value ?? '';
+  // $mission_description = $pageData->meta->where('meta_key', 'mission_description')->first()->meta_value ?? '';
+  // $vision_title = $pageData->meta->where('meta_key', 'vision_title')->first()->meta_value ?? '';
+  // $vision_description = $pageData->meta->where('meta_key', 'vision_description')->first()->meta_value ?? '';
+  // $value_title = $pageData->meta->where('meta_key', 'value_title')->first()->meta_value ?? '';
+  // $value_description = $pageData->meta->where('meta_key', 'value_description')->first()->meta_value ?? '';
   $landing_milestones = json_decode($pageData->meta->where('meta_key', 'landing_milestones')->first()->meta_value ?? '[]', true);
   $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
   $landing_quicklinks = json_decode($pageData->meta->where('meta_key', 'landing_quicklinks')->first()->meta_value ?? '[]', true);
@@ -311,6 +312,7 @@
     </section>
 
 
+{{-- Temporarily disabled Mission, Vision & Values section.
 <section class="vission_mission pt-5 pb-5 position-relative">
   <div class="container">
     <div class="row justify-content-center">
@@ -345,6 +347,7 @@
     </div>
   </div>
 </section>
+--}}
 
 @if(isset($landing_milestones['itration']) && is_array($landing_milestones['itration']))
   <section id="counter" class="statistics-section about-us">
