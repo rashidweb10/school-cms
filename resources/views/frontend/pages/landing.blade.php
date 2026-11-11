@@ -22,6 +22,7 @@
   // $value_title = $pageData->meta->where('meta_key', 'value_title')->first()->meta_value ?? '';
   // $value_description = $pageData->meta->where('meta_key', 'value_description')->first()->meta_value ?? '';
   $landing_milestones = json_decode($pageData->meta->where('meta_key', 'landing_milestones')->first()->meta_value ?? '[]', true);
+  $landing_awards = json_decode($pageData->meta->where('meta_key', 'landing_awards')->first()->meta_value ?? '[]', true);
   $video = $pageData->meta->where('meta_key', 'video')->first()->meta_value ?? '';
   $landing_quicklinks = json_decode($pageData->meta->where('meta_key', 'landing_quicklinks')->first()->meta_value ?? '[]', true);
   $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updates')->first()->meta_value ?? '[]', true);
@@ -280,6 +281,35 @@
            
           </div>
           --}}
+
+          @if(isset($landing_awards['itration']) && is_array($landing_awards['itration']) && count($landing_awards['itration']))
+            <div class="col-lg-7 col-12 landing-awards-column">
+              <section class="landing-awards" aria-labelledby="landing-awards-heading" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+                <h3 id="landing-awards-heading" class="landing-awards__heading">Awards &amp; Accolades</h3>
+                <div class="owl-carousel achievements landing-awards__carousel">
+                  @foreach($landing_awards['itration'] as $index => $itration)
+                    @if(!empty($landing_awards['image'][$index]) && !empty($landing_awards['title'][$index]))
+                      <div class="item">
+                        <div class="position-relative">
+                          <div class="about_border border_9 position-relative">
+                            <a href="{{ central_asset(uploaded_asset($landing_awards['image'][$index])) }}"
+                               data-fancybox="landing-awards"
+                               aria-label="View award: {{ $landing_awards['title'][$index] }}">
+                              <img class="landing-awards__image hvr-bounce-in"
+                                   src="{{ central_asset(uploaded_asset($landing_awards['image'][$index])) }}"
+                                   alt="{{ $landing_awards['title'][$index] }}"
+                                   loading="lazy">
+                            </a>
+                          </div>
+                          <p class="landing-awards__caption text-center">{{ $landing_awards['title'][$index] }}</p>
+                        </div>
+                      </div>
+                    @endif
+                  @endforeach
+                </div>
+              </section>
+            </div>
+          @endif
           
          
         </div>
