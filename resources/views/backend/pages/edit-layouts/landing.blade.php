@@ -2,8 +2,9 @@
 @php
 $banner_title = $pageData->meta->where('meta_key', 'banner_title')->first()->meta_value ?? '';
 $banner_images = $pageData->meta->where('meta_key', 'banner_images')->first()->meta_value ?? '';
-$about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
-$about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
+// Temporarily disabled with the school list and introduction section.
+// $about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
+// $about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
 $about_title2 = $pageData->meta->where('meta_key', 'about_title2')->first()->meta_value ?? '';
 $about_description2 = $pageData->meta->where('meta_key', 'about_description2')->first()->meta_value ?? '';
 $about_image = $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '';
@@ -49,14 +50,16 @@ $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updat
         <hr>
         <h4 class="text-primary">About Section</h4>
     </div>     
+    {{-- Temporarily disabled fields for the school list and introduction section.
     <div class="col-md-12 form-group mb-2">
         <label for="name" class="form-label">Title 1 <span class="text-danger">*</span></label>
         <input class="form-control" value="{{$about_title}}" name="meta[about_title]" type="text" required>
-    </div>   
+    </div>
     <div class="col-md-12 form-group mb-2">
         <label for="content" class="form-label">Description 1 <span class="text-danger">*</span></label>
         <textarea name="meta[about_description]" class="form-control text-editor" rows="4" required>{{$about_description}}</textarea>
     </div>   
+    --}}
     <div class="col-md-6 form-group mb-2">
         <label for="name" class="form-label">Title 2<span class="text-danger">*</span></label>
         <input class="form-control" value="{{$about_title2}}" name="meta[about_title2]" type="text" required>

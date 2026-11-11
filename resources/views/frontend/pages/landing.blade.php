@@ -8,8 +8,9 @@
 @php
   $banner_title = $pageData->meta->where('meta_key', 'banner_title')->first()->meta_value ?? '';
   $banner_images = explode(',', $pageData->meta->where('meta_key', 'banner_images')->first()->meta_value ?? '');
-  $about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
-  $about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
+  // Temporarily disabled with the school list and introduction section.
+  // $about_title = $pageData->meta->where('meta_key', 'about_title')->first()->meta_value ?? '';
+  // $about_description = $pageData->meta->where('meta_key', 'about_description')->first()->meta_value ?? '';
   $about_title2 = $pageData->meta->where('meta_key', 'about_title2')->first()->meta_value ?? '';
   $about_description2 = $pageData->meta->where('meta_key', 'about_description2')->first()->meta_value ?? '';
   $about_image = explode(',', $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '');
@@ -238,6 +239,7 @@
             </div>
           </div> -->
 
+          {{-- Temporarily disabled school list and introduction section.
           <div class="col-lg-6 pt55" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
             <div class="locatio_box">
               <ul>
@@ -277,6 +279,7 @@
             <p>{!! $about_description !!}</p>
            
           </div>
+          --}}
           
          
         </div>
