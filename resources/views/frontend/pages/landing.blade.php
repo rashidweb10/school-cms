@@ -361,18 +361,18 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
-              <div class="mb-md-4 mb-2">
-                <h3 class="roboto text_color fw-normal">{{ $landing_information_title }}</h3>
-              </div>
-              <div>{!! $landing_information_description !!}</div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
               <div class="position-relative">
                 <div class="border_8">
                   <img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($landing_information_image)) }}" alt="{{ $landing_information_title }}" loading="lazy">
                 </div>
               </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+              <div class="mb-md-4 mb-2">
+                <h3 class="roboto text_color fw-normal">{{ $landing_information_title }}</h3>
+              </div>
+              <div>{!! $landing_information_description !!}</div>
             </div>
           </div>
         </div>

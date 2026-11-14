@@ -859,6 +859,14 @@ footer.footer a{
     bottom: -16px;
 }
 
+.scholar_section.landing-information-section {
+    background: #fff;
+}
+
+.landing-information-section .border_8 {
+    margin-top: 0;
+}
+
 .showcase_box {
     position: relative;
     /* width: 300px; */ /* Adjust width as needed */
