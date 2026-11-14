@@ -285,33 +285,35 @@
           @if(isset($landing_awards['itration']) && is_array($landing_awards['itration']) && count($landing_awards['itration']))
             <div class="col-lg-12 col-12 landing-awards-column">
               <section class="awards_achievements landing-awards" aria-labelledby="landing-awards-heading" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-                <div class="row justify-content-center">
-                  <div class="col-lg-12 aos-init aos-animate">
-                    <div class="text-start mb-md-4 mb-2 pt-2">
-                      <h3 id="landing-awards-heading" class="roboto text_color text-center">Awards &amp; Accolades</h3>
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-12 aos-init aos-animate">
+                      <div class="text-start mb-md-4 mb-2 pt-2">
+                        <h3 id="landing-awards-heading" class="roboto text_color text-center">Awards &amp; Accolades</h3>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="owl-carousel achievements landing-awards__carousel">
-                    @foreach($landing_awards['itration'] as $index => $itration)
-                      @if(!empty($landing_awards['image'][$index]) && !empty($landing_awards['title'][$index]))
-                        <div class="item">
-                          <div class="position-relative">
-                            <div class="about_border border_9 position-relative">
-                              <a href="{{ central_asset(uploaded_asset($landing_awards['image'][$index])) }}"
-                                 data-fancybox="landing-awards"
-                                 aria-label="View award: {{ $landing_awards['title'][$index] }}">
-                                <img class="jbox-img rotate w-100 hvr-bounce-in"
-                                     src="{{ central_asset(uploaded_asset($landing_awards['image'][$index])) }}"
-                                     alt="{{ $landing_awards['title'][$index] }}"
-                                     loading="lazy">
-                              </a>
+                    <div class="owl-carousel achievements landing-awards__carousel">
+                      @foreach($landing_awards['itration'] as $index => $itration)
+                        @if(!empty($landing_awards['image'][$index]) && !empty($landing_awards['title'][$index]))
+                          <div class="item">
+                            <div class="position-relative">
+                              <div class="about_border border_9 position-relative">
+                                <a href="{{ central_asset(uploaded_asset($landing_awards['image'][$index])) }}"
+                                   data-fancybox="landing-awards"
+                                   aria-label="View award: {{ $landing_awards['title'][$index] }}">
+                                  <img class="jbox-img rotate w-100 hvr-bounce-in"
+                                       src="{{ central_asset(uploaded_asset($landing_awards['image'][$index])) }}"
+                                       alt="{{ $landing_awards['title'][$index] }}"
+                                       loading="lazy">
+                                </a>
+                              </div>
+                              <p class="text-center pt-1">{{ $landing_awards['title'][$index] }}</p>
                             </div>
-                            <p class="text-center pt-1">{{ $landing_awards['title'][$index] }}</p>
                           </div>
-                        </div>
-                      @endif
-                    @endforeach
+                        @endif
+                      @endforeach
+                    </div>
                   </div>
                 </div>
               </section>
