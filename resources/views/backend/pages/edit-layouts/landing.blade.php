@@ -8,6 +8,9 @@ $banner_images = $pageData->meta->where('meta_key', 'banner_images')->first()->m
 $about_title2 = $pageData->meta->where('meta_key', 'about_title2')->first()->meta_value ?? '';
 $about_description2 = $pageData->meta->where('meta_key', 'about_description2')->first()->meta_value ?? '';
 $about_image = $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '';
+$landing_information_title = $pageData->meta->where('meta_key', 'landing_information_title')->first()->meta_value ?? '';
+$landing_information_description = $pageData->meta->where('meta_key', 'landing_information_description')->first()->meta_value ?? '';
+$landing_information_image = $pageData->meta->where('meta_key', 'landing_information_image')->first()->meta_value ?? '';
 // Temporarily disabled with the Mission, Vision & Values editor section.
 // $mission_title = $pageData->meta->where('meta_key', 'mission_title')->first()->meta_value ?? '';
 // $mission_description = $pageData->meta->where('meta_key', 'mission_description')->first()->meta_value ?? '';
@@ -172,6 +175,34 @@ $landing_updates = json_decode($pageData->meta->where('meta_key', 'landing_updat
     <div class="col-md-12 form-group mb-2">
         <label for="content" class="form-label">Description 2 <span class="text-danger">*</span></label>
         <textarea name="meta[about_description2]" class="form-control text-editor" rows="4" required>{{$about_description2}}</textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+        <h4 class="text-primary">Information Section</h4>
+    </div>
+    <div class="col-md-6 form-group mb-2">
+        <label for="landing-information-title" class="form-label">Title</label>
+        <input id="landing-information-title" class="form-control" value="{{$landing_information_title}}" name="meta[landing_information_title]" type="text">
+    </div>
+    <div class="col-md-6">
+        <label for="landing-information-image" class="form-label">Image</label>
+        <div class="form-group mb-2">
+            <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-soft-secondary font-weight-medium">{{ __('Browse') }}</div>
+                </div>
+                <div class="form-control file-amount">{{ __('Choose File') }}</div>
+                <input id="landing-information-image" value="{{$landing_information_image}}" type="hidden" name="meta[landing_information_image]" class="selected-files">
+            </div>
+            <div class="file-preview box sm"></div>
+        </div>
+    </div>
+    <div class="col-md-12 form-group mb-2">
+        <label for="landing-information-description" class="form-label">Description</label>
+        <textarea id="landing-information-description" name="meta[landing_information_description]" class="form-control text-editor" rows="4">{{$landing_information_description}}</textarea>
     </div>
 </div>
 

@@ -14,6 +14,9 @@
   $about_title2 = $pageData->meta->where('meta_key', 'about_title2')->first()->meta_value ?? '';
   $about_description2 = $pageData->meta->where('meta_key', 'about_description2')->first()->meta_value ?? '';
   $about_image = explode(',', $pageData->meta->where('meta_key', 'about_image')->first()->meta_value ?? '');
+  $landing_information_title = $pageData->meta->where('meta_key', 'landing_information_title')->first()->meta_value ?? '';
+  $landing_information_description = $pageData->meta->where('meta_key', 'landing_information_description')->first()->meta_value ?? '';
+  $landing_information_image = $pageData->meta->where('meta_key', 'landing_information_image')->first()->meta_value ?? '';
   // Temporarily disabled with the Mission, Vision & Values section.
   // $mission_title = $pageData->meta->where('meta_key', 'mission_title')->first()->meta_value ?? '';
   // $mission_description = $pageData->meta->where('meta_key', 'mission_description')->first()->meta_value ?? '';
@@ -352,6 +355,29 @@
         </div>
       </div>
     </section>
+
+    @if($landing_information_title && $landing_information_description && $landing_information_image)
+      <section class="scholar_section landing-information-section pt-4 pb-4 pb-md-5 pt-md-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+              <div class="mb-md-4 mb-2">
+                <h3 class="roboto text_color fw-normal">{{ $landing_information_title }}</h3>
+              </div>
+              <div>{!! $landing_information_description !!}</div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+              <div class="position-relative">
+                <div class="border_8">
+                  <img class="hvr-bounce-in" src="{{ central_asset(uploaded_asset($landing_information_image)) }}" alt="{{ $landing_information_title }}" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    @endif
 
 
 {{-- Temporarily disabled Mission, Vision & Values section.
