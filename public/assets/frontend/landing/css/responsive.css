@@ -4,6 +4,26 @@
     background: #fefddf;
     padding-top: 0;
 }
+.landing-awards .owl-nav {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    width: 100%;
+}
+.landing-awards .owl-nav button.owl-prev,
+.landing-awards .owl-nav button.owl-next {
+    position: static;
+}
+.scholar_section.landing-information-section {
+    background: #fff;
+}
+.landing-information-section .row > .col-lg-6:first-child {
+    margin-bottom: 32px;
+}
+.landing-information-section h3 {
+    margin-top: 0;
+    line-height: 1.3;
+}
 p.qr_text {
     text-align: center;
 }

@@ -859,6 +859,13 @@ footer.footer a{
     bottom: -16px;
 }
 
+.landing-awards .owl-nav button.owl-prev,
+.landing-awards .owl-nav button.owl-next {
+    background: #666 !important;
+    color: #fff !important;
+    border-radius: 50px;
+}
+
 .scholar_section.landing-information-section {
     background: #fff;
 }
