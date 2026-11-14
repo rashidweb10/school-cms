@@ -833,35 +833,55 @@ footer.footer a{
     line-height: 22px;
 }
 
+.about_section .container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 .landing-awards {
     width: 100%;
     padding: 20px 0 32px;
+    background: transparent;
+}
+
+.landing-awards-column {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .landing-awards__heading {
     margin: 0 0 12px;
-    color: #ed1c24;
-    font-size: clamp(1.25rem, 2vw, 1.8rem);
-    font-weight: 500;
+    color: #E31E24;
+    font-size: clamp(1.75rem, 2vw, 2.5rem);
+    font-weight: 400;
     text-align: center;
+    font-family: "Roboto Slab", serif;
+}
+
+.landing-awards__carousel {
+    width: 100%;
+}
+
+.landing-awards__carousel .item {
+    padding: 0 12px;
 }
 
 .landing-awards__image {
     display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
-    border: 1px solid #eee;
+    object-fit: cover;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    object-fit: contain;
+    border: 1px solid #d8d8d8;
 }
 
 .landing-awards__caption {
     margin: 0;
-    color: #292929;
-    font-size: clamp(0.8rem, 1vw, 1rem);
-    font-weight: 600;
+    color: #111;
+    font-size: 1rem;
     line-height: 1.45;
+    text-align: center;
     padding: 10px 8px 0;
 }
 

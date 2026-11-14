@@ -200,7 +200,7 @@
         </script>
         <script>
         $(document).ready(function() {
-            $(".owl-carousel").owlCarousel({
+            $(".owl-carousel:not(.landing-awards__carousel)").owlCarousel({
             items: 5, // Default number of items
             loop: true, // Loop through items
             margin: 65, // Space between items
@@ -220,6 +220,26 @@
                 items: 3 // Number of items for desktops (width 1024px and up)
                 }
             }
+            });
+            $(".landing-awards__carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 3
+                    },
+                    1024: {
+                        items: 4
+                    }
+                }
             });
         });
         </script>
